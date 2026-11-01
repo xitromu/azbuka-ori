@@ -347,7 +347,7 @@ const PENDING=[];
 function waitable(exec){return new Promise((res,rej)=>{const e={rej};PENDING.push(e);exec(v=>{PENDING.splice(PENDING.indexOf(e),1);res(v);});});}
 function abortAll(){const p=PENDING.splice(0);p.forEach(e=>e.rej(new Abort()));}
 const wait=ms=>waitable(res=>setTimeout(res,ms));
-async function sayWait(text,voiceText){const p=say(text,voiceText);await waitable(res=>{let done=false;const fin=()=>{if(!done){done=true;res();}};p.then(()=>setTimeout(fin,180));setTimeout(fin,Math.min(7500,Math.max(1200,text.length*(S.sound?60:40))));});}
+async function sayWait(text,voiceText,who){const p=say(text,voiceText,who);await waitable(res=>{p.then(()=>setTimeout(res,180));});}
 function updWallet(){document.querySelectorAll('.wallet').forEach(w=>w.innerHTML=CRYSTAL+`<span>${S.coins}</span>`);}
 function addCoins(n){S.coins+=n;if(L)L.earned+=n;save();updWallet();sfx('coin');const w=$('.screen.on .wallet');if(w){const f=document.createElement('span');f.className='float';f.textContent='+'+n;w.appendChild(f);setTimeout(()=>f.remove(),1200);}}
 function drawChars(anim) {
@@ -360,12 +360,12 @@ function applyTheme(){const t=THEMES[shown('paint')?S.theme||0:0];document.docum
 function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('on',s.id===id));buildStages();if(id==='lesson')drawPair();updWallet();applyTheme();drawChars();window.scrollTo(0,0);}
 function actions(html){$('#act').innerHTML=html||'';}
 function scene(html){$('#board').innerHTML=html||'';}
-function happy(text,voiceText){MOOD='happy';drawChars('hop');sparkle($('#board'));say(text||pick(['Верно! У тебя получилось!','Отлично! Ты настоящий исследователь букв!','Замечательно! Мои ученики тобой гордятся!','Точно! Ещё одна звёздная победа!']),voiceText);}
+async function happy(text,voiceText){MOOD='happy';drawChars('hop');sparkle($('#board'));await sayWait(text||pick(['Верно! У тебя получилось!','Отлично! Ты настоящий исследователь букв!','Замечательно! Мои ученики тобой гордятся!','Точно! Ещё одна звёздная победа!']),voiceText);}
 function oops(text){MOOD='think';drawChars('think');sfx('wrong');say(text||pick(['Почти! Попробуй ещё раз.','Не спеши. Посмотри внимательно и попробуй снова.','Пока не то, но у тебя обязательно получится!']));}
 function sparkle(el){if(!el)return;const r=el.getBoundingClientRect();for(let i=0;i<12;i++){const d=document.createElement('span'),a=i/12*Math.PI*2;d.className='spark';d.textContent=i%2?'✦':'⭐';d.style.left=r.left+r.width/2+'px';d.style.top=r.top+r.height*.45+'px';d.style.setProperty('--dx',Math.cos(a)*90+'px');d.style.setProperty('--dy',Math.sin(a)*70+'px');document.body.appendChild(d);setTimeout(()=>d.remove(),1100);}}
 function confetti(){const cols=['#ff6b9d','#ffd93d','#6bcb77','#4d96ff','#b06bff'];for(let i=0;i<35;i++){const d=document.createElement('span');d.className='cf';d.style.left=Math.random()*100+'%';d.style.background=cols[i%cols.length];d.style.animationDelay=Math.random()*.35+'s';document.body.appendChild(d);setTimeout(()=>d.remove(),2300);}}
 function fireworks(){for(let i=0;i<30;i++)setTimeout(()=>{const d=document.createElement('span');d.className='spark';d.textContent='✦';d.style.left=15+Math.random()*70+'%';d.style.top=10+Math.random()*55+'%';d.style.color=pick(['#ffe46b','#75ecff','#ff8bc5']);d.style.setProperty('--dx',(Math.random()*100-50)+'px');d.style.setProperty('--dy',(Math.random()*100-50)+'px');document.body.appendChild(d);setTimeout(()=>d.remove(),1100);},i*35);}
-async function give(tries,success){addCoins(tries===0?2:1);sfx('right');if(shown('confetti'))confetti();happy(success&&success.text,success&&success.voice);await wait(1250);}
+async function give(tries,success){addCoins(tries===0?2:1);sfx('right');if(shown('confetti'))confetti();await happy(success&&success.text,success&&success.voice);}
 
 // Общие механики заданий
 async function sayChoice(text,voiceText,els) {
@@ -570,7 +570,7 @@ function menu() {
 }
 async function runLesson(def,again=false) {
   abortAll();actions([]);scene('');const student=again&&L?L.student:(S.student=(S.student+1)%STUDENTS.length);save();L={def,errors:0,earned:0,student};show('lesson');$('#lTitle').textContent=def.name;
-  try { if(!again){const st=STUDENTS[student];say(st.hi,undefined,'student');await wait(2100);MOOD='neutral';drawChars();}await def.run();await finishLesson(); } catch(e){if(!(e instanceof Abort)){console.error(e);menu();}}
+  try { if(!again){const st=STUDENTS[student];await sayWait(st.hi,undefined,'student');MOOD='neutral';drawChars();}await def.run();await finishLesson(); } catch(e){if(!(e instanceof Abort)){console.error(e);menu();}}
 }
 async function finishLesson() {
   const stars=L.errors<=1?3:L.errors<=4?2:1,fresh=Math.max(0,stars-(S.stars[L.def.id]||0));if(fresh)addCoins(fresh*5);S.stars[L.def.id]=Math.max(S.stars[L.def.id]||0,stars);save();

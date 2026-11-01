@@ -1,0 +1,597 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#241d59">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Азбука с Ори</title>
+<style>
+  :root { --bg1:#17133f; --bg2:#493787; --ink:#31245f; --purple:#7256d9; --gold:#ffbf3f; --mint:#62dbc2; --panel:#fff; }
+  * { box-sizing:border-box; }
+  html,body { margin:0; min-height:100%; overscroll-behavior:none; }
+  body { background:linear-gradient(var(--bg1),var(--bg2)) fixed; color:var(--ink); font-family:system-ui,"Segoe UI",Roboto,sans-serif; -webkit-tap-highlight-color:transparent; user-select:none; -webkit-user-select:none; touch-action:manipulation; }
+  button { font:inherit; color:inherit; }
+  #app { max-width:720px; margin:0 auto; min-height:100vh; }
+  .screen { display:none; flex-direction:column; min-height:100vh; padding-bottom:18px; }
+  .screen.on { display:flex; }
+  .top { display:flex; align-items:center; gap:8px; padding:10px 12px 5px; color:#fff; }
+  .ttl { flex:1; font-weight:850; font-size:clamp(16px,4vw,23px); text-align:center; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; text-shadow:0 2px 4px #0004; }
+  .ib { border:0; background:#fff; color:var(--ink); border-radius:14px; width:44px; height:44px; font-size:22px; cursor:pointer; box-shadow:0 3px 8px #0003; flex:none; }
+  #back,#shopBack { width:auto; min-width:92px; padding:0 12px; font-size:16px; font-weight:800; white-space:nowrap; }
+  .wallet { display:flex; align-items:center; gap:5px; background:#fff; border-radius:22px; padding:5px 11px 5px 7px; color:var(--ink); font-weight:900; font-size:19px; box-shadow:0 3px 8px #0003; position:relative; flex:none; }
+  .wallet svg { width:25px; height:25px; }
+  .float { position:absolute; right:2px; top:-5px; color:#ffe16b; font-size:20px; animation:up 1.1s ease-out forwards; pointer-events:none; }
+  @keyframes up { to { transform:translateY(-38px); opacity:0; } }
+  .bubble { position:relative; background:#fff; border-radius:18px; padding:11px 14px; font-size:17px; font-weight:650; line-height:1.35; box-shadow:0 4px 12px #0003; min-height:50px; cursor:pointer; }
+  .bubble::after { content:""; position:absolute; left:35%; bottom:-9px; border:9px solid transparent; border-top-color:#fff; border-bottom:0; }
+  .hero { padding:5px 12px 0; }
+  .stage { position:relative; height:255px; margin-top:10px; border-radius:25px; overflow:hidden; background:radial-gradient(circle at 80% 10%,#806ad0 0 2%,transparent 3%),linear-gradient(#29205e 0 64%,#8b74c9 64% 68%,#51408f 68%); box-shadow:inset 0 0 0 2px #ffffff30,0 5px 16px #0004; }
+  .stage::before { content:"✦  ·  ✧  ·  ✦  ·  ✧"; position:absolute; top:12px; left:15px; right:15px; color:#fff9; font-size:23px; letter-spacing:9px; }
+  .stage .window { position:absolute; width:112px; height:82px; border:7px solid #b6a8ec; border-radius:50%; right:7%; top:29px; background:radial-gradient(circle at 65% 35%,#ffcf65 0 4%,transparent 5%),radial-gradient(circle at 30% 70%,#fff 0 2%,transparent 3%),linear-gradient(#101637,#285790); box-shadow:0 0 20px #7ccfff44; }
+  .charwrap { position:absolute; transform-origin:50% 100%; }
+  .charwrap svg { display:block; width:100%; height:100%; overflow:visible; filter:drop-shadow(0 4px 2px #0003); }
+  .charwrap.idle { animation:breathe 3s ease-in-out infinite; }
+  .charwrap.hop { animation:hop .45s ease-out 2; }
+  .charwrap.think { animation:think .6s ease-in-out 2; }
+  @keyframes breathe { 50% { transform:scale(1.02,.985); } }
+  @keyframes hop { 40% { transform:translateY(-12%) scale(1.04); } }
+  @keyframes think { 50% { transform:rotate(-4deg); } }
+  .stage .ori { left:6%; bottom:0; width:150px; height:205px; z-index:3; }
+  .stage .lulu { left:36%; bottom:2%; width:105px; height:132px; z-index:4; }
+  .stage .bip { left:54%; bottom:2%; width:88px; height:145px; z-index:3; }
+  .stage .tum { left:69%; bottom:1%; width:105px; height:120px; z-index:4; }
+  .stage .neema { left:82%; bottom:8%; width:72px; height:105px; z-index:2; animation:floaty 2.7s ease-in-out infinite alternate; }
+  @keyframes floaty { to { transform:translateY(-10px) rotate(3deg); } }
+  .mainbtn { display:block; width:calc(100% - 24px); margin:11px 12px 0; border:0; border-radius:17px; padding:12px; font-size:18px; font-weight:850; color:#fff; background:linear-gradient(#7fe3ca,#42bfa8); box-shadow:0 4px 0 #238d7a; cursor:pointer; }
+  .mainbtn:active { transform:translateY(2px); box-shadow:0 2px 0 #238d7a; }
+  .vrow { display:block; width:calc(100% - 24px); margin:10px 12px 0; border:0; border-radius:12px; padding:8px 10px; font-size:13px; line-height:1.3; font-weight:700; color:var(--ink); background:#ffffffdf; cursor:pointer; }
+  .cards { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; padding:13px 12px 4px; }
+  .sect { grid-column:1/-1; color:#fff; font-size:15px; font-weight:850; margin:8px 2px -2px; text-shadow:0 2px 3px #0004; }
+  .card { position:relative; border:0; border-radius:18px; padding:10px 4px 8px; min-height:105px; background:#fff; box-shadow:0 4px 0 #c9bfe9,0 6px 12px #0003; cursor:pointer; display:flex; flex-direction:column; align-items:center; gap:3px; }
+  .card:active { transform:translateY(2px); box-shadow:0 2px 0 #c9bfe9; }
+  .card .ic { min-height:43px; display:flex; align-items:center; justify-content:center; font-size:33px; font-weight:900; color:var(--purple); }
+  .card b { font-size:13px; line-height:1.15; min-height:29px; display:flex; align-items:center; text-align:center; }
+  .card i { font-style:normal; color:var(--gold); font-size:14px; letter-spacing:1px; }
+  .host { display:flex; align-items:center; gap:5px; min-height:132px; padding:0 12px; }
+  .host .pair { position:relative; width:125px; height:128px; flex:none; }
+  .host .ori { left:0; bottom:0; width:82px; height:116px; }
+  .host .student { right:0; bottom:0; width:59px; height:72px; z-index:2; }
+  .host .bubble { flex:1; max-height:132px; overflow-y:auto; font-size:16px; }
+  .host .bubble::after { left:-9px; top:48%; bottom:auto; border:9px solid transparent; border-right-color:#fff; border-left:0; }
+  #board { position:relative; margin:4px 12px 0; min-height:265px; border-radius:25px; background:linear-gradient(145deg,#fff,#f0ebff); box-shadow:0 5px 15px #0004; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:13px; padding:17px 12px; overflow:hidden; text-align:center; }
+  #board:empty { display:none; }
+  .bigletter { font-size:clamp(100px,26vw,165px); line-height:.9; font-weight:900; color:var(--purple); text-shadow:0 5px 0 #dfd5ff; }
+  .letterpair { display:flex; align-items:baseline; gap:28px; font-weight:900; color:var(--purple); }
+  .letterpair .up { font-size:112px; line-height:1; }
+  .letterpair .low { font-size:94px; line-height:1; color:#dd6ea8; }
+  .picture { font-size:82px; line-height:1; filter:drop-shadow(0 4px 2px #0002); }
+  .caption { font-size:25px; font-weight:850; }
+  .word { font-size:clamp(31px,8vw,49px); line-height:1.15; font-weight:900; letter-spacing:3px; color:var(--purple); }
+  .sentence { font-size:clamp(27px,6.5vw,40px); line-height:1.3; font-weight:850; }
+  .mini { font-size:15px; font-weight:650; opacity:.72; }
+  .merge { display:flex; align-items:center; justify-content:center; gap:15px; font-size:58px; font-weight:900; color:var(--purple); }
+  .merge .plus { color:#e695b9; font-size:40px; }
+  .soundmark { color:#d54f8d; }
+  #act { display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:10px; padding:12px 12px 0; min-height:78px; }
+  .btn { border:0; border-radius:18px; padding:13px 20px; min-width:66px; min-height:54px; background:#fff; box-shadow:0 4px 0 #bdb1df,0 5px 9px #0003; font-size:20px; font-weight:850; cursor:pointer; transition:transform .15s,box-shadow .15s,opacity .15s; }
+  .btn:active { transform:translateY(2px); box-shadow:0 2px 0 #bdb1df; }
+  .btn.next { color:#fff; background:var(--purple); box-shadow:0 4px 0 #49349e; padding-left:30px; padding-right:30px; }
+  .btn.choice { min-width:82px; font-size:28px; }
+  .btn.wordchoice { font-size:23px; letter-spacing:1px; }
+  .btn.picchoice { font-size:46px; min-width:78px; padding:8px 13px; }
+  .btn.right { background:#55ce8b; color:#fff; box-shadow:0 4px 0 #2e9760; }
+  .btn.wrongb { background:#ffd6df; opacity:.55; }
+  .btn.reading { transform:scale(1.08); box-shadow:0 0 0 4px #ffd251,0 4px 0 #bdb1df; }
+  .btn.hint { animation:hint 1s ease-in-out infinite; box-shadow:0 0 0 5px #ffd251,0 4px 0 #bdb1df; }
+  @keyframes hint { 50% { transform:scale(1.08); } }
+  .many { display:grid; grid-template-columns:repeat(4,1fr); gap:9px; width:100%; max-width:440px; }
+  .many .btn { padding:10px 5px; font-size:34px; }
+  .many .btn.found { opacity:.25; transform:scale(.85); }
+  .slots { display:flex; flex-wrap:wrap; justify-content:center; gap:7px; }
+  .slot { width:49px; height:60px; border-radius:12px; background:#e4dcf7; box-shadow:inset 0 0 0 2px #c2b4e6; display:flex; align-items:center; justify-content:center; font-size:37px; font-weight:900; color:var(--purple); }
+  .slot.filled { background:#fff4c9; animation:pop .25s ease-out; }
+  @keyframes pop { from { transform:scale(.4); } 70% { transform:scale(1.12); } }
+  .spark { position:fixed; z-index:60; font-size:20px; pointer-events:none; animation:spark 1s ease-out forwards; }
+  @keyframes spark { to { transform:translate(var(--dx),var(--dy)) scale(1.2); opacity:0; } }
+  .cf { position:fixed; top:-14px; width:9px; height:13px; border-radius:2px; z-index:55; pointer-events:none; animation:cf 1.8s linear forwards; }
+  @keyframes cf { to { transform:translateY(80vh) rotate(720deg); opacity:.1; } }
+  .items { display:grid; grid-template-columns:repeat(4,1fr); gap:9px; padding:13px 12px 5px; }
+  .item { border:0; border-radius:18px; padding:8px 3px; background:#fff; box-shadow:0 4px 0 #bdb1df; cursor:pointer; display:flex; flex-direction:column; align-items:center; gap:3px; }
+  .item .pv { font-size:43px; height:53px; }
+  .item b { font-size:12px; line-height:1.15; min-height:28px; display:flex; align-items:center; }
+  .item span { font-size:13px; font-weight:850; display:flex; align-items:center; gap:3px; }
+  .item span svg { width:16px; height:16px; }
+  .item:not(.own) .pv { filter:grayscale(.5); opacity:.65; }
+  .item.own:not(.on) .pv { opacity:.45; }
+  .item.on { outline:4px solid var(--gold); }
+  .item.poor { opacity:.55; }
+  .themes { display:flex; justify-content:center; flex-wrap:wrap; gap:8px; padding:10px 12px; }
+  .themes button { border:0; border-radius:14px; padding:8px 12px; background:#fff; font-weight:750; cursor:pointer; }
+  .themes button.on { color:#fff; background:var(--purple); }
+  .tiny { display:block; margin:18px auto 0; border:0; background:none; color:#ffffffaa; text-decoration:underline; cursor:pointer; }
+  .overlay { position:fixed; inset:0; z-index:70; background:#110d35bb; display:none; align-items:center; justify-content:center; padding:16px; }
+  .overlay.on { display:flex; }
+  .res { width:100%; max-width:390px; background:linear-gradient(#fff,#eee7ff); border-radius:27px; padding:20px; text-align:center; }
+  .res h2 { margin:0 0 8px; font-size:26px; }
+  .res .stars { color:var(--gold); font-size:48px; letter-spacing:4px; }
+  .res .stars .off { color:#d8d0ea; }
+  .res .got { display:flex; justify-content:center; align-items:center; gap:6px; font-size:23px; font-weight:900; margin:7px 0 15px; }
+  .res .got svg { width:29px; height:29px; }
+  .res .row { display:flex; gap:10px; }
+  .res .row .btn { flex:1; padding-left:8px; padding-right:8px; }
+  #novoice .res { text-align:left; }
+  #novoice h2 { text-align:center; }
+  #novoice p { font-size:15px; line-height:1.4; }
+  .giftdecor { position:absolute; z-index:5; pointer-events:none; font-size:40px; }
+  .gd-garland { left:20%; right:4%; top:0; font-size:31px; letter-spacing:8px; animation:glow 1.5s ease-in-out infinite alternate; }
+  .gd-holo { right:25%; top:29px; animation:floaty 2s ease-in-out infinite alternate; }
+  .gd-lamp { left:2%; top:18px; }
+  .gd-music { left:30%; bottom:2%; pointer-events:auto; cursor:pointer; }
+  .gd-plant { right:1%; bottom:1%; }
+  .gd-robot { right:32%; bottom:0; pointer-events:auto; cursor:pointer; }
+  @keyframes glow { to { filter:brightness(1.5) drop-shadow(0 0 6px #fff); } }
+  @media (max-width:480px) {
+    .cards { grid-template-columns:repeat(3,1fr); gap:9px; }
+    .stage { height:225px; }
+    .stage .ori { width:128px; height:184px; left:2%; }
+    .stage .lulu { left:32%; width:91px; height:119px; }
+    .stage .bip { left:51%; width:76px; height:128px; }
+    .stage .tum { left:66%; width:91px; height:108px; }
+    .stage .neema { left:84%; width:57px; height:88px; }
+    .items { grid-template-columns:repeat(3,1fr); }
+    #board { min-height:250px; }
+  }
+  @media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; } }
+</style>
+</head>
+<body>
+<div id="app">
+  <section id="menu" class="screen on">
+    <header class="top"><div class="wallet"></div><div class="ttl">Азбука с Ори</div><button class="ib" id="snd" title="Звук">🔊</button><button class="ib" id="toShop" title="Подарки">🎁</button></header>
+    <div class="hero"><div class="bubble"></div><div class="stage"></div></div>
+    <button class="mainbtn" id="continue">▶ Начать приключение</button>
+    <button class="vrow"></button>
+    <div class="cards" id="cards"></div>
+  </section>
+  <section id="lesson" class="screen">
+    <header class="top"><button class="ib" id="back" title="Назад">← Назад</button><div class="ttl" id="lTitle"></div><div class="wallet"></div></header>
+    <div class="host"><div class="pair"></div><div class="bubble" id="bubble"></div></div>
+    <div id="board"></div><div id="act"></div>
+  </section>
+  <section id="shop" class="screen">
+    <header class="top"><button class="ib" id="shopBack" title="Назад">← Назад</button><div class="ttl">Подарки для корабля</div><div class="wallet"></div></header>
+    <div class="hero"><div class="bubble"></div><div class="stage"></div></div>
+    <div class="items" id="items"></div><div class="themes" id="themes"></div><button class="vrow"></button><button class="tiny" id="reset">Сбросить прогресс</button>
+  </section>
+  <div class="overlay" id="result"><div class="res"><h2>Урок пройден!</h2><div class="stars" id="rStars"></div><div class="got" id="rGot"></div><div class="row"><button class="btn" id="rAgain">↺ Ещё раз</button><button class="btn next" id="rMenu">Дальше ▶</button></div></div></div>
+  <div class="overlay" id="novoice"><div class="res"><h2>Ори пока молчит</h2><div class="txt"></div><div class="row"><button class="btn" id="nvOff">Не показывать</button><button class="btn next" id="nvOk">Понятно</button></div></div></div>
+</div>
+<script>
+'use strict';
+const $ = s => document.querySelector(s);
+const pick = a => a[Math.random() * a.length | 0];
+const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i; i--) { const j = Math.random() * (i + 1) | 0; [a[i], a[j]] = [a[j], a[i]]; } return a; };
+const CRYSTAL = '<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2 35 13 29 34 11 34 5 13Z" fill="#6ee7f3" stroke="#fff" stroke-width="2"/><path d="m20 2 2 32 7-21Z" fill="#25a9df"/><path d="M5 13h30L20 2Z" fill="#c5fbff" opacity=".75"/></svg>';
+
+function oriSVG(mood = 'neutral') {
+  const mouth = mood === 'happy' ? '<path d="M77 111 Q100 134 123 111 Q119 143 100 144 Q81 142 77 111" fill="#592d63"/><path d="M87 133 Q100 125 113 133" stroke="#f58fa2" stroke-width="7" stroke-linecap="round"/>' : mood === 'think' ? '<path d="M88 126 Q101 119 114 126" fill="none" stroke="#592d63" stroke-width="5" stroke-linecap="round"/>' : '<path d="M84 122 Q100 133 117 121" fill="none" stroke="#592d63" stroke-width="5" stroke-linecap="round"/>';
+  return `<svg viewBox="0 0 200 240" aria-label="Ори"><path d="M58 198 Q25 212 26 240H174Q175 211 142 198" fill="#6550a5"/><path d="M65 177 43 227 157 227 135 177" fill="#8b72d0"/><path d="M100 181v46M68 205h64" stroke="#d8c8ff" stroke-width="5"/><circle cx="100" cy="200" r="10" fill="#7df1e0"/><path d="M52 73Q23 84 35 117Q48 105 58 110M148 73Q177 84 165 117Q152 105 142 110" fill="#69c9b5"/><ellipse cx="100" cy="102" rx="65" ry="78" fill="#7edac5"/><path d="M68 39Q58 9 76 8Q89 9 84 34M116 34Q111 8 127 7Q145 10 132 42" fill="#7edac5"/><circle cx="76" cy="9" r="6" fill="#ffe277"/><circle cx="128" cy="8" r="6" fill="#ffe277"/><ellipse cx="75" cy="88" rx="23" ry="28" fill="#fff"/><ellipse cx="125" cy="88" rx="23" ry="28" fill="#fff"/><ellipse cx="78" cy="91" rx="10" ry="15" fill="#31245f"/><ellipse cx="122" cy="91" rx="10" ry="15" fill="#31245f"/><circle cx="81" cy="85" r="4" fill="#fff"/><circle cx="125" cy="85" r="4" fill="#fff"/><path d="M51 62Q74 44 91 61M109 61Q128 44 150 63" stroke="#f2f0df" stroke-width="10" stroke-linecap="round" fill="none"/>${mouth}<path d="M58 125Q45 165 70 183L78 161 87 190 100 164 113 190 123 160 132 182Q156 159 141 124 126 148 100 148 74 148 58 125" fill="#f2f0df"/><path d="M48 199Q22 197 18 216M151 199Q177 197 183 216" stroke="#7edac5" stroke-width="15" stroke-linecap="round"/></svg>`;
+}
+function studentSVG(id, mood = 'neutral') {
+  const smile = mood === 'happy' ? 'M75 121Q100 145 125 121' : 'M80 123Q100 136 120 123';
+  if (id === 'lulu') return `<svg viewBox="0 0 200 240" aria-label="Лулу"><path d="M42 223Q30 156 48 80Q62 24 102 26Q151 27 159 87Q169 164 153 223" fill="#ef87bc"/><path d="M57 56Q31 34 42 20M140 54Q169 32 157 17" stroke="#ef87bc" stroke-width="12" stroke-linecap="round"/><circle cx="42" cy="18" r="9" fill="#ffe274"/><circle cx="158" cy="16" r="9" fill="#ffe274"/>${[[68,80],[129,80],[99,117]].map(([x,y])=>`<ellipse cx="${x}" cy="${y}" rx="20" ry="23" fill="#fff"/><circle cx="${x}" cy="${y+2}" r="9" fill="#382459"/><circle cx="${x+3}" cy="${y-2}" r="3" fill="#fff"/>`).join('')}<path d="${smile}" stroke="#713055" stroke-width="6" stroke-linecap="round" fill="none"/><path d="M44 169Q14 176 24 199M155 169Q185 176 176 199" stroke="#ef87bc" stroke-width="14" stroke-linecap="round"/><path d="M63 221v15M137 221v15" stroke="#ef87bc" stroke-width="20" stroke-linecap="round"/></svg>`;
+  if (id === 'bip') return `<svg viewBox="0 0 200 240" aria-label="Бип"><path d="M65 231Q48 174 54 84Q57 33 99 28Q145 32 147 88Q153 175 134 231" fill="#68bfea"/><path d="M98 30Q87 6 100 3Q116 3 110 29" fill="#68bfea"/><circle cx="102" cy="4" r="7" fill="#ffdc67"/><ellipse cx="101" cy="94" rx="42" ry="47" fill="#fff"/><ellipse cx="102" cy="98" rx="20" ry="28" fill="#283765"/><circle cx="109" cy="87" r="7" fill="#fff"/><path d="${smile}" stroke="#274e78" stroke-width="6" stroke-linecap="round" fill="none"/><path d="M57 157Q24 164 32 199M144 157Q175 164 168 199M76 230v7M125 230v7" stroke="#68bfea" stroke-width="15" stroke-linecap="round"/></svg>`;
+  if (id === 'tum') return `<svg viewBox="0 0 200 240" aria-label="Тум"><path d="M43 225 31 207 45 190 29 171 45 153 31 131 47 115 38 89 58 80 56 51 80 51 96 28 113 47 139 35 145 60 168 68 159 94 175 112 161 133 173 155 155 170 163 198 145 205 143 229" fill="#f3a44f"/><path d="M68 59Q46 28 60 18 79 20 85 52M123 53Q132 20 150 22 159 38 139 65" fill="#f3a44f"/><ellipse cx="73" cy="105" rx="21" ry="25" fill="#fff"/><ellipse cx="128" cy="105" rx="21" ry="25" fill="#fff"/><circle cx="75" cy="108" r="10" fill="#573349"/><circle cx="126" cy="108" r="10" fill="#573349"/><path d="${smile}" stroke="#713f32" stroke-width="6" stroke-linecap="round" fill="none"/><path d="M52 166Q20 171 30 199M150 166Q181 171 171 199M68 224v12M132 224v12" stroke="#f3a44f" stroke-width="17" stroke-linecap="round"/></svg>`;
+  return `<svg viewBox="0 0 200 240" aria-label="Нима"><path d="M53 118Q40 46 98 31Q161 39 149 119L139 172 122 150 105 180 88 151 66 174Z" fill="#9bdc70"/><path d="M68 47Q47 24 58 12M132 47Q153 24 143 12" stroke="#9bdc70" stroke-width="10" stroke-linecap="round"/><circle cx="58" cy="11" r="7" fill="#ed83c1"/><circle cx="143" cy="11" r="7" fill="#ed83c1"/><ellipse cx="77" cy="89" rx="22" ry="28" fill="#fff"/><ellipse cx="124" cy="89" rx="22" ry="28" fill="#fff"/><ellipse cx="78" cy="93" rx="10" ry="16" fill="#314b4a"/><ellipse cx="123" cy="93" rx="10" ry="16" fill="#314b4a"/><path d="${smile}" stroke="#42613f" stroke-width="6" stroke-linecap="round" fill="none"/></svg>`;
+}
+const STUDENTS = [
+  { id:'lulu', name:'Лулу', hi:'Привет! Я Лулу. Я уже умею считать до трёх — по числу моих глаз!' },
+  { id:'bip', name:'Бип', hi:'Бип! Я очень люблю новые слова. Давай читать вместе!' },
+  { id:'tum', name:'Тум', hi:'Я Тум. На моей планете буквы пахнут звёздной пылью!' },
+  { id:'neema', name:'Нима', hi:'Я Нима. Я летаю, но читать пока не умею. Научишься вместе со мной?' }
+];
+function charHTML(id, mood = 'neutral', anim = 'idle') { return `<div class="charwrap ${id} ${id === 'ori' ? 'ori' : 'student'} ${anim}" data-char="${id}">${id === 'ori' ? oriSVG(mood) : studentSVG(id, mood)}</div>`; }
+
+const LETTERS = [
+  { ch:'А', word:'арбуз', icon:'🍉', kind:'vowel' }, { ch:'О', word:'окно', icon:'🪟', kind:'vowel' },
+  { ch:'У', word:'утка', icon:'🦆', kind:'vowel' }, { ch:'Ы', word:'рыба', icon:'🐟', kind:'vowel' },
+  { ch:'Э', word:'экран', icon:'🖥️', kind:'vowel' },
+  { ch:'М', word:'мама', icon:'👩', kind:'consonant' }, { ch:'Н', word:'нос', icon:'👃', kind:'consonant' },
+  { ch:'Л', word:'луна', icon:'🌙', kind:'consonant' }, { ch:'Р', word:'рыба', icon:'🐟', kind:'consonant' },
+  { ch:'С', word:'сок', icon:'🧃', kind:'consonant' },
+  { ch:'Т', word:'торт', icon:'🎂', kind:'consonant' }, { ch:'Д', word:'дом', icon:'🏠', kind:'consonant' },
+  { ch:'П', word:'пароход', icon:'🚢', kind:'consonant' }, { ch:'Б', word:'банан', icon:'🍌', kind:'consonant' },
+  { ch:'К', word:'кот', icon:'🐱', kind:'consonant' }, { ch:'Г', word:'гриб', icon:'🍄', kind:'consonant' },
+  { ch:'И', word:'игла', icon:'🪡', kind:'vowel' }, { ch:'Е', word:'ель', icon:'🌲', kind:'vowel' },
+  { ch:'Ё', word:'ёлка', icon:'🎄', kind:'vowel' }, { ch:'Ю', word:'юбка', icon:'👗', kind:'vowel' },
+  { ch:'Я', word:'яблоко', icon:'🍎', kind:'vowel' },
+  { ch:'З', word:'зонт', icon:'☂️', kind:'consonant' }, { ch:'Ф', word:'флаг', icon:'🚩', kind:'consonant' },
+  { ch:'В', word:'ваза', icon:'🏺', kind:'consonant' }, { ch:'Х', word:'хлеб', icon:'🍞', kind:'consonant' },
+  { ch:'Й', word:'йогурт', icon:'🥛', kind:'consonant' },
+  { ch:'Ш', word:'шар', icon:'🎈', kind:'consonant' }, { ch:'Ж', word:'жук', icon:'🪲', kind:'consonant' },
+  { ch:'Ч', word:'чашка', icon:'☕', kind:'consonant' }, { ch:'Щ', word:'щётка', icon:'🪥', kind:'consonant' },
+  { ch:'Ц', word:'цветок', icon:'🌸', kind:'consonant' },
+  { ch:'Ь', word:'мышь', icon:'🐁', kind:'sign' }, { ch:'Ъ', word:'подъезд', icon:'🏢', kind:'sign' }
+];
+const LETTER = Object.fromEntries(LETTERS.map(x => [x.ch, x]));
+const low = ch => ch.toLowerCase();
+const LETTER_NAMES = { а:'а',б:'бэ',в:'вэ',г:'гэ',д:'дэ',е:'е',ё:'ё',ж:'жэ',з:'зэ',и:'и',й:'и краткое',к:'ка',л:'эл',м:'эм',н:'эн',о:'о',п:'пэ',р:'эр',с:'эс',т:'тэ',у:'у',ф:'эф',х:'ха',ц:'цэ',ч:'чэ',ш:'ша',щ:'ща',ъ:'твёрдый знак',ы:'ы',ь:'мягкий знак',э:'э',ю:'ю',я:'я' };
+const SOUND_SUPPORT = { б:'ба',г:'га',д:'да',п:'па',т:'та',к:'ка',й:'йа',ч:'ча',щ:'ща',ц:'ца' };
+const nameToken = ch => '#' + low(ch);
+const soundToken = ch => '#з_' + low(ch);
+const syllToken = s => '#с_' + s.toLowerCase();
+const GIFTS = [
+  { id:'plant', name:'Звёздный цветок', icon:'🪴', price:30, hi:'Этот цветок светится, когда мы читаем!' },
+  { id:'garland', name:'Гирлянда', icon:'✨', price:35, hi:'Огоньки будут мигать над нашим классом!' },
+  { id:'lamp', name:'Лампа-планета', icon:'🪐', price:40, hi:'Теперь у нас есть собственная планета!' },
+  { id:'holo', name:'Голограмма', icon:'🌍', price:45, hi:'Земля — планета, где придумали эти слова!' },
+  { id:'confetti', name:'Конфетти', icon:'🎊', price:50, hi:'За верные ответы полетит конфетти!' },
+  { id:'fireworks', name:'Салют', icon:'🎆', price:55, hi:'После урока будет звёздный салют!' },
+  { id:'music', name:'Музыкальный орбитрон', icon:'🎵', price:60, hi:'Нажми на ноту в классе — я сыграю мелодию!' },
+  { id:'robot', name:'Робот-помощник', icon:'🤖', price:75, hi:'Нажми на робота в классе — он поздоровается!' },
+  { id:'paint', name:'Цвет каюты', icon:'🎨', price:90, hi:'Выбирай цвет нашего космического класса!' }
+];
+const THEMES = [ ['Космос','#17133f','#493787'], ['Аврора','#103b46','#227b78'], ['Сирень','#40234f','#9b5792'], ['Солнечная','#493019','#9c6330'] ];
+const shown = id => S.gifts.includes(id) && S.shown.includes(id);
+const KEY = 'oriAlphabet1';
+const FRESH = () => ({ coins:10, stars:{}, gifts:[], shown:[], theme:0, student:0 });
+const S = (() => { const d = { ...FRESH(), sound:true }; try { const j = JSON.parse(localStorage.getItem(KEY)); if (j) Object.assign(d,j); } catch(e) {} for (const k of ['gifts','shown']) if (!Array.isArray(d[k])) d[k]=[]; if (!d.stars || typeof d.stars !== 'object') d.stars={}; return d; })();
+function save() { try { localStorage.setItem(KEY,JSON.stringify(S)); } catch(e) {} }
+
+// Звуковые эффекты
+let AC = null;
+function audioOn() {
+  AC = AC || new (window.AudioContext || window.webkitAudioContext)();
+  if (navigator.audioSession && navigator.audioSession.type !== 'playback') navigator.audioSession.type = 'playback';
+  if (AC.state !== 'running') { AC.resume().catch(() => {}); const s=AC.createBufferSource(); s.buffer=AC.createBuffer(1,1,22050); s.connect(AC.destination); s.start(0); }
+  return AC;
+}
+['pointerdown','touchend','click'].forEach(k => document.addEventListener(k,() => { try { audioOn(); } catch(e) {} },{capture:true,passive:true}));
+function sfx(kind) {
+  if (!S.sound) return;
+  try {
+    audioOn(); const notes={tap:[[520,.05,.07]],right:[[660,.09,.12],[880,.09,.12],[1174,.18,.1]],wrong:[[330,.13,.1],[277,.2,.08]],coin:[[1200,.06,.05],[1600,.1,.04]],win:[[523,.12,.12],[659,.12,.12],[784,.12,.12],[1047,.3,.1]],pop:[[900,.05,.08]]}[kind]||[];
+    let t=AC.currentTime;
+    for (const [f,d,v] of notes) { const o=AC.createOscillator(),g=AC.createGain(); o.type='sine'; o.frequency.value=f; g.gain.setValueAtTime(v,t); g.gain.exponentialRampToValueAtTime(.001,t+d); o.connect(g); g.connect(AC.destination); o.start(t); o.stop(t+d+.02); t+=d*.85; }
+  } catch(e) {}
+}
+function melody() {
+  if (!S.sound) return;
+  try { audioOn(); let t=AC.currentTime; [523,659,784,659,880,784].forEach((f,i)=>{ const o=AC.createOscillator(),g=AC.createGain(); o.type='sine'; o.frequency.value=f; g.gain.setValueAtTime(.08,t); g.gain.exponentialRampToValueAtTime(.001,t+.22); o.connect(g); g.connect(AC.destination); o.start(t); o.stop(t+.24); t+=.18; }); } catch(e) {}
+}
+
+// Записанный голос, а если записи нет — синтез устройства
+let VAR = null;
+function pickVoice() {
+  try { const vs=speechSynthesis.getVoices().filter(v=>/^ru/i.test(v.lang)); VAR=vs.find(v=>/pavel|дмитр|dmitr|yuri|юрий|aleksandr|artemiy|мужск|male/i.test(v.name))||vs[0]||null; } catch(e) { VAR=null; }
+}
+if ('speechSynthesis' in window) { pickVoice(); speechSynthesis.onvoiceschanged=pickVoice; }
+// VOICE START (вписывает tools/voice_build.py)
+const VOICE_KEYS = new Set('1094d22 10993b06 10e94391 11924d29 12264fd7 1272035e 131d8dbb 137274e4 1385af72 13d3e44e 13eb456c 150e93a6 171fe4e0 18203dea 18ca4c67 194cc64 1a747594 1a7c9ce7 1a8aa3da 1d66d69b 1dae3c30 1e57baf6 1f7d5e4d 203f2f02 2102c3a5 211696ef 2295bf50 22b8c12b 234a5492 238b8946 2393b143 23f07c14 26acf517 2902ffe9 2a9c8545 2ab61c01 2ae053d6 2b180 2b181 2b182 2b183 2b184 2b185 2b186 2b187 2b188 2b189 2b18a 2b18b 2b18c 2b18d 2b18e 2b18f 2b190 2b191 2b192 2b193 2b194 2b195 2b196 2b197 2b198 2b199 2b19a 2b19b 2b19c 2b19d 2b19e 2b19f 2b1a4 2b1b0 2b1b1 2b1b2 2b1b3 2b1b4 2b1b5 2b1b6 2b1b7 2b1b8 2b1b9 2b1ba 2b1bb 2b1bc 2b1bd 2b1be 2b1bf 2b1e0 2b1e1 2b1e2 2b1e3 2b1e4 2b1e5 2b1e6 2b1e7 2b1e8 2b1e9 2b1ea 2b1eb 2b1ec 2b1ed 2b1ee 2b1ef 2b1f4 2bf30267 2bf9a499 2c6822c7 2c775b16 2d36ba84 2dd5c647 2ffe29d9 30031b3b 305768ae 309027c7 309133b8 312687a2 31835f5a 33f24ef6 33fa7c2a 34875252 35e3ddf0 378597a9 379a9a0 379a9ad 379a9d3 379aa1b 379aa34 379aa4b 379b95a 379b9ef 37c3d219 38b65fa8 38ea70e 39a7b05 39d60e3f 3b395066 3c4d174d 3c54250 3eb00b8c 3fb9069a 40198412 40d96be7 411dde64 41372a11 41de9e75 426a8ea9 42a47c79 434776a1 43f0a4b4 442bdd11 45e7e8a3 4715e34c 47fa266b 48753085 4b1b160d 4bd81ff1 4bd892f5 4bd9a905 4bda7cfc 4bdc3b91 4be1cf8b 4be68f16 4bf6eede 4bfa0972 4e1e3b52 4e5d1825 4ef0ae49 4f2a0b10 4fa4c4c7 4fa5eb66 4fdcc61e 5100f096 512edfc2 524a7cb7 5256eca0 52b42418 53bbd784 541d3330 544f4393 54b9bbf9 558cb127 55cef7bf 5692061b 572025fe 578f7d68 57a961d6 57b87d23 585e9f09 58e5d2 58e5e1 58e5f3 58e61a 58e627 58e73d 58eca6 58eca8 58ecc7 58ecc9 58ecf6 58ecfa 58ed50 58ed5d 58ed6e 59283857 596200 596201 596202 596203 596204 596205 596206 596207 596208 596209 59620a 59620b 59620c 59620d 59620e 59620f 596217 596270 596271 596272 596273 596274 596275 596276 596277 596278 596279 59627a 59627b 59627c 59627d 59627e 59627f 596670 596671 596672 596673 596674 596675 596677 59667e 59667f 59ac35a2 5aba19e2 5ba72830 5c000c8b 5e58b004 5fb3d1d2 6029fafe 61fc4988 62a06c51 63038ddf 63038dfe 63038e1d 63038e3c 63038e5b 63038e7a 63038e99 63038eb8 63038ed7 63038ef6 63038f15 63038f34 63038f53 63038f72 63038f91 63038fb0 63038fce 6303900c 6303902f 6303904a 6303906d 63039088 630390ab 630390c6 630390e9 63039104 63039127 63039142 63039165 63039180 630391a3 630391e1 630392d6 64461966 6469c884 647ba822 652cd058 66314302 67d096fc 67d0ae28 67d0b2a7 6a1c7bf2 6b80234 6bdec4ce 6bee5d10 6db30fab 6dd6c189 6e3677cc 6fa50e80 706bf8d 7112cfef 720d5938 72264a1d 7244d50d 7253d18b 7373b7a2 744bfea4 754e2a37 759990c7 7700c788 77545022 77724ca5 778e009b 779017a4 77a3ce77 77a7d594 780f4472 78eb681f 7a11c09f 7a128b20 7a12d49f 7a13ac05 7a146ef6 7a149c62 7a1514b0 7a15e1a5 7a1aeab5 7a2217b3 7a222063 7a28b239 7a293ebf 7a2a1baf 7a2ada41 7a2bb7cf 7a320f33 7a3a46ff 7a3cdab9 7a3e5caf 7a3eab2e 7a401d3b 7a422ab0 7a45a360 7a46b646 7a46b664 7a46b672 7a46c485 7a487676 7a488669 7a4a3cf0 7a66b885 7b1940cb 7b239798 7b39bbd3 7b44208b 7b68f8d6 7b9b8a43 7ba1ac3c 7c3bceb0 7c3bceb1 7c3bceb2 7c3bceb3 7c3bceb4 7c3bceb5 7c3bceb6 7c3bceb7 7c3bceb8 7c3bceb9 7c3bceba 7c3bcebb 7c3bcebc 7c3bcebd 7c3bcebe 7c3bcebf 7c3bcec0 7c3bcec1 7c3bcec2 7c3bcec3 7c3bcec4 7c3bcec5 7c3bcec6 7c3bcec7 7c3bcec8 7c3bcec9 7c3bceca 7c3bcecb 7c3bcecc 7c3bcecd 7c3bcece 7c3bcecf 7c3bcedf 7c5bf541 7c92a927 7cc4094 7d10f5d3 7dc00243 7f8941d9 8337c9b5 841a8ce7 84aeed3a 84c2747a 855b0a5b 85f7eef2 8654ca98 87c1f0a9 87ea6ba 87f54ba2 883c552e 887428e7 888f246d 898112d 8a5a0d4b 8abbbba3 8b3a42e6 8bbca6ac 8c193b86 8c28a81e 8c6893d5 8d0f1194 8fd7d8af 9047c4a6 907d32ca 91484ab 931475f1 93316d0e 936b19a4 94372191 943ba15f 96969509 96982b0 96da544d 9a1315d5 9a245063 9ae854b 9aeec726 9cafcab6 9d260ffd 9d4ece5a 9d70669e 9d7066dc 9d7066ff 9d70671a 9d70673d 9d706758 9d70677b 9d706796 9d7067b9 9d7067d4 9d7067f7 9d706812 9d706835 9d706850 9d706873 9d7068b1 9d7068cf 9d7068ee 9d70690d 9d70692c 9d70694b 9d70696a 9d706989 9d7069a8 9d7069c7 9d7069e6 9d706a05 9d706a24 9d706a43 9d706a62 9d706a81 9d706aa0 9d706c91 9e9b0d15 9e9b0d72 9ec45d95 9ec5ca69 9eeb7858 9eed24a1 a0b40337 a0fdcae2 a14e24d1 a300c499 a513aed2 a54d6a62 a5b00f9 a5bcdd27 a6171b47 a618ab14 a642c530 a665089c a68ebe9b a726d73b a86e5097 a8874f97 a8e330be a9d5f75e ab415dde aba0e7c4 abe01444 abef8d5f ac56c18c acda3d30 acf4fead ad228ec7 b033de1d b0a4d8a6 b0d9014c b112754c b1671724 b19a9338 b23e7adc b29680c9 b476f7be b57e9d51 b5abaef9 b73d4d8d b74f127 b750d23 b7559b3 b75ad40 b75d947 b75d98a b75dd53 b7631a0 b76344f b76671d b766843 b76694b b76726a b767610 b76762a b768547 b769983 b76a583 b7800dc3 b780134c b7edd266 b8349dcf b863440 b863441 b863442 b863443 b863444 b863445 b863446 b863447 b863448 b863449 b863480 b863481 b863482 b863483 b863484 b863485 b863486 b863487 b86348a b86348b b8634a0 b8634a1 b8634a2 b8634a3 b8634a4 b8634a5 b8634a6 b8634a7 b8634a8 b8634a9 b8634c0 b8634c1 b8634c2 b8634c3 b8634c4 b8634c5 b8634c6 b8634c7 b8634cc b8634cd b8634e0 b8634e1 b8634e2 b8634e3 b8634e4 b8634e5 b8634e6 b8634e7 b8634ea b8634eb b863520 b863521 b863522 b863523 b863524 b863525 b863526 b863527 b86352c b86352d b863560 b863561 b863562 b863563 b863564 b863565 b863566 b863567 b86356e b86356f b863606 b863607 b863608 b863609 b86360a b86360b b86360c b86360d b86360e b86360f b86366f b903217d b944882c b9484b2e b991d363 ba259346 ba752138 badd5f94 bb2b06c5 bb8fb0c bbac3285 bbbad1b4 bc2fec94 bc5bccf0 bc617384 bcc6ee5f bd856d62 be2e1b25 beb20eec bef93452 bf644543 bf864532 bfec8982 c01aad05 c0b56c35 c0eef016 c1a11f50 c1fc4a71 c20c67df c22f4202 c266f2d5 c29ea9 c3503452 c468a24d c489c238 c4ba6ff3 c4e2b6e6 c5058fef c55be189 c5681bb3 c631dd6f c67ebd33 c6a709b4 c6c79e53 c6ea666e c7399c66 c7658903 c77cdc36 c7877845 c7ebb5a9 c7f911a6 c85b037e c862404f c8734d49 c88eafd9 c988e759 ca4a1b2e cb6caa2c cc0cea77 ccb854bc ccec289d cdf73f46 cf12edd4 cf417746 cf87c637 d0ef5ab1 d1bc5433 d37567a8 d42a62cd d46de7c4 d582b239 d6336465 d7e23d12 d7e5fa21 d816976c d8187b04 d9459502 d9afc318 da32004a db13f49b dbb009a6 dc7c83bf dd64ef57 dd6501fa dd66a27b de62f1a4 defe304a e2f7cf80 e472199b e60a6e0b e6c7bbe1 e73ac804 e7c50c5e e8054485 ebc1ed06 ebc49418 ec30d643 f0892be1 f29b7eae f2b0896c f2f59201 f557e162 f7bce818 f8cc67ba fa52b55e fb5b1c04 fb90dd fbba11b0 fee1ba2d ff0d24'.split(' ').filter(Boolean));
+const VOICE_MB = 7;
+// VOICE END
+const VOICE_URL = 'voice/', VOICE_CACHE = 'ori-voice-1';
+const vkey = s => { let x=5381; for(let i=0;i<s.length;i++) x=(Math.imul(x,33)^s.charCodeAt(i))>>>0; return x.toString(16); };
+const VTOKEN = /#[а-яё](?:_[а-яё]+)?|\d+/g;
+function voiceParts(t) {
+  const s=String(t).replace(/[\u{1F000}-\u{1FFFF}☀-➿️▶←↺✔✘«»]/gu,'').replace(/\s+/g,' ').trim(),out=[];
+  const chunk=x=>{ x=x.replace(/^[\s.,:;!?…—–-]+/,'').trim(); if(/[а-яё]/i.test(x)) out.push(x); };
+  let last=0;
+  for(const m of s.matchAll(VTOKEN)) { chunk(s.slice(last,m.index)); out.push(m[0][0]==='#'?m[0]:'#'+m[0]); last=m.index+m[0].length; }
+  chunk(s.slice(last)); return out;
+}
+function spokenToken(t) {
+  if(t[0]!=='#') return t;
+  const v=t.slice(1);
+  if(/^\d+$/.test(v)) return v;
+  if(v.startsWith('с_')) return v.slice(2);
+  if(v.startsWith('з_')) { const c=v.slice(2); return SOUND_SUPPORT[c]||(/[аоуыэи]/.test(c)?c+c+c:c+c+c); }
+  return LETTER_NAMES[v]||v;
+}
+const speakable = t => String(t).replace(VTOKEN,m=>spokenToken(m)).replace(/[\u{1F000}-\u{1FFFF}☀-➿️▶←↺✔✘«»]/gu,'');
+let vSrc=null,vNow=0,vHow='',vLoad=0;
+const vBufs=new Map();
+function hush() { vNow++; if(vSrc){try{vSrc.stop();}catch(e){}vSrc=null;} try{if('speechSynthesis' in window&&(speechSynthesis.speaking||speechSynthesis.pending))speechSynthesis.cancel();}catch(e){} }
+async function clipGet(tok) {
+  const k=vkey(tok); if(vBufs.has(k))return vBufs.get(k);
+  const url=VOICE_URL+k+'.mp3',r=(window.caches&&await caches.match(url))||await fetch(url);
+  if(!r.ok)throw new Error('нет записи '+tok);
+  const data=await r.arrayBuffer(),buf=await new Promise((ok,no)=>AC.decodeAudioData(data,ok,no));
+  vBufs.set(k,buf); if(vBufs.size>100)vBufs.delete(vBufs.keys().next().value); return buf;
+}
+async function playRecord(parts,who,me) {
+  audioOn(); const bufs=await Promise.all(parts.map(clipGet)); if(me!==vNow)return;
+  voiceShow(S.voiceDL?'disk':'net'); if(AC.state!=='running')await Promise.race([AC.resume().catch(()=>{}),new Promise(r=>setTimeout(r,300))]); if(AC.state!=='running')return;
+  for(const b of bufs) { if(me!==vNow)return; await new Promise(done=>{const n=AC.createBufferSource();n.buffer=b;n.playbackRate.value=who==='student'?1.16:1;n.connect(AC.destination);n.onended=done;vSrc=n;n.start();}); }
+}
+function deviceSpeak(t,who) {
+  return new Promise(res=>{
+    if(!('speechSynthesis' in window)){voiceShow('none');return res();} voiceShow('dev');
+    try { const u=new SpeechSynthesisUtterance(speakable(t));u.lang='ru-RU';if(VAR)u.voice=VAR;u.rate=1.03;u.pitch=who==='student'?1.35:.85;u.onend=()=>res();u.onerror=e=>{if(/synthesis-failed|language-unavailable|voice-unavailable/.test(e.error))noVoice('noru');res();};speechSynthesis.speak(u); } catch(e){res();}
+  });
+}
+function speak(t,who) { hush();const me=vNow;if(!S.sound){voiceShow();return Promise.resolve();}const parts=voiceParts(t);if(parts.length&&parts.every(p=>VOICE_KEYS.has(vkey(p))))return playRecord(parts,who,me).catch(()=>me===vNow?deviceSpeak(t,who):undefined);return deviceSpeak(t,who); }
+function voiceShow(how) {
+  if(how)vHow=how;const can=window.caches&&VOICE_KEYS.size&&!S.voiceDL&&!vLoad&&location.protocol!=='file:',get=can?` · ⬇ Скачать, ${VOICE_MB} МБ`:'';
+  const text=vLoad?`⬇ Скачиваю голос: ${vLoad-1}%`:!S.sound?'🔇 Звук выключен кнопкой 🔊':{disk:'🎙 Говорит запись: голос скачан на устройство ✓',net:'🎙 Говорит запись из интернета'+get,dev:'🤖 Говорит синтез устройства: записи сейчас нет'+get,none:'🔇 Сейчас нет доступного голоса'+get}[vHow]||'';
+  document.querySelectorAll('.vrow').forEach(b=>b.textContent=text);
+}
+async function voiceDownload() {
+  if(vLoad||S.voiceDL||!window.caches||!VOICE_KEYS.size||location.protocol==='file:')return;
+  vLoad=1;voiceShow();const c=await caches.open(VOICE_CACHE),all=[...VOICE_KEYS];let i=0,done=0,bad=0;
+  const fetchClip=async url=>{for(let n=0;;n++){try{const r=await fetch(url);if(r.ok)return r;if(n>=2)throw new Error(url);}catch(e){if(n>=2)throw e;}await new Promise(ok=>setTimeout(ok,700));}};
+  const worker=async()=>{while(i<all.length){const url=VOICE_URL+all[i++]+'.mp3';try{if(!await c.match(url))await c.put(url,await fetchClip(url));}catch(e){bad++;}vLoad=1+Math.floor(++done/all.length*100);voiceShow();}};
+  await Promise.all([1,2,3,4,5,6].map(worker));vLoad=0;S.voiceDL=!bad;save();try{if(navigator.storage&&navigator.storage.persist)navigator.storage.persist();}catch(e){}
+  if(S.voiceDL)voiceShow('disk');else{voiceShow();document.querySelectorAll('.vrow').forEach(b=>b.textContent='⚠ Скачалось не всё: нужен интернет. Нажми ещё раз.');}
+}
+document.addEventListener('click',e=>{if(e.target.closest('.vrow'))voiceDownload();});
+async function voiceInit() {
+  let have=false;try{if(window.caches&&VOICE_KEYS.size&&location.protocol!=='file:'){const urls=new Set((await(await caches.open(VOICE_CACHE)).keys()).map(r=>r.url.split('/').pop().replace('.mp3','')));have=[...VOICE_KEYS].every(k=>urls.has(k));}}catch(e){}
+  if(!!S.voiceDL!==have){S.voiceDL=have;save();}voiceShow(vHow||(have?'disk':VOICE_KEYS.size&&navigator.onLine?'net':'dev'));
+}
+if('serviceWorker' in navigator&&window.isSecureContext&&location.protocol!=='file:')navigator.serviceWorker.register('sw.js').catch(()=>{});
+const NOVOICE={none:'<p>Этот браузер не умеет говорить. Открой игру в Chrome, Safari или Яндекс.Браузере.</p>',noru:'<p>На устройстве нет русского голоса. При наличии интернета можно скачать записанный голос Ори строкой в меню.</p>'};
+let novoiceShown=false;
+function noVoice(why){if(novoiceShown||S.noVoiceOff||!S.sound)return;novoiceShown=true;$('#novoice .txt').innerHTML=NOVOICE[why]+'<p>Все задания можно выполнять и по картинкам.</p>';$('#novoice').classList.add('on');}
+function voiceCheck(){if(VOICE_KEYS.size&&(S.voiceDL||navigator.onLine))return;if(!('speechSynthesis' in window))return noVoice('none');let vs=[];try{vs=speechSynthesis.getVoices();}catch(e){}if(vs.length&&!vs.some(v=>/^ru/i.test(v.lang)))noVoice('noru');}
+let SAYN=0;
+function say(text,voiceText,who){SAYN++;const b=$('.screen.on .bubble');if(b){b.textContent=text;b.dataset.say=voiceText||text;b.dataset.who=who||'';b.replay=null;}return speak(voiceText||text,who);}
+document.addEventListener('click',e=>{const b=e.target.closest('.bubble');if(b&&b.replay)b.replay();else if(b&&b.dataset.say)speak(b.dataset.say,b.dataset.who);});
+
+// Состояние экранов и урока
+let L=null,MOOD='neutral';
+class Abort {}
+const PENDING=[];
+function waitable(exec){return new Promise((res,rej)=>{const e={rej};PENDING.push(e);exec(v=>{PENDING.splice(PENDING.indexOf(e),1);res(v);});});}
+function abortAll(){const p=PENDING.splice(0);p.forEach(e=>e.rej(new Abort()));}
+const wait=ms=>waitable(res=>setTimeout(res,ms));
+async function sayWait(text,voiceText){const p=say(text,voiceText);await waitable(res=>{let done=false;const fin=()=>{if(!done){done=true;res();}};p.then(()=>setTimeout(fin,180));setTimeout(fin,Math.min(7500,Math.max(1200,text.length*(S.sound?60:40))));});}
+function updWallet(){document.querySelectorAll('.wallet').forEach(w=>w.innerHTML=CRYSTAL+`<span>${S.coins}</span>`);}
+function addCoins(n){S.coins+=n;if(L)L.earned+=n;save();updWallet();sfx('coin');const w=$('.screen.on .wallet');if(w){const f=document.createElement('span');f.className='float';f.textContent='+'+n;w.appendChild(f);setTimeout(()=>f.remove(),1200);}}
+function drawChars(anim) {
+  document.querySelectorAll('.screen.on .charwrap').forEach(el=>{const id=el.dataset.char,mood=id==='ori'?MOOD:(MOOD==='happy'?'happy':'neutral');el.innerHTML=id==='ori'?oriSVG(mood):studentSVG(id,mood);el.classList.remove('idle','hop','think');void el.offsetWidth;el.classList.add(anim||(MOOD==='think'?'think':'idle'));});
+}
+function decorHTML(){return GIFTS.filter(g=>shown(g.id)&&['plant','garland','lamp','holo','music','robot'].includes(g.id)).map(g=>`<span class="giftdecor gd-${g.id}" data-gift="${g.id}">${g.icon}</span>`).join('');}
+function buildStages(){document.querySelectorAll('.stage').forEach(st=>st.innerHTML='<div class="window"></div>'+decorHTML()+charHTML('ori',MOOD)+STUDENTS.map(s=>charHTML(s.id)).join(''));}
+function drawPair(){const st=L?STUDENTS[L.student]:STUDENTS[0];$('.host .pair').innerHTML=charHTML('ori',MOOD)+charHTML(st.id,'neutral');}
+function applyTheme(){const t=THEMES[shown('paint')?S.theme||0:0];document.documentElement.style.setProperty('--bg1',t[1]);document.documentElement.style.setProperty('--bg2',t[2]);}
+function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('on',s.id===id));buildStages();if(id==='lesson')drawPair();updWallet();applyTheme();drawChars();window.scrollTo(0,0);}
+function actions(html){$('#act').innerHTML=html||'';}
+function scene(html){$('#board').innerHTML=html||'';}
+function happy(text,voiceText){MOOD='happy';drawChars('hop');sparkle($('#board'));say(text||pick(['Верно! У тебя получилось!','Отлично! Ты настоящий исследователь букв!','Замечательно! Мои ученики тобой гордятся!','Точно! Ещё одна звёздная победа!']),voiceText);}
+function oops(text){MOOD='think';drawChars('think');sfx('wrong');say(text||pick(['Почти! Попробуй ещё раз.','Не спеши. Посмотри внимательно и попробуй снова.','Пока не то, но у тебя обязательно получится!']));}
+function sparkle(el){if(!el)return;const r=el.getBoundingClientRect();for(let i=0;i<12;i++){const d=document.createElement('span'),a=i/12*Math.PI*2;d.className='spark';d.textContent=i%2?'✦':'⭐';d.style.left=r.left+r.width/2+'px';d.style.top=r.top+r.height*.45+'px';d.style.setProperty('--dx',Math.cos(a)*90+'px');d.style.setProperty('--dy',Math.sin(a)*70+'px');document.body.appendChild(d);setTimeout(()=>d.remove(),1100);}}
+function confetti(){const cols=['#ff6b9d','#ffd93d','#6bcb77','#4d96ff','#b06bff'];for(let i=0;i<35;i++){const d=document.createElement('span');d.className='cf';d.style.left=Math.random()*100+'%';d.style.background=cols[i%cols.length];d.style.animationDelay=Math.random()*.35+'s';document.body.appendChild(d);setTimeout(()=>d.remove(),2300);}}
+function fireworks(){for(let i=0;i<30;i++)setTimeout(()=>{const d=document.createElement('span');d.className='spark';d.textContent='✦';d.style.left=15+Math.random()*70+'%';d.style.top=10+Math.random()*55+'%';d.style.color=pick(['#ffe46b','#75ecff','#ff8bc5']);d.style.setProperty('--dx',(Math.random()*100-50)+'px');d.style.setProperty('--dy',(Math.random()*100-50)+'px');document.body.appendChild(d);setTimeout(()=>d.remove(),1100);},i*35);}
+async function give(tries,success){addCoins(tries===0?2:1);sfx('right');if(shown('confetti'))confetti();happy(success&&success.text,success&&success.voice);await wait(1250);}
+
+// Общие механики заданий
+async function sayChoice(text,voiceText,els) {
+  const b=$('.screen.on .bubble');
+  const read=async()=>{const me=++SAYN;await speak(voiceText||text);for(const el of els){if(SAYN!==me||!el.isConnected||!S.sound)return;if(el.disabled)continue;el.classList.add('reading');await Promise.all([speak(el.dataset.speech||el.textContent),new Promise(r=>setTimeout(r,350))]);el.classList.remove('reading');}};
+  if(b){b.textContent=text;b.dataset.say=voiceText||text;b.replay=read;}return read();
+}
+async function askChoice({text,voice,options,scene:sc,readOptions=true,success,hint,hintVoice}) {
+  if(sc!==undefined)scene(sc);let tries=0;
+  const answer=await waitable(res=>{
+    const a=$('#act');a.innerHTML='';options.forEach(o=>{
+      const el=document.createElement('button');el.className='btn choice '+(o.cls||'');el.innerHTML=o.html||o.label;el.dataset.speech=o.speech||o.label||'';
+      el.onclick=()=>{if(el.disabled)return;if(o.ok){el.classList.add('right');[...a.children].forEach(b=>b.disabled=true);res(o);}else{tries++;L.errors++;el.classList.add('wrongb');el.disabled=true;oops(o.say);if(tries>=2){const good=[...a.children].find((b,i)=>options[i].ok&&!b.disabled);if(good)good.classList.add('hint');if(hint)say(hint,hintVoice);}}};
+      a.appendChild(el);
+    });
+    if(readOptions)sayChoice(text,voice||text,[...a.children]);else say(text,voice||text);
+  });
+  await give(tries,(answer.success||success)&&{text:(answer.success||success).text,voice:(answer.success||success).voice});actions([]);return answer;
+}
+async function askMany({text,voice,options,success}) {
+  actions([]);let tries=0,left=options.filter(o=>o.ok).length;
+  await waitable(res=>{
+    scene('<div class="many">'+options.map((o,i)=>`<button class="btn" data-i="${i}">${o.html||o.label}</button>`).join('')+'</div>');
+    say(text,voice||text);
+    $('#board .many').onclick=e=>{
+      const el=e.target.closest('button');if(!el||el.disabled)return;const o=options[+el.dataset.i];
+      if(o.ok){el.classList.add('right','found');el.disabled=true;sfx('tap');if(!--left)res();}
+      else{tries++;L.errors++;el.classList.add('wrongb');setTimeout(()=>el.classList.remove('wrongb'),500);oops(o.say);if(tries>=2)$('#board .many').querySelectorAll('button').forEach((b,i)=>{if(options[i].ok&&!b.disabled)b.classList.add('hint');});}
+    };
+  });
+  await give(tries,success);scene('');
+}
+async function askSequence({text,voice,answer,scene:sc,success,readOptions=false}) {
+  if(sc!==undefined)scene(sc);let tries=0,pos=0;answer=answer.toUpperCase();
+  const letters=[...new Set(answer.split(''))];
+  await waitable(res=>{
+    const render=()=>{
+      scene((sc||'')+`<div class="slots">${[...answer].map((c,i)=>`<span class="slot ${i<pos?'filled':''}">${i<pos?c:''}</span>`).join('')}</div>`);
+      const a=$('#act');a.innerHTML='';shuffle(letters).forEach(c=>{const b=document.createElement('button');b.className='btn choice';b.textContent=c;b.dataset.speech=soundToken(c);b.onclick=()=>{
+        if(c===answer[pos]){pos++;sfx('tap');speak(soundToken(c));if(pos===answer.length){render();res();}else render();}
+        else{tries++;L.errors++;b.classList.add('wrongb');setTimeout(()=>b.classList.remove('wrongb'),450);oops(`Посмотри: следующая буква должна стоять на месте номер ${pos+1}.`);if(tries>=2)[...a.children].forEach(x=>{if(x.textContent===answer[pos])x.classList.add('hint');});}
+      };a.appendChild(b);});
+    };render();if(readOptions)sayChoice(text,voice||text,[...$('#act').children]);else say(text,voice||text);
+  });
+  await give(tries,success);actions([]);
+}
+async function tell(text,{voice,scene:sc,btn='Дальше ▶'}={}) {
+  if(sc!==undefined)scene(sc);say(text,voice||text);
+  await waitable(res=>{actions(`<button class="btn next">${btn}</button>`);$('#act .next').onclick=()=>res();});actions([]);
+}
+function letterScene(d){return `<div class="letterpair"><span class="up">${d.ch}</span><span class="low">${low(d.ch)}</span></div><div class="picture">${d.icon}</div><div class="caption">${d.word.toUpperCase()}</div>`;}
+function pictureScene(icon,word=''){return `<div class="picture">${icon}</div>${word?`<div class="word">${word}</div>`:''}`;}
+function wordChoices(target,pool,kind='word') { return shuffle([target,...pool.filter(x=>x!==target).slice(0,3)]).map(x=>({label:x,html:kind==='pic'?x:x,ok:x===target})); }
+function optionsForLetters(target,lowerCase=false) {
+  const idx=LETTERS.findIndex(x=>x.ch===target),others=[1,5,12].map(n=>LETTERS[(idx+n)%LETTERS.length].ch);
+  return shuffle([target,...others]).map(ch=>({label:lowerCase?low(ch):ch,speech:nameToken(ch),ok:ch===target}));
+}
+async function letterLesson(d) {
+  const l=low(d.ch),isSign=d.kind==='sign';
+  let intro,introVoice;
+  if(d.ch==='Ы') { intro='Это буква Ы. Она обозначает звук [ы] и любит прятаться в середине слова: рыба.';introVoice=`Это буква ${nameToken(d.ch)}. Она обозначает звук ${soundToken(d.ch)} и любит прятаться в середине слова: рыба.`; }
+  else if(isSign) { intro=d.ch==='Ь'?'Это мягкий знак. Он не обозначает звук, а подсказывает: читай согласный мягко. Послушай: мышь.':'Это твёрдый знак. Он не обозначает звук, а разделяет согласный и гласный: подъезд.';introVoice=intro; }
+  else { intro=`Это буква ${d.ch}. Послушай её звук: [${l}]. ${d.word[0].toUpperCase()+d.word.slice(1)} начинается с буквы ${d.ch}.`;introVoice=`Это буква ${nameToken(d.ch)}. Послушай её звук: ${soundToken(d.ch)}. ${d.word[0].toUpperCase()+d.word.slice(1)} начинается с буквы ${nameToken(d.ch)}.`; }
+  await tell(intro,{voice:introVoice,scene:letterScene(d)});
+  await askChoice({text:`Найди заглавную букву ${d.ch}.`,voice:`Найди заглавную букву ${nameToken(d.ch)}.`,options:optionsForLetters(d.ch),scene:`<div class="mini">Заглавная буква — как в начале предложения</div>`});
+  if(d.ch==='Ы') {
+    await askChoice({text:'В каком слове слышен звук [ы]?',voice:`В каком слове слышен звук ${soundToken('Ы')}?`,scene:'<div class="mini">Слушай внимательно</div>',options:shuffle([{label:'🐟',cls:'picchoice',speech:'рыба',ok:true,success:{text:'Верно! В слове рыба есть звук [ы].',voice:`Верно! В слове рыба есть звук ${soundToken('Ы')}.`}},{label:'🏠',cls:'picchoice',speech:'дом',ok:false,say:'В слове дом звука [ы] нет.'},{label:'🧃',cls:'picchoice',speech:'сок',ok:false,say:'В слове сок звука [ы] нет.'}])});
+  } else if(isSign) {
+    const opts=d.ch==='Ь'?[{label:'МЫШЬ 🐁',ok:true,speech:'мышь'},{label:'ДОМ 🏠',ok:false,speech:'дом'},{label:'СОК 🧃',ok:false,speech:'сок'}]:[{label:'ПОДЪЕЗД 🏢',ok:true,speech:'подъезд'},{label:'КОТ 🐱',ok:false,speech:'кот'},{label:'ЛУНА 🌙',ok:false,speech:'луна'}];
+    await askChoice({text:`В каком слове есть ${d.ch==='Ь'?'мягкий':'твёрдый'} знак?`,options:shuffle(opts),scene:`<div class="letterpair"><span class="up">${d.ch}</span><span class="low">${l}</span></div>`});
+  } else {
+    await askChoice({text:`С какой буквы начинается слово «${d.word}»?`,voice:`С какой буквы начинается слово ${d.word}?`,options:optionsForLetters(d.ch),scene:pictureScene(d.icon)});
+  }
+  await askChoice({text:`Найди строчную букву ${l}.`,voice:`Найди строчную букву ${nameToken(d.ch)}.`,options:optionsForLetters(d.ch,true),scene:'<div class="mini">Строчная буква — маленькая</div>'});
+  const pool=shuffle([d.ch,d.ch,d.ch,...LETTERS.filter(x=>x.ch!==d.ch).slice(0,5).map(x=>x.ch)]);
+  await askMany({text:`Найди все буквы ${d.ch}. Их здесь три!`,voice:`Найди все буквы ${nameToken(d.ch)}. Их здесь три!`,options:pool.map(ch=>({label:ch,ok:ch===d.ch})),success:{text:`Все буквы ${d.ch} найдены!`,voice:`Все буквы ${nameToken(d.ch)} найдены!`}});
+}
+const letterDef=(ch,sect)=>({id:'letter_'+ch,name:`${ch} — ${LETTER[ch].word}`,icon:LETTER[ch].ch,sect,run:()=>letterLesson(LETTER[ch]),letter:ch});
+
+// Уроки чтения
+const seqSuccess=word=>({text:`Верно! Это слово «${word.toLowerCase()}».`,voice:`Верно! Это слово ${word.toLowerCase()}.`});
+const seqWord=(word,icon,text)=>askSequence({text:text||`Собери слово «${word.toLowerCase()}» по буквам.`,answer:word,scene:pictureScene(icon),success:seqSuccess(word)});
+async function readPicture(word,icon,others) {
+  const opts=shuffle([{word,icon,ok:true},...others.map(x=>({...x,ok:false}))]).map(o=>({label:o.icon,cls:'picchoice',speech:o.word,ok:o.ok,success:o.ok?seqSuccess(word):undefined}));
+  return askChoice({text:'Прочитай слово и выбери подходящую картинку.',options:opts,scene:`<div class="word">${word}</div>`,readOptions:false,hint:'Посмотри на первую букву и прочитай слово по слогам.'});
+}
+async function choosePrinted(word,icon,otherWords) {
+  const options=shuffle([word,...otherWords]).map(w=>({label:w,cls:'wordchoice',speech:w,ok:w===word}));
+  return askChoice({text:'Послушай слово и найди его среди написанных.',voice:`Найди слово ${word.toLowerCase()}.`,options,scene:pictureScene(icon),readOptions:false,success:seqSuccess(word)});
+}
+async function missingLetter(word,missing,icon) {
+  const options=optionsForLetters(missing).map(o=>({...o,cls:''}));
+  return askChoice({text:'Какая буква спряталась в слове?',options,scene:pictureScene(icon,word.replace(missing,'_')),success:seqSuccess(word)});
+}
+async function sentenceTask(sentence,question,options,icon) {
+  return askChoice({text:question,options:shuffle(options.map((label,i)=>({label,cls:'wordchoice',ok:i===0}))),scene:`<div class="picture">${icon}</div><div class="sentence">${sentence}</div>`,readOptions:false,hint:'Прочитай предложение ещё раз. Ответ спрятан в нём.'});
+}
+async function lessonBlend() {
+  await tell('Буквы дружат друг с другом! Соединим согласный и гласный звук — получится слог.',{scene:'<div class="merge"><span>М</span><span class="plus">+</span><span>А</span><span class="plus">→</span><span>МА</span></div>'});
+  await askSequence({text:'Соедини [м] и [а]. Нажимай буквы по порядку.',voice:`Соедини ${soundToken('М')} и ${soundToken('А')}. Нажимай буквы по порядку.`,answer:'МА',scene:'<div class="mini">Сначала согласный, потом гласный</div>',success:{text:'Получился слог МА!',voice:`Получился слог ${syllToken('МА')}!`}});
+  await askSequence({text:'Теперь соедини [н] и [о].',voice:`Теперь соедини ${soundToken('Н')} и ${soundToken('О')}.`,answer:'НО',success:{text:'Получился слог НО!',voice:`Получился слог ${syllToken('НО')}!`}});
+  await askChoice({text:'Что получится, если соединить [с] и [у]?',voice:`Что получится, если соединить ${soundToken('С')} и ${soundToken('У')}?`,options:shuffle(['СУ','МА','НО'].map(x=>({label:x,ok:x==='СУ'}))),scene:'<div class="merge"><span>С</span><span class="plus">+</span><span>У</span></div>',readOptions:false,success:{text:'Да! Получился слог СУ!',voice:`Да! Получился слог ${syllToken('СУ')}!`}});
+}
+async function lessonSyllables() {
+  await tell('Слог читаем вместе, не разрывая звуки. Попробуй прочитать сам!',{scene:'<div class="word">МА · МО · МУ</div>'});
+  for(const [target,others] of [['МА',['МО','МУ','НА']],['НО',['НА','МО','СО']],['ЛУ',['ЛА','СУ','МУ']]]) await askChoice({text:`Найди слог ${target}.`,voice:`Найди слог ${syllToken(target)}.`,options:shuffle([target,...others]).map(x=>({label:x,ok:x===target})),readOptions:false});
+  await askSequence({text:'Собери слог ЛА.',voice:`Собери слог ${syllToken('ЛА')}.`,answer:'ЛА',success:{text:'Отлично! Ты читаешь слоги!',voice:'Отлично! Ты читаешь слоги!'}});
+}
+async function lessonFirstWords() {
+  await tell('Из слогов получаются слова. Читай слева направо: МА–МА — мама!',{scene:pictureScene('👩','МА–МА')});
+  await readPicture('МАМА','👩',[{word:'луна',icon:'🌙'},{word:'сок',icon:'🧃'},{word:'рыба',icon:'🐟'}]);
+  await seqWord('ЛУНА','🌙');
+  await readPicture('НОС','👃',[{word:'мама',icon:'👩'},{word:'окно',icon:'🪟'},{word:'утка',icon:'🦆'}]);
+  await seqWord('СОК','🧃');
+}
+async function lessonBuildWords() {
+  await tell('Теперь будем собирать новые слова. Называй каждую букву про себя, а потом прочитай всё слово.',{scene:'<div class="word">Р + О + С + А</div>'});
+  await seqWord('РОСА','💧');
+  await seqWord('СОСНА','🌲');
+  await missingLetter('СОН','С','😴');
+  await choosePrinted('МОРС','🧃',['МОРЕ','МОСТ','НОС']);
+}
+async function lessonSoft() {
+  await tell('Буквы И, Е, Ё, Ю, Я делают согласный перед собой мягким. Сравни: МА — МЯ.',{voice:`Сравни: ${syllToken('МА')} — ${syllToken('МЯ')}.`,scene:'<div class="merge"><span>МА</span><span class="plus">↔</span><span>МЯ</span></div>'});
+  await askChoice({text:'В каком слоге согласный звук мягкий?',options:shuffle(['МЯ','МА','МО'].map(x=>({label:x,ok:x==='МЯ'}))),readOptions:false});
+  await askSequence({text:'Собери мягкий слог МЯ.',voice:`Собери мягкий слог ${syllToken('МЯ')}.`,answer:'МЯ',success:{text:'Верно! Мягкий слог МЯ!',voice:`Верно! Мягкий слог ${syllToken('МЯ')}!`}});
+  await readPicture('МЯСО','🍖',[{word:'сок',icon:'🧃'},{word:'мама',icon:'👩'},{word:'луна',icon:'🌙'}]);
+  await askChoice({text:'Послушай и найди мягкий слог ЛЮ.',voice:`Найди мягкий слог ${syllToken('ЛЮ')}.`,options:shuffle(['ЛЮ','ЛУ','ЛА'].map(x=>({label:x,ok:x==='ЛЮ'}))),readOptions:false});
+}
+async function lessonYo() {
+  await tell('У буквы Ё всегда есть две точки. Она не любит лениться: в слове ёлка слышится [йо].',{scene:letterScene(LETTER.Ё)});
+  await askChoice({text:'Найди букву Ё с двумя точками.',voice:`Найди букву ${nameToken('Ё')} с двумя точками.`,options:optionsForLetters('Ё'),readOptions:false});
+  await seqWord('ЛЁД','🧊');
+  await readPicture('ЁЛКА','🎄',[{word:'утка',icon:'🦆'},{word:'окно',icon:'🪟'},{word:'дом',icon:'🏠'}]);
+  await missingLetter('ПОЁТ','Ё','🎤');
+}
+async function lessonSoftWords() {
+  await tell('Мягкий знак не читается отдельно. Он меняет предыдущий согласный: ДЕНЬ.',{scene:pictureScene('📅','ДЕНЬ')});
+  await readPicture('МЫШЬ','🐁',[{word:'жук',icon:'🪲'},{word:'кот',icon:'🐱'},{word:'шар',icon:'🎈'}]);
+  await seqWord('ДЕНЬ','📅');
+  await missingLetter('СЕМЬЯ','Ь','👨‍👩‍👧');
+  await choosePrinted('ПОДЪЕЗД','🏢',['ПОЕЗД','ПОДАРОК','ПОБЕДА']);
+}
+async function lessonWords() {
+  await tell('Читаем целые слова! Сначала по слогам, потом попробуй прочитать сразу.',{scene:'<div class="word">ДОМ · РЫБА · ЖУК</div>'});
+  await seqWord('ДОМ','🏠');
+  await readPicture('РЫБА','🐟',[{word:'юбка',icon:'👗'},{word:'ваза',icon:'🏺'},{word:'хлеб',icon:'🍞'}]);
+  await choosePrinted('ЖУК','🪲',['ЖАР','ЖИР','ЖУР']);
+  await seqWord('ЧАШКА','☕');
+  await readPicture('ЩЁТКА','🪥',[{word:'ёлка',icon:'🎄'},{word:'цветок',icon:'🌸'},{word:'чашка',icon:'☕'}]);
+}
+async function lessonPicture() {
+  await tell('Теперь читаем без подсказки голосом. Слово прозвучит только после верного ответа.',{scene:'<div class="word">ЧИТАЙ САМ!</div>'});
+  await readPicture('ЗОНТ','☂️',[{word:'флаг',icon:'🚩'},{word:'шар',icon:'🎈'},{word:'торт',icon:'🎂'}]);
+  await readPicture('ФЛАГ','🚩',[{word:'гриб',icon:'🍄'},{word:'зонт',icon:'☂️'},{word:'банан',icon:'🍌'}]);
+  await readPicture('ВАЗА','🏺',[{word:'цветок',icon:'🌸'},{word:'игла',icon:'🪡'},{word:'юбка',icon:'👗'}]);
+  await readPicture('ХЛЕБ','🍞',[{word:'сыр',icon:'🧀'},{word:'сок',icon:'🧃'},{word:'рыба',icon:'🐟'}]);
+}
+async function lessonMissing() {
+  await tell('Одна буква спряталась! Прочитай слово и верни её на место.',{scene:'<div class="word">М_МА</div>'});
+  await missingLetter('МАМА','М','👩');
+  await missingLetter('ЛУНА','Н','🌙');
+  await missingLetter('ДОМ','О','🏠');
+  await missingLetter('РЫБА','Ы','🐟');
+  await missingLetter('ЯБЛОКО','Я','🍎');
+}
+async function lessonSentences() {
+  await tell('Слова дружат в предложениях. Прочитай предложение и ответь на вопрос.',{scene:'<div class="sentence">МАМА ДОМА.</div>'});
+  await sentenceTask('МАМА ДОМА.','Где мама?',['Дома','На Луне','В воде'],'🏠');
+  await sentenceTask('КОТ СПИТ.','Что делает кот?',['Спит','Летает','Читает'],'🐱');
+  await sentenceTask('ЛУНА В НЕБЕ.','Где Луна?',['В небе','В вазе','Под домом'],'🌙');
+  await sentenceTask('РЫБА ПЛЫВЁТ.','Кто плывёт?',['Рыба','Жук','Кот'],'🐟');
+}
+async function lessonReview() {
+  await tell('Большое звёздное повторение! Вспомним буквы, слоги, слова и предложения.',{scene:'<div class="picture">🏆</div><div class="caption">Ты готов!</div>'});
+  await askChoice({text:'Найди букву, с которой начинается слово «яблоко».',voice:`Найди букву, с которой начинается слово яблоко.`,options:optionsForLetters('Я'),scene:pictureScene('🍎')});
+  await askChoice({text:'Прочитай и найди слог ЧА.',voice:`Прочитай и найди слог ${syllToken('ЧА')}.`,options:shuffle(['ЧА','ЧУ','ША','ЦА'].map(x=>({label:x,ok:x==='ЧА'}))),readOptions:false});
+  await seqWord('ЦВЕТОК','🌸');
+  await missingLetter('ЙОГУРТ','Й','🥛');
+  await sentenceTask('ЖУК СИДИТ НА ЦВЕТКЕ.','Где сидит жук?',['На цветке','На Луне','В чашке'],'🪲');
+}
+const readDef=(id,name,icon,run,sect)=>({id,name,icon,run,sect});
+const LESSONS=[
+  letterDef('А','Первые гласные'),letterDef('О'),letterDef('У'),letterDef('Ы'),letterDef('Э'),
+  letterDef('М','Первые согласные'),letterDef('Н'),letterDef('Л'),letterDef('Р'),letterDef('С'),
+  readDef('blend','Соединяем звуки в слог','М+А',lessonBlend,'Первые слоги и слова'),readDef('syllables','Читаем слоги','МА',lessonSyllables),readDef('firstWords','Первые слова','👩',lessonFirstWords),readDef('buildWords','Собираем слова','🧩',lessonBuildWords),
+  letterDef('Т','Новые согласные'),letterDef('Д'),letterDef('П'),letterDef('Б'),letterDef('К'),letterDef('Г'),
+  letterDef('И','Гласные-подсказки'),letterDef('Е'),letterDef('Ё'),letterDef('Ю'),letterDef('Я'),
+  readDef('soft','Твёрдо и мягко','МА · МЯ',lessonSoft,'Мягкость и чтение'),readDef('yo','Читаем слова с Ё','Ё',lessonYo),
+  letterDef('З','Ещё согласные'),letterDef('Ф'),letterDef('В'),letterDef('Х'),letterDef('Й'),
+  letterDef('Ш','Шипящие и особенные'),letterDef('Ж'),letterDef('Ч'),letterDef('Щ'),letterDef('Ц'),
+  letterDef('Ь','Буквы без звука'),letterDef('Ъ'),
+  readDef('softWords','Мягкий знак в словах','Ь',lessonSoftWords,'Читаем уверенно'),readDef('words','Слова из 3–5 букв','📖',lessonWords),readDef('picture','Слово и картинка','🖼️',lessonPicture),readDef('missing','Недостающая буква','❔',lessonMissing),readDef('sentences','Первые предложения','💬',lessonSentences),readDef('review','Большое повторение','🏆',lessonReview)
+];
+
+// Экраны, награды и подарки
+function menu() {
+  abortAll();L=null;actions([]);hush();MOOD='neutral';show('menu');
+  const c=$('#cards');c.innerHTML='';LESSONS.forEach((l,i)=>{if(l.sect)c.insertAdjacentHTML('beforeend',`<div class="sect">${l.sect}</div>`);const st=S.stars[l.id]||0,b=document.createElement('button');b.className='card';b.innerHTML=`<div class="ic">${l.icon}</div><b>${i+1}. ${l.name}</b><i>${'★'.repeat(st)}${'☆'.repeat(3-st)}</i>`;b.onclick=()=>{sfx('tap');runLesson(l);};c.appendChild(b);});
+  const next=LESSONS.find(l=>!(S.stars[l.id]>0))||LESSONS[0];$('#continue').textContent=Object.keys(S.stars).length?'▶ Продолжить обучение':'▶ Начать приключение';$('#continue').onclick=()=>runLesson(next);
+  say(pick(['Привет! Я Ори, хранитель звёздной библиотеки. Выбирай урок!','Мои ученики прилетели с разных планет. Вместе мы откроем тайну русских букв!','За верные ответы — кристаллы. На них можно украсить наш корабль!','Каждая буква — маленькая звезда. Соберём из них целое созвездие слов!']));
+}
+async function runLesson(def,again=false) {
+  abortAll();actions([]);scene('');const student=again&&L?L.student:(S.student=(S.student+1)%STUDENTS.length);save();L={def,errors:0,earned:0,student};show('lesson');$('#lTitle').textContent=def.name;
+  try { if(!again){const st=STUDENTS[student];say(st.hi,undefined,'student');await wait(2100);MOOD='neutral';drawChars();}await def.run();await finishLesson(); } catch(e){if(!(e instanceof Abort)){console.error(e);menu();}}
+}
+async function finishLesson() {
+  const stars=L.errors<=1?3:L.errors<=4?2:1,fresh=Math.max(0,stars-(S.stars[L.def.id]||0));if(fresh)addCoins(fresh*5);S.stars[L.def.id]=Math.max(S.stars[L.def.id]||0,stars);save();
+  $('#rStars').innerHTML='★'.repeat(stars)+`<span class="off">${'★'.repeat(3-stars)}</span>`;$('#rGot').innerHTML=CRYSTAL+` +${L.earned}`;$('#result').classList.add('on');MOOD='happy';sfx('win');if(shown('fireworks'))fireworks();speak(stars===3?'Урок пройден! Три звезды! Ты настоящий читатель!':'Урок пройден! Молодец!');
+  const again=await waitable(res=>{$('#rAgain').onclick=()=>res(true);$('#rMenu').onclick=()=>res(false);});$('#result').classList.remove('on');if(again)runLesson(L.def,true);else menu();
+}
+function shop() {
+  show('shop');const box=$('#items');box.innerHTML='';GIFTS.forEach(g=>{const own=S.gifts.includes(g.id),on=shown(g.id),b=document.createElement('button');b.className='item '+(own?'own ':'')+(on?'on ':'')+(S.coins<g.price&&!own?'poor':'');b.innerHTML=`<div class="pv">${g.icon}</div><b>${g.name}</b><span>${own?(on?'Показан ✓':'Спрятан'):CRYSTAL+g.price}</span>`;b.onclick=()=>{
+    if(!own){if(S.coins<g.price){say(`Нужно ещё ${g.price-S.coins} кристаллов. Пройди ещё один урок!`);return;}S.coins-=g.price;S.gifts.push(g.id);S.shown.push(g.id);save();sfx('win');say(g.hi);}
+    else{const i=S.shown.indexOf(g.id);if(i<0)S.shown.push(g.id);else S.shown.splice(i,1);save();sfx('tap');}
+    shop();
+  };box.appendChild(b);});
+  const themes=$('#themes');themes.innerHTML='';if(shown('paint')){themes.innerHTML='<div class="mini" style="width:100%;color:#fff">Цвет каюты:</div>';THEMES.forEach((t,i)=>{const b=document.createElement('button');b.textContent=t[0];b.className=i===S.theme?'on':'';b.onclick=()=>{S.theme=i;save();applyTheme();shop();};themes.appendChild(b);});}
+  voiceShow();
+}
+document.addEventListener('click',e=>{const g=e.target.closest('[data-gift]');if(!g)return;if(g.dataset.gift==='music'){melody();say('Орбитрон играет мелодию звёздного класса!');}if(g.dataset.gift==='robot'){say('Бип-боп! Я тоже хочу учиться читать!',undefined,'student');}});
+$('#back').onclick=()=>{sfx('tap');menu();};$('#toShop').onclick=()=>{sfx('tap');shop();say('Это подарки для нашего корабля. Купленный подарок можно показать или спрятать.');};$('#shopBack').onclick=()=>{sfx('tap');menu();};
+$('#snd').onclick=()=>{S.sound=!S.sound;save();$('#snd').textContent=S.sound?'🔊':'🔇';if(!S.sound)hush();voiceShow();};
+$('#reset').onclick=()=>{if(!confirm('Сбросить кристаллы, звёзды и все подарки?'))return;Object.assign(S,FRESH());save();shop();say('Начинаем новое звёздное путешествие!');};
+$('#nvOk').onclick=()=>$('#novoice').classList.remove('on');$('#nvOff').onclick=()=>{S.noVoiceOff=true;save();$('#novoice').classList.remove('on');};
+$('#snd').textContent=S.sound?'🔊':'🔇';voiceInit();menu();setTimeout(voiceCheck,2500);
+</script>
+</body>
+</html>

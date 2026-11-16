@@ -1,3 +1,5 @@
 __pycache__/
 mockups/voice/
+mockups/voice-v2/test-*.png
+tools/check_*.png
 *.log

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Голоса космического класса · Азбука с Ори 2</title>
+<style>
+:root{--paper:#f3f0e7;--night:#111e2b;--muted:#a8b8c5;--line:#344552}
+*{box-sizing:border-box}body{margin:0;background:var(--night);color:var(--paper);font:16px/1.5 "Trebuchet MS",sans-serif}button,input,textarea{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #eeac60;outline-offset:4px}main{max-width:1380px;margin:auto;padding:36px 40px 28px}.eyebrow{display:flex;align-items:center;gap:14px;font-size:11px;font-weight:bold;letter-spacing:2.5px;text-transform:uppercase}.eyebrow span{background:#cee795;color:#172b26;padding:5px 10px;border-radius:3px}.intro{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;margin:22px 0 30px}h1{font:normal clamp(32px,3.3vw,49px)/1.06 Georgia,serif;letter-spacing:-1.5px;margin:0}.intro p{max-width:390px;color:var(--muted);font-size:14px;margin:0 0 3px}.cast{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:17px}.person{--accent:#d5e8a8;background:var(--paper);color:#172831;border-radius:16px;overflow:hidden;border:2px solid transparent;position:relative}.person.chosen{border-color:var(--accent)}.person:nth-child(2){--accent:#b4ddf0}.person:nth-child(3){--accent:#f3c78a}.person:nth-child(4){--accent:#deb6d4}.portrait{height:170px;background:var(--accent);position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}.portrait:before,.portrait:after{content:"";position:absolute;width:210px;height:210px;border:1px solid #17283120;border-radius:50%}.portrait:after{width:145px;height:145px}.portrait img{height:163px;width:190px;object-fit:contain;position:relative;z-index:1;filter:drop-shadow(0 8px 6px #17283120)}.serial{position:absolute;top:12px;left:15px;z-index:2;font:italic 15px Georgia,serif}.body{padding:17px}.name{display:flex;align-items:baseline;justify-content:space-between;gap:8px}h2{font:normal 29px/1 Georgia,serif;margin:0}.role{font-size:10px;letter-spacing:.8px;text-transform:uppercase;color:#52626a}.line{font-size:12px;line-height:1.5;min-height:75px;margin:13px 0 17px;color:#516169}.take{border-top:1px solid #17283122;padding:12px 0 6px}.takehead{display:flex;justify-content:space-between;align-items:center;gap:8px}.listen{border:0;border-radius:6px;background:#1c303a;color:#fff;min-height:39px;min-width:101px;padding:7px 12px;font-size:12px;display:flex;align-items:center;gap:8px}.listen:hover{background:#314f5b}.listen.playing{background:#35685f}.listen svg{width:12px;height:12px;fill:currentColor}.choose{font-size:12px;display:flex;align-items:center;gap:4px;cursor:pointer;padding:6px 0}.choose input{accent-color:#1c655a;width:17px;height:17px}.detail{font-size:11px;color:#627078;margin:7px 0 0}.note{margin:18px 0;color:var(--muted);font-size:12px}.selection{border-top:1px solid var(--line);padding-top:20px;display:grid;grid-template-columns:240px minmax(0,1fr) auto;gap:20px;align-items:center}.selection h3{font:normal 23px Georgia,serif;margin:0 0 4px}.selection p{font-size:12px;color:var(--muted);margin:0}textarea{width:100%;resize:none;min-height:56px;border:1px solid var(--line);background:#172735;color:#e9eddf;border-radius:8px;padding:14px;font:13px/1.6 Consolas,monospace}#copy{background:#cee795;border:0;border-radius:8px;color:#182b22;padding:16px 20px;font-size:13px;font-weight:bold}#copy:disabled{opacity:.4;cursor:default}#status{min-height:24px;font-size:12px;color:#c5d0d7;margin-top:12px}footer{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:17px;margin-top:16px;font-size:11px;color:var(--muted)}
+@media(max-width:1050px){main{padding:28px 24px}.cast{grid-template-columns:repeat(2,minmax(0,1fr))}.portrait{height:150px}.portrait img{height:145px}.line{min-height:40px}.intro{align-items:flex-start}.selection{grid-template-columns:1fr auto}.selection>div{grid-column:1/-1}}
+@media(max-width:540px){main{padding:24px 16px}.intro{display:block;margin-top:22px}.intro p{margin-top:18px}.cast{grid-template-columns:1fr;gap:20px}.portrait{height:175px}.portrait img{height:165px}.line{min-height:0}.selection{display:block}.selection textarea{margin:14px 0 8px}#copy{width:100%}footer{display:block}footer span{display:block;margin-bottom:6px}.eyebrow{font-size:9px;letter-spacing:1.5px}}
+</style>
+</head>
+<body>
+<main>
+<div class="eyebrow"><span>GAMES</span> Азбука с Ори 2 / голосовая студия</div>
+<header class="intro"><h1>Как звучит<br>космический класс?</h1><p>Четыре героя, восемь проб. Послушай оба варианта и выбери голос для каждого. Это отдельная примерка — озвучка в игре пока не менялась.</p></header>
+<section class="cast" aria-label="Пробы голосов персонажей"></section>
+<p class="note">В пробах Ори есть проверка произношения: буква А, слог МА, «ёлка» и «щётка». Без музыки и фоновых эффектов — слушаем именно голос.</p>
+<section class="selection" aria-label="Выбор голосов">
+<div><h3>Твой состав</h3><p id="count">Выбрано 0 из 4</p></div>
+<textarea id="result" readonly rows="2" aria-label="Строка выбранных голосов"></textarea>
+<button id="copy" disabled>Скопировать выбор</button>
+</section>
+<div id="status" role="status" aria-live="polite">Нажми «Слушать А» или «Слушать Б». Одновременно звучит только одна проба.</div>
+<footer><span>Локальный синтез Silero · разные тембры, мягкая обработка высоты и темпа</span><span>GAMES / Кастинг 01 · не финальная озвучка</span></footer>
+</main>
+<script>
+const cast = [
+  {id:'ori', name:'Ори', role:'Наставник', line:'Привет! Я Ори. Блип, Пуф и Ку-Ку прилетели учиться читать. Выбирай урок!', takes:['Мягкий, размеренный рассказчик','Более светлый и бодрый наставник']},
+  {id:'alien1', name:'Блип', role:'Любопытный', line:'Блип-блап! Привет, землянин! Я Блип. Какую букву ищем сегодня?', takes:['Звонкий и лёгкий голос','Более высокий, озорной голос']},
+  {id:'alien2', name:'Пуф', role:'Добрый увалень', line:'Ух ты! У меня три глаза, а букву П я всё равно не сразу вижу! Помоги мне!', takes:['Низкий и чуть неторопливый','Мягкий и более ровный']},
+  {id:'alien3', name:'Ку-Ку', role:'Непоседа', line:'Ку-ку! Я Ку-Ку. Я спрятался за буквой К! Найдёшь меня?', takes:['Светлый и певучий','Более тонкий, сказочный']}
+];
+const icons = {play:'<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1l11 7-11 7z"/></svg>', stop:'<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3h10v10H3z"/></svg>'};
+const container = document.querySelector('.cast');
+const status = document.querySelector('#status');
+const players = [];
+let active = null;
+cast.forEach((person, index) => {
+  const card = document.createElement('article');
+  card.className = 'person';
+  card.innerHTML = `<div class="portrait"><span class="serial">0${index+1}</span><img src="../../img/${person.id}.png" alt="${person.name}"></div><div class="body"><div class="name"><h2>${person.name}</h2><span class="role">${person.role}</span></div><p class="line">${person.line}</p><div class="takes"></div></div>`;
+  ['a','b'].forEach((variant, i) => {
+    const letter = ['А','Б'][i];
+    const row = document.createElement('div');
+    row.className = 'take';
+    row.innerHTML = `<div class="takehead"><button class="listen" type="button" aria-label="Слушать ${person.name}, вариант ${letter}" aria-pressed="false">${icons.play}<span>Слушать ${letter}</span></button><label class="choose"><input type="radio" name="${person.id}" value="${letter}">Выбрать ${letter}</label></div><p class="detail">${person.takes[i]}</p>`;
+    const audio = document.createElement('audio');
+    audio.src = `${person.id}-${variant}.mp3`;
+    audio.preload = 'none';
+    row.append(audio);
+    const button = row.querySelector('button');
+    const reset = () => {button.classList.remove('playing');button.setAttribute('aria-pressed','false');button.innerHTML = `${icons.play}<span>Слушать ${letter}</span>`;};
+    button.addEventListener('click', async () => {
+      if (active === audio) {audio.pause();audio.currentTime = 0;active = null;status.textContent = 'Воспроизведение остановлено.';return;}
+      players.forEach(p => {p.pause();p.currentTime = 0;});
+      active = audio;
+      status.textContent = `Загружаю: ${person.name}, вариант ${letter}…`;
+      try {
+        await audio.play();
+        if (active !== audio) return;
+        button.classList.add('playing');button.setAttribute('aria-pressed','true');button.innerHTML = `${icons.stop}<span>Остановить</span>`;
+        status.textContent = `Сейчас звучит: ${person.name}, вариант ${letter}.`;
+      } catch (e) {
+        if (active !== audio) return;
+        active = null;reset();status.textContent = 'Не удалось открыть пробу. Проверь, что аудиофайлы находятся рядом с этой страницей.';
+      }
+    });
+    audio.addEventListener('pause', reset);
+    audio.addEventListener('ended', () => {if(active === audio){active = null;status.textContent = `Проба «${person.name}, ${letter}» закончилась. Можно выбрать голос или послушать другой.`;}reset();});
+    row.querySelector('input').addEventListener('change', () => {card.classList.add('chosen');update();});
+    players.push(audio);
+    card.querySelector('.takes').append(row);
+  });
+  container.append(card);
+});
+function update() {
+  let count = 0;
+  const parts = cast.map(p => {const selected = document.querySelector(`input[name="${p.id}"]:checked`);if(selected)count++;return `${p.name}=${selected ? selected.value : '—'}`;});
+  document.querySelector('#result').value = 'GAMES | Азбука Ори 2 | ' + parts.join(' | ');
+  document.querySelector('#count').textContent = `Выбрано ${count} из 4`;
+  document.querySelector('#copy').disabled = count !== 4;
+}
+document.querySelector('#copy').addEventListener('click', async () => {
+  const output = document.querySelector('#result');
+  try {await navigator.clipboard.writeText(output.value);status.textContent = 'Выбор скопирован. Отправь эту строку в чат.';}
+  catch(e) {output.focus();output.select();status.textContent = 'Строка выделена. Скопируй её вручную и отправь в чат.';}
+});
+update();
+</script>
+</body>
+</html>

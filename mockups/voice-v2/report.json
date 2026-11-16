@@ -1,0 +1,5674 @@
+{
+  "ori/596677": {
+    "text": "#1",
+    "source": "один.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.497
+  },
+  "ori/b863567": {
+    "text": "#10",
+    "source": "десять.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.628
+  },
+  "ori/b863566": {
+    "text": "#11",
+    "source": "одиннадцать.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.748
+  },
+  "ori/b863565": {
+    "text": "#12",
+    "source": "двенадцать.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.715
+  },
+  "ori/b863564": {
+    "text": "#13",
+    "source": "тринадцать.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.65
+  },
+  "ori/b863563": {
+    "text": "#14",
+    "source": "четырнадцать.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.791
+  },
+  "ori/b863562": {
+    "text": "#15",
+    "source": "пятнадцать.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.715
+  },
+  "ori/b863561": {
+    "text": "#16",
+    "source": "шестнадцать.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.737
+  },
+  "ori/b863560": {
+    "text": "#17",
+    "source": "семнадцать.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.715
+  },
+  "ori/b86356f": {
+    "text": "#18",
+    "source": "восемнадцать.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.824
+  },
+  "ori/b86356e": {
+    "text": "#19",
+    "source": "девятнадцать.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.824
+  },
+  "ori/596674": {
+    "text": "#2",
+    "source": "два.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.497
+  },
+  "ori/b8634c4": {
+    "text": "#20",
+    "source": "двадцать.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.65
+  },
+  "ori/b8634c5": {
+    "text": "#21",
+    "source": "двадцать один.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.878,
+    "heard": "21",
+    "score": 1.0
+  },
+  "ori/b8634c6": {
+    "text": "#22",
+    "source": "двадцать два.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.813,
+    "heard": "Двадцать два.",
+    "score": 1.0
+  },
+  "ori/b8634c7": {
+    "text": "#23",
+    "source": "двадцать три.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.835,
+    "heard": "23",
+    "score": 1.0
+  },
+  "ori/b8634c0": {
+    "text": "#24",
+    "source": "двадцать четыре.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.965,
+    "heard": "24",
+    "score": 1.0
+  },
+  "ori/b8634c1": {
+    "text": "#25",
+    "source": "двадцать пять.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.878,
+    "heard": "25.",
+    "score": 1.0
+  },
+  "ori/b8634c2": {
+    "text": "#26",
+    "source": "двадцать шесть.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.933,
+    "heard": "26",
+    "score": 1.0
+  },
+  "ori/b8634c3": {
+    "text": "#27",
+    "source": "двадцать семь.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.846,
+    "heard": "27",
+    "score": 1.0
+  },
+  "ori/b8634cc": {
+    "text": "#28",
+    "source": "двадцать восемь.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.998,
+    "heard": "Двадцать восемь.",
+    "score": 1.0
+  },
+  "ori/b8634cd": {
+    "text": "#29",
+    "source": "двадцать девять.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.878,
+    "heard": "29",
+    "score": 1.0
+  },
+  "ori/596675": {
+    "text": "#3",
+    "source": "три.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.4
+  },
+  "ori/b863525": {
+    "text": "#30",
+    "source": "тридцать.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.541
+  },
+  "ori/b863524": {
+    "text": "#31",
+    "source": "тридцать один.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.824,
+    "heard": "31",
+    "score": 1.0
+  },
+  "ori/b863527": {
+    "text": "#32",
+    "source": "тридцать два.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.748,
+    "heard": "32",
+    "score": 1.0
+  },
+  "ori/b863526": {
+    "text": "#33",
+    "source": "тридцать три.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.759,
+    "heard": "33",
+    "score": 1.0
+  },
+  "ori/b863521": {
+    "text": "#34",
+    "source": "тридцать четыре.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.889,
+    "heard": "Тридцать четыре.",
+    "score": 1.0
+  },
+  "ori/b863520": {
+    "text": "#35",
+    "source": "тридцать пять.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.813,
+    "heard": "Тридцать пять.",
+    "score": 1.0
+  },
+  "ori/b863523": {
+    "text": "#36",
+    "source": "тридцать шесть.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.857,
+    "heard": "Тридцать шесть.",
+    "score": 1.0
+  },
+  "ori/b863522": {
+    "text": "#37",
+    "source": "тридцать семь.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.802,
+    "heard": "Тридцать семь.",
+    "score": 1.0
+  },
+  "ori/b86352d": {
+    "text": "#38",
+    "source": "тридцать восемь.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.944,
+    "heard": "38.",
+    "score": 1.0
+  },
+  "ori/b86352c": {
+    "text": "#39",
+    "source": "тридцать девять.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.802,
+    "heard": "39",
+    "score": 1.0
+  },
+  "ori/596672": {
+    "text": "#4",
+    "source": "четыре.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.585
+  },
+  "ori/b863482": {
+    "text": "#40",
+    "source": "сорок.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.574
+  },
+  "ori/b863483": {
+    "text": "#41",
+    "source": "сорок один.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.824,
+    "heard": "41",
+    "score": 1.0
+  },
+  "ori/b863480": {
+    "text": "#42",
+    "source": "сорок два.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.791,
+    "heard": "42",
+    "score": 1.0
+  },
+  "ori/b863481": {
+    "text": "#43",
+    "source": "сорок три.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.748,
+    "heard": "43",
+    "score": 1.0
+  },
+  "ori/b863486": {
+    "text": "#44",
+    "source": "сорок четыре.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.868,
+    "heard": "44",
+    "score": 1.0
+  },
+  "ori/b863487": {
+    "text": "#45",
+    "source": "сорок пять.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.824,
+    "heard": "Сорок пять.",
+    "score": 1.0
+  },
+  "ori/b863484": {
+    "text": "#46",
+    "source": "сорок шесть.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.857,
+    "heard": "Сорок шесть.",
+    "score": 1.0
+  },
+  "ori/b863485": {
+    "text": "#47",
+    "source": "сорок семь.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.813,
+    "heard": "47",
+    "score": 1.0
+  },
+  "ori/b86348a": {
+    "text": "#48",
+    "source": "сорок восемь.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.922,
+    "heard": "Сорок восемь.",
+    "score": 1.0
+  },
+  "ori/b86348b": {
+    "text": "#49",
+    "source": "сорок девять.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.791,
+    "heard": "Сорок девять.",
+    "score": 1.0
+  },
+  "ori/596673": {
+    "text": "#5",
+    "source": "пять.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.465
+  },
+  "ori/b8634e3": {
+    "text": "#50",
+    "source": "пятьдесят.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.65
+  },
+  "ori/b8634e2": {
+    "text": "#51",
+    "source": "пятьдесят один.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.911,
+    "heard": "51.",
+    "score": 1.0
+  },
+  "ori/b8634e1": {
+    "text": "#52",
+    "source": "пятьдесят два.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.889,
+    "heard": "52.",
+    "score": 1.0
+  },
+  "ori/b8634e0": {
+    "text": "#53",
+    "source": "пятьдесят три.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.857,
+    "heard": "53.",
+    "score": 1.0
+  },
+  "ori/b8634e7": {
+    "text": "#54",
+    "source": "пятьдесят четыре.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.998,
+    "heard": "54.",
+    "score": 1.0
+  },
+  "ori/b8634e6": {
+    "text": "#55",
+    "source": "пятьдесят пять.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.944,
+    "heard": "55.",
+    "score": 1.0
+  },
+  "ori/b8634e5": {
+    "text": "#56",
+    "source": "пятьдесят шесть.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.911,
+    "heard": "56",
+    "score": 1.0
+  },
+  "ori/b8634e4": {
+    "text": "#57",
+    "source": "пятьдесят семь.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.944,
+    "heard": "57",
+    "score": 1.0
+  },
+  "ori/b8634eb": {
+    "text": "#58",
+    "source": "пятьдесят восемь.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.031,
+    "heard": "58.",
+    "score": 1.0
+  },
+  "ori/b8634ea": {
+    "text": "#59",
+    "source": "пятьдесят девять.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.933,
+    "heard": "59",
+    "score": 1.0
+  },
+  "ori/596670": {
+    "text": "#6",
+    "source": "шесть.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.541
+  },
+  "ori/b863440": {
+    "text": "#60",
+    "source": "шестьдесят.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.682
+  },
+  "ori/b863441": {
+    "text": "#61",
+    "source": "шестьдесят один.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.009,
+    "heard": "61.",
+    "score": 1.0
+  },
+  "ori/b863442": {
+    "text": "#62",
+    "source": "шестьдесят два.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.911,
+    "heard": "62",
+    "score": 1.0
+  },
+  "ori/b863443": {
+    "text": "#63",
+    "source": "шестьдесят три.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.9,
+    "heard": "63.",
+    "score": 1.0
+  },
+  "ori/b863444": {
+    "text": "#64",
+    "source": "шестьдесят четыре.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.02,
+    "heard": "64.",
+    "score": 1.0
+  },
+  "ori/b863445": {
+    "text": "#65",
+    "source": "шестьдесят пять.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.922,
+    "heard": "65.",
+    "score": 1.0
+  },
+  "ori/b863446": {
+    "text": "#66",
+    "source": "шестьдесят шесть.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.933,
+    "heard": "Шестьдесят шесть.",
+    "score": 1.0
+  },
+  "ori/b863447": {
+    "text": "#67",
+    "source": "шестьдесят семь.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.922,
+    "heard": "Шестьдесят семь.",
+    "score": 1.0
+  },
+  "ori/b863448": {
+    "text": "#68",
+    "source": "шестьдесят восемь.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.063,
+    "heard": "68",
+    "score": 1.0
+  },
+  "ori/b863449": {
+    "text": "#69",
+    "source": "шестьдесят девять.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.955,
+    "heard": "Шестьдесят девять.",
+    "score": 1.0
+  },
+  "ori/596671": {
+    "text": "#7",
+    "source": "семь.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.519
+  },
+  "ori/b8634a1": {
+    "text": "#70",
+    "source": "семьдесят.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.693
+  },
+  "ori/b8634a0": {
+    "text": "#71",
+    "source": "семьдесят один.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.944,
+    "heard": "71",
+    "score": 1.0
+  },
+  "ori/b8634a3": {
+    "text": "#72",
+    "source": "семьдесят два.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.878,
+    "heard": "72.",
+    "score": 1.0
+  },
+  "ori/b8634a2": {
+    "text": "#73",
+    "source": "семьдесят три.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.922,
+    "heard": "Семьдесят три.",
+    "score": 1.0
+  },
+  "ori/b8634a5": {
+    "text": "#74",
+    "source": "семьдесят четыре.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.031,
+    "heard": "74",
+    "score": 1.0
+  },
+  "ori/b8634a4": {
+    "text": "#75",
+    "source": "семьдесят пять.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.922,
+    "heard": "Семьдесят пять.",
+    "score": 1.0
+  },
+  "ori/b8634a7": {
+    "text": "#76",
+    "source": "семьдесят шесть.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.944,
+    "heard": "Семьдесят шесть.",
+    "score": 1.0
+  },
+  "ori/b8634a6": {
+    "text": "#77",
+    "source": "семьдесят семь.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.922,
+    "heard": "Семьдесят семь.",
+    "score": 1.0
+  },
+  "ori/b8634a9": {
+    "text": "#78",
+    "source": "семьдесят восемь.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.053,
+    "heard": "Семьдесят восемь.",
+    "score": 1.0
+  },
+  "ori/b8634a8": {
+    "text": "#79",
+    "source": "семьдесят девять.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.944,
+    "heard": "Семьдесят девять.",
+    "score": 1.0
+  },
+  "ori/59667e": {
+    "text": "#8",
+    "source": "восемь.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.617
+  },
+  "ori/b86360e": {
+    "text": "#80",
+    "source": "восемьдесят.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.748
+  },
+  "ori/b86360f": {
+    "text": "#81",
+    "source": "восемьдесят один.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.031,
+    "heard": "Восемьдесят один.",
+    "score": 1.0
+  },
+  "ori/b86360c": {
+    "text": "#82",
+    "source": "восемьдесят два.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.976,
+    "heard": "Восемьдесят два.",
+    "score": 1.0
+  },
+  "ori/b86360d": {
+    "text": "#83",
+    "source": "восемьдесят три.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.02,
+    "heard": "83",
+    "score": 1.0
+  },
+  "ori/b86360a": {
+    "text": "#84",
+    "source": "восемьдесят четыре.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.107,
+    "heard": "восемьдесят четыре",
+    "score": 1.0
+  },
+  "ori/b86360b": {
+    "text": "#85",
+    "source": "восемьдесят пять.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.009,
+    "heard": "Восемьдесят пять.",
+    "score": 1.0
+  },
+  "ori/b863608": {
+    "text": "#86",
+    "source": "восемьдесят шесть.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.02,
+    "heard": "восемьдесят шесть",
+    "score": 1.0
+  },
+  "ori/b863609": {
+    "text": "#87",
+    "source": "восемьдесят семь.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.998,
+    "heard": "87",
+    "score": 1.0
+  },
+  "ori/b863606": {
+    "text": "#88",
+    "source": "восемьдесят восемь.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.14,
+    "heard": "Восемьдесят восемь.",
+    "score": 1.0
+  },
+  "ori/b863607": {
+    "text": "#89",
+    "source": "восемьдесят девять.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.009,
+    "heard": "восемьдесят девять",
+    "score": 1.0
+  },
+  "ori/59667f": {
+    "text": "#9",
+    "source": "девять.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.595
+  },
+  "ori/b86366f": {
+    "text": "#90",
+    "source": "девяносто.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.791
+  },
+  "ori/596276": {
+    "text": "#а",
+    "source": "а!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.53
+  },
+  "ori/596277": {
+    "text": "#б",
+    "source": "бэ!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.41
+  },
+  "ori/596274": {
+    "text": "#в",
+    "source": "вэ!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.421
+  },
+  "ori/596275": {
+    "text": "#г",
+    "source": "гэ!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.41
+  },
+  "ori/596272": {
+    "text": "#д",
+    "source": "дэ!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.432
+  },
+  "ori/596273": {
+    "text": "#е",
+    "source": "е!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.487
+  },
+  "ori/596270": {
+    "text": "#ж",
+    "source": "жэ!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.465
+  },
+  "ori/596271": {
+    "text": "#з",
+    "source": "зэ!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.465
+  },
+  "ori/7c3bcebe": {
+    "text": "#з_а",
+    "source": "ааа!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.595
+  },
+  "ori/7c3bcebf": {
+    "text": "#з_б",
+    "source": "ба!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.432
+  },
+  "ori/7c3bcebc": {
+    "text": "#з_в",
+    "source": "ввв!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.665
+  },
+  "ori/7c3bcebd": {
+    "text": "#з_г",
+    "source": "га!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.432
+  },
+  "ori/7c3bceba": {
+    "text": "#з_д",
+    "source": "да!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.432
+  },
+  "ori/7c3bcebb": {
+    "text": "#з_е",
+    "source": "йэ!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.4
+  },
+  "ori/7c3bceb8": {
+    "text": "#з_ж",
+    "source": "жжж!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.812
+  },
+  "ori/7c3bceb9": {
+    "text": "#з_з",
+    "source": "ззз!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.497
+  },
+  "ori/7c3bceb6": {
+    "text": "#з_и",
+    "source": "иии!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.432
+  },
+  "ori/7c3bceb7": {
+    "text": "#з_й",
+    "source": "йа!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.41
+  },
+  "ori/7c3bceb4": {
+    "text": "#з_к",
+    "source": "ка!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.367
+  },
+  "ori/7c3bceb5": {
+    "text": "#з_л",
+    "source": "ллл!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.41
+  },
+  "ori/7c3bceb2": {
+    "text": "#з_м",
+    "source": "ммм!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.476
+  },
+  "ori/7c3bceb3": {
+    "text": "#з_н",
+    "source": "ннн!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.476
+  },
+  "ori/7c3bceb0": {
+    "text": "#з_о",
+    "source": "ооо!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.552
+  },
+  "ori/7c3bceb1": {
+    "text": "#з_п",
+    "source": "па!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.345
+  },
+  "ori/7c3bcece": {
+    "text": "#з_р",
+    "source": "ррр!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.421
+  },
+  "ori/7c3bcecf": {
+    "text": "#з_с",
+    "source": "ссс!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.632
+  },
+  "ori/7c3bcecc": {
+    "text": "#з_т",
+    "source": "та!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.367
+  },
+  "ori/7c3bcecd": {
+    "text": "#з_у",
+    "source": "ууу!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.574
+  },
+  "ori/7c3bceca": {
+    "text": "#з_ф",
+    "source": "ффф!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.606
+  },
+  "ori/7c3bcecb": {
+    "text": "#з_х",
+    "source": "ххх!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.4
+  },
+  "ori/7c3bcec8": {
+    "text": "#з_ц",
+    "source": "ца!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.4
+  },
+  "ori/7c3bcec9": {
+    "text": "#з_ч",
+    "source": "ча!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.41
+  },
+  "ori/7c3bcec6": {
+    "text": "#з_ш",
+    "source": "шшш!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.555
+  },
+  "ori/7c3bcec7": {
+    "text": "#з_щ",
+    "source": "ща!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.465
+  },
+  "ori/7c3bcec5": {
+    "text": "#з_ы",
+    "source": "ыыы!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.487
+  },
+  "ori/7c3bcec3": {
+    "text": "#з_э",
+    "source": "эээ!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.479
+  },
+  "ori/7c3bcec0": {
+    "text": "#з_ю",
+    "source": "йу!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.443
+  },
+  "ori/7c3bcec1": {
+    "text": "#з_я",
+    "source": "йа!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.41
+  },
+  "ori/7c3bcedf": {
+    "text": "#з_ё",
+    "source": "йо!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.421
+  },
+  "ori/59627e": {
+    "text": "#и",
+    "source": "и!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.495
+  },
+  "ori/59627f": {
+    "text": "#й",
+    "source": "и краткое!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.77,
+    "heard": "И краткое.",
+    "score": 1.0
+  },
+  "ori/59627c": {
+    "text": "#к",
+    "source": "ка!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.367
+  },
+  "ori/59627d": {
+    "text": "#л",
+    "source": "эл!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.432
+  },
+  "ori/59627a": {
+    "text": "#м",
+    "source": "эм!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.465
+  },
+  "ori/59627b": {
+    "text": "#н",
+    "source": "эн!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.454
+  },
+  "ori/596278": {
+    "text": "#о",
+    "source": "о!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.497
+  },
+  "ori/596279": {
+    "text": "#п",
+    "source": "пэ!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.345
+  },
+  "ori/596206": {
+    "text": "#р",
+    "source": "эр!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.421
+  },
+  "ori/596207": {
+    "text": "#с",
+    "source": "эс!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.476
+  },
+  "ori/379a9d3": {
+    "text": "#с_ла",
+    "source": "ла!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.41
+  },
+  "ori/379a9a0": {
+    "text": "#с_лу",
+    "source": "лу!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.432
+  },
+  "ori/379a9ad": {
+    "text": "#с_лю",
+    "source": "лю!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.443
+  },
+  "ori/379aa34": {
+    "text": "#с_ма",
+    "source": "ма!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.421
+  },
+  "ori/379aa4b": {
+    "text": "#с_мя",
+    "source": "мя!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.421
+  },
+  "ori/379aa1b": {
+    "text": "#с_но",
+    "source": "но!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.41
+  },
+  "ori/379b95a": {
+    "text": "#с_су",
+    "source": "су!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.519
+  },
+  "ori/379b9ef": {
+    "text": "#с_ча",
+    "source": "ча!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.41
+  },
+  "ori/596204": {
+    "text": "#т",
+    "source": "тэ!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.345
+  },
+  "ori/596205": {
+    "text": "#у",
+    "source": "у!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.421
+  },
+  "ori/596202": {
+    "text": "#ф",
+    "source": "эф!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.443
+  },
+  "ori/596203": {
+    "text": "#х",
+    "source": "ха!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.443
+  },
+  "ori/596200": {
+    "text": "#ц",
+    "source": "цэ!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.465
+  },
+  "ori/596201": {
+    "text": "#ч",
+    "source": "чэ!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.465
+  },
+  "ori/59620e": {
+    "text": "#ш",
+    "source": "ша!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.497
+  },
+  "ori/59620f": {
+    "text": "#щ",
+    "source": "ща!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.465
+  },
+  "ori/59620c": {
+    "text": "#ъ",
+    "source": "твёрдый знак!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.791,
+    "heard": "Твердый знак.",
+    "score": 1.0
+  },
+  "ori/59620d": {
+    "text": "#ы",
+    "source": "ы!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.495
+  },
+  "ori/59620a": {
+    "text": "#ь",
+    "source": "мягкий знак!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.889,
+    "heard": "Мягкий знак.",
+    "score": 1.0
+  },
+  "ori/59620b": {
+    "text": "#э",
+    "source": "э!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.504
+  },
+  "ori/596208": {
+    "text": "#ю",
+    "source": "ю!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.389
+  },
+  "ori/596209": {
+    "text": "#я",
+    "source": "я!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.61
+  },
+  "ori/596217": {
+    "text": "#ё",
+    "source": "йо!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.421
+  },
+  "ori/57b87d23": {
+    "text": "Ёлка начинается с буквы",
+    "source": "Ёлка начинается с буквы",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.488,
+    "heard": "Ёлка начинается с буквы.",
+    "score": 1.0
+  },
+  "ori/9e55a6ba": {
+    "text": "А мы ищем",
+    "source": "А мы ищем",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.802,
+    "heard": "А мы ищем.",
+    "score": 1.0
+  },
+  "ori/bc34bf8e": {
+    "text": "А теперь секретное испытание от инопланетян!",
+    "source": "А теперь секретное испытание от инопланетян!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.25,
+    "heard": "А теперь секретное испытание от инопланетян.",
+    "score": 1.0
+  },
+  "ori/10993b06": {
+    "text": "Арбуз начинается с буквы",
+    "source": "Арбуз начинается с буквы",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.433,
+    "heard": "Арбуз начинается с буквы.",
+    "score": 1.0
+  },
+  "ori/87f54ba2": {
+    "text": "Банан начинается с буквы",
+    "source": "Банан начинается с буквы",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.423,
+    "heard": "Банан начинается с буквы.",
+    "score": 1.0
+  },
+  "ori/dc7c83bf": {
+    "text": "Большое звёздное повторение! Вспомним буквы, слоги, слова и предложения.",
+    "source": "Большое звёздное повторение! Вспомним буквы, слоги, слова и предложения.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 4.089,
+    "heard": "Большое звёздное повторение. Вспомним буквы, слоги, слова и предложения.",
+    "score": 1.0
+  },
+  "ori/b033de1d": {
+    "text": "Буквы И, Е, Ё, Ю, Я делают согласный перед собой мягким. Сравни: МА — МЯ.",
+    "source": "Буквы и, Е, Ё, Ю, Я делают согласный перед собой мягким. Сравни: МА, МЯ.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 4.655,
+    "heard": "Буквы ее я делаю согласно перед собой мягким. Сравни, мамя.",
+    "score": 0.939
+  },
+  "ori/c4e2b6e6": {
+    "text": "Буквы дружат друг с другом! Соединим согласный и гласный звук — получится слог.",
+    "source": "Буквы дружат друг с другом! Соединим согласный и гласный звук, получится слог.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 4.535,
+    "heard": "Буквы дружат друг с другом, соединим согласный и гласный звук, получится слог.",
+    "score": 1.0
+  },
+  "ori/52b42418": {
+    "text": "В каком слове есть мягкий знак?",
+    "source": "В каком слове есть мягкий знак?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.673,
+    "heard": "В каком славе есть мягкий знак?",
+    "score": 0.96
+  },
+  "ori/e73ac804": {
+    "text": "В каком слове есть твёрдый знак?",
+    "source": "В каком слове есть твёрдый знак?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.651,
+    "heard": "В каком славе есть твердый знак?",
+    "score": 0.962
+  },
+  "ori/22b8c12b": {
+    "text": "В каком слове слышен звук",
+    "source": "В каком слове слышен звук",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.401,
+    "heard": "В каком слове слышен звук?",
+    "score": 1.0
+  },
+  "ori/2ffe29d9": {
+    "text": "В каком слове слышен звук [ы]?",
+    "source": "В каком слове слышен звук ы?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.477,
+    "heard": "В каком слове слышен звукой?",
+    "score": 0.933
+  },
+  "ori/33f24ef6": {
+    "text": "В каком слоге согласный звук мягкий?",
+    "source": "В каком слоге согласный звук мягкий?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.869,
+    "heard": "В каком слуге согласный звук мягкий?",
+    "score": 0.967
+  },
+  "ori/2dd5c647": {
+    "text": "В слове дом звука [ы] нет.",
+    "source": "В слове дом звука ы нет.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.433,
+    "heard": "В слове «дон звука» бы нет.",
+    "score": 0.919
+  },
+  "ori/8d0f1194": {
+    "text": "В слове сок звука [ы] нет.",
+    "source": "В слове сок звука ы нет.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.51,
+    "heard": "В слове сок звука бы нет.",
+    "score": 0.973
+  },
+  "ori/5100f096": {
+    "text": "Ваза начинается с буквы",
+    "source": "Ваза начинается с буквы",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.423,
+    "heard": "Ваза начинается с буквы.",
+    "score": 1.0
+  },
+  "ori/9d260ffd": {
+    "text": "Верно! В слове рыба есть звук",
+    "source": "Верно! В слове рыба есть звук",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.956,
+    "heard": "Верно, в слове рыба есть звук.",
+    "score": 1.0
+  },
+  "ori/1272035e": {
+    "text": "Верно! В слове рыба есть звук [ы].",
+    "source": "Верно! В слове рыба есть звук ы.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.054,
+    "heard": "Верно, в слове рыба есть звуквы.",
+    "score": 0.98
+  },
+  "ori/8caa440c": {
+    "text": "Верно! Лишнее слово начинается на букву",
+    "source": "Верно! Лишнее слово начинается на букву",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.663,
+    "heard": "Верно. Лишнее слово начинается на букву.",
+    "score": 1.0
+  },
+  "ori/3eb00b8c": {
+    "text": "Верно! Мягкий слог",
+    "source": "Верно! Мягкий слог",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.51,
+    "heard": "Верно, мягкий слог.",
+    "score": 1.0
+  },
+  "ori/e7c50c5e": {
+    "text": "Верно! Мягкий слог МЯ!",
+    "source": "Верно! Мягкий слог МЯ!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.619,
+    "heard": "Верно, мягкий слог мят.",
+    "score": 0.971
+  },
+  "ori/2a9c8545": {
+    "text": "Верно! У тебя получилось!",
+    "source": "Верно! У тебя получилось!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.738,
+    "heard": "Верно, у тебя получилось.",
+    "score": 1.0
+  },
+  "ori/cf1221fb": {
+    "text": "Верно! Это буква",
+    "source": "Верно! Это буква",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.51,
+    "heard": "Верно, это буква.",
+    "score": 1.0
+  },
+  "ori/780f4472": {
+    "text": "Верно! Это слово ваза.",
+    "source": "Верно! Это слово ваза.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.662,
+    "heard": "Верно, это слово ВАЗа.",
+    "score": 1.0
+  },
+  "ori/7c92a927": {
+    "text": "Верно! Это слово день.",
+    "source": "Верно! Это слово день.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.651,
+    "heard": "Верно, это слово день.",
+    "score": 1.0
+  },
+  "ori/9eed24a1": {
+    "text": "Верно! Это слово дом.",
+    "source": "Верно! Это слово дом.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.64,
+    "heard": "Верно, это слово «дом».",
+    "score": 1.0
+  },
+  "ori/9eeb7858": {
+    "text": "Верно! Это слово жук.",
+    "source": "Верно! Это слово жук.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.651,
+    "heard": "Верно, это слово жук.",
+    "score": 1.0
+  },
+  "ori/7c5bf541": {
+    "text": "Верно! Это слово зонт.",
+    "source": "Верно! Это слово зонт.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.695,
+    "heard": "Верно, это слово зонт.",
+    "score": 1.0
+  },
+  "ori/647ba822": {
+    "text": "Верно! Это слово йогурт.",
+    "source": "Верно! Это слово йогурт.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.738,
+    "heard": "Верно, это слово йогурт.",
+    "score": 1.0
+  },
+  "ori/77545022": {
+    "text": "Верно! Это слово луна.",
+    "source": "Верно! Это слово луна.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.662,
+    "heard": "Верно, это слово Луна.",
+    "score": 1.0
+  },
+  "ori/9ec5ca69": {
+    "text": "Верно! Это слово лёд.",
+    "source": "Верно! Это слово лёд.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.662,
+    "heard": "Верно, это слово лед.",
+    "score": 1.0
+  },
+  "ori/77a3ce77": {
+    "text": "Верно! Это слово мама.",
+    "source": "Верно! Это слово мама.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.673,
+    "heard": "Верно, это слово «мама».",
+    "score": 1.0
+  },
+  "ori/77a7d594": {
+    "text": "Верно! Это слово морс.",
+    "source": "Верно! Это слово морс.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.651,
+    "heard": "Верно, это слово Морс.",
+    "score": 1.0
+  },
+  "ori/779017a4": {
+    "text": "Верно! Это слово мышь.",
+    "source": "Верно! Это слово мышь.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.684,
+    "heard": "Верно, это слово мышь.",
+    "score": 1.0
+  },
+  "ori/778e009b": {
+    "text": "Верно! Это слово мясо.",
+    "source": "Верно! Это слово мясо.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.76,
+    "heard": "Верно, это слово мясо.",
+    "score": 1.0
+  },
+  "ori/9ec45d95": {
+    "text": "Верно! Это слово нос.",
+    "source": "Верно! Это слово нос.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.651,
+    "heard": "Верно, это слово нос.",
+    "score": 1.0
+  },
+  "ori/fa52b55e": {
+    "text": "Верно! Это слово подъезд.",
+    "source": "Верно! Это слово подъезд.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.749,
+    "heard": "Верно, это слово «подъезд».",
+    "score": 1.0
+  },
+  "ori/77724ca5": {
+    "text": "Верно! Это слово поёт.",
+    "source": "Верно! Это слово поёт.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.727,
+    "heard": "Верно, это слово поет.",
+    "score": 1.0
+  },
+  "ori/720d5938": {
+    "text": "Верно! Это слово роса.",
+    "source": "Верно! Это слово роса.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.706,
+    "heard": "Верно, это слово роса.",
+    "score": 1.0
+  },
+  "ori/72264a1d": {
+    "text": "Верно! Это слово рыба.",
+    "source": "Верно! Это слово рыба.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.684,
+    "heard": "Верно, это слово рыба.",
+    "score": 1.0
+  },
+  "ori/b23e7adc": {
+    "text": "Верно! Это слово семья.",
+    "source": "Верно! Это слово семья.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.793,
+    "heard": "Верно, это слово семья.",
+    "score": 1.0
+  },
+  "ori/9e9b0d72": {
+    "text": "Верно! Это слово сок.",
+    "source": "Верно! Это слово сок.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.673,
+    "heard": "Верно, это слово сок.",
+    "score": 1.0
+  },
+  "ori/9e9b0d15": {
+    "text": "Верно! Это слово сон.",
+    "source": "Верно! Это слово сон.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.662,
+    "heard": "Верно, это слово сон.",
+    "score": 1.0
+  },
+  "ori/b1671724": {
+    "text": "Верно! Это слово сосна.",
+    "source": "Верно! Это слово сосна.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.771,
+    "heard": "Верно, это слово сосна.",
+    "score": 1.0
+  },
+  "ori/7253d18b": {
+    "text": "Верно! Это слово флаг.",
+    "source": "Верно! Это слово флаг.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.706,
+    "heard": "Верно, это слово флаг.",
+    "score": 1.0
+  },
+  "ori/7244d50d": {
+    "text": "Верно! Это слово хлеб.",
+    "source": "Верно! Это слово хлеб.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.651,
+    "heard": "Верно, это слово хлеб.",
+    "score": 1.0
+  },
+  "ori/fbba11b0": {
+    "text": "Верно! Это слово цветок.",
+    "source": "Верно! Это слово цветок.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.858,
+    "heard": "Верно, это слово «цветок».",
+    "score": 1.0
+  },
+  "ori/bfec8982": {
+    "text": "Верно! Это слово чашка.",
+    "source": "Верно! Это слово чашка.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.814,
+    "heard": "Верно, это слово «чашка».",
+    "score": 1.0
+  },
+  "ori/a5bcdd27": {
+    "text": "Верно! Это слово щётка.",
+    "source": "Верно! Это слово щётка.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.847,
+    "heard": "Верно, это слово «щетка».",
+    "score": 1.0
+  },
+  "ori/578f7d68": {
+    "text": "Верно! Это слово яблоко.",
+    "source": "Верно! Это слово яблоко.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.923,
+    "heard": "Верно, это слово яблоко.",
+    "score": 1.0
+  },
+  "ori/754e2a37": {
+    "text": "Верно! Это слово ёлка.",
+    "source": "Верно! Это слово ёлка.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.847,
+    "heard": "Верно, это слово елка.",
+    "score": 1.0
+  },
+  "ori/5fb3d1d2": {
+    "text": "Все буквы",
+    "source": "Все буквы",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.715,
+    "heard": "Все буквы",
+    "score": 1.0
+  },
+  "ori/d6069118": {
+    "text": "Все буквы пойманы! Какие ловкие пальцы!",
+    "source": "Все буквы пойманы! Какие ловкие пальцы!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.663,
+    "heard": "Все буквы пойманы, какие ловкие пальцы.",
+    "score": 1.0
+  },
+  "ori/fdae6829": {
+    "text": "Все пары найдены! У тебя звёздная память!",
+    "source": "Все пары найдены! У тебя звёздная память!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.391,
+    "heard": "Все пары найдены. У тебя звездная память.",
+    "score": 1.0
+  },
+  "ori/37c3d219": {
+    "text": "Выбирай цвет нашего космического класса!",
+    "source": "Выбирай цвет нашего космического класса!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.272,
+    "heard": "Выбирай цвет нашего космического класса.",
+    "score": 1.0
+  },
+  "ori/ccec289d": {
+    "text": "Где Луна?",
+    "source": "Где Луна?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.715,
+    "heard": "Где Луна?",
+    "score": 1.0
+  },
+  "ori/d37567a8": {
+    "text": "Где мама?",
+    "source": "Где мама?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.704,
+    "heard": "Где мама?",
+    "score": 1.0
+  },
+  "ori/35e3ddf0": {
+    "text": "Где сидит жук?",
+    "source": "Где сидит жук?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.922,
+    "heard": "Где сидит жук?",
+    "score": 1.0
+  },
+  "ori/4ef0ae49": {
+    "text": "Гриб начинается с буквы",
+    "source": "Гриб начинается с буквы",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.357,
+    "heard": "Греб начинается с буквы.",
+    "score": 0.95
+  },
+  "ori/fb5b1c04": {
+    "text": "Да! Получился слог",
+    "source": "Да! Получился слог",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.651,
+    "heard": "Да, получился слог.",
+    "score": 1.0
+  },
+  "ori/2bf30267": {
+    "text": "Да! Получился слог СУ!",
+    "source": "Да! Получился слог СУ!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.771,
+    "heard": "Да, получился слог в суд.",
+    "score": 0.944
+  },
+  "ori/3ef3e8fc": {
+    "text": "Два слова начинаются на букву",
+    "source": "Два слова начинаются на букву",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.706,
+    "heard": "Два слова начинаются на букву.",
+    "score": 1.0
+  },
+  "ori/bbac3285": {
+    "text": "Дом начинается с буквы",
+    "source": "Дом начинается с буквы",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.292,
+    "heard": "Дом начинается с буквы.",
+    "score": 1.0
+  },
+  "ori/b57e9d51": {
+    "text": "Ель начинается с буквы",
+    "source": "Ель начинается с буквы",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.303,
+    "heard": "ель начинается с буквы",
+    "score": 1.0
+  },
+  "ori/234a5492": {
+    "text": "ЖУК СИДИТ НА ЦВЕТКЕ.",
+    "source": "ЖУК СИДИТ НА ЦВЕТКЕ.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.27,
+    "heard": "Жук сидит на цветке.",
+    "score": 1.0
+  },
+  "ori/7ba1ac3c": {
+    "text": "Жук начинается с буквы",
+    "source": "Жук начинается с буквы",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.39,
+    "heard": "Жук начинается с буквы.",
+    "score": 1.0
+  },
+  "ori/bef93452": {
+    "text": "За верные ответы полетит конфетти!",
+    "source": "За верные ответы полетит конфетти!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.978,
+    "heard": "За верный ответ и полетит конфетти.",
+    "score": 0.931
+  },
+  "ori/64461966": {
+    "text": "За верные ответы — кристаллы. На них можно украсить наш корабль!",
+    "source": "За верные ответы, кристаллы. На них можно украсить наш корабль!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 3.741,
+    "heard": "За верные ответы, кристаллы. На них можно украсить наш корабль.",
+    "score": 1.0
+  },
+  "ori/7b9b8a43": {
+    "text": "Замечательно! Мои ученики тобой гордятся!",
+    "source": "Замечательно! Мои ученики тобой гордятся!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.598,
+    "heard": "Замечательно, мои ученики тобой гордятся.",
+    "score": 1.0
+  },
+  "ori/293b0cd8": {
+    "text": "Звуковой радар ловит звуки из космоса! Услышь звук — и покажи его букву. Шесть сигналов!",
+    "source": "Звуковой радар ловит звуки из космоса! Услышь звук, и покажи его букву. Шесть сигналов!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 5.591,
+    "heard": "Звуковой радар ловит звуки из космоса. Услышь звук и покажи его букву. Шесть сигналов,",
+    "score": 1.0
+  },
+  "ori/de62f1a4": {
+    "text": "Земля — планета, где придумали эти слова!",
+    "source": "Земля, планета, где придумали эти слова!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.065,
+    "heard": "Земля-планета, где придумали эти слова.",
+    "score": 1.0
+  },
+  "ori/d6336465": {
+    "text": "Зонт начинается с буквы",
+    "source": "Зонт начинается с буквы",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.379,
+    "heard": "Зонд начинается с буквы.",
+    "score": 0.95
+  },
+  "ori/c4ba6ff3": {
+    "text": "Игла начинается с буквы",
+    "source": "Игла начинается с буквы",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.357,
+    "heard": "Игла начинается с буквы.",
+    "score": 1.0
+  },
+  "ori/6029fafe": {
+    "text": "Из слогов получаются слова. Читай слева направо: МА–МА — мама!",
+    "source": "Из слогов получаются слова. Читай слева направо: МА–МА, мама!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 3.926,
+    "heard": "Из слогов получаются слова. Читай слева направо. Мама, мама.",
+    "score": 1.0
+  },
+  "ori/309133b8": {
+    "text": "Их здесь три!",
+    "source": "Их здесь три!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.835,
+    "heard": "И здесь три.",
+    "score": 0.947
+  },
+  "ori/cdf73f46": {
+    "text": "Йогурт начинается с буквы",
+    "source": "Йогурт начинается с буквы",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.531,
+    "heard": "Йогурт начинается с буквы.",
+    "score": 1.0
+  },
+  "ori/378597a9": {
+    "text": "КОТ СПИТ.",
+    "source": "Кот, спит.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.726,
+    "heard": "Кот спит.",
+    "score": 1.0
+  },
+  "ori/855b0a5b": {
+    "text": "Каждая буква — маленькая звезда. Соберём из них целое созвездие слов!",
+    "source": "Каждая буква, маленькая звезда. Соберём из них целое созвездие слов!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 4.285,
+    "heard": "Каждая буква – маленькая звезда. Соберем из них целое созвездие слов.",
+    "score": 1.0
+  },
+  "ori/6db30fab": {
+    "text": "Какая буква спряталась в слове?",
+    "source": "Какая буква спряталась в слове?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.727,
+    "heard": "Какая буква спряталась в слове?",
+    "score": 1.0
+  },
+  "ori/8337c9b5": {
+    "text": "Кот начинается с буквы",
+    "source": "Кот начинается с буквы",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.292,
+    "heard": "Код начинается с буквы.",
+    "score": 0.947
+  },
+  "ori/a513aed2": {
+    "text": "Кто плывёт?",
+    "source": "Скажи, кто плывёт?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.933,
+    "heard": "Скажи, кто плывет.",
+    "score": 1.0
+  },
+  "ori/cc99ef5a": {
+    "text": "Ку-Ку выглядывает из-за буквы и улыбается!",
+    "source": "Ку-Ку выглядывает из-за буквы и улыбается!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.544,
+    "heard": "Кутку выглядывает из-за буквы и улыбается.",
+    "score": 0.986
+  },
+  "ori/7a0b780f": {
+    "text": "Ку-Ку кружится от радости!",
+    "source": "Ку-Ку кружится от радости!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.521,
+    "heard": "Кубку кружится от радости.",
+    "score": 0.977
+  },
+  "ori/e2f7cf80": {
+    "text": "ЛУНА В НЕБЕ.",
+    "source": "ЛУНА В НЕБЕ.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.802,
+    "heard": "Луна в небе.",
+    "score": 1.0
+  },
+  "ori/cf66b9b8": {
+    "text": "Лопни все пузыри с буквой",
+    "source": "Лопни все пузыри с буквой",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.51,
+    "heard": "Лопни все пузыри с буквой.",
+    "score": 1.0
+  },
+  "ori/cf417746": {
+    "text": "Луна начинается с буквы",
+    "source": "Луна начинается с буквы",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.357,
+    "heard": "Луна начинается с буквы.",
+    "score": 1.0
+  },
+  "ori/96da544d": {
+    "text": "МАМА ДОМА.",
+    "source": "МАМА ДОМА.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.78,
+    "heard": "Мама дома.",
+    "score": 1.0
+  },
+  "ori/7d10f5d3": {
+    "text": "Мама начинается с буквы",
+    "source": "Мама начинается с буквы",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.423,
+    "heard": "Мама начинается с буквы.",
+    "score": 1.0
+  },
+  "ori/b73d4d8d": {
+    "text": "Мягкий знак не читается отдельно. Он меняет предыдущий согласный: ДЕНЬ.",
+    "source": "Мягкий знак не читается отдельно. Он меняет предыдущий согласный: ДЕНЬ.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 4.155,
+    "heard": "Мягкий знак не читается отдельно, он меняет предыдущий согласный день.",
+    "score": 1.0
+  },
+  "ori/bde5c0aa": {
+    "text": "На игровой площадке новые испытания: лови буквы, ищи пары и слушай звуки!",
+    "source": "На игровой площадке новые испытания: лови буквы, ищи пары и слушай звуки!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 4.525,
+    "heard": "На игровой площадке новые испытания. Лови буквы, ищи пары и слушай звуки.",
+    "score": 1.0
+  },
+  "ori/ca4a1b2e": {
+    "text": "Нажимай буквы по порядку.",
+    "source": "Нажимай буквы по порядку.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.499,
+    "heard": "Нажимай буквы по порядку.",
+    "score": 1.0
+  },
+  "ori/3c54250": {
+    "text": "Нажми на ноту в классе — я сыграю мелодию!",
+    "source": "Нажми на ноту в классе, я сыграю мелодию!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.239,
+    "heard": "Нажми на ноту в классе, я сыграю мелодию.",
+    "score": 1.0
+  },
+  "ori/36f30321": {
+    "text": "Нажми на облачко речи, чтобы послушать звук ещё раз.",
+    "source": "Нажми на облачко речи, чтобы послушать звук ещё раз.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.729,
+    "heard": "Нажми на облачко речи, чтобы послушать звук ещё раз.",
+    "score": 1.0
+  },
+  "ori/888f246d": {
+    "text": "Нажми на робота в классе — он поздоровается!",
+    "source": "Нажми на робота в классе, он поздоровается!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.261,
+    "heard": "Нажми на робота в классе, он поздоровается.",
+    "score": 1.0
+  },
+  "ori/aba0e7c4": {
+    "text": "Найди букву",
+    "source": "Найди букву",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.857,
+    "heard": "Найди букву.",
+    "score": 1.0
+  },
+  "ori/96969509": {
+    "text": "Найди букву Ё с двумя точками.",
+    "source": "Найди букву ё с двумя точками.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.706,
+    "heard": "Найди букву её с двумя точками.",
+    "score": 0.98
+  },
+  "ori/6dd6c189": {
+    "text": "Найди букву, с которой начинается слово яблоко.",
+    "source": "Найди букву, с которой начинается слово яблоко.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.772,
+    "heard": "Найди букву, с которой начинается слово «яблоко».",
+    "score": 1.0
+  },
+  "ori/defe304a": {
+    "text": "Найди все буквы",
+    "source": "Найди все буквы",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.063,
+    "heard": "Найди все буквы.",
+    "score": 1.0
+  },
+  "ori/7f8941d9": {
+    "text": "Найди заглавную букву",
+    "source": "Найди заглавную букву",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.39,
+    "heard": "Найди заглавную букву.",
+    "score": 1.0
+  },
+  "ori/cbd5cade": {
+    "text": "Найди лишнюю картинку!",
+    "source": "Найди лишнюю картинку!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.401,
+    "heard": "Найди лишнюю картинку.",
+    "score": 1.0
+  },
+  "ori/a14e24d1": {
+    "text": "Найди мягкий слог",
+    "source": "Найди мягкий слог",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.161,
+    "heard": "Найди мягкий слог.",
+    "score": 1.0
+  },
+  "ori/a618ab14": {
+    "text": "Найди слово жук.",
+    "source": "Найди слово жук.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.053,
+    "heard": "Найди слово, жук.",
+    "score": 1.0
+  },
+  "ori/652cd058": {
+    "text": "Найди слово морс.",
+    "source": "Найди слово морс.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.074,
+    "heard": "Найди слово морс.",
+    "score": 1.0
+  },
+  "ori/40198412": {
+    "text": "Найди слово подъезд.",
+    "source": "Найди слово подъезд.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.227,
+    "heard": "Найди слово «подъезд».",
+    "score": 1.0
+  },
+  "ori/33fa7c2a": {
+    "text": "Найди слог",
+    "source": "Найди слог",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.802,
+    "heard": "Найди слог.",
+    "score": 1.0
+  },
+  "ori/883c552e": {
+    "text": "Найди строчную букву",
+    "source": "Найди стр+очную букву",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.292,
+    "heard": "Найди строчную букву.",
+    "score": 1.0
+  },
+  "ori/1f000586": {
+    "text": "Найди эту букву.",
+    "source": "Найди эту букву.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.053,
+    "heard": "Найди эту букву.",
+    "score": 1.0
+  },
+  "ori/2393b143": {
+    "text": "Начинаем новое звёздное путешествие!",
+    "source": "Начинаем новое звёздное путешествие!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.021,
+    "heard": "Начинаем новое звездное путешествие.",
+    "score": 1.0
+  },
+  "ori/39a7b05": {
+    "text": "Не спеши. Посмотри внимательно и попробуй снова.",
+    "source": "Не спеши. Посмотри внимательно и попробуй снова.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.968,
+    "heard": "Не спеши, посмотри внимательно и попробуй снова.",
+    "score": 1.0
+  },
+  "ori/d0ef5ab1": {
+    "text": "Нос начинается с буквы",
+    "source": "Нос начинается с буквы",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.303,
+    "heard": "Нос начинается с буквы.",
+    "score": 1.0
+  },
+  "ori/45e7e8a3": {
+    "text": "Нужно ещё",
+    "source": "Нужно ещё",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.944,
+    "heard": "Нужно ещё...",
+    "score": 1.0
+  },
+  "ori/f39d2ec4": {
+    "text": "Обнимаю крылом! Так держать!",
+    "source": "Обнимаю крылом! Так держать!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.043,
+    "heard": "Обнимаю крылом. Так держать.",
+    "score": 1.0
+  },
+  "ori/e6c7bbe1": {
+    "text": "Огоньки будут мигать над нашим классом!",
+    "source": "Огоньки будут мигать над нашим классом!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.978,
+    "heard": "Огоньки будут мигать над нашим классом.",
+    "score": 1.0
+  },
+  "ori/d9afc318": {
+    "text": "Одна буква спряталась! Прочитай слово и верни её на место.",
+    "source": "Одна буква спряталась! Прочитай слово и верни её на место.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 3.578,
+    "heard": "Одна буква спряталась, прочитай слово и верни ее на место.",
+    "score": 1.0
+  },
+  "ori/773670d4": {
+    "text": "Ой-ой! Пуф перепутал глаза. А ты попробуй ещё!",
+    "source": "Ой-ой! Пуф перепутал глаза. А ты попробуй ещё!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 3.534,
+    "heard": "Ой-ой, Пуф перепутал глаза, а ты попробуй ещё.",
+    "score": 1.0
+  },
+  "ori/7cc4094": {
+    "text": "Окно начинается с буквы",
+    "source": "Окно начинается с буквы",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.357,
+    "heard": "Окно начинается с буквы.",
+    "score": 1.0
+  },
+  "ori/434776a1": {
+    "text": "Она обозначает звук",
+    "source": "Она обозначает звук",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.205,
+    "heard": "Она обозначает звук.",
+    "score": 1.0
+  },
+  "ori/7700c788": {
+    "text": "Орбитрон играет мелодию звёздного класса!",
+    "source": "Орбитрон играет мелодию звёздного класса!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.239,
+    "heard": "Арбитрон играет мелодию звездного класса.",
+    "score": 0.972
+  },
+  "ori/10c6460a": {
+    "text": "Открывай карточки и ищи пары: большая и маленькая буква.",
+    "source": "Открывай карточки и ищи пары: большая и маленькая буква.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 3.741,
+    "heard": "Открывай карточки и ищи пары. Большая и маленькая буква.",
+    "score": 1.0
+  },
+  "ori/75565c6b": {
+    "text": "Открывай карточки по две и ищи пары: большая буква и её маленькая сестра. Запомни, где кто спрятался!",
+    "source": "Открывай карточки по две и ищи пары: большая буква и её маленькая сестра. Запомни, где кто спрятался!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 6.451,
+    "heard": "Открывай карточки по две и ищи пары. Большая буква, ее маленькая сестра. Запомни, где кто спрятался.",
+    "score": 0.994
+  },
+  "ori/6469c884": {
+    "text": "Отлично! Ты настоящий исследователь букв!",
+    "source": "Отлично! Ты настоящий исследователь букв!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.631,
+    "heard": "Отлично, ты настоящий исследователь букв.",
+    "score": 1.0
+  },
+  "ori/744bfea4": {
+    "text": "Отлично! Ты читаешь слоги!",
+    "source": "Отлично! Ты читаешь слоги!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.967,
+    "heard": "Отлично, ты читаешь слоги.",
+    "score": 1.0
+  },
+  "ori/d42a62cd": {
+    "text": "Пароход начинается с буквы",
+    "source": "Пароход начинается с буквы",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.444,
+    "heard": "Пароход начинается с буквы.",
+    "score": 1.0
+  },
+  "ori/4f2a0b10": {
+    "text": "Пока не то, но у тебя обязательно получится!",
+    "source": "Пока не то, но у тебя обязательно получится!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.25,
+    "heard": "Пока не то, но у тебя обязательно получится.",
+    "score": 1.0
+  },
+  "ori/f2f59201": {
+    "text": "Получился слог",
+    "source": "Получился слог",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.02,
+    "heard": "Получился слог.",
+    "score": 1.0
+  },
+  "ori/b780134c": {
+    "text": "Получился слог МА!",
+    "source": "Получился слог МА!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.118,
+    "heard": "Получился слог МАК.",
+    "score": 0.968
+  },
+  "ori/b7800dc3": {
+    "text": "Получился слог НО!",
+    "source": "Получился слог НО!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.14,
+    "heard": "Получился слог ну.",
+    "score": 0.933
+  },
+  "ori/6a1c7bf2": {
+    "text": "После урока будет звёздный салют!",
+    "source": "После урока будет звёздный салют!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.684,
+    "heard": "После урока будет звездный салют.",
+    "score": 1.0
+  },
+  "ori/a8e330be": {
+    "text": "Послушай её звук:",
+    "source": "Послушай её звук:",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.118,
+    "heard": "Послушаю я звук.",
+    "score": 0.815
+  },
+  "ori/9ad7bfef": {
+    "text": "Послушай звук и найди его букву.",
+    "source": "Послушай звук и найди его букву.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.793,
+    "heard": "Послушай звук и найди его букву.",
+    "score": 1.0
+  },
+  "ori/91484ab": {
+    "text": "Послушай и найди мягкий слог ЛЮ.",
+    "source": "Послушай и найди мягкий слог ЛЮ.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.793,
+    "heard": "Послушай и найди мягкий слоглю.",
+    "score": 1.0
+  },
+  "ori/ef27382f": {
+    "text": "Послушай название буквы и найди её.",
+    "source": "Послушай название буквы и найди её.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.163,
+    "heard": "Послушай название буквы и найди её.",
+    "score": 1.0
+  },
+  "ori/f1399a81": {
+    "text": "Послушай слова ещё раз и найди то, что начинается не на букву",
+    "source": "Послушай слова ещё раз и найди то, что начинается не на букву",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 3.153,
+    "heard": "Послушай слова еще раз и найди то, что начинается не на букву,",
+    "score": 1.0
+  },
+  "ori/c631dd6f": {
+    "text": "Послушай слово и найди его среди написанных.",
+    "source": "Послушай слово и найди его среди написанных.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.282,
+    "heard": "Послушай слово и найди его среди написанных.",
+    "score": 1.0
+  },
+  "ori/6fefa7c6": {
+    "text": "Послушай:",
+    "source": "Послушай:",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.682
+  },
+  "ori/fee1ba2d": {
+    "text": "Посмотри на первую букву и прочитай слово по слогам.",
+    "source": "Посмотри на первую букву и прочитай слово по слогам.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.674,
+    "heard": "Посмотри на первую букву и прочитай слово по слогам.",
+    "score": 1.0
+  },
+  "ori/e849683": {
+    "text": "Посмотри: следующая буква должна стоять на месте номер",
+    "source": "Посмотри: следующая буква должна стоять на месте номер",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 3.142,
+    "heard": "Посмотри, следующая буква должна стоять на месте номера.",
+    "score": 0.989
+  },
+  "ori/59283857": {
+    "text": "Почти! Попробуй ещё раз.",
+    "source": "Почти! Попробуй ещё раз.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.804,
+    "heard": "Почти. Попробую еще раз.",
+    "score": 0.947
+  },
+  "ori/a0954be": {
+    "text": "Привет! Я Ори. Блип, Пуф и Ку-Ку прилетели учиться читать. Выбирай урок!",
+    "source": "Привет! Я +Ори. Блип, Пуф и Ку-Ку прилетели учиться читать. Выбирай урок!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 4.938,
+    "heard": "Привет, я Ори. Блеб, Пуф и Кутку прилетели учиться читать. Выбирай урок.",
+    "score": 0.955
+  },
+  "ori/309027c7": {
+    "text": "Прочитай и найди слог",
+    "source": "Прочитай и найди слог",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.259,
+    "heard": "Прочитай и найди слог.",
+    "score": 1.0
+  },
+  "ori/c85b037e": {
+    "text": "Прочитай и найди слог ЧА.",
+    "source": "Прочитай и найди слог ЧА.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.433,
+    "heard": "Прочитай на дислокча.",
+    "score": 0.895
+  },
+  "ori/12264fd7": {
+    "text": "Прочитай предложение ещё раз. Ответ спрятан в нём.",
+    "source": "Прочитай предложение ещё раз. Ответ спрятан в нём.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.957,
+    "heard": "Прочитай предложение еще раз. Ответ спрятан в нем.",
+    "score": 1.0
+  },
+  "ori/38ea70e": {
+    "text": "Прочитай слово и выбери подходящую картинку.",
+    "source": "Прочитай слово и выбери подходящую картинку.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.511,
+    "heard": "Прочитай слово и выбери подходящую картинку.",
+    "score": 1.0
+  },
+  "ori/f793d809": {
+    "text": "Пузыри с буквами летят в космосе! Лопни только те, где спрятались нужные буквы. Пять волн — и ты чемпион!",
+    "source": "Пузыри с буквами летят в космосе! Лопни только те, где спрятались нужные буквы. Пять волн, и ты чемпион!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 6.288,
+    "heard": "Пузыри с буквами летят в космосе. Лопнет только те, где спрятались нужные буквы. Пять волн, и ты чемпион.",
+    "score": 0.982
+  },
+  "ori/485dcaf2": {
+    "text": "Пуф смотрит всеми тремя глазами и видит: получилось!",
+    "source": "Пуф смотрит всеми тремя глазами и видит: получилось!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.979,
+    "heard": "Пуф смотрит всеми тремя глазами и видит. Получилось?",
+    "score": 1.0
+  },
+  "ori/59010d06": {
+    "text": "Пуф хлопает всеми щупальцами!",
+    "source": "Пуф хлопает всеми щупальцами!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.727,
+    "heard": "Уф хлопает всеми щупальцами.",
+    "score": 0.98
+  },
+  "ori/943ba15f": {
+    "text": "РЫБА ПЛЫВЁТ.",
+    "source": "РЫБА ПЛЫВЁТ.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.824,
+    "heard": "Рыба плывет.",
+    "score": 1.0
+  },
+  "ori/32d80f23": {
+    "text": "Радар настроен! Ты слышишь каждый звук!",
+    "source": "Радар настроен! Ты слышишь каждый звук!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.413,
+    "heard": "Продав настроен. Ты слышишь каждый звук?",
+    "score": 0.923
+  },
+  "ori/b5abaef9": {
+    "text": "Рыба начинается с буквы",
+    "source": "Рыба начинается с буквы",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.346,
+    "heard": "Рыба начинается с буквы.",
+    "score": 1.0
+  },
+  "ori/ba259346": {
+    "text": "С какой буквы начинается слово арбуз?",
+    "source": "С какой буквы начинается слово арбуз?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.065,
+    "heard": "с какой буквы начинается слово арбуз",
+    "score": 1.0
+  },
+  "ori/bd856d62": {
+    "text": "С какой буквы начинается слово банан?",
+    "source": "С какой буквы начинается слово банан?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.0,
+    "heard": "С какой буквы начинается слово «банан».",
+    "score": 1.0
+  },
+  "ori/c77cdc36": {
+    "text": "С какой буквы начинается слово ваза?",
+    "source": "С какой буквы начинается слово ваза?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.967,
+    "heard": "С какой буквы начинается слово ваза?",
+    "score": 1.0
+  },
+  "ori/c7ebb5a9": {
+    "text": "С какой буквы начинается слово гриб?",
+    "source": "С какой буквы начинается слово гриб?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.945,
+    "heard": "Как и буквы начинается слово ГРИП.",
+    "score": 0.897
+  },
+  "ori/4bd9a905": {
+    "text": "С какой буквы начинается слово дом?",
+    "source": "С какой буквы начинается слово дом?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.901,
+    "heard": "С какой буквы начинается слово «дом»?",
+    "score": 1.0
+  },
+  "ori/4bdc3b91": {
+    "text": "С какой буквы начинается слово ель?",
+    "source": "С какой буквы начинается слово ель?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.978,
+    "heard": "С какой буквы начинается слово ЕЛЬ?",
+    "score": 1.0
+  },
+  "ori/4bda7cfc": {
+    "text": "С какой буквы начинается слово жук?",
+    "source": "С какой буквы начинается слово жук?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.945,
+    "heard": "С какой буквы начинается слово «ЖУК»?",
+    "score": 1.0
+  },
+  "ori/c7877845": {
+    "text": "С какой буквы начинается слово зонт?",
+    "source": "С какой буквы начинается слово зонт?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.956,
+    "heard": "С какой буквы начинается слово зонт?",
+    "score": 1.0
+  },
+  "ori/c6c79e53": {
+    "text": "С какой буквы начинается слово игла?",
+    "source": "С какой буквы начинается слово игла?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.0,
+    "heard": "С какой буквы начинается слово ИГЛА.",
+    "score": 1.0
+  },
+  "ori/150e93a6": {
+    "text": "С какой буквы начинается слово йогурт?",
+    "source": "С какой буквы начинается слово йогурт?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.054,
+    "heard": "С какой буквы начинается слово йогурт?",
+    "score": 1.0
+  },
+  "ori/4bd892f5": {
+    "text": "С какой буквы начинается слово кот?",
+    "source": "С какой буквы начинается слово кот?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.891,
+    "heard": "С какой буквы начинается слово «код»?",
+    "score": 0.966
+  },
+  "ori/c7399c66": {
+    "text": "С какой буквы начинается слово луна?",
+    "source": "С какой буквы начинается слово луна?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.945,
+    "heard": "С какой буквы начинается слово Луна?",
+    "score": 1.0
+  },
+  "ori/c67ebd33": {
+    "text": "С какой буквы начинается слово мама?",
+    "source": "С какой буквы начинается слово мама?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.967,
+    "heard": "С какой буквы начинается слово «мама»?",
+    "score": 1.0
+  },
+  "ori/4bd81ff1": {
+    "text": "С какой буквы начинается слово нос?",
+    "source": "С какой буквы начинается слово нос?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.945,
+    "heard": "С какой буквы начинается слово НОС?",
+    "score": 1.0
+  },
+  "ori/c6a709b4": {
+    "text": "С какой буквы начинается слово окно?",
+    "source": "С какой буквы начинается слово окно?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.01,
+    "heard": "С какой буквы начинается слово «Окно».",
+    "score": 1.0
+  },
+  "ori/3c4d174d": {
+    "text": "С какой буквы начинается слово пароход?",
+    "source": "С какой буквы начинается слово пароход?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.119,
+    "heard": "С какой буквы начинается слово пароход?",
+    "score": 1.0
+  },
+  "ori/c88eafd9": {
+    "text": "С какой буквы начинается слово рыба?",
+    "source": "С какой буквы начинается слово рыба?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.934,
+    "heard": "С какой буквы начинается слово рыба?",
+    "score": 1.0
+  },
+  "ori/4be68f16": {
+    "text": "С какой буквы начинается слово сок?",
+    "source": "С какой буквы начинается слово сок?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.967,
+    "heard": "С какой буквы начинается слово «сок»?",
+    "score": 1.0
+  },
+  "ori/c468a24d": {
+    "text": "С какой буквы начинается слово торт?",
+    "source": "С какой буквы начинается слово торт?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.934,
+    "heard": "С какой буквы начинается слово торт?",
+    "score": 1.0
+  },
+  "ori/c489c238": {
+    "text": "С какой буквы начинается слово утка?",
+    "source": "С какой буквы начинается слово утка?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.054,
+    "heard": "С какой буквы начинается слово «утка»?",
+    "score": 1.0
+  },
+  "ori/c862404f": {
+    "text": "С какой буквы начинается слово флаг?",
+    "source": "С какой буквы начинается слово флаг?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.978,
+    "heard": "С какой буквы начинается слово флаг.",
+    "score": 1.0
+  },
+  "ori/c8734d49": {
+    "text": "С какой буквы начинается слово хлеб?",
+    "source": "С какой буквы начинается слово хлеб?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.901,
+    "heard": "С какой буквы начинается слово «хлеб»?",
+    "score": 1.0
+  },
+  "ori/6b80234": {
+    "text": "С какой буквы начинается слово цветок?",
+    "source": "С какой буквы начинается слово цветок?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.097,
+    "heard": "С какой буквы начинается слово «цветок»?",
+    "score": 1.0
+  },
+  "ori/dbb009a6": {
+    "text": "С какой буквы начинается слово чашка?",
+    "source": "С какой буквы начинается слово чашка?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.108,
+    "heard": "С какой буквы начинается слово чашка?",
+    "score": 1.0
+  },
+  "ori/4be1cf8b": {
+    "text": "С какой буквы начинается слово шар?",
+    "source": "С какой буквы начинается слово шар?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.923,
+    "heard": "С какой буквы начинается слово шар?",
+    "score": 1.0
+  },
+  "ori/c7658903": {
+    "text": "С какой буквы начинается слово щётка?",
+    "source": "С какой буквы начинается слово щётка?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.141,
+    "heard": "С какой буквы начинается слово «щетка»?",
+    "score": 1.0
+  },
+  "ori/c55be189": {
+    "text": "С какой буквы начинается слово экран?",
+    "source": "С какой буквы начинается слово экран?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.032,
+    "heard": "Как и буквы начинается слово «экран».",
+    "score": 0.933
+  },
+  "ori/c7f911a6": {
+    "text": "С какой буквы начинается слово юбка?",
+    "source": "С какой буквы начинается слово юбка?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.13,
+    "heard": "Как и буквы начинается слово «юбка».",
+    "score": 0.931
+  },
+  "ori/f2b0896c": {
+    "text": "С какой буквы начинается слово яблоко?",
+    "source": "С какой буквы начинается слово яблоко?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.195,
+    "heard": "С какой буквы начинается слово яблоко.",
+    "score": 1.0
+  },
+  "ori/c5681bb3": {
+    "text": "С какой буквы начинается слово ёлка?",
+    "source": "С какой буквы начинается слово ёлка?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.13,
+    "heard": "С какой буквы начинается слово Ёлка?",
+    "score": 1.0
+  },
+  "ori/96982b0": {
+    "text": "Сбросить кристаллы, звёзды и все подарки?",
+    "source": "Сбросить кристаллы, звёзды и все подарки?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.141,
+    "heard": "Сбросить кристаллы, звезды и все подарки.",
+    "score": 1.0
+  },
+  "ori/cb6caa2c": {
+    "text": "Скачалось не всё: нужен интернет. Нажми ещё раз.",
+    "source": "Скачалось не всё: нужен интернет. Нажми ещё раз.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 3.295,
+    "heard": "Качалось не все. Нужен интернет. Нажми еще раз.",
+    "score": 0.987
+  },
+  "ori/411dde64": {
+    "text": "Слова дружат в предложениях. Прочитай предложение и ответь на вопрос.",
+    "source": "Слова дружат в предложениях. Прочитай предложение и ответь на вопрос.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 3.676,
+    "heard": "Слова дружат в предложениях. Прочитай предложение и ответь на вопрос.",
+    "score": 1.0
+  },
+  "ori/442bdd11": {
+    "text": "Слог читаем вместе, не разрывая звуки. Попробуй прочитать сам!",
+    "source": "Слог читаем вместе, не разрывая звуки. Попробуй прочитать сам!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 3.676,
+    "heard": "Слог читаем вместе, не разрывая звуки. Попробуй прочитать сам.",
+    "score": 1.0
+  },
+  "ori/da32004a": {
+    "text": "Собери мягкий слог",
+    "source": "Собери мягкий слог",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.238,
+    "heard": "Собери мягкий слог.",
+    "score": 1.0
+  },
+  "ori/a86e5097": {
+    "text": "Собери мягкий слог МЯ.",
+    "source": "Собери мягкий слог МЯ.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.346,
+    "heard": "Собери мягкий слог мед.",
+    "score": 0.919
+  },
+  "ori/759990c7": {
+    "text": "Собери слово день по буквам.",
+    "source": "Собери слово день по буквам.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.542,
+    "heard": "Собери слово день по буквам.",
+    "score": 1.0
+  },
+  "ori/f0892be1": {
+    "text": "Собери слово дом по буквам.",
+    "source": "Собери слово дом по буквам.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.553,
+    "heard": "Собери слово Дом по буквам.",
+    "score": 1.0
+  },
+  "ori/c22f4202": {
+    "text": "Собери слово луна по буквам.",
+    "source": "Собери слово луна по буквам.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.586,
+    "heard": "Собери слово Луна по буквам.",
+    "score": 1.0
+  },
+  "ori/87c1f0a9": {
+    "text": "Собери слово лёд по буквам.",
+    "source": "Собери слово лёд по буквам.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.499,
+    "heard": "Собери слово ЛЮ по буквам.",
+    "score": 0.93
+  },
+  "ori/ebc49418": {
+    "text": "Собери слово роса по буквам.",
+    "source": "Собери слово роса по буквам.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.619,
+    "heard": "Собери слово Роса по буквам.",
+    "score": 1.0
+  },
+  "ori/bf864532": {
+    "text": "Собери слово сок по буквам.",
+    "source": "Собери слово сок по буквам.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.608,
+    "heard": "Собери слово сок по буквам.",
+    "score": 1.0
+  },
+  "ori/936b19a4": {
+    "text": "Собери слово сосна по буквам.",
+    "source": "Собери слово сосна по буквам.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.684,
+    "heard": "Собери слово сосна по буквам.",
+    "score": 1.0
+  },
+  "ori/2295bf50": {
+    "text": "Собери слово цветок по буквам.",
+    "source": "Собери слово цветок по буквам.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.727,
+    "heard": "Собери слово цветок по буквам.",
+    "score": 1.0
+  },
+  "ori/203f2f02": {
+    "text": "Собери слово чашка по буквам.",
+    "source": "Собери слово чашка по буквам.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.749,
+    "heard": "Собери слово чашка по буквам.",
+    "score": 1.0
+  },
+  "ori/10e94391": {
+    "text": "Собери слог",
+    "source": "Собери слог",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.868,
+    "heard": "Собери слог.",
+    "score": 1.0
+  },
+  "ori/23f07c14": {
+    "text": "Собери слог ЛА.",
+    "source": "Собери слог ЛА.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.987,
+    "heard": "Собери слогла.",
+    "score": 1.0
+  },
+  "ori/b7edd266": {
+    "text": "Соедини",
+    "source": "Соедини",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.801
+  },
+  "ori/a0b40337": {
+    "text": "Соедини [м] и [а]. Нажимай буквы по порядку.",
+    "source": "Соедини м и а. Нажимай буквы по порядку.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.794,
+    "heard": "Соединим ИА. Нажимай буквы по порядку.",
+    "score": 1.0
+  },
+  "ori/57a961d6": {
+    "text": "Сок начинается с буквы",
+    "source": "Сок начинается с буквы",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.346,
+    "heard": "Сок начинается с буквы.",
+    "score": 1.0
+  },
+  "ori/d582b239": {
+    "text": "Сравни:",
+    "source": "Сравни:",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.563
+  },
+  "ori/be2e1b25": {
+    "text": "Теперь будем собирать новые слова. Называй каждую букву про себя, а потом прочитай всё слово.",
+    "source": "Теперь будем собирать новые слова. Называй каждую букву про себя, а потом прочитай всё слово.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 4.96,
+    "heard": "Теперь будем собирать новые слова. Называй каждую букву про себя, а потом прочитай все слово.",
+    "score": 1.0
+  },
+  "ori/cf87c637": {
+    "text": "Теперь соедини",
+    "source": "Теперь соедини",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.027,
+    "heard": "Теперь сегини.",
+    "score": 0.88
+  },
+  "ori/59ac35a2": {
+    "text": "Теперь соедини [н] и [о].",
+    "source": "Теперь соедини н и о.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.227,
+    "heard": "Теперь сейдининг его.",
+    "score": 0.824
+  },
+  "ori/30031b3b": {
+    "text": "Теперь у нас есть собственная планета!",
+    "source": "Теперь у нас есть собственная планета!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.814,
+    "heard": "Теперь у нас есть собственная планета.",
+    "score": 1.0
+  },
+  "ori/acda3d30": {
+    "text": "Теперь читаем без подсказки голосом. Слово прозвучит только после верного ответа.",
+    "source": "Теперь читаем без подсказки голосом. Слово прозвучит только после верного ответа.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 4.492,
+    "heard": "Теперь читаем без подсказки голосом. Слово прозвучит только после верного ответа.",
+    "score": 1.0
+  },
+  "ori/898112d": {
+    "text": "Торт начинается с буквы",
+    "source": "Торт начинается с буквы",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.303,
+    "heard": "Торт начинается с буквы.",
+    "score": 1.0
+  },
+  "ori/9a245063": {
+    "text": "Точно! Ещё одна звёздная победа!",
+    "source": "Точно! Ещё одна звёздная победа!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.174,
+    "heard": "Точно. Еще одна звездная победа.",
+    "score": 1.0
+  },
+  "ori/dc9847b0": {
+    "text": "Три слова начинаются на букву",
+    "source": "Три слова начинаются на букву",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.629,
+    "heard": "Три слова начинаются на букву.",
+    "score": 1.0
+  },
+  "ori/571109d": {
+    "text": "Ты раскусил все хитрости! Ни одно лишнее слово не ускользнуло!",
+    "source": "Ты раскусил все хитрости! Ни одно лишнее слово не ускользнуло!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 3.502,
+    "heard": "Ты раскусил все хитрости, ни одно лишнее слово не ускользнуло.",
+    "score": 1.0
+  },
+  "ori/ecbff97a": {
+    "text": "Ты сегодня ярче сверхновой!",
+    "source": "Ты сегодня ярче сверхновой!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.586,
+    "heard": "Ты сегодня ярче сверхновой.",
+    "score": 1.0
+  },
+  "ori/4fdcc61e": {
+    "text": "У буквы Ё всегда есть две точки. Она не любит лениться: в слове ёлка слышится [йо].",
+    "source": "У буквы ё всегда есть две точки. Она не любит лениться: в слове ёлка слышится йо.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 4.764,
+    "heard": "У буквы Е всегда есть две точки, она не любит лениться, в слове елка слышит цвет.",
+    "score": 0.937
+  },
+  "ori/3b395066": {
+    "text": "Урок пройден! Молодец!",
+    "source": "Урок пройден! Молодец!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.64,
+    "heard": "Урок пройден, молодец.",
+    "score": 1.0
+  },
+  "ori/7b68f8d6": {
+    "text": "Урок пройден! Три звезды! Ты настоящий читатель!",
+    "source": "Урок пройден! Три звезды! Ты настоящий читатель!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 3.469,
+    "heard": "Урок пройден. Три звезды. Ты настоящий читатель.",
+    "score": 1.0
+  },
+  "ori/8654ca98": {
+    "text": "Утка начинается с буквы",
+    "source": "Утка начинается с буквы",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.379,
+    "heard": "Утка начинается с буквы.",
+    "score": 1.0
+  },
+  "ori/c5058fef": {
+    "text": "Флаг начинается с буквы",
+    "source": "Флаг начинается с буквы",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.368,
+    "heard": "Флаг начинается с буквы.",
+    "score": 1.0
+  },
+  "ori/34c20be9": {
+    "text": "Хитрые инопланетяне перепутали картинки! Найди слово, которое начинается НЕ на ту букву. Пять раундов!",
+    "source": "Хитрые инопланетяне перепутали картинки! Найди слово, которое начинается НЕ на ту букву. Пять раундов!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 6.266,
+    "heard": "Титры инопланетяне перепутали картинки. Найди слово, которое начинается не на ту букву. Пять раундов.",
+    "score": 0.982
+  },
+  "ori/2902ffe9": {
+    "text": "Хлеб начинается с буквы",
+    "source": "Хлеб начинается с буквы",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.379,
+    "heard": "Клеп начинается с буквы.",
+    "score": 0.9
+  },
+  "ori/7650a245": {
+    "text": "Хм, моя совиная голова думает: почти получилось!",
+    "source": "Хм, моя совиная голова думает: почти получилось!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.936,
+    "heard": "Моя совиная голова думает, почти получилось.",
+    "score": 0.974
+  },
+  "ori/badd5f94": {
+    "text": "Цветок начинается с буквы",
+    "source": "Цветок начинается с буквы",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.466,
+    "heard": "Цветок начинается с буквы.",
+    "score": 1.0
+  },
+  "ori/b0a4d8a6": {
+    "text": "Чашка начинается с буквы",
+    "source": "Чашка начинается с буквы",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.412,
+    "heard": "Чашка начинается с буквы.",
+    "score": 1.0
+  },
+  "ori/8c6893d5": {
+    "text": "Читаем целые слова! Сначала по слогам, потом попробуй прочитать сразу.",
+    "source": "Читаем целые слова! Сначала по слогам, потом попробуй прочитать сразу.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 3.915,
+    "heard": "Читаем целые слова. Сначала по слогам, потом попробую прочитать сразу.",
+    "score": 0.983
+  },
+  "ori/31835f5a": {
+    "text": "Что делает кот?",
+    "source": "Что делает кот?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.835,
+    "heard": "Кто делает код?",
+    "score": 0.833
+  },
+  "ori/c6db7217": {
+    "text": "Что лишнее?",
+    "source": "Что лишнее?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.737,
+    "heard": "то лишнее",
+    "score": 0.941
+  },
+  "ori/7373b7a2": {
+    "text": "Что получится, если соединить",
+    "source": "Что получится, если соединить",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.738,
+    "heard": "то получится, если соединить",
+    "score": 0.98
+  },
+  "ori/a6171b47": {
+    "text": "Что получится, если соединить [с] и [у]?",
+    "source": "Что получится, если соединить с и у?",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.01,
+    "heard": "то получится, если соединить стил",
+    "score": 0.929
+  },
+  "ori/7b1940cb": {
+    "text": "Шар начинается с буквы",
+    "source": "Шар начинается с буквы",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.336,
+    "heard": "Шар начинается с буквы.",
+    "score": 1.0
+  },
+  "ori/ec30d643": {
+    "text": "Щётка начинается с буквы",
+    "source": "Щётка начинается с буквы",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.466,
+    "heard": "Чётко начинается с буквы.",
+    "score": 0.905
+  },
+  "ori/b29680c9": {
+    "text": "Экран начинается с буквы",
+    "source": "Экран начинается с буквы",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.423,
+    "heard": "Экран начинается с буквы",
+    "score": 1.0
+  },
+  "ori/b476f7be": {
+    "text": "Это буква",
+    "source": "Это буква",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.791,
+    "heard": "Это буква.",
+    "score": 1.0
+  },
+  "ori/a300c499": {
+    "text": "Это буква Ы. Она обозначает звук [ы] и любит прятаться в середине слова: рыба.",
+    "source": "Это буква ы. Она обозначает звук ы и любит прятаться в середине слова: рыба.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 4.971,
+    "heard": "Это буква «ы». Она обозначает звук «ы» и любит прятаться в середине слова «рыба».",
+    "score": 1.0
+  },
+  "ori/48753085": {
+    "text": "Это мягкий знак. Он не обозначает звук, а подсказывает: читай согласный мягко. Послушай: мышь.",
+    "source": "Это мягкий знак. Он не обозначает звук, а подсказывает: читай согласный мягко. Послушай: мышь.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 6.408,
+    "heard": "Это мягкий знак. Он не обозначает звук, а подсказывает. Считай согласно мягко. Послушай, мышь.",
+    "score": 0.973
+  },
+  "ori/ad228ec7": {
+    "text": "Это подарки для нашего корабля. Купленный подарок можно показать или спрятать.",
+    "source": "Это подарки для нашего корабля. Купленный подарок можно показать или спрятать.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 4.34,
+    "heard": "Это подарки для нашего корабля. Купленный подарок можно показать или спрятать.",
+    "score": 1.0
+  },
+  "ori/4fffea6d": {
+    "text": "Это слово начинается на ту же букву. Ищем лишнее!",
+    "source": "Это слово начинается на ту же букву. Ищем лишнее!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 3.175,
+    "heard": "Это слово начинается на ту же букву. Ищем лишнее.",
+    "score": 1.0
+  },
+  "ori/d9459502": {
+    "text": "Это твёрдый знак. Он не обозначает звук, а разделяет согласный и гласный: подъезд.",
+    "source": "Это твёрдый знак. Он не обозначает звук, а разделяет согласный и гласный: подъезд.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 4.829,
+    "heard": "Это твердый знак. Он не обозначает звук, а разделяет согласный и гласный. Подъезд.",
+    "score": 1.0
+  },
+  "ori/beb20eec": {
+    "text": "Этот цветок светится, когда мы читаем!",
+    "source": "Этот цветок светится, когда мы читаем!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.021,
+    "heard": "Этот цветок светится, когда мы читаем.",
+    "score": 1.0
+  },
+  "ori/ebc1ed06": {
+    "text": "Юбка начинается с буквы",
+    "source": "Юбка начинается с буквы",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.455,
+    "heard": "Юбка начинается с буквы.",
+    "score": 1.0
+  },
+  "ori/6e3677cc": {
+    "text": "Яблоко начинается с буквы",
+    "source": "Яблоко начинается с буквы",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.564,
+    "heard": "Яблоко начинается с буквы.",
+    "score": 1.0
+  },
+  "ori/b741fb10": {
+    "text": "а не на",
+    "source": "а не на",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.665,
+    "heard": "А не на...",
+    "score": 1.0
+  },
+  "ori/d12e8bc8": {
+    "text": "автобус",
+    "source": "автобус",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.827
+  },
+  "ori/44941b74": {
+    "text": "ананас",
+    "source": "ананас",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.639
+  },
+  "ori/bc5bccf0": {
+    "text": "арбуз",
+    "source": "арбуз",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.715
+  },
+  "ori/87981c66": {
+    "text": "бабочка",
+    "source": "бабочка",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.791
+  },
+  "ori/bc2fec94": {
+    "text": "банан",
+    "source": "банан",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.628
+  },
+  "ori/88d93368": {
+    "text": "барабан",
+    "source": "барабан",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.682
+  },
+  "ori/7a128b20": {
+    "text": "ваза",
+    "source": "ваза",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.585
+  },
+  "ori/4ddb03a0": {
+    "text": "велосипед",
+    "source": "велосипед",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.824
+  },
+  "ori/7a1293a8": {
+    "text": "волк",
+    "source": "волк",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.53
+  },
+  "ori/476e0aac": {
+    "text": "гитара",
+    "source": "гитара",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.628
+  },
+  "ori/7a11c09f": {
+    "text": "гриб",
+    "source": "гриб",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.541
+  },
+  "ori/7a11c138": {
+    "text": "гусь",
+    "source": "гусь",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.541
+  },
+  "ori/c039a1da": {
+    "text": "дверь",
+    "source": "дверь",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.497
+  },
+  "ori/cc0cdbbd": {
+    "text": "дерево",
+    "source": "дерево",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.639
+  },
+  "ori/b75dd53": {
+    "text": "дом",
+    "source": "дом",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.595
+  },
+  "ori/b75d947": {
+    "text": "ель",
+    "source": "ель",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.541
+  },
+  "ori/7a310391": {
+    "text": "енот",
+    "source": "енот",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.563
+  },
+  "ori/c085721f": {
+    "text": "жираф",
+    "source": "жираф",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.595
+  },
+  "ori/b75d98a": {
+    "text": "жук",
+    "source": "жук",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.508
+  },
+  "ori/ce23efc2": {
+    "text": "жёлудь",
+    "source": "жёлудь",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.606
+  },
+  "ori/c06ee7da": {
+    "text": "замок",
+    "source": "замок",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.595
+  },
+  "ori/c0717e86": {
+    "text": "зебра",
+    "source": "зебра",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.606
+  },
+  "ori/7a320f33": {
+    "text": "зонт",
+    "source": "зонт",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.552
+  },
+  "ori/2b19d": {
+    "text": "и",
+    "source": "и",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.444
+  },
+  "ori/93316d0e": {
+    "text": "и любит прятаться в середине слова: рыба.",
+    "source": "и любит прятаться в середине слова: рыба.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.587,
+    "heard": "И любит прятаться в середине слова. Рыба.",
+    "score": 1.0
+  },
+  "ori/7a15e1a5": {
+    "text": "игла",
+    "source": "игла",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.612
+  },
+  "ori/368eeeaf": {
+    "text": "игрушка",
+    "source": "игрушка",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.672
+  },
+  "ori/bccbab00": {
+    "text": "индюк",
+    "source": "индюк",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.585
+  },
+  "ori/541d3330": {
+    "text": "йогурт",
+    "source": "йогурт",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.595
+  },
+  "ori/b750e65": {
+    "text": "кит",
+    "source": "кит",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.41
+  },
+  "ori/b750d23": {
+    "text": "кот",
+    "source": "кот",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.41
+  },
+  "ori/8c193b86": {
+    "text": "кристаллов. Пройди ещё один урок!",
+    "source": "кристаллов. Пройди ещё од+ин урок!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 2.141,
+    "heard": "Кристаллов, пройди еще один урок.",
+    "score": 1.0
+  },
+  "ori/bce9d849": {
+    "text": "кубок",
+    "source": "кубок",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.552
+  },
+  "ori/7a165377": {
+    "text": "лиса",
+    "source": "лиса",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.648
+  },
+  "ori/bcdd319e": {
+    "text": "лодка",
+    "source": "лодка",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.628
+  },
+  "ori/7a1514b0": {
+    "text": "луна",
+    "source": "луна",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.574
+  },
+  "ori/7a13ac05": {
+    "text": "мама",
+    "source": "мама",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.574
+  },
+  "ori/abbf387": {
+    "text": "медведь",
+    "source": "медведь",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.628
+  },
+  "ori/7a146ef6": {
+    "text": "мышь",
+    "source": "мышь",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.65
+  },
+  "ori/b74fbf1": {
+    "text": "мяч",
+    "source": "мяч",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.587
+  },
+  "ori/18ca4c67": {
+    "text": "найдены!",
+    "source": "найдены!",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.672
+  },
+  "ori/bc742820": {
+    "text": "нитки",
+    "source": "нитки",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.65
+  },
+  "ori/b65d99b8": {
+    "text": "ножницы",
+    "source": "ножницы",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.693
+  },
+  "ori/b74f127": {
+    "text": "нос",
+    "source": "нос",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.508
+  },
+  "ori/5245e425": {
+    "text": "облако",
+    "source": "облако",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.672
+  },
+  "ori/7a149c62": {
+    "text": "окно",
+    "source": "окно",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.67
+  },
+  "ori/7a1478fe": {
+    "text": "очки",
+    "source": "очки",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.661
+  },
+  "ori/5692061b": {
+    "text": "пароход",
+    "source": "пароход",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.606
+  },
+  "ori/7a1443b3": {
+    "text": "паук",
+    "source": "паук",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.541
+  },
+  "ori/bc9851d2": {
+    "text": "пицца",
+    "source": "пицца",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.617
+  },
+  "ori/4715e34c": {
+    "text": "подъезд",
+    "source": "подъезд",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.552
+  },
+  "ori/b76456f": {
+    "text": "рак",
+    "source": "рак",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.487
+  },
+  "ori/ce267e95": {
+    "text": "ромашка",
+    "source": "ромашка",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.704
+  },
+  "ori/7a3e5caf": {
+    "text": "рыба",
+    "source": "рыба",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.519
+  },
+  "ori/c29ea9": {
+    "text": "с двумя точками.",
+    "source": "с двумя точками.",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 1.009,
+    "heard": "двумя точками",
+    "score": 0.96
+  },
+  "ori/7a3c761c": {
+    "text": "слон",
+    "source": "слон",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.541
+  },
+  "ori/b7631a0": {
+    "text": "сок",
+    "source": "сок",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.487
+  },
+  "ori/b76344f": {
+    "text": "сыр",
+    "source": "сыр",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.519
+  },
+  "ori/462e799b": {
+    "text": "телефон",
+    "source": "телефон",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.682
+  },
+  "ori/7a40282c": {
+    "text": "тигр",
+    "source": "тигр",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.519
+  },
+  "ori/7a401d3b": {
+    "text": "торт",
+    "source": "торт",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.421
+  },
+  "ori/feda0de1": {
+    "text": "удочка",
+    "source": "удочка",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.639
+  },
+  "ori/ff995bad": {
+    "text": "улитка",
+    "source": "улитка",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.661
+  },
+  "ori/7a3eab2e": {
+    "text": "утка",
+    "source": "утка",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.541
+  },
+  "ori/7a3cdab9": {
+    "text": "флаг",
+    "source": "флаг",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.465
+  },
+  "ori/fd76635e": {
+    "text": "фонарь",
+    "source": "фонарь",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.585
+  },
+  "ori/fd767411": {
+    "text": "фрукты",
+    "source": "фрукты",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.574
+  },
+  "ori/c19f5499": {
+    "text": "халат",
+    "source": "халат",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.585
+  },
+  "ori/7a3a46ff": {
+    "text": "хлеб",
+    "source": "хлеб",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.476
+  },
+  "ori/c1848377": {
+    "text": "хомяк",
+    "source": "хомяк",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.563
+  },
+  "ori/c1f9ad78": {
+    "text": "цапля",
+    "source": "цапля",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.585
+  },
+  "ori/1094d22": {
+    "text": "цветок",
+    "source": "цветок",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.585
+  },
+  "ori/7f1dc764": {
+    "text": "цыплёнок",
+    "source": "цыплёнок",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.693
+  },
+  "ori/7a3b2e38": {
+    "text": "часы",
+    "source": "часы",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.606
+  },
+  "ori/c1a11f50": {
+    "text": "чашка",
+    "source": "чашка",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.606
+  },
+  "ori/bad8ae8c": {
+    "text": "чемодан",
+    "source": "чемодан",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.628
+  },
+  "ori/c2ae4ea8": {
+    "text": "шапка",
+    "source": "шапка",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.65
+  },
+  "ori/b76671d": {
+    "text": "шар",
+    "source": "шар",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.497
+  },
+  "ori/c2a9d75a": {
+    "text": "шорты",
+    "source": "шорты",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.585
+  },
+  "ori/c2547a00": {
+    "text": "щенок",
+    "source": "щенок",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.585
+  },
+  "ori/7a40ffe5": {
+    "text": "щука",
+    "source": "щука",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.585
+  },
+  "ori/c266f2d5": {
+    "text": "щётка",
+    "source": "щётка",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.65
+  },
+  "ori/c20c67df": {
+    "text": "экран",
+    "source": "экран",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.574
+  },
+  "ori/4462fcc7": {
+    "text": "экскаватор",
+    "source": "экскаватор",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.759
+  },
+  "ori/a78ae9": {
+    "text": "эскимо",
+    "source": "эскимо",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.75
+  },
+  "ori/7a422ab0": {
+    "text": "юбка",
+    "source": "юбка",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.661
+  },
+  "ori/b765d40": {
+    "text": "юла",
+    "source": "юла",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.612
+  },
+  "ori/87ea6ba": {
+    "text": "яблоко",
+    "source": "яблоко",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.835
+  },
+  "ori/c2316d03": {
+    "text": "ягода",
+    "source": "ягода",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.639
+  },
+  "ori/c80ecc38": {
+    "text": "ящерица",
+    "source": "ящерица",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.759
+  },
+  "ori/7a668bc0": {
+    "text": "ёжик",
+    "source": "ёжик",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.574
+  },
+  "ori/7a66b885": {
+    "text": "ёлка",
+    "source": "ёлка",
+    "profile": [
+      "eugene",
+      1.06,
+      0.98
+    ],
+    "seconds": 0.617
+  },
+  "alien1/a9d5f75e": {
+    "text": "Бип-боп! Я тоже хочу учиться читать!",
+    "source": "Бип-боп! Я тоже хочу учиться читать!",
+    "profile": [
+      "kseniya",
+      1.16,
+      1.04
+    ],
+    "seconds": 3.052,
+    "heard": "Бип-боп. Я тоже хочу учиться читать.",
+    "score": 1.0
+  },
+  "alien1/a38ae6bb": {
+    "text": "Блип-блап! Вот это да!",
+    "source": "Блип-блап! Вот это да!",
+    "profile": [
+      "kseniya",
+      1.16,
+      1.04
+    ],
+    "seconds": 2.057,
+    "heard": "Бри-пу-блап. Вот это да!",
+    "score": 0.909
+  },
+  "alien1/698773fc": {
+    "text": "Блип-блап! Мой космический компас показывает: молодец!",
+    "source": "Блип-блап! Мой космический компас показывает: молодец!",
+    "profile": [
+      "kseniya",
+      1.16,
+      1.04
+    ],
+    "seconds": 4.468,
+    "heard": "Брэйпу Блаб. Мой космический компас показывает. Молодец.",
+    "score": 0.913
+  },
+  "alien1/5fbeb24c": {
+    "text": "Блип-блап! Привет, землянин! Я Блип. Какую букву ищем сегодня?",
+    "source": "Блип-блап! Привет, землянин! Я Блип. Какую букву ищем сегодня?",
+    "profile": [
+      "kseniya",
+      1.16,
+      1.04
+    ],
+    "seconds": 5.493,
+    "heard": "Блип и Блап! Привет, землянин! Я Блип! Какую букву ищем сегодня?",
+    "score": 0.99
+  },
+  "alien1/6eba8d48": {
+    "text": "Ой! Мимо, но это не страшно — попробуем ещё!",
+    "source": "Ой! Мимо, но это не страшно, попробуем ещё!",
+    "profile": [
+      "kseniya",
+      1.16,
+      1.04
+    ],
+    "seconds": 2.939,
+    "heard": "Ой, мимо, но это не страшно, попробуем еще.",
+    "score": 1.0
+  },
+  "alien2/4538a22a": {
+    "text": "Вот это да! Ты быстрее кометы!",
+    "source": "Вот это да! Ты быстрее кометы!",
+    "profile": [
+      "eugene",
+      0.96,
+      1.0
+    ],
+    "seconds": 2.165,
+    "heard": "Вот это да! Ты быстрее кометы!",
+    "score": 1.0
+  },
+  "alien2/eecc0f72": {
+    "text": "Не беда! Даже ракеты иногда чихают. Ещё раз!",
+    "source": "Не беда! Даже ракеты иногда чихают. Ещё раз!",
+    "profile": [
+      "eugene",
+      0.96,
+      1.0
+    ],
+    "seconds": 3.36,
+    "heard": "Не беда. Даже ракеты иногда чихают. Еще раз.",
+    "score": 1.0
+  },
+  "alien2/b64fc6ee": {
+    "text": "Ух ты! У меня три глаза, а букву П я всё равно не сразу вижу! Помоги мне!",
+    "source": "Ух ты! У меня три глаза, а букву пэ я всё равно не сразу вижу! Помоги мне!",
+    "profile": [
+      "eugene",
+      0.96,
+      1.0
+    ],
+    "seconds": 4.629,
+    "heard": "Ух ты! У меня три глаза, а букву П я все равно не сразу вижу. Помоги мне!",
+    "score": 0.991
+  },
+  "alien2/15681bf9": {
+    "text": "Ха-ха! Отлично! Ещё разок — и ты чемпион галактики!",
+    "source": "Ха-ха! Отлично! Ещё разок, и ты чемпион галактики!",
+    "profile": [
+      "eugene",
+      0.96,
+      1.0
+    ],
+    "seconds": 3.957,
+    "heard": "Ха-ха. Отлично. Еще разок, и ты чемпион галактики.",
+    "score": 1.0
+  },
+  "alien3/9f08fb4c": {
+    "text": "Ку-ку! Я Ку-Ку. Я спрятался за буквой К! Найдёшь меня?",
+    "source": "Ку-ку! Я Ку-Ку. Я спрятался за буквой ка! Найдёшь меня?",
+    "profile": [
+      "xenia",
+      1.22,
+      1.04
+    ],
+    "seconds": 4.847,
+    "heard": "Ку-ку. Я Ку-ку. Я спрятался за буквой К. Найдёшь меня?",
+    "score": 0.987
+  },
+  "alien3/6fb30ab0": {
+    "text": "Ку-ку! Я тут, я помогу: посмотри внимательнее!",
+    "source": "Ку-ку! Я тут, я помогу: посмотри внимательнее!",
+    "profile": [
+      "xenia",
+      1.22,
+      1.04
+    ],
+    "seconds": 4.037,
+    "heard": "Кувку, я тут, я помогу. Посмотри внимательнее.",
+    "score": 0.986
+  },
+  "alien3/310ddb46": {
+    "text": "Ура! Даже звёзды захлопали!",
+    "source": "Ура! Даже звёзды захлопали!",
+    "profile": [
+      "xenia",
+      1.22,
+      1.04
+    ],
+    "seconds": 2.273,
+    "heard": "Ура! Даже звезды захлопали.",
+    "score": 1.0
+  }
+}

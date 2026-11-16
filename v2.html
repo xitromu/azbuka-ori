@@ -1,0 +1,762 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#241d59">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Азбука с Ори 2</title>
+<style>
+  :root { --bg1:#17133f; --bg2:#493787; --ink:#31245f; --purple:#7256d9; --gold:#ffbf3f; --mint:#62dbc2; --panel:#fff; }
+  * { box-sizing:border-box; }
+  html,body { margin:0; min-height:100%; overscroll-behavior:none; }
+  body { background:linear-gradient(var(--bg1),var(--bg2)) fixed; color:var(--ink); font-family:system-ui,"Segoe UI",Roboto,sans-serif; -webkit-tap-highlight-color:transparent; user-select:none; -webkit-user-select:none; touch-action:manipulation; }
+  button { font:inherit; color:inherit; }
+  #app { max-width:720px; margin:0 auto; min-height:100vh; }
+  .screen { display:none; flex-direction:column; min-height:100vh; padding-bottom:18px; }
+  .screen.on { display:flex; }
+  .top { display:flex; align-items:center; gap:8px; padding:10px 12px 5px; color:#fff; }
+  .ttl { flex:1; font-weight:850; font-size:clamp(16px,4vw,23px); text-align:center; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; text-shadow:0 2px 4px #0004; }
+  .ib { border:0; background:#fff; color:var(--ink); border-radius:14px; width:44px; height:44px; font-size:22px; cursor:pointer; box-shadow:0 3px 8px #0003; flex:none; }
+  #back,#shopBack { width:auto; min-width:92px; padding:0 12px; font-size:16px; font-weight:800; white-space:nowrap; }
+  .wallet { display:flex; align-items:center; gap:5px; background:#fff; border-radius:22px; padding:5px 11px 5px 7px; color:var(--ink); font-weight:900; font-size:19px; box-shadow:0 3px 8px #0003; position:relative; flex:none; }
+  .wallet svg { width:25px; height:25px; }
+  .float { position:absolute; right:2px; top:-5px; color:#ffe16b; font-size:20px; animation:up 1.1s ease-out forwards; pointer-events:none; }
+  @keyframes up { to { transform:translateY(-38px); opacity:0; } }
+  .bubble { position:relative; background:#fff; border-radius:18px; padding:11px 14px; font-size:17px; font-weight:650; line-height:1.35; box-shadow:0 4px 12px #0003; min-height:50px; cursor:pointer; }
+  .bubble::after { content:""; position:absolute; left:35%; bottom:-9px; border:9px solid transparent; border-top-color:#fff; border-bottom:0; }
+  .hero { padding:5px 12px 0; }
+  .stage { position:relative; height:255px; margin-top:10px; border-radius:25px; overflow:hidden; background:radial-gradient(circle at 80% 10%,#806ad0 0 2%,transparent 3%),linear-gradient(#29205e 0 64%,#8b74c9 64% 68%,#51408f 68%); box-shadow:inset 0 0 0 2px #ffffff30,0 5px 16px #0004; }
+  .stage::before { content:"✦  ·  ✧  ·  ✦  ·  ✧"; position:absolute; top:12px; left:15px; right:15px; color:#fff9; font-size:23px; letter-spacing:9px; }
+  .stage .window { position:absolute; width:112px; height:82px; border:7px solid #b6a8ec; border-radius:50%; right:7%; top:29px; background:radial-gradient(circle at 65% 35%,#ffcf65 0 4%,transparent 5%),radial-gradient(circle at 30% 70%,#fff 0 2%,transparent 3%),linear-gradient(#101637,#285790); box-shadow:0 0 20px #7ccfff44; }
+  .charwrap { position:absolute; transform-origin:50% 100%; }
+  .charwrap img { display:block; width:100%; height:100%; object-fit:contain; object-position:50% 100%; filter:drop-shadow(0 6px 5px #0005); pointer-events:none; }
+  .charwrap.idle { animation:breathe 3s ease-in-out infinite; }
+  .charwrap.hop { animation:hop .45s ease-out 2; }
+  .charwrap.think { animation:think .6s ease-in-out 2; }
+  @keyframes breathe { 50% { transform:scale(1.02,.985); } }
+  @keyframes hop { 40% { transform:translateY(-12%) scale(1.04); } }
+  @keyframes think { 50% { transform:rotate(-4deg); } }
+  .stage .ori { left:4%; bottom:0; width:158px; height:210px; z-index:3; }
+  .stage .alien1 { left:37%; bottom:1%; width:100px; height:140px; z-index:4; }
+  .stage .alien2 { left:55%; bottom:1%; width:112px; height:122px; z-index:3; }
+  .stage .alien3 { left:74%; bottom:1%; width:104px; height:124px; z-index:4; animation:floaty 2.7s ease-in-out infinite alternate; }
+  @keyframes floaty { to { transform:translateY(-10px) rotate(3deg); } }
+  .mainbtn { display:block; width:calc(100% - 24px); margin:11px 12px 0; border:0; border-radius:17px; padding:12px; font-size:18px; font-weight:850; color:#fff; background:linear-gradient(#7fe3ca,#42bfa8); box-shadow:0 4px 0 #238d7a; cursor:pointer; }
+  .mainbtn:active { transform:translateY(2px); box-shadow:0 2px 0 #238d7a; }
+  .vrow { display:block; width:calc(100% - 24px); margin:10px 12px 0; border:0; border-radius:12px; padding:8px 10px; font-size:13px; line-height:1.3; font-weight:700; color:var(--ink); background:#ffffffdf; cursor:pointer; }
+  .cards { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; padding:13px 12px 4px; }
+  .sect { grid-column:1/-1; color:#fff; font-size:15px; font-weight:850; margin:8px 2px -2px; text-shadow:0 2px 3px #0004; }
+  .card { position:relative; border:0; border-radius:18px; padding:10px 4px 8px; min-height:105px; background:#fff; box-shadow:0 4px 0 #c9bfe9,0 6px 12px #0003; cursor:pointer; display:flex; flex-direction:column; align-items:center; gap:3px; }
+  .card:active { transform:translateY(2px); box-shadow:0 2px 0 #c9bfe9; }
+  .card .ic { min-height:43px; display:flex; align-items:center; justify-content:center; font-size:33px; font-weight:900; color:var(--purple); }
+  .card b { font-size:13px; line-height:1.15; min-height:29px; display:flex; align-items:center; text-align:center; }
+  .card i { font-style:normal; color:var(--gold); font-size:14px; letter-spacing:1px; }
+  .card.game { background:linear-gradient(160deg,#fff,#ffe9f4); box-shadow:0 4px 0 #e7b7d3,0 6px 12px #0003; }
+  .host { display:flex; align-items:center; gap:5px; min-height:132px; padding:0 12px; }
+  .host .pair { position:relative; width:125px; height:128px; flex:none; }
+  .host .ori { left:0; bottom:0; width:86px; height:120px; }
+  .host .student { right:0; bottom:0; width:62px; height:78px; z-index:2; }
+  .host .bubble { flex:1; max-height:132px; overflow-y:auto; font-size:16px; }
+  .host .bubble::after { left:-9px; top:48%; bottom:auto; border:9px solid transparent; border-right-color:#fff; border-left:0; }
+  #board { position:relative; margin:4px 12px 0; min-height:265px; border-radius:25px; background:linear-gradient(145deg,#fff,#f0ebff); box-shadow:0 5px 15px #0004; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:13px; padding:17px 12px; overflow:hidden; text-align:center; }
+  #board:empty { display:none; }
+  .bigletter { font-size:clamp(100px,26vw,165px); line-height:.9; font-weight:900; color:var(--purple); text-shadow:0 5px 0 #dfd5ff; }
+  .letterpair { display:flex; align-items:baseline; gap:28px; font-weight:900; color:var(--purple); }
+  .letterpair .up { font-size:112px; line-height:1; }
+  .letterpair .low { font-size:94px; line-height:1; color:#dd6ea8; }
+  .picture { font-size:82px; line-height:1; filter:drop-shadow(0 4px 2px #0002); }
+  .caption { font-size:25px; font-weight:850; }
+  .word { font-size:clamp(31px,8vw,49px); line-height:1.15; font-weight:900; letter-spacing:3px; color:var(--purple); }
+  .sentence { font-size:clamp(27px,6.5vw,40px); line-height:1.3; font-weight:850; }
+  .mini { font-size:15px; font-weight:650; opacity:.72; }
+  .merge { display:flex; align-items:center; justify-content:center; gap:15px; font-size:58px; font-weight:900; color:var(--purple); }
+  .merge .plus { color:#e695b9; font-size:40px; }
+  .soundmark { color:#d54f8d; }
+  #act { display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:10px; padding:12px 12px 0; min-height:78px; }
+  .btn { border:0; border-radius:18px; padding:13px 20px; min-width:66px; min-height:54px; background:#fff; box-shadow:0 4px 0 #bdb1df,0 5px 9px #0003; font-size:20px; font-weight:850; cursor:pointer; transition:transform .15s,box-shadow .15s,opacity .15s; }
+  .btn:active { transform:translateY(2px); box-shadow:0 2px 0 #bdb1df; }
+  .btn.next { color:#fff; background:var(--purple); box-shadow:0 4px 0 #49349e; padding-left:30px; padding-right:30px; }
+  .btn.choice { min-width:82px; font-size:28px; }
+  .btn.wordchoice { font-size:23px; letter-spacing:1px; }
+  .btn.picchoice { font-size:46px; min-width:78px; padding:8px 13px; }
+  .btn.right { background:#55ce8b; color:#fff; box-shadow:0 4px 0 #2e9760; }
+  .btn.wrongb { background:#ffd6df; opacity:.55; }
+  .btn.reading { transform:scale(1.08); box-shadow:0 0 0 4px #ffd251,0 4px 0 #bdb1df; }
+  .btn.hint { animation:hint 1s ease-in-out infinite; box-shadow:0 0 0 5px #ffd251,0 4px 0 #bdb1df; }
+  @keyframes hint { 50% { transform:scale(1.08); } }
+  .many { display:grid; grid-template-columns:repeat(4,1fr); gap:9px; width:100%; max-width:440px; }
+  .many .btn { padding:10px 5px; font-size:34px; }
+  .many .btn.found { opacity:.25; transform:scale(.85); }
+  .slots { display:flex; flex-wrap:wrap; justify-content:center; gap:7px; }
+  .slot { width:49px; height:60px; border-radius:12px; background:#e4dcf7; box-shadow:inset 0 0 0 2px #c2b4e6; display:flex; align-items:center; justify-content:center; font-size:37px; font-weight:900; color:var(--purple); }
+  .slot.filled { background:#fff4c9; animation:pop .25s ease-out; }
+  @keyframes pop { from { transform:scale(.4); } 70% { transform:scale(1.12); } }
+  .spark { position:fixed; z-index:60; font-size:20px; pointer-events:none; animation:spark 1s ease-out forwards; }
+  @keyframes spark { to { transform:translate(var(--dx),var(--dy)) scale(1.2); opacity:0; } }
+  .cf { position:fixed; top:-14px; width:9px; height:13px; border-radius:2px; z-index:55; pointer-events:none; animation:cf 1.8s linear forwards; }
+  @keyframes cf { to { transform:translateY(80vh) rotate(720deg); opacity:.1; } }
+  #catch { position:relative; width:100%; height:290px; border-radius:18px; background:radial-gradient(circle at 20% 15%,#806ad0 0 1.5%,transparent 2.5%),radial-gradient(circle at 75% 40%,#806ad0 0 1%,transparent 2%),linear-gradient(#241d59,#493787); overflow:hidden; box-shadow:inset 0 0 0 2px #ffffff25; }
+  .bub { position:absolute; width:66px; height:66px; border-radius:50%; border:0; background:radial-gradient(circle at 32% 28%,#fff,#d9ccf8 55%,#a68ceb); color:var(--purple); font-size:31px; font-weight:900; box-shadow:0 4px 10px #0005,inset 0 -5px 9px #7256d955; cursor:pointer; animation:bubfloat var(--dur) ease-in-out var(--del) infinite alternate; }
+  @keyframes bubfloat { from { transform:translate(0,0) rotate(-5deg); } to { transform:translate(var(--fx),var(--fy)) rotate(6deg); } }
+  .bub.pop { animation:bubpop .32s ease-out forwards; }
+  @keyframes bubpop { 40% { transform:scale(1.25); } to { transform:scale(0); opacity:0; } }
+  .bub.bad { animation:bubbad .4s ease-in-out; }
+  @keyframes bubbad { 25% { transform:translateX(-7px); } 50% { transform:translateX(7px); } 75% { transform:translateX(-4px); } }
+  .mem { display:grid; grid-template-columns:repeat(4,1fr); gap:9px; width:100%; max-width:430px; }
+  .mcard { height:76px; border-radius:14px; border:0; background:linear-gradient(145deg,#7256d9,#49349e); color:#ffffffcc; font-size:30px; font-weight:900; cursor:pointer; box-shadow:0 3px 0 #37287a; transition:transform .15s; }
+  .mcard:active { transform:scale(.95); }
+  .mcard.open { background:#fff; color:var(--purple); box-shadow:0 3px 0 #bdb1df; }
+  .mcard.done { background:#fff4c9; color:#c9971b; box-shadow:0 3px 0 #e4c86f; cursor:default; animation:pop .3s ease-out; }
+  .items { display:grid; grid-template-columns:repeat(4,1fr); gap:9px; padding:13px 12px 5px; }
+  .item { border:0; border-radius:18px; padding:8px 3px; background:#fff; box-shadow:0 4px 0 #bdb1df; cursor:pointer; display:flex; flex-direction:column; align-items:center; gap:3px; }
+  .item .pv { font-size:43px; height:53px; }
+  .item b { font-size:12px; line-height:1.15; min-height:28px; display:flex; align-items:center; }
+  .item span { font-size:13px; font-weight:850; display:flex; align-items:center; gap:3px; }
+  .item span svg { width:16px; height:16px; }
+  .item:not(.own) .pv { filter:grayscale(.5); opacity:.65; }
+  .item.own:not(.on) .pv { opacity:.45; }
+  .item.on { outline:4px solid var(--gold); }
+  .item.poor { opacity:.55; }
+  .themes { display:flex; justify-content:center; flex-wrap:wrap; gap:8px; padding:10px 12px; }
+  .themes button { border:0; border-radius:14px; padding:8px 12px; background:#fff; font-weight:750; cursor:pointer; }
+  .themes button.on { color:#fff; background:var(--purple); }
+  .tiny { display:block; margin:18px auto 0; border:0; background:none; color:#ffffffaa; text-decoration:underline; cursor:pointer; }
+  .overlay { position:fixed; inset:0; z-index:70; background:#110d35bb; display:none; align-items:center; justify-content:center; padding:16px; }
+  .overlay.on { display:flex; }
+  .res { width:100%; max-width:390px; background:linear-gradient(#fff,#eee7ff); border-radius:27px; padding:20px; text-align:center; }
+  .res h2 { margin:0 0 8px; font-size:26px; }
+  .res .stars { color:var(--gold); font-size:48px; letter-spacing:4px; }
+  .res .stars .off { color:#d8d0ea; }
+  .res .got { display:flex; justify-content:center; align-items:center; gap:6px; font-size:23px; font-weight:900; margin:7px 0 15px; }
+  .res .got svg { width:29px; height:29px; }
+  .res .row { display:flex; gap:10px; }
+  .res .row .btn { flex:1; padding-left:8px; padding-right:8px; }
+  #novoice .res { text-align:left; }
+  #novoice h2 { text-align:center; }
+  #novoice p { font-size:15px; line-height:1.4; }
+  .giftdecor { position:absolute; z-index:5; pointer-events:none; font-size:40px; }
+  .gd-garland { left:20%; right:4%; top:0; font-size:31px; letter-spacing:8px; animation:glow 1.5s ease-in-out infinite alternate; }
+  .gd-holo { right:25%; top:29px; animation:floaty 2s ease-in-out infinite alternate; }
+  .gd-lamp { left:2%; top:18px; }
+  .gd-music { left:30%; bottom:2%; pointer-events:auto; cursor:pointer; }
+  .gd-plant { right:1%; bottom:1%; }
+  .gd-robot { right:32%; bottom:0; pointer-events:auto; cursor:pointer; }
+  @keyframes glow { to { filter:brightness(1.5) drop-shadow(0 0 6px #fff); } }
+  @media (max-width:480px) {
+    .cards { grid-template-columns:repeat(3,1fr); gap:9px; }
+    .stage { height:225px; }
+    .stage .ori { width:132px; height:182px; left:1%; }
+    .stage .alien1 { left:34%; width:86px; height:122px; }
+    .stage .alien2 { left:53%; width:96px; height:106px; }
+    .stage .alien3 { left:75%; width:86px; height:104px; }
+    .items { grid-template-columns:repeat(3,1fr); }
+    #board { min-height:250px; }
+    #catch { height:260px; }
+    .bub { width:58px; height:58px; font-size:27px; }
+    .mcard { height:66px; font-size:26px; }
+  }
+  @media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; } }
+</style>
+</head>
+<body>
+<div id="app">
+  <section id="menu" class="screen on">
+    <header class="top"><div class="wallet"></div><div class="ttl">Азбука с Ори 2</div><button class="ib" id="snd" title="Звук">🔊</button><button class="ib" id="toShop" title="Подарки">🎁</button></header>
+    <div class="hero"><div class="bubble"></div><div class="stage"></div></div>
+    <button class="mainbtn" id="continue">▶ Начать приключение</button>
+    <button class="vrow"></button>
+    <div class="cards" id="cards"></div>
+    <div class="cards" id="games"></div>
+  </section>
+  <section id="lesson" class="screen">
+    <header class="top"><button class="ib" id="back" title="Назад">← Назад</button><div class="ttl" id="lTitle"></div><div class="wallet"></div></header>
+    <div class="host"><div class="pair"></div><div class="bubble" id="bubble"></div></div>
+    <div id="board"></div><div id="act"></div>
+  </section>
+  <section id="shop" class="screen">
+    <header class="top"><button class="ib" id="shopBack" title="Назад">← Назад</button><div class="ttl">Подарки для корабля</div><div class="wallet"></div></header>
+    <div class="hero"><div class="bubble"></div><div class="stage"></div></div>
+    <div class="items" id="items"></div><div class="themes" id="themes"></div><button class="vrow"></button><button class="tiny" id="reset">Сбросить прогресс</button>
+  </section>
+  <div class="overlay" id="result"><div class="res"><h2>Урок пройден!</h2><div class="stars" id="rStars"></div><div class="got" id="rGot"></div><div class="row"><button class="btn" id="rAgain">↺ Ещё раз</button><button class="btn next" id="rMenu">Дальше ▶</button></div></div></div>
+  <div class="overlay" id="novoice"><div class="res"><h2>Ори пока молчит</h2><div class="txt"></div><div class="row"><button class="btn" id="nvOff">Не показывать</button><button class="btn next" id="nvOk">Понятно</button></div></div></div>
+</div>
+<script>
+'use strict';
+const $ = s => document.querySelector(s);
+const pick = a => a[Math.random() * a.length | 0];
+const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i; i--) { const j = Math.random() * (i + 1) | 0; [a[i], a[j]] = [a[j], a[i]]; } return a; };
+const CRYSTAL = '<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2 35 13 29 34 11 34 5 13Z" fill="#6ee7f3" stroke="#fff" stroke-width="2"/><path d="m20 2 2 32 7-21Z" fill="#25a9df"/><path d="M5 13h30L20 2Z" fill="#c5fbff" opacity=".75"/></svg>';
+
+const STUDENTS = [
+  { id:'alien1', name:'Блип', hi:'Блип-блап! Привет, землянин! Я Блип. Какую букву ищем сегодня?' },
+  { id:'alien2', name:'Пуф', hi:'Ух ты! У меня три глаза, а букву П я всё равно не сразу вижу! Помоги мне!' },
+  { id:'alien3', name:'Ку-Ку', hi:'Ку-ку! Я Ку-Ку. Я спрятался за буквой К! Найдёшь меня?' }
+];
+function charHTML(id, anim = 'idle') { return `<div class="charwrap ${id} ${id === 'ori' ? 'ori' : 'student'} ${anim}" data-char="${id}"><img src="img/${id}.png" alt=""></div>`; }
+
+const LETTERS = [
+  { ch:'А', word:'арбуз', icon:'🍉', kind:'vowel' }, { ch:'О', word:'окно', icon:'🪟', kind:'vowel' },
+  { ch:'У', word:'утка', icon:'🦆', kind:'vowel' }, { ch:'Ы', word:'рыба', icon:'🐟', kind:'vowel' },
+  { ch:'Э', word:'экран', icon:'🖥️', kind:'vowel' },
+  { ch:'М', word:'мама', icon:'👩', kind:'consonant' }, { ch:'Н', word:'нос', icon:'👃', kind:'consonant' },
+  { ch:'Л', word:'луна', icon:'🌙', kind:'consonant' }, { ch:'Р', word:'рыба', icon:'🐟', kind:'consonant' },
+  { ch:'С', word:'сок', icon:'🧃', kind:'consonant' },
+  { ch:'Т', word:'торт', icon:'🎂', kind:'consonant' }, { ch:'Д', word:'дом', icon:'🏠', kind:'consonant' },
+  { ch:'П', word:'пароход', icon:'🚢', kind:'consonant' }, { ch:'Б', word:'банан', icon:'🍌', kind:'consonant' },
+  { ch:'К', word:'кот', icon:'🐱', kind:'consonant' }, { ch:'Г', word:'гриб', icon:'🍄', kind:'consonant' },
+  { ch:'И', word:'игла', icon:'🪡', kind:'vowel' }, { ch:'Е', word:'ель', icon:'🌲', kind:'vowel' },
+  { ch:'Ё', word:'ёлка', icon:'🎄', kind:'vowel' }, { ch:'Ю', word:'юбка', icon:'👗', kind:'vowel' },
+  { ch:'Я', word:'яблоко', icon:'🍎', kind:'vowel' },
+  { ch:'З', word:'зонт', icon:'☂️', kind:'consonant' }, { ch:'Ф', word:'флаг', icon:'🚩', kind:'consonant' },
+  { ch:'В', word:'ваза', icon:'🏺', kind:'consonant' }, { ch:'Х', word:'хлеб', icon:'🍞', kind:'consonant' },
+  { ch:'Й', word:'йогурт', icon:'🥛', kind:'consonant' },
+  { ch:'Ш', word:'шар', icon:'🎈', kind:'consonant' }, { ch:'Ж', word:'жук', icon:'🪲', kind:'consonant' },
+  { ch:'Ч', word:'чашка', icon:'☕', kind:'consonant' }, { ch:'Щ', word:'щётка', icon:'🪥', kind:'consonant' },
+  { ch:'Ц', word:'цветок', icon:'🌸', kind:'consonant' },
+  { ch:'Ь', word:'мышь', icon:'🐁', kind:'sign' }, { ch:'Ъ', word:'подъезд', icon:'🏢', kind:'sign' }
+];
+const LETTER = Object.fromEntries(LETTERS.map(x => [x.ch, x]));
+const low = ch => ch.toLowerCase();
+const LETTER_NAMES = { а:'а',б:'бэ',в:'вэ',г:'гэ',д:'дэ',е:'е',ё:'ё',ж:'жэ',з:'зэ',и:'и',й:'и краткое',к:'ка',л:'эл',м:'эм',н:'эн',о:'о',п:'пэ',р:'эр',с:'эс',т:'тэ',у:'у',ф:'эф',х:'ха',ц:'цэ',ч:'чэ',ш:'ша',щ:'ща',ъ:'твёрдый знак',ы:'ы',ь:'мягкий знак',э:'э',ю:'ю',я:'я' };
+const SOUND_SUPPORT = { б:'ба',г:'га',д:'да',п:'па',т:'та',к:'ка',й:'йа',ч:'ча',щ:'ща',ц:'ца' };
+const nameToken = ch => '#' + low(ch);
+const soundToken = ch => 'ЬЪ'.includes(ch.toUpperCase()) ? nameToken(ch) : '#з_' + low(ch);
+const syllToken = s => '#с_' + s.toLowerCase();
+const WORDBANK = {
+  'А':[{word:'арбуз',icon:'🍉'},{word:'ананас',icon:'🍍'},{word:'автобус',icon:'🚌'}],
+  'Б':[{word:'банан',icon:'🍌'},{word:'барабан',icon:'🥁'},{word:'бабочка',icon:'🦋'}],
+  'В':[{word:'ваза',icon:'🏺'},{word:'волк',icon:'🐺'},{word:'велосипед',icon:'🚲'}],
+  'Г':[{word:'гриб',icon:'🍄'},{word:'гусь',icon:'🪿'},{word:'гитара',icon:'🎸'}],
+  'Д':[{word:'дом',icon:'🏠'},{word:'дерево',icon:'🌳'},{word:'дверь',icon:'🚪'}],
+  'Е':[{word:'енот',icon:'🦝'},{word:'ель',icon:'🌲'}],
+  'Ё':[{word:'ёлка',icon:'🎄'},{word:'ёжик',icon:'🦔'}],
+  'Ж':[{word:'жук',icon:'🪲'},{word:'жираф',icon:'🦒'},{word:'жёлудь',icon:'🌰'}],
+  'З':[{word:'зонт',icon:'☂️'},{word:'зебра',icon:'🦓'},{word:'замок',icon:'🏰'}],
+  'И':[{word:'игла',icon:'🪡'},{word:'индюк',icon:'🦃'},{word:'игрушка',icon:'🧸'}],
+  'К':[{word:'кот',icon:'🐱'},{word:'кит',icon:'🐳'},{word:'кубок',icon:'🏆'}],
+  'Л':[{word:'луна',icon:'🌙'},{word:'лиса',icon:'🦊'},{word:'лодка',icon:'⛵'}],
+  'М':[{word:'мама',icon:'👩'},{word:'мяч',icon:'⚽'},{word:'медведь',icon:'🐻'}],
+  'Н':[{word:'нос',icon:'👃'},{word:'нитки',icon:'🧵'},{word:'ножницы',icon:'✂️'}],
+  'О':[{word:'окно',icon:'🪟'},{word:'облако',icon:'☁️'},{word:'очки',icon:'👓'}],
+  'П':[{word:'пароход',icon:'🚢'},{word:'паук',icon:'🕷️'},{word:'пицца',icon:'🍕'}],
+  'Р':[{word:'рыба',icon:'🐟'},{word:'рак',icon:'🦞'},{word:'ромашка',icon:'🌼'}],
+  'С':[{word:'сок',icon:'🧃'},{word:'сыр',icon:'🧀'},{word:'слон',icon:'🐘'}],
+  'Т':[{word:'торт',icon:'🎂'},{word:'тигр',icon:'🐯'},{word:'телефон',icon:'📱'}],
+  'У':[{word:'утка',icon:'🦆'},{word:'улитка',icon:'🐌'},{word:'удочка',icon:'🎣'}],
+  'Ф':[{word:'флаг',icon:'🚩'},{word:'фонарь',icon:'🔦'},{word:'фрукты',icon:'🍇'}],
+  'Х':[{word:'хлеб',icon:'🍞'},{word:'хомяк',icon:'🐹'},{word:'халат',icon:'🥼'}],
+  'Ц':[{word:'цветок',icon:'🌸'},{word:'цапля',icon:'🦩'},{word:'цыплёнок',icon:'🐤'}],
+  'Ч':[{word:'чашка',icon:'☕'},{word:'часы',icon:'⏰'},{word:'чемодан',icon:'🧳'}],
+  'Ш':[{word:'шар',icon:'🎈'},{word:'шапка',icon:'🧢'},{word:'шорты',icon:'🩳'}],
+  'Щ':[{word:'щётка',icon:'🪥'},{word:'щенок',icon:'🐶'},{word:'щука',icon:'🐟'}],
+  'Э':[{word:'экран',icon:'🖥️'},{word:'эскимо',icon:'🍦'},{word:'экскаватор',icon:'🚜'}],
+  'Ю':[{word:'юбка',icon:'👗'},{word:'юла',icon:'🪀'}],
+  'Я':[{word:'яблоко',icon:'🍎'},{word:'ягода',icon:'🍓'},{word:'ящерица',icon:'🦎'}]
+};
+const GIFTS = [
+  { id:'plant', name:'Звёздный цветок', icon:'🪴', price:30, hi:'Этот цветок светится, когда мы читаем!' },
+  { id:'garland', name:'Гирлянда', icon:'✨', price:35, hi:'Огоньки будут мигать над нашим классом!' },
+  { id:'lamp', name:'Лампа-планета', icon:'🪐', price:40, hi:'Теперь у нас есть собственная планета!' },
+  { id:'holo', name:'Голограмма', icon:'🌍', price:45, hi:'Земля — планета, где придумали эти слова!' },
+  { id:'confetti', name:'Конфетти', icon:'🎊', price:50, hi:'За верные ответы полетит конфетти!' },
+  { id:'fireworks', name:'Салют', icon:'🎆', price:55, hi:'После урока будет звёздный салют!' },
+  { id:'music', name:'Музыкальный орбитрон', icon:'🎵', price:60, hi:'Нажми на ноту в классе — я сыграю мелодию!' },
+  { id:'robot', name:'Робот-помощник', icon:'🤖', price:75, hi:'Нажми на робота в классе — он поздоровается!' },
+  { id:'paint', name:'Цвет каюты', icon:'🎨', price:90, hi:'Выбирай цвет нашего космического класса!' }
+];
+const THEMES = [ ['Космос','#17133f','#493787'], ['Аврора','#103b46','#227b78'], ['Сирень','#40234f','#9b5792'], ['Солнечная','#493019','#9c6330'] ];
+const shown = id => S.gifts.includes(id) && S.shown.includes(id);
+const KEY = 'oriAlphabet2';
+const FRESH = () => ({ coins:10, stars:{}, gifts:[], shown:[], theme:0, student:0 });
+const S = (() => { const d = { ...FRESH(), sound:true }; try { const j = JSON.parse(localStorage.getItem(KEY)); if (j) Object.assign(d,j); } catch(e) {} for (const k of ['gifts','shown']) if (!Array.isArray(d[k])) d[k]=[]; if (!d.stars || typeof d.stars !== 'object') d.stars={}; return d; })();
+function save() { try { localStorage.setItem(KEY,JSON.stringify(S)); } catch(e) {} }
+
+// Звуковые эффекты
+let AC = null;
+function audioOn() {
+  AC = AC || new (window.AudioContext || window.webkitAudioContext)();
+  if (navigator.audioSession && navigator.audioSession.type !== 'playback') navigator.audioSession.type = 'playback';
+  if (AC.state !== 'running') { AC.resume().catch(() => {}); const s=AC.createBufferSource(); s.buffer=AC.createBuffer(1,1,22050); s.connect(AC.destination); s.start(0); }
+  return AC;
+}
+['pointerdown','touchend','click'].forEach(k => document.addEventListener(k,() => { try { audioOn(); } catch(e) {} },{capture:true,passive:true}));
+function sfx(kind) {
+  if (!S.sound) return;
+  try {
+    audioOn(); const notes={tap:[[520,.05,.07]],right:[[660,.09,.12],[880,.09,.12],[1174,.18,.1]],wrong:[[330,.13,.1],[277,.2,.08]],coin:[[1200,.06,.05],[1600,.1,.04]],win:[[523,.12,.12],[659,.12,.12],[784,.12,.12],[1047,.3,.1]],pop:[[900,.05,.08]]}[kind]||[];
+    let t=AC.currentTime;
+    for (const [f,d,v] of notes) { const o=AC.createOscillator(),g=AC.createGain(); o.type='sine'; o.frequency.value=f; g.gain.setValueAtTime(v,t); g.gain.exponentialRampToValueAtTime(.001,t+d); o.connect(g); g.connect(AC.destination); o.start(t); o.stop(t+d+.02); t+=d*.85; }
+  } catch(e) {}
+}
+function melody() {
+  if (!S.sound) return;
+  try { audioOn(); let t=AC.currentTime; [523,659,784,659,880,784].forEach((f,i)=>{ const o=AC.createOscillator(),g=AC.createGain(); o.type='sine'; o.frequency.value=f; g.gain.setValueAtTime(.08,t); g.gain.exponentialRampToValueAtTime(.001,t+.22); o.connect(g); g.connect(AC.destination); o.start(t); o.stop(t+.24); t+=.18; }); } catch(e) {}
+}
+
+// Записанный голос, а если записи нет — синтез устройства
+let VAR = null;
+function pickVoice() {
+  try { const vs=speechSynthesis.getVoices().filter(v=>/^ru/i.test(v.lang)); VAR=vs.find(v=>/pavel|дмитр|dmitr|yuri|юрий|aleksandr|artemiy|мужск|male/i.test(v.name))||vs[0]||null; } catch(e) { VAR=null; }
+}
+if ('speechSynthesis' in window) { pickVoice(); speechSynthesis.onvoiceschanged=pickVoice; }
+// VOICE START (вписывает tools/voice_build_v2.py)
+const VOICE_KEYS = new Set('alien1/5fbeb24c alien1/698773fc alien1/6eba8d48 alien1/a38ae6bb alien1/a9d5f75e alien2/15681bf9 alien2/4538a22a alien2/b64fc6ee alien2/eecc0f72 alien3/310ddb46 alien3/6fb30ab0 alien3/9f08fb4c ori/1094d22 ori/10993b06 ori/10c6460a ori/10e94391 ori/12264fd7 ori/1272035e ori/150e93a6 ori/18ca4c67 ori/1f000586 ori/203f2f02 ori/2295bf50 ori/22b8c12b ori/234a5492 ori/2393b143 ori/23f07c14 ori/2902ffe9 ori/293b0cd8 ori/2a9c8545 ori/2b19d ori/2bf30267 ori/2dd5c647 ori/2ffe29d9 ori/30031b3b ori/309027c7 ori/309133b8 ori/31835f5a ori/32d80f23 ori/33f24ef6 ori/33fa7c2a ori/34c20be9 ori/35e3ddf0 ori/368eeeaf ori/36f30321 ori/378597a9 ori/379a9a0 ori/379a9ad ori/379a9d3 ori/379aa1b ori/379aa34 ori/379aa4b ori/379b95a ori/379b9ef ori/37c3d219 ori/38ea70e ori/39a7b05 ori/3b395066 ori/3c4d174d ori/3c54250 ori/3eb00b8c ori/3ef3e8fc ori/40198412 ori/411dde64 ori/434776a1 ori/442bdd11 ori/4462fcc7 ori/44941b74 ori/45e7e8a3 ori/462e799b ori/4715e34c ori/476e0aac ori/485dcaf2 ori/48753085 ori/4bd81ff1 ori/4bd892f5 ori/4bd9a905 ori/4bda7cfc ori/4bdc3b91 ori/4be1cf8b ori/4be68f16 ori/4ddb03a0 ori/4ef0ae49 ori/4f2a0b10 ori/4fdcc61e ori/4fffea6d ori/5100f096 ori/5245e425 ori/52b42418 ori/541d3330 ori/5692061b ori/571109d ori/578f7d68 ori/57a961d6 ori/57b87d23 ori/59010d06 ori/59283857 ori/596200 ori/596201 ori/596202 ori/596203 ori/596204 ori/596205 ori/596206 ori/596207 ori/596208 ori/596209 ori/59620a ori/59620b ori/59620c ori/59620d ori/59620e ori/59620f ori/596217 ori/596270 ori/596271 ori/596272 ori/596273 ori/596274 ori/596275 ori/596276 ori/596277 ori/596278 ori/596279 ori/59627a ori/59627b ori/59627c ori/59627d ori/59627e ori/59627f ori/596670 ori/596671 ori/596672 ori/596673 ori/596674 ori/596675 ori/596677 ori/59667e ori/59667f ori/59ac35a2 ori/5fb3d1d2 ori/6029fafe ori/64461966 ori/6469c884 ori/647ba822 ori/652cd058 ori/6a1c7bf2 ori/6b80234 ori/6db30fab ori/6dd6c189 ori/6e3677cc ori/6fefa7c6 ori/720d5938 ori/72264a1d ori/7244d50d ori/7253d18b ori/7373b7a2 ori/744bfea4 ori/754e2a37 ori/75565c6b ori/759990c7 ori/7650a245 ori/7700c788 ori/773670d4 ori/77545022 ori/77724ca5 ori/778e009b ori/779017a4 ori/77a3ce77 ori/77a7d594 ori/780f4472 ori/7a0b780f ori/7a11c09f ori/7a11c138 ori/7a128b20 ori/7a1293a8 ori/7a13ac05 ori/7a1443b3 ori/7a146ef6 ori/7a1478fe ori/7a149c62 ori/7a1514b0 ori/7a15e1a5 ori/7a165377 ori/7a310391 ori/7a320f33 ori/7a3a46ff ori/7a3b2e38 ori/7a3c761c ori/7a3cdab9 ori/7a3e5caf ori/7a3eab2e ori/7a401d3b ori/7a40282c ori/7a40ffe5 ori/7a422ab0 ori/7a668bc0 ori/7a66b885 ori/7b1940cb ori/7b68f8d6 ori/7b9b8a43 ori/7ba1ac3c ori/7c3bceb0 ori/7c3bceb1 ori/7c3bceb2 ori/7c3bceb3 ori/7c3bceb4 ori/7c3bceb5 ori/7c3bceb6 ori/7c3bceb7 ori/7c3bceb8 ori/7c3bceb9 ori/7c3bceba ori/7c3bcebb ori/7c3bcebc ori/7c3bcebd ori/7c3bcebe ori/7c3bcebf ori/7c3bcec0 ori/7c3bcec1 ori/7c3bcec3 ori/7c3bcec5 ori/7c3bcec6 ori/7c3bcec7 ori/7c3bcec8 ori/7c3bcec9 ori/7c3bceca ori/7c3bcecb ori/7c3bcecc ori/7c3bcecd ori/7c3bcece ori/7c3bcecf ori/7c3bcedf ori/7c5bf541 ori/7c92a927 ori/7cc4094 ori/7d10f5d3 ori/7f1dc764 ori/7f8941d9 ori/8337c9b5 ori/855b0a5b ori/8654ca98 ori/87981c66 ori/87c1f0a9 ori/87ea6ba ori/87f54ba2 ori/883c552e ori/888f246d ori/88d93368 ori/898112d ori/8c193b86 ori/8c6893d5 ori/8caa440c ori/8d0f1194 ori/91484ab ori/93316d0e ori/936b19a4 ori/943ba15f ori/96969509 ori/96982b0 ori/96da544d ori/9a245063 ori/9ad7bfef ori/9d260ffd ori/9e55a6ba ori/9e9b0d15 ori/9e9b0d72 ori/9ec45d95 ori/9ec5ca69 ori/9eeb7858 ori/9eed24a1 ori/a0954be ori/a0b40337 ori/a14e24d1 ori/a300c499 ori/a513aed2 ori/a5bcdd27 ori/a6171b47 ori/a618ab14 ori/a78ae9 ori/a86e5097 ori/a8e330be ori/aba0e7c4 ori/abbf387 ori/acda3d30 ori/ad228ec7 ori/b033de1d ori/b0a4d8a6 ori/b1671724 ori/b23e7adc ori/b29680c9 ori/b476f7be ori/b57e9d51 ori/b5abaef9 ori/b65d99b8 ori/b73d4d8d ori/b741fb10 ori/b74f127 ori/b74fbf1 ori/b750d23 ori/b750e65 ori/b75d947 ori/b75d98a ori/b75dd53 ori/b7631a0 ori/b76344f ori/b76456f ori/b765d40 ori/b76671d ori/b7800dc3 ori/b780134c ori/b7edd266 ori/b863440 ori/b863441 ori/b863442 ori/b863443 ori/b863444 ori/b863445 ori/b863446 ori/b863447 ori/b863448 ori/b863449 ori/b863480 ori/b863481 ori/b863482 ori/b863483 ori/b863484 ori/b863485 ori/b863486 ori/b863487 ori/b86348a ori/b86348b ori/b8634a0 ori/b8634a1 ori/b8634a2 ori/b8634a3 ori/b8634a4 ori/b8634a5 ori/b8634a6 ori/b8634a7 ori/b8634a8 ori/b8634a9 ori/b8634c0 ori/b8634c1 ori/b8634c2 ori/b8634c3 ori/b8634c4 ori/b8634c5 ori/b8634c6 ori/b8634c7 ori/b8634cc ori/b8634cd ori/b8634e0 ori/b8634e1 ori/b8634e2 ori/b8634e3 ori/b8634e4 ori/b8634e5 ori/b8634e6 ori/b8634e7 ori/b8634ea ori/b8634eb ori/b863520 ori/b863521 ori/b863522 ori/b863523 ori/b863524 ori/b863525 ori/b863526 ori/b863527 ori/b86352c ori/b86352d ori/b863560 ori/b863561 ori/b863562 ori/b863563 ori/b863564 ori/b863565 ori/b863566 ori/b863567 ori/b86356e ori/b86356f ori/b863606 ori/b863607 ori/b863608 ori/b863609 ori/b86360a ori/b86360b ori/b86360c ori/b86360d ori/b86360e ori/b86360f ori/b86366f ori/ba259346 ori/bad8ae8c ori/badd5f94 ori/bbac3285 ori/bc2fec94 ori/bc34bf8e ori/bc5bccf0 ori/bc742820 ori/bc9851d2 ori/bccbab00 ori/bcdd319e ori/bce9d849 ori/bd856d62 ori/bde5c0aa ori/be2e1b25 ori/beb20eec ori/bef93452 ori/bf864532 ori/bfec8982 ori/c039a1da ori/c06ee7da ori/c0717e86 ori/c085721f ori/c1848377 ori/c19f5499 ori/c1a11f50 ori/c1f9ad78 ori/c20c67df ori/c22f4202 ori/c2316d03 ori/c2547a00 ori/c266f2d5 ori/c29ea9 ori/c2a9d75a ori/c2ae4ea8 ori/c468a24d ori/c489c238 ori/c4ba6ff3 ori/c4e2b6e6 ori/c5058fef ori/c55be189 ori/c5681bb3 ori/c631dd6f ori/c67ebd33 ori/c6a709b4 ori/c6c79e53 ori/c6db7217 ori/c7399c66 ori/c7658903 ori/c77cdc36 ori/c7877845 ori/c7ebb5a9 ori/c7f911a6 ori/c80ecc38 ori/c85b037e ori/c862404f ori/c8734d49 ori/c88eafd9 ori/ca4a1b2e ori/cb6caa2c ori/cbd5cade ori/cc0cdbbd ori/cc99ef5a ori/ccec289d ori/cdf73f46 ori/ce23efc2 ori/ce267e95 ori/cf1221fb ori/cf417746 ori/cf66b9b8 ori/cf87c637 ori/d0ef5ab1 ori/d12e8bc8 ori/d37567a8 ori/d42a62cd ori/d582b239 ori/d6069118 ori/d6336465 ori/d9459502 ori/d9afc318 ori/da32004a ori/dbb009a6 ori/dc7c83bf ori/dc9847b0 ori/de62f1a4 ori/defe304a ori/e2f7cf80 ori/e6c7bbe1 ori/e73ac804 ori/e7c50c5e ori/e849683 ori/ebc1ed06 ori/ebc49418 ori/ec30d643 ori/ecbff97a ori/ef27382f ori/f0892be1 ori/f1399a81 ori/f2b0896c ori/f2f59201 ori/f39d2ec4 ori/f793d809 ori/fa52b55e ori/fb5b1c04 ori/fbba11b0 ori/fd76635e ori/fd767411 ori/fdae6829 ori/feda0de1 ori/fee1ba2d ori/ff995bad'.split(' ').filter(Boolean));
+const VOICE_MB = 6;
+const VOICE_VERSION = 'c9ef140417c0';
+// VOICE END
+const VOICE_URL = 'voice-v2/', VOICE_CACHE = 'ori-v2-voice-' + VOICE_VERSION;
+const voiceKey = (text, who='ori') => who + '/' + vkey(text);
+const clipURL = key => VOICE_URL + key + '.mp3?v=' + VOICE_VERSION;
+const vkey = s => { let x=5381; for(let i=0;i<s.length;i++) x=(Math.imul(x,33)^s.charCodeAt(i))>>>0; return x.toString(16); };
+const VTOKEN = /#[а-яё](?:_[а-яё]+)?|\d+/g;
+function voiceParts(t) {
+  const s=String(t).replace(/[\u{1F000}-\u{1FFFF}☀-➿️▶←↺✔✘«»]/gu,'').replace(/\s+/g,' ').trim(),out=[];
+  const chunk=x=>{ x=x.replace(/^[\s.,:;!?…—–-]+/,'').trim(); if(/[а-яё]/i.test(x)) out.push(x); };
+  let last=0;
+  for(const m of s.matchAll(VTOKEN)) { chunk(s.slice(last,m.index)); out.push(m[0][0]==='#'?m[0]:'#'+m[0]); last=m.index+m[0].length; }
+  chunk(s.slice(last)); return out;
+}
+function spokenToken(t) {
+  if(t[0]!=='#') return t;
+  const v=t.slice(1);
+  if(/^\d+$/.test(v)) return v;
+  if(v.startsWith('с_')) return v.slice(2);
+  if(v.startsWith('з_')) { const c=v.slice(2); return SOUND_SUPPORT[c]||(/[аоуыэи]/.test(c)?c+c+c:c+c+c); }
+  return LETTER_NAMES[v]||v;
+}
+const speakable = t => String(t).replace(VTOKEN,m=>spokenToken(m)).replace(/[\u{1F000}-\u{1FFFF}☀-➿️▶←↺✔✘«»]/gu,'');
+let vSrc=null,vNow=0,vHow='',vLoad=0;
+const vBufs=new Map();
+function hush() { vNow++; if(vSrc){try{vSrc.stop();}catch(e){}vSrc=null;} try{if('speechSynthesis' in window&&(speechSynthesis.speaking||speechSynthesis.pending))speechSynthesis.cancel();}catch(e){} }
+async function clipGet(tok,who='ori') {
+  const k=voiceKey(tok,who); if(vBufs.has(k))return vBufs.get(k);
+  const url=clipURL(k),c=window.caches&&await caches.open(VOICE_CACHE),r=(c&&await c.match(url))||await fetch(url);
+  if(!r.ok)throw new Error('нет записи '+tok);
+  const data=await r.arrayBuffer(),buf=await new Promise((ok,no)=>AC.decodeAudioData(data,ok,no));
+  vBufs.set(k,buf); if(vBufs.size>100)vBufs.delete(vBufs.keys().next().value); return buf;
+}
+async function playRecord(parts,who,me) {
+  audioOn(); const bufs=await Promise.all(parts.map(p=>clipGet(p,who))); if(me!==vNow)return;
+  voiceShow(S.voiceDL?'disk':'net'); if(AC.state!=='running')await Promise.race([AC.resume().catch(()=>{}),new Promise(r=>setTimeout(r,300))]); if(AC.state!=='running')return;
+  for(const b of bufs) { if(me!==vNow)return; await new Promise(done=>{const n=AC.createBufferSource();n.buffer=b;n.playbackRate.value=1;n.connect(AC.destination);n.onended=done;vSrc=n;n.start();}); }
+}
+function deviceSpeak(t,who) {
+  return new Promise(res=>{
+    if(!('speechSynthesis' in window)){voiceShow('none');return res();} voiceShow('dev');
+    try { const u=new SpeechSynthesisUtterance(speakable(t));u.lang='ru-RU';if(VAR)u.voice=VAR;u.rate=who==='alien2'?.98:1.03;u.pitch={ori:1.06,alien1:1.3,alien2:.96,alien3:1.4}[who]||1;u.onend=()=>res();u.onerror=e=>{if(/synthesis-failed|language-unavailable|voice-unavailable/.test(e.error))noVoice('noru');res();};speechSynthesis.speak(u); } catch(e){res();}
+  });
+}
+function speak(t,who='ori') { hush();const me=vNow;if(!S.sound){voiceShow();return Promise.resolve();}const parts=voiceParts(t);if(parts.length&&parts.every(p=>VOICE_KEYS.has(voiceKey(p,who))))return playRecord(parts,who,me).catch(()=>me===vNow?deviceSpeak(t,who):undefined);return deviceSpeak(t,who); }
+function voiceShow(how) {
+  if(how)vHow=how;const can=window.caches&&VOICE_KEYS.size&&!S.voiceDL&&!vLoad&&location.protocol!=='file:',get=can?` · ⬇ Скачать, ${VOICE_MB} МБ`:'';
+  const text=vLoad?`⬇ Скачиваю голос: ${vLoad-1}%`:!S.sound?'🔇 Звук выключен кнопкой 🔊':{disk:'🎙 Говорит запись: голос скачан на устройство ✓',net:'🎙 Говорит запись из интернета'+get,dev:'🤖 Говорит синтез устройства: записи сейчас нет'+get,none:'🔇 Сейчас нет доступного голоса'+get}[vHow]||'';
+  document.querySelectorAll('.vrow').forEach(b=>b.textContent=text);
+}
+async function voiceDownload() {
+  if(vLoad||S.voiceDL||!window.caches||!VOICE_KEYS.size||location.protocol==='file:')return;
+  vLoad=1;voiceShow();const c=await caches.open(VOICE_CACHE),all=[...VOICE_KEYS];let i=0,done=0,bad=0;
+  const fetchClip=async url=>{for(let n=0;;n++){try{const r=await fetch(url);if(r.ok)return r;if(n>=2)throw new Error(url);}catch(e){if(n>=2)throw e;}await new Promise(ok=>setTimeout(ok,700));}};
+  const worker=async()=>{while(i<all.length){const url=clipURL(all[i++]);try{if(!await c.match(url))await c.put(url,await fetchClip(url));}catch(e){bad++;}vLoad=1+Math.floor(++done/all.length*100);voiceShow();}};
+  await Promise.all([1,2,3,4,5,6].map(worker));vLoad=0;S.voiceDL=!bad;save();try{if(navigator.storage&&navigator.storage.persist)navigator.storage.persist();}catch(e){}
+  if(S.voiceDL)voiceShow('disk');else{voiceShow();document.querySelectorAll('.vrow').forEach(b=>b.textContent='⚠ Скачалось не всё: нужен интернет. Нажми ещё раз.');}
+}
+document.addEventListener('click',e=>{if(e.target.closest('.vrow'))voiceDownload();});
+async function voiceInit() {
+  let have=false;try{if(window.caches&&VOICE_KEYS.size&&location.protocol!=='file:'){const urls=new Set((await(await caches.open(VOICE_CACHE)).keys()).map(r=>r.url));have=[...VOICE_KEYS].every(k=>urls.has(new URL(clipURL(k),location.href).href));}}catch(e){}
+  if(!!S.voiceDL!==have){S.voiceDL=have;save();}voiceShow(vHow||(have?'disk':VOICE_KEYS.size&&navigator.onLine?'net':'dev'));
+}
+if('serviceWorker' in navigator&&window.isSecureContext&&location.protocol!=='file:')navigator.serviceWorker.register('sw.js').catch(()=>{});
+const NOVOICE={none:'<p>Этот браузер не умеет говорить. Открой игру в Chrome, Safari или Яндекс.Браузере.</p>',noru:'<p>На устройстве нет русского голоса. При наличии интернета можно скачать записанный голос Ори строкой в меню.</p>'};
+let novoiceShown=false;
+function noVoice(why){if(novoiceShown||S.noVoiceOff||!S.sound)return;novoiceShown=true;$('#novoice .txt').innerHTML=NOVOICE[why]+'<p>Все задания можно выполнять и по картинкам.</p>';$('#novoice').classList.add('on');}
+function voiceCheck(){if(VOICE_KEYS.size&&(S.voiceDL||navigator.onLine))return;if(!('speechSynthesis' in window))return noVoice('none');let vs=[];try{vs=speechSynthesis.getVoices();}catch(e){}if(vs.length&&!vs.some(v=>/^ru/i.test(v.lang)))noVoice('noru');}
+let SAYN=0;
+function say(text,voiceText,who='ori'){SAYN++;const b=$('.screen.on .bubble');if(b){b.textContent=text;b.dataset.say=voiceText||text;b.dataset.who=who;b.replay=null;}return speak(voiceText||text,who);}
+document.addEventListener('click',e=>{const b=e.target.closest('.bubble');if(b&&b.replay)b.replay();else if(b&&b.dataset.say)speak(b.dataset.say,b.dataset.who);});
+
+// Состояние экранов и урока
+let L=null,MOOD='neutral';
+class Abort {}
+const PENDING=[];
+function waitable(exec){return new Promise((res,rej)=>{const e={rej};PENDING.push(e);exec(v=>{PENDING.splice(PENDING.indexOf(e),1);res(v);});});}
+function abortAll(){const p=PENDING.splice(0);p.forEach(e=>e.rej(new Abort()));}
+const wait=ms=>waitable(res=>setTimeout(res,ms));
+async function sayWait(text,voiceText,who){const p=say(text,voiceText,who);await waitable(res=>{p.then(()=>setTimeout(res,180));});}
+function updWallet(){document.querySelectorAll('.wallet').forEach(w=>w.innerHTML=CRYSTAL+`<span>${S.coins}</span>`);}
+function addCoins(n){S.coins+=n;if(L)L.earned+=n;save();updWallet();sfx('coin');const w=$('.screen.on .wallet');if(w){const f=document.createElement('span');f.className='float';f.textContent='+'+n;w.appendChild(f);setTimeout(()=>f.remove(),1200);}}
+function drawChars(anim) {
+  document.querySelectorAll('.screen.on .charwrap').forEach(el=>{el.classList.remove('idle','hop','think');void el.offsetWidth;el.classList.add(anim||(MOOD==='think'?'think':'idle'));});
+}
+function decorHTML(){return GIFTS.filter(g=>shown(g.id)&&['plant','garland','lamp','holo','music','robot'].includes(g.id)).map(g=>`<span class="giftdecor gd-${g.id}" data-gift="${g.id}">${g.icon}</span>`).join('');}
+function buildStages(){document.querySelectorAll('.stage').forEach(st=>st.innerHTML='<div class="window"></div>'+decorHTML()+charHTML('ori')+STUDENTS.map(s=>charHTML(s.id)).join(''));}
+function drawPair(){const st=L?STUDENTS[L.student]:STUDENTS[0];$('.host .pair').innerHTML=charHTML('ori')+charHTML(st.id);}
+function applyTheme(){const t=THEMES[shown('paint')?S.theme||0:0];document.documentElement.style.setProperty('--bg1',t[1]);document.documentElement.style.setProperty('--bg2',t[2]);}
+function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('on',s.id===id));buildStages();if(id==='lesson')drawPair();updWallet();applyTheme();drawChars();window.scrollTo(0,0);}
+function actions(html){$('#act').innerHTML=html||'';}
+function scene(html){$('#board').innerHTML=html||'';}
+const PRAISE = [
+  ['Верно! У тебя получилось!'], ['Отлично! Ты настоящий исследователь букв!'],
+  ['Замечательно! Мои ученики тобой гордятся!'], ['Точно! Ещё одна звёздная победа!'],
+  ['Блип-блап! Вот это да!','alien1'], ['Пуф хлопает всеми щупальцами!'],
+  ['Ку-Ку кружится от радости!'], ['Ура! Даже звёзды захлопали!','alien3'],
+  ['Вот это да! Ты быстрее кометы!','alien2'],
+  ['Блип-блап! Мой космический компас показывает: молодец!','alien1'],
+  ['Пуф смотрит всеми тремя глазами и видит: получилось!'],
+  ['Ку-Ку выглядывает из-за буквы и улыбается!'],
+  ['Ха-ха! Отлично! Ещё разок — и ты чемпион галактики!','alien2'],
+  ['Ты сегодня ярче сверхновой!'], ['Обнимаю крылом! Так держать!']
+];
+const ENCOURAGE = [
+  ['Почти! Попробуй ещё раз.'], ['Не спеши. Посмотри внимательно и попробуй снова.'],
+  ['Пока не то, но у тебя обязательно получится!'], ['Ой! Мимо, но это не страшно — попробуем ещё!','alien1'],
+  ['Хм, моя совиная голова думает: почти получилось!'], ['Не беда! Даже ракеты иногда чихают. Ещё раз!','alien2'],
+  ['Ой-ой! Пуф перепутал глаза. А ты попробуй ещё!'], ['Ку-ку! Я тут, я помогу: посмотри внимательнее!','alien3']
+];
+async function happy(text,voiceText){MOOD='happy';drawChars('hop');sparkle($('#board'));const [line,who]=text?[text]:pick(PRAISE);await sayWait(line,voiceText,who);}
+function oops(text,voice){MOOD='think';drawChars('think');sfx('wrong');const [line,who]=text?[text]:pick(ENCOURAGE);say(line,text?voice:undefined,who);}
+function sparkle(el){if(!el)return;const r=el.getBoundingClientRect();for(let i=0;i<12;i++){const d=document.createElement('span'),a=i/12*Math.PI*2;d.className='spark';d.textContent=i%2?'✦':'⭐';d.style.left=r.left+r.width/2+'px';d.style.top=r.top+r.height*.45+'px';d.style.setProperty('--dx',Math.cos(a)*90+'px');d.style.setProperty('--dy',Math.sin(a)*70+'px');document.body.appendChild(d);setTimeout(()=>d.remove(),1100);}}
+function confetti(){const cols=['#ff6b9d','#ffd93d','#6bcb77','#4d96ff','#b06bff'];for(let i=0;i<35;i++){const d=document.createElement('span');d.className='cf';d.style.left=Math.random()*100+'%';d.style.background=cols[i%cols.length];d.style.animationDelay=Math.random()*.35+'s';document.body.appendChild(d);setTimeout(()=>d.remove(),2300);}}
+function fireworks(){for(let i=0;i<30;i++)setTimeout(()=>{const d=document.createElement('span');d.className='spark';d.textContent='✦';d.style.left=15+Math.random()*70+'%';d.style.top=10+Math.random()*55+'%';d.style.color=pick(['#ffe46b','#75ecff','#ff8bc5']);d.style.setProperty('--dx',(Math.random()*100-50)+'px');d.style.setProperty('--dy',(Math.random()*100-50)+'px');document.body.appendChild(d);setTimeout(()=>d.remove(),1100);},i*35);}
+async function give(tries,success){addCoins(tries===0?2:1);sfx('right');if(shown('confetti'))confetti();await happy(success&&success.text,success&&success.voice);}
+
+// Общие механики заданий
+async function sayChoice(text,voiceText,els) {
+  const b=$('.screen.on .bubble');
+  const read=async()=>{const me=++SAYN;await speak(voiceText||text);for(const el of els){if(SAYN!==me||!el.isConnected||!S.sound)return;if(el.disabled)continue;el.classList.add('reading');await Promise.all([speak(el.dataset.speech||el.textContent),new Promise(r=>setTimeout(r,350))]);el.classList.remove('reading');}};
+  if(b){b.textContent=text;b.dataset.say=voiceText||text;b.replay=read;}return read();
+}
+async function askChoice({text,voice,options,scene:sc,readOptions=true,success,hint,hintVoice}) {
+  if(sc!==undefined)scene(sc);let tries=0;
+  const answer=await waitable(res=>{
+    const a=$('#act');a.innerHTML='';options.forEach(o=>{
+      const el=document.createElement('button');el.className='btn choice '+(o.cls||'');el.innerHTML=o.html||o.label;el.dataset.speech=o.speech||o.label||'';
+      el.onclick=()=>{if(el.disabled)return;if(o.ok){el.classList.add('right');[...a.children].forEach(b=>b.disabled=true);res(o);}else{tries++;L.errors++;el.classList.add('wrongb');el.disabled=true;oops(o.say,o.sayVoice);if(tries>=2){const good=[...a.children].find((b,i)=>options[i].ok&&!b.disabled);if(good)good.classList.add('hint');if(hint)say(hint,hintVoice);}}};
+      a.appendChild(el);
+    });
+    if(readOptions)sayChoice(text,voice||text,[...a.children]);else say(text,voice||text);
+  });
+  await give(tries,(answer.success||success)&&{text:(answer.success||success).text,voice:(answer.success||success).voice});actions([]);return answer;
+}
+async function askMany({text,voice,options,success}) {
+  actions([]);let tries=0,left=options.filter(o=>o.ok).length;
+  await waitable(res=>{
+    scene('<div class="many">'+options.map((o,i)=>`<button class="btn" data-i="${i}">${o.html||o.label}</button>`).join('')+'</div>');
+    say(text,voice||text);
+    $('#board .many').onclick=e=>{
+      const el=e.target.closest('button');if(!el||el.disabled)return;const o=options[+el.dataset.i];
+      if(o.ok){el.classList.add('right','found');el.disabled=true;sfx('tap');if(!--left)res();}
+      else{tries++;L.errors++;el.classList.add('wrongb');setTimeout(()=>el.classList.remove('wrongb'),500);oops(o.say);if(tries>=2)$('#board .many').querySelectorAll('button').forEach((b,i)=>{if(options[i].ok&&!b.disabled)b.classList.add('hint');});}
+    };
+  });
+  await give(tries,success);scene('');
+}
+async function askSequence({text,voice,answer,scene:sc,success,readOptions=false}) {
+  if(sc!==undefined)scene(sc);let tries=0,pos=0;answer=answer.toUpperCase();
+  const letters=[...new Set(answer.split(''))];
+  await waitable(res=>{
+    const render=()=>{
+      scene((sc||'')+`<div class="slots">${[...answer].map((c,i)=>`<span class="slot ${i<pos?'filled':''}">${i<pos?c:''}</span>`).join('')}</div>`);
+      const a=$('#act');a.innerHTML='';shuffle(letters).forEach(c=>{const b=document.createElement('button');b.className='btn choice';b.textContent=c;b.dataset.speech=soundToken(c);b.onclick=()=>{
+        if(c===answer[pos]){pos++;sfx('tap');speak(soundToken(c));if(pos===answer.length){render();res();}else render();}
+        else{tries++;L.errors++;b.classList.add('wrongb');setTimeout(()=>b.classList.remove('wrongb'),450);oops(`Посмотри: следующая буква должна стоять на месте номер ${pos+1}.`);if(tries>=2)[...a.children].forEach(x=>{if(x.textContent===answer[pos])x.classList.add('hint');});}
+      };a.appendChild(b);});
+    };render();if(readOptions)sayChoice(text,voice||text,[...$('#act').children]);else say(text,voice||text);
+  });
+  await give(tries,success);actions([]);
+}
+async function tell(text,{voice,scene:sc,btn='Дальше ▶'}={}) {
+  if(sc!==undefined)scene(sc);say(text,voice||text);
+  await waitable(res=>{actions(`<button class="btn next">${btn}</button>`);$('#act .next').onclick=()=>res();});actions([]);
+}
+function letterScene(d){return `<div class="letterpair"><span class="up">${d.ch}</span><span class="low">${low(d.ch)}</span></div><div class="picture">${d.icon}</div><div class="caption">${d.word.toUpperCase()}</div>`;}
+function pictureScene(icon,word=''){return `<div class="picture">${icon}</div>${word?`<div class="word">${word}</div>`:''}`;}
+function wordChoices(target,pool,kind='word') { return shuffle([target,...pool.filter(x=>x!==target).slice(0,3)]).map(x=>({label:x,html:kind==='pic'?x:x,ok:x===target})); }
+function optionsForLetters(target,lowerCase=false) {
+  const idx=LETTERS.findIndex(x=>x.ch===target),others=[1,5,12].map(n=>LETTERS[(idx+n)%LETTERS.length].ch);
+  return shuffle([target,...others]).map(ch=>({label:lowerCase?low(ch):ch,speech:nameToken(ch),ok:ch===target}));
+}
+
+// Новые испытания: ловля букв, память, лишнее слово, звуковой радар
+const CATCH_POOL = LETTERS.filter(x=>x.kind!=='sign').map(x=>x.ch);
+async function catchWaves(waves, forced) {
+  for(let w=0;w<waves;w++){
+    const target=forced||pick(CATCH_POOL);
+    const others=shuffle(CATCH_POOL.filter(c=>c!==target)).slice(0,4);
+    const letters=shuffle([target,target,...others]);
+    let left=2;
+    await waitable(res=>{
+      scene(`<div class="mini">Волна ${w+1} из ${waves} · лопни все пузыри с буквой ${target}</div><div id="catch"></div>`);
+      say(`Лопни все пузыри с буквой ${target}!`,`Лопни все пузыри с буквой ${nameToken(target)}!`);
+      const area=$('#catch');
+      letters.forEach((ch,i)=>{
+        const b=document.createElement('button');b.className='bub';b.textContent=ch;
+        const col=i%3,row=(i/3)|0;
+        b.style.left=(5+col*31+Math.random()*9)+'%';
+        b.style.top=(7+row*47+Math.random()*12)+'%';
+        b.style.setProperty('--dur',(2.6+Math.random()*2)+'s');
+        b.style.setProperty('--del',(-Math.random()*2)+'s');
+        b.style.setProperty('--fx',(Math.random()*22-11)+'px');
+        b.style.setProperty('--fy',(Math.random()*18-9)+'px');
+        b.onclick=()=>{
+          if(b.disabled)return;
+          if(ch===target){b.disabled=true;b.classList.add('pop');sfx('pop');speak(nameToken(ch));if(--left===0)setTimeout(res,380);}
+          else{L.errors++;b.classList.add('bad');setTimeout(()=>b.classList.remove('bad'),420);oops(`Это буква ${ch}. А мы ищем ${target}!`,`Это буква ${nameToken(ch)}. А мы ищем ${nameToken(target)}!`);}
+        };
+        area.appendChild(b);
+      });
+    });
+  }
+  scene('');
+}
+async function gameCatch() {
+  await tell('Пузыри с буквами летят в космосе! Лопни только те, где спрятались нужные буквы. Пять волн — и ты чемпион!',{scene:'<div class="picture">🫧</div><div class="caption">Лови буквы!</div>'});
+  await catchWaves(5);
+  await give(L.errors?1:0,{text:'Все буквы пойманы! Какие ловкие пальцы!'});
+}
+async function gameMemory() {
+  await tell('Открывай карточки по две и ищи пары: большая буква и её маленькая сестра. Запомни, где кто спрятался!',{scene:'<div class="picture">🃏</div><div class="caption">Звёздная память</div>'});
+  const chars=shuffle(CATCH_POOL).slice(0,6);
+  const cards=shuffle(chars.flatMap(ch=>[{ch,up:true},{ch,up:false}]));
+  let open=[],lock=false,found=0,moves=0;
+  await waitable(res=>{
+    scene('<div class="mem">'+cards.map((c,i)=>`<button class="mcard" data-i="${i}">✦</button>`).join('')+'</div>');
+    say('Открывай карточки и ищи пары: большая и маленькая буква.');
+    $('#board .mem').onclick=e=>{
+      const el=e.target.closest('.mcard');if(!el||lock||el.classList.contains('open')||el.classList.contains('done'))return;
+      const c=cards[+el.dataset.i];el.classList.add('open');el.textContent=c.up?c.ch:low(c.ch);speak(nameToken(c.ch));
+      open.push({el,c});
+      if(open.length===2){
+        moves++;lock=true;const [a,b]=open;
+        if(a.c.ch===b.c.ch&&a.c.up!==b.c.up){setTimeout(()=>{a.el.classList.add('done');b.el.classList.add('done');sfx('right');sparkle(b.el);open=[];lock=false;if(++found===6)res();},450);}
+        else{L.errors++;setTimeout(()=>{a.el.classList.remove('open');b.el.classList.remove('open');a.el.textContent='✦';b.el.textContent='✦';open=[];lock=false;},800);}
+      }
+    };
+  });
+  await give(Math.max(0,moves-6),{text:'Все пары найдены! У тебя звёздная память!'});
+  scene('');
+}
+async function oddRound(ch) {
+  const bank=WORDBANK[ch];
+  if(!bank||bank.length<2)return radarRound(ch);
+  const same=shuffle(bank).slice(0,3);
+  const oddCh=pick(Object.keys(WORDBANK).filter(k=>k!==ch));
+  const odd=pick(WORDBANK[oddCh]);
+  const countWord=same.length===3?'Три слова':'Два слова';
+  const opts=shuffle([
+    ...same.map(w=>({label:w.icon,cls:'picchoice',speech:w.word,ok:false,say:`«${w.word}» начинается на букву ${ch}. Это не лишнее!`,sayVoice:'Это слово начинается на ту же букву. Ищем лишнее!'})),
+    {label:odd.icon,cls:'picchoice',speech:odd.word,ok:true,success:{text:`Верно! «${odd.word}» начинается на букву ${oddCh}, а не на ${ch}.`,voice:`Верно! Лишнее слово начинается на букву ${nameToken(oddCh)}, а не на ${nameToken(ch)}.`}}
+  ]);
+  await askChoice({text:`${countWord} начинаются на букву ${ch}. Найди лишнюю картинку!`,voice:`${countWord} начинаются на букву ${nameToken(ch)}. Найди лишнюю картинку!`,options:opts,scene:`<div class="bigletter" style="font-size:76px">${ch}</div>`,hint:`Послушай слова ещё раз и найди то, что начинается не на букву ${ch}.`,hintVoice:`Послушай слова ещё раз и найди то, что начинается не на букву ${nameToken(ch)}.`});
+}
+async function gameOdd() {
+  await tell('Хитрые инопланетяне перепутали картинки! Найди слово, которое начинается НЕ на ту букву. Пять раундов!',{scene:'<div class="picture">🕵️</div><div class="caption">Что лишнее?</div>'});
+  const pool=shuffle(Object.keys(WORDBANK).filter(k=>WORDBANK[k].length>=2));
+  for(let i=0;i<5;i++)await oddRound(pool[i%pool.length]);
+  await happy('Ты раскусил все хитрости! Ни одно лишнее слово не ускользнуло!');
+}
+async function radarRound(ch) {
+  const isSign=LETTER[ch].kind==='sign';
+  const others=shuffle(CATCH_POOL.filter(c=>c!==ch)).slice(0,3);
+  const tok=isSign?nameToken(ch):soundToken(ch);
+  await askChoice({text:isSign?'Послушай название буквы и найди её.':'Послушай звук и найди его букву.',voice:`Послушай: ${tok}. Найди эту букву.`,options:shuffle([ch,...others]).map(c=>({label:c,speech:nameToken(c),ok:c===ch})),scene:'<div class="picture">📡</div><div class="mini">Слушай внимательно</div>',readOptions:false,success:{text:`Верно! Это буква ${ch}.`,voice:`Верно! Это буква ${nameToken(ch)}.`},hint:'Нажми на облачко речи, чтобы послушать звук ещё раз.'});
+}
+async function gameRadar() {
+  await tell('Звуковой радар ловит звуки из космоса! Услышь звук — и покажи его букву. Шесть сигналов!',{scene:'<div class="picture">📡</div><div class="caption">Звуковой радар</div>'});
+  const pool=shuffle(LETTERS.map(x=>x.ch));
+  for(let i=0;i<6;i++)await radarRound(pool[i]);
+  await happy('Радар настроен! Ты слышишь каждый звук!');
+}
+async function letterBonus(ch) {
+  const opts=['radar'];
+  if(WORDBANK[ch]&&WORDBANK[ch].length>=2)opts.push('odd');
+  if(LETTER[ch].kind!=='sign')opts.push('catch');
+  const kind=pick(opts);
+  if(kind==='odd')await oddRound(ch);
+  else if(kind==='catch')await catchWaves(1,ch);
+  else await radarRound(ch);
+}
+
+async function letterLesson(d) {
+  const l=low(d.ch),isSign=d.kind==='sign';
+  let intro,introVoice;
+  if(d.ch==='Ы') { intro='Это буква Ы. Она обозначает звук [ы] и любит прятаться в середине слова: рыба.';introVoice=`Это буква ${nameToken(d.ch)}. Она обозначает звук ${soundToken(d.ch)} и любит прятаться в середине слова: рыба.`; }
+  else if(isSign) { intro=d.ch==='Ь'?'Это мягкий знак. Он не обозначает звук, а подсказывает: читай согласный мягко. Послушай: мышь.':'Это твёрдый знак. Он не обозначает звук, а разделяет согласный и гласный: подъезд.';introVoice=intro; }
+  else { intro=`Это буква ${d.ch}. Послушай её звук: [${l}]. ${d.word[0].toUpperCase()+d.word.slice(1)} начинается с буквы ${d.ch}.`;introVoice=`Это буква ${nameToken(d.ch)}. Послушай её звук: ${soundToken(d.ch)}. ${d.word[0].toUpperCase()+d.word.slice(1)} начинается с буквы ${nameToken(d.ch)}.`; }
+  await tell(intro,{voice:introVoice,scene:letterScene(d)});
+  await askChoice({text:`Найди заглавную букву ${d.ch}.`,voice:`Найди заглавную букву ${nameToken(d.ch)}.`,options:optionsForLetters(d.ch),scene:`<div class="mini">Заглавная буква — как в начале предложения</div>`});
+  if(d.ch==='Ы') {
+    await askChoice({text:'В каком слове слышен звук [ы]?',voice:`В каком слове слышен звук ${soundToken('Ы')}?`,scene:'<div class="mini">Слушай внимательно</div>',options:shuffle([{label:'🐟',cls:'picchoice',speech:'рыба',ok:true,success:{text:'Верно! В слове рыба есть звук [ы].',voice:`Верно! В слове рыба есть звук ${soundToken('Ы')}.`}},{label:'🏠',cls:'picchoice',speech:'дом',ok:false,say:'В слове дом звука [ы] нет.'},{label:'🧃',cls:'picchoice',speech:'сок',ok:false,say:'В слове сок звука [ы] нет.'}])});
+  } else if(isSign) {
+    const opts=d.ch==='Ь'?[{label:'МЫШЬ 🐁',ok:true,speech:'мышь'},{label:'ДОМ 🏠',ok:false,speech:'дом'},{label:'СОК 🧃',ok:false,speech:'сок'}]:[{label:'ПОДЪЕЗД 🏢',ok:true,speech:'подъезд'},{label:'КОТ 🐱',ok:false,speech:'кот'},{label:'ЛУНА 🌙',ok:false,speech:'луна'}];
+    await askChoice({text:`В каком слове есть ${d.ch==='Ь'?'мягкий':'твёрдый'} знак?`,options:shuffle(opts),scene:`<div class="letterpair"><span class="up">${d.ch}</span><span class="low">${l}</span></div>`});
+  } else {
+    await askChoice({text:`С какой буквы начинается слово «${d.word}»?`,voice:`С какой буквы начинается слово ${d.word}?`,options:optionsForLetters(d.ch),scene:pictureScene(d.icon)});
+  }
+  await askChoice({text:`Найди строчную букву ${l}.`,voice:`Найди строчную букву ${nameToken(d.ch)}.`,options:optionsForLetters(d.ch,true),scene:'<div class="mini">Строчная буква — маленькая</div>'});
+  const pool=shuffle([d.ch,d.ch,d.ch,...LETTERS.filter(x=>x.ch!==d.ch).slice(0,5).map(x=>x.ch)]);
+  await askMany({text:`Найди все буквы ${d.ch}. Их здесь три!`,voice:`Найди все буквы ${nameToken(d.ch)}. Их здесь три!`,options:pool.map(ch=>({label:ch,ok:ch===d.ch})),success:{text:`Все буквы ${d.ch} найдены!`,voice:`Все буквы ${nameToken(d.ch)} найдены!`}});
+  await tell('А теперь секретное испытание от инопланетян!',{scene:'<div class="picture">🛸</div>'});
+  await letterBonus(d.ch);
+}
+const letterDef=(ch,sect)=>({id:'letter_'+ch,name:`${ch} — ${LETTER[ch].word}`,icon:LETTER[ch].ch,sect,run:()=>letterLesson(LETTER[ch]),letter:ch});
+
+// Уроки чтения
+const seqSuccess=word=>({text:`Верно! Это слово «${word.toLowerCase()}».`,voice:`Верно! Это слово ${word.toLowerCase()}.`});
+const seqWord=(word,icon,text)=>askSequence({text:text||`Собери слово «${word.toLowerCase()}» по буквам.`,answer:word,scene:pictureScene(icon),success:seqSuccess(word)});
+async function readPicture(word,icon,others) {
+  const opts=shuffle([{word,icon,ok:true},...others.map(x=>({...x,ok:false}))]).map(o=>({label:o.icon,cls:'picchoice',speech:o.word,ok:o.ok,success:o.ok?seqSuccess(word):undefined}));
+  return askChoice({text:'Прочитай слово и выбери подходящую картинку.',options:opts,scene:`<div class="word">${word}</div>`,readOptions:false,hint:'Посмотри на первую букву и прочитай слово по слогам.'});
+}
+async function choosePrinted(word,icon,otherWords) {
+  const options=shuffle([word,...otherWords]).map(w=>({label:w,cls:'wordchoice',speech:w,ok:w===word}));
+  return askChoice({text:'Послушай слово и найди его среди написанных.',voice:`Найди слово ${word.toLowerCase()}.`,options,scene:pictureScene(icon),readOptions:false,success:seqSuccess(word)});
+}
+async function missingLetter(word,missing,icon) {
+  const options=optionsForLetters(missing).map(o=>({...o,cls:''}));
+  return askChoice({text:'Какая буква спряталась в слове?',options,scene:pictureScene(icon,word.replace(missing,'_')),success:seqSuccess(word)});
+}
+async function sentenceTask(sentence,question,options,icon) {
+  return askChoice({text:question,options:shuffle(options.map((label,i)=>({label,cls:'wordchoice',ok:i===0}))),scene:`<div class="picture">${icon}</div><div class="sentence">${sentence}</div>`,readOptions:false,hint:'Прочитай предложение ещё раз. Ответ спрятан в нём.'});
+}
+async function lessonBlend() {
+  await tell('Буквы дружат друг с другом! Соединим согласный и гласный звук — получится слог.',{scene:'<div class="merge"><span>М</span><span class="plus">+</span><span>А</span><span class="plus">→</span><span>МА</span></div>'});
+  await askSequence({text:'Соедини [м] и [а]. Нажимай буквы по порядку.',voice:`Соедини ${soundToken('М')} и ${soundToken('А')}. Нажимай буквы по порядку.`,answer:'МА',scene:'<div class="mini">Сначала согласный, потом гласный</div>',success:{text:'Получился слог МА!',voice:`Получился слог ${syllToken('МА')}!`}});
+  await askSequence({text:'Теперь соедини [н] и [о].',voice:`Теперь соедини ${soundToken('Н')} и ${soundToken('О')}.`,answer:'НО',success:{text:'Получился слог НО!',voice:`Получился слог ${syllToken('НО')}!`}});
+  await askChoice({text:'Что получится, если соединить [с] и [у]?',voice:`Что получится, если соединить ${soundToken('С')} и ${soundToken('У')}?`,options:shuffle(['СУ','МА','НО'].map(x=>({label:x,ok:x==='СУ'}))),scene:'<div class="merge"><span>С</span><span class="plus">+</span><span>У</span></div>',readOptions:false,success:{text:'Да! Получился слог СУ!',voice:`Да! Получился слог ${syllToken('СУ')}!`}});
+}
+async function lessonSyllables() {
+  await tell('Слог читаем вместе, не разрывая звуки. Попробуй прочитать сам!',{scene:'<div class="word">МА · МО · МУ</div>'});
+  for(const [target,others] of [['МА',['МО','МУ','НА']],['НО',['НА','МО','СО']],['ЛУ',['ЛА','СУ','МУ']]]) await askChoice({text:`Найди слог ${target}.`,voice:`Найди слог ${syllToken(target)}.`,options:shuffle([target,...others]).map(x=>({label:x,ok:x===target})),readOptions:false});
+  await askSequence({text:'Собери слог ЛА.',voice:`Собери слог ${syllToken('ЛА')}.`,answer:'ЛА',success:{text:'Отлично! Ты читаешь слоги!',voice:'Отлично! Ты читаешь слоги!'}});
+}
+async function lessonFirstWords() {
+  await tell('Из слогов получаются слова. Читай слева направо: МА–МА — мама!',{scene:pictureScene('👩','МА–МА')});
+  await readPicture('МАМА','👩',[{word:'луна',icon:'🌙'},{word:'сок',icon:'🧃'},{word:'рыба',icon:'🐟'}]);
+  await seqWord('ЛУНА','🌙');
+  await readPicture('НОС','👃',[{word:'мама',icon:'👩'},{word:'окно',icon:'🪟'},{word:'утка',icon:'🦆'}]);
+  await seqWord('СОК','🧃');
+}
+async function lessonBuildWords() {
+  await tell('Теперь будем собирать новые слова. Называй каждую букву про себя, а потом прочитай всё слово.',{scene:'<div class="word">Р + О + С + А</div>'});
+  await seqWord('РОСА','💧');
+  await seqWord('СОСНА','🌲');
+  await missingLetter('СОН','С','😴');
+  await choosePrinted('МОРС','🧃',['МОРЕ','МОСТ','НОС']);
+}
+async function lessonSoft() {
+  await tell('Буквы И, Е, Ё, Ю, Я делают согласный перед собой мягким. Сравни: МА — МЯ.',{voice:`Сравни: ${syllToken('МА')} — ${syllToken('МЯ')}.`,scene:'<div class="merge"><span>МА</span><span class="plus">↔</span><span>МЯ</span></div>'});
+  await askChoice({text:'В каком слоге согласный звук мягкий?',options:shuffle(['МЯ','МА','МО'].map(x=>({label:x,ok:x==='МЯ'}))),readOptions:false});
+  await askSequence({text:'Собери мягкий слог МЯ.',voice:`Собери мягкий слог ${syllToken('МЯ')}.`,answer:'МЯ',success:{text:'Верно! Мягкий слог МЯ!',voice:`Верно! Мягкий слог ${syllToken('МЯ')}!`}});
+  await readPicture('МЯСО','🍖',[{word:'сок',icon:'🧃'},{word:'мама',icon:'👩'},{word:'луна',icon:'🌙'}]);
+  await askChoice({text:'Послушай и найди мягкий слог ЛЮ.',voice:`Найди мягкий слог ${syllToken('ЛЮ')}.`,options:shuffle(['ЛЮ','ЛУ','ЛА'].map(x=>({label:x,ok:x==='ЛЮ'}))),readOptions:false});
+}
+async function lessonYo() {
+  await tell('У буквы Ё всегда есть две точки. Она не любит лениться: в слове ёлка слышится [йо].',{scene:letterScene(LETTER.Ё)});
+  await askChoice({text:'Найди букву Ё с двумя точками.',voice:`Найди букву ${nameToken('Ё')} с двумя точками.`,options:optionsForLetters('Ё'),readOptions:false});
+  await seqWord('ЛЁД','🧊');
+  await readPicture('ЁЛКА','🎄',[{word:'утка',icon:'🦆'},{word:'окно',icon:'🪟'},{word:'дом',icon:'🏠'}]);
+  await missingLetter('ПОЁТ','Ё','🎤');
+}
+async function lessonSoftWords() {
+  await tell('Мягкий знак не читается отдельно. Он меняет предыдущий согласный: ДЕНЬ.',{scene:pictureScene('📅','ДЕНЬ')});
+  await readPicture('МЫШЬ','🐁',[{word:'жук',icon:'🪲'},{word:'кот',icon:'🐱'},{word:'шар',icon:'🎈'}]);
+  await seqWord('ДЕНЬ','📅');
+  await missingLetter('СЕМЬЯ','Ь','👨‍👩‍👧');
+  await choosePrinted('ПОДЪЕЗД','🏢',['ПОЕЗД','ПОДАРОК','ПОБЕДА']);
+}
+async function lessonWords() {
+  await tell('Читаем целые слова! Сначала по слогам, потом попробуй прочитать сразу.',{scene:'<div class="word">ДОМ · РЫБА · ЖУК</div>'});
+  await seqWord('ДОМ','🏠');
+  await readPicture('РЫБА','🐟',[{word:'юбка',icon:'👗'},{word:'ваза',icon:'🏺'},{word:'хлеб',icon:'🍞'}]);
+  await choosePrinted('ЖУК','🪲',['ЖАР','ЖИР','ЖУР']);
+  await seqWord('ЧАШКА','☕');
+  await readPicture('ЩЁТКА','🪥',[{word:'ёлка',icon:'🎄'},{word:'цветок',icon:'🌸'},{word:'чашка',icon:'☕'}]);
+}
+async function lessonPicture() {
+  await tell('Теперь читаем без подсказки голосом. Слово прозвучит только после верного ответа.',{scene:'<div class="word">ЧИТАЙ САМ!</div>'});
+  await readPicture('ЗОНТ','☂️',[{word:'флаг',icon:'🚩'},{word:'шар',icon:'🎈'},{word:'торт',icon:'🎂'}]);
+  await readPicture('ФЛАГ','🚩',[{word:'гриб',icon:'🍄'},{word:'зонт',icon:'☂️'},{word:'банан',icon:'🍌'}]);
+  await readPicture('ВАЗА','🏺',[{word:'цветок',icon:'🌸'},{word:'игла',icon:'🪡'},{word:'юбка',icon:'👗'}]);
+  await readPicture('ХЛЕБ','🍞',[{word:'сыр',icon:'🧀'},{word:'сок',icon:'🧃'},{word:'рыба',icon:'🐟'}]);
+}
+async function lessonMissing() {
+  await tell('Одна буква спряталась! Прочитай слово и верни её на место.',{scene:'<div class="word">М_МА</div>'});
+  await missingLetter('МАМА','М','👩');
+  await missingLetter('ЛУНА','Н','🌙');
+  await missingLetter('ДОМ','О','🏠');
+  await missingLetter('РЫБА','Ы','🐟');
+  await missingLetter('ЯБЛОКО','Я','🍎');
+}
+async function lessonSentences() {
+  await tell('Слова дружат в предложениях. Прочитай предложение и ответь на вопрос.',{scene:'<div class="sentence">МАМА ДОМА.</div>'});
+  await sentenceTask('МАМА ДОМА.','Где мама?',['Дома','На Луне','В воде'],'🏠');
+  await sentenceTask('КОТ СПИТ.','Что делает кот?',['Спит','Летает','Читает'],'🐱');
+  await sentenceTask('ЛУНА В НЕБЕ.','Где Луна?',['В небе','В вазе','Под домом'],'🌙');
+  await sentenceTask('РЫБА ПЛЫВЁТ.','Кто плывёт?',['Рыба','Жук','Кот'],'🐟');
+}
+async function lessonReview() {
+  await tell('Большое звёздное повторение! Вспомним буквы, слоги, слова и предложения.',{scene:'<div class="picture">🏆</div><div class="caption">Ты готов!</div>'});
+  await askChoice({text:'Найди букву, с которой начинается слово «яблоко».',voice:`Найди букву, с которой начинается слово яблоко.`,options:optionsForLetters('Я'),scene:pictureScene('🍎')});
+  await askChoice({text:'Прочитай и найди слог ЧА.',voice:`Прочитай и найди слог ${syllToken('ЧА')}.`,options:shuffle(['ЧА','ЧУ','ША','ЦА'].map(x=>({label:x,ok:x==='ЧА'}))),readOptions:false});
+  await seqWord('ЦВЕТОК','🌸');
+  await missingLetter('ЙОГУРТ','Й','🥛');
+  await sentenceTask('ЖУК СИДИТ НА ЦВЕТКЕ.','Где сидит жук?',['На цветке','На Луне','В чашке'],'🪲');
+}
+const readDef=(id,name,icon,run,sect)=>({id,name,icon,run,sect});
+const LESSONS=[
+  letterDef('А','Первые гласные'),letterDef('О'),letterDef('У'),letterDef('Ы'),letterDef('Э'),
+  letterDef('М','Первые согласные'),letterDef('Н'),letterDef('Л'),letterDef('Р'),letterDef('С'),
+  readDef('blend','Соединяем звуки в слог','М+А',lessonBlend,'Первые слоги и слова'),readDef('syllables','Читаем слоги','МА',lessonSyllables),readDef('firstWords','Первые слова','👩',lessonFirstWords),readDef('buildWords','Собираем слова','🧩',lessonBuildWords),
+  letterDef('Т','Новые согласные'),letterDef('Д'),letterDef('П'),letterDef('Б'),letterDef('К'),letterDef('Г'),
+  letterDef('И','Гласные-подсказки'),letterDef('Е'),letterDef('Ё'),letterDef('Ю'),letterDef('Я'),
+  readDef('soft','Твёрдо и мягко','МА · МЯ',lessonSoft,'Мягкость и чтение'),readDef('yo','Читаем слова с Ё','Ё',lessonYo),
+  letterDef('З','Ещё согласные'),letterDef('Ф'),letterDef('В'),letterDef('Х'),letterDef('Й'),
+  letterDef('Ш','Шипящие и особенные'),letterDef('Ж'),letterDef('Ч'),letterDef('Щ'),letterDef('Ц'),
+  letterDef('Ь','Буквы без звука'),letterDef('Ъ'),
+  readDef('softWords','Мягкий знак в словах','Ь',lessonSoftWords,'Читаем уверенно'),readDef('words','Слова из 3–5 букв','📖',lessonWords),readDef('picture','Слово и картинка','🖼️',lessonPicture),readDef('missing','Недостающая буква','❔',lessonMissing),readDef('sentences','Первые предложения','💬',lessonSentences),readDef('review','Большое повторение','🏆',lessonReview)
+];
+const GAMES=[
+  { id:'game_catch', name:'Поймай букву', icon:'🫧', run:gameCatch },
+  { id:'game_memory', name:'Звёздная память', icon:'🃏', run:gameMemory },
+  { id:'game_odd', name:'Что лишнее?', icon:'🕵️', run:gameOdd },
+  { id:'game_radar', name:'Звуковой радар', icon:'📡', run:gameRadar }
+];
+
+// Экраны, награды и подарки
+function menu() {
+  abortAll();L=null;actions([]);hush();MOOD='neutral';show('menu');
+  const c=$('#cards');c.innerHTML='';LESSONS.forEach((l,i)=>{if(l.sect)c.insertAdjacentHTML('beforeend',`<div class="sect">${l.sect}</div>`);const st=S.stars[l.id]||0,b=document.createElement('button');b.className='card';b.innerHTML=`<div class="ic">${l.icon}</div><b>${i+1}. ${l.name}</b><i>${'★'.repeat(st)}${'☆'.repeat(3-st)}</i>`;b.onclick=()=>{sfx('tap');runLesson(l);};c.appendChild(b);});
+  const g=$('#games');g.innerHTML='<div class="sect">🎮 Игровая площадка</div>';GAMES.forEach(l=>{const st=S.stars[l.id]||0,b=document.createElement('button');b.className='card game';b.innerHTML=`<div class="ic">${l.icon}</div><b>${l.name}</b><i>${'★'.repeat(st)}${'☆'.repeat(3-st)}</i>`;b.onclick=()=>{sfx('tap');runLesson(l);};g.appendChild(b);});
+  const next=LESSONS.find(l=>!(S.stars[l.id]>0))||LESSONS[0];$('#continue').textContent=Object.keys(S.stars).length?'▶ Продолжить обучение':'▶ Начать приключение';$('#continue').onclick=()=>runLesson(next);
+  say(pick(['Привет! Я Ори. Блип, Пуф и Ку-Ку прилетели учиться читать. Выбирай урок!','За верные ответы — кристаллы. На них можно украсить наш корабль!','На игровой площадке новые испытания: лови буквы, ищи пары и слушай звуки!','Каждая буква — маленькая звезда. Соберём из них целое созвездие слов!']));
+}
+async function runLesson(def,again=false) {
+  abortAll();actions([]);scene('');const student=again&&L?L.student:(S.student=(S.student+1)%STUDENTS.length);save();L={def,errors:0,earned:0,student};show('lesson');$('#lTitle').textContent=def.name;
+  try { if(!again){const st=STUDENTS[student];await sayWait(st.hi,undefined,st.id);MOOD='neutral';drawChars();}await def.run();await finishLesson(); } catch(e){if(!(e instanceof Abort)){console.error(e);menu();}}
+}
+async function finishLesson() {
+  const stars=L.errors<=1?3:L.errors<=4?2:1,fresh=Math.max(0,stars-(S.stars[L.def.id]||0));if(fresh)addCoins(fresh*5);S.stars[L.def.id]=Math.max(S.stars[L.def.id]||0,stars);save();
+  $('#rStars').innerHTML='★'.repeat(stars)+`<span class="off">${'★'.repeat(3-stars)}</span>`;$('#rGot').innerHTML=CRYSTAL+` +${L.earned}`;$('#result').classList.add('on');MOOD='happy';sfx('win');if(shown('fireworks'))fireworks();speak(stars===3?'Урок пройден! Три звезды! Ты настоящий читатель!':'Урок пройден! Молодец!');
+  const again=await waitable(res=>{$('#rAgain').onclick=()=>res(true);$('#rMenu').onclick=()=>res(false);});$('#result').classList.remove('on');if(again)runLesson(L.def,true);else menu();
+}
+function shop() {
+  show('shop');const box=$('#items');box.innerHTML='';GIFTS.forEach(g=>{const own=S.gifts.includes(g.id),on=shown(g.id),b=document.createElement('button');b.className='item '+(own?'own ':'')+(on?'on ':'')+(S.coins<g.price&&!own?'poor':'');b.innerHTML=`<div class="pv">${g.icon}</div><b>${g.name}</b><span>${own?(on?'Показан ✓':'Спрятан'):CRYSTAL+g.price}</span>`;b.onclick=()=>{
+    if(!own){if(S.coins<g.price){say(`Нужно ещё ${g.price-S.coins} кристаллов. Пройди ещё один урок!`);return;}S.coins-=g.price;S.gifts.push(g.id);S.shown.push(g.id);save();sfx('win');say(g.hi);}
+    else{const i=S.shown.indexOf(g.id);if(i<0)S.shown.push(g.id);else S.shown.splice(i,1);save();sfx('tap');}
+    shop();
+  };box.appendChild(b);});
+  const themes=$('#themes');themes.innerHTML='';if(shown('paint')){themes.innerHTML='<div class="mini" style="width:100%;color:#fff">Цвет каюты:</div>';THEMES.forEach((t,i)=>{const b=document.createElement('button');b.textContent=t[0];b.className=i===S.theme?'on':'';b.onclick=()=>{S.theme=i;save();applyTheme();shop();};themes.appendChild(b);});}
+  voiceShow();
+}
+document.addEventListener('click',e=>{const g=e.target.closest('[data-gift]');if(!g)return;if(g.dataset.gift==='music'){melody();say('Орбитрон играет мелодию звёздного класса!');}if(g.dataset.gift==='robot'){say('Бип-боп! Я тоже хочу учиться читать!',undefined,'alien1');}});
+$('#back').onclick=()=>{sfx('tap');menu();};$('#toShop').onclick=()=>{sfx('tap');shop();say('Это подарки для нашего корабля. Купленный подарок можно показать или спрятать.');};$('#shopBack').onclick=()=>{sfx('tap');menu();};
+$('#snd').onclick=()=>{S.sound=!S.sound;save();$('#snd').textContent=S.sound?'🔊':'🔇';if(!S.sound)hush();voiceShow();};
+$('#reset').onclick=()=>{if(!confirm('Сбросить кристаллы, звёзды и все подарки?'))return;Object.assign(S,FRESH());save();shop();say('Начинаем новое звёздное путешествие!');};
+$('#nvOk').onclick=()=>$('#novoice').classList.remove('on');$('#nvOff').onclick=()=>{S.noVoiceOff=true;save();$('#novoice').classList.remove('on');};
+$('#snd').textContent=S.sound?'🔊':'🔇';voiceInit();menu();setTimeout(voiceCheck,2500);
+</script>
+</body>
+</html>

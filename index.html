@@ -187,10 +187,10 @@ function studentSVG(id, mood = 'neutral') {
   return `<svg viewBox="0 0 200 240" aria-label="Нима"><path d="M53 118Q40 46 98 31Q161 39 149 119L139 172 122 150 105 180 88 151 66 174Z" fill="#9bdc70"/><path d="M68 47Q47 24 58 12M132 47Q153 24 143 12" stroke="#9bdc70" stroke-width="10" stroke-linecap="round"/><circle cx="58" cy="11" r="7" fill="#ed83c1"/><circle cx="143" cy="11" r="7" fill="#ed83c1"/><ellipse cx="77" cy="89" rx="22" ry="28" fill="#fff"/><ellipse cx="124" cy="89" rx="22" ry="28" fill="#fff"/><ellipse cx="78" cy="93" rx="10" ry="16" fill="#314b4a"/><ellipse cx="123" cy="93" rx="10" ry="16" fill="#314b4a"/><path d="${smile}" stroke="#42613f" stroke-width="6" stroke-linecap="round" fill="none"/></svg>`;
 }
 const STUDENTS = [
-  { id:'lulu', name:'Лулу', hi:'Привет! Я Лулу. Я уже умею считать до трёх — по числу моих глаз!' },
-  { id:'bip', name:'Бип', hi:'Бип! Я очень люблю новые слова. Давай читать вместе!' },
-  { id:'tum', name:'Тум', hi:'Я Тум. На моей планете буквы пахнут звёздной пылью!' },
-  { id:'neema', name:'Нима', hi:'Я Нима. Я летаю, но читать пока не умею. Научишься вместе со мной?' }
+  { id:'lulu', name:'Лулу', hi:'Привет! Я Лулу. У меня три глаза, и я уже умею считать до трёх!' },
+  { id:'bip', name:'Бип', hi:'Бип-бип! Я обожаю новые слова. Давай читать вместе!' },
+  { id:'tum', name:'Тум', hi:'Я Тум. На моей планете буквы пахнут звёздной пылью. Хочешь понюхать?' },
+  { id:'neema', name:'Нима', hi:'Я Нима. Я умею летать, но читать пока не умею. Научишь меня?' }
 ];
 function charHTML(id, mood = 'neutral', anim = 'idle') { return `<div class="charwrap ${id} ${id === 'ori' ? 'ori' : 'student'} ${anim}" data-char="${id}">${id === 'ori' ? oriSVG(mood) : studentSVG(id, mood)}</div>`; }
 

@@ -282,10 +282,14 @@
   };
   T.previews = async () => {
     const before = JSON.stringify(T.state()), rows = [];
+    const sources = ORI_REWARDS.items.map(i => ORI_ART[i.id]?.src);
+    assert(sources.every(Boolean) && new Set(sources).size === 44, 'Every gift needs its own catalog image');
     for (const i of ORI_REWARDS.items) {
       await T.go('shop'); await T.click('filter', 'all'); await T.click('item', i.id);
       await T.wait(() => !!document.querySelector(T.select('preview', i.id)), 'Preview detail missing');
+      assert(document.querySelector('.detail-art img')?.getAttribute('src') === ORI_ART[i.id].src, 'Wrong catalog image: ' + i.id);
       await T.click('preview', i.id); await T.images(document.querySelector('#modal'));
+      assert(!document.querySelector('#modal .effect-art'), 'Shared gift placeholder: ' + i.id);
       assert(document.querySelector('.toy-stage').dataset.toy === i.id, 'Wrong preview');
       await T.click('animate', i.id); await T.click('animate', i.id);
       assert(document.querySelector('.toy-object').dataset.animation === (i.category === 'outfits' ? i.shape : i.id), 'Toy did not animate: ' + i.id);
@@ -294,6 +298,28 @@
     }
     assert(JSON.stringify(T.state()) === before, 'Free previews mutated saved progress');
     return {count: rows.length, layouts: T.layouts};
+  };
+  T.paintColors = async () => {
+    await T.buyItem('paint');
+    assert(T.state().theme === 'paint' && T.state().coins === 910, 'Palette purchase failed');
+    assert(document.querySelector('.detail-art img').getAttribute('src') === ORI_ART.paint.src, 'Palette illustration missing');
+    await T.go('room');
+    assert(!getComputedStyle(document.querySelector('.room')).backgroundImage.includes(ORI_ART.paint.src), 'Palette illustration used as room wallpaper');
+    const colors = ['rgb(73, 55, 135)', 'rgb(34, 123, 120)', 'rgb(155, 87, 146)', 'rgb(156, 99, 48)'];
+    for (let n = 0; n < colors.length; n++) {
+      await T.click('toy', 'paint');
+      assert(document.querySelectorAll('[data-action="set-palette"]').length === 4, 'Four paint choices missing');
+      assert(!getComputedStyle(document.querySelector('.toy-stage .room')).backgroundImage.includes(ORI_ART.paint.src), 'Palette preview used illustration as wallpaper');
+      await T.click('set-palette', n);
+      assert(T.state().theme === n && T.state().shown.includes('paint'), 'Paint choice not saved');
+      assert(getComputedStyle(document.querySelector('.room')).backgroundImage.includes(colors[n]), 'Wrong wall color');
+      assert(T.state().coins === 910, 'Paint selection charged extra crystals');
+      await T.click('equip', 'paint');
+      assert(!T.state().shown.includes('paint'), 'Paint could not be hidden');
+      await T.click('equip', 'paint');
+      assert(getComputedStyle(document.querySelector('.room')).backgroundImage.includes(colors[n]), 'Paint color not restored');
+    }
+    return {colors: 4, paletteAsWallpaper: false, noExtraCharges: true};
   };
   T.parent = async () => {
     await T.go('settings'); assert(!document.querySelector('#startLesson'), 'Ungated settings');

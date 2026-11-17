@@ -14,6 +14,7 @@ self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET' || url.origin !== BASE.origin || !url.pathname.startsWith(BASE.pathname)) return;
   const normalized = new URL(url);
   normalized.search = '';
+  normalized.hash = '';
   if (normalized.pathname === BASE.pathname) normalized.pathname += 'index.html';
   const isShell = URLS.has(normalized.href);
   const isVoice = /^voice(?:-v[23])?\/.*\.mp3$/.test(url.pathname.slice(BASE.pathname.length));

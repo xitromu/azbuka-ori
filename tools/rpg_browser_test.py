@@ -265,7 +265,29 @@ class Runner:
         result = self.action('previews', timeout=240)
         require(result['count'] == 44, 'Not all previews exercised')
         require(not result['layouts'], 'Preview/layout overflow: ' + str(result['layouts'][:5]))
-        return {'previewsAnimated': 44, 'free': True, 'brokenImages': 0}
+        self.viewport(1440, 1200)
+        self.js("__rpgtest.go('shop')")
+        self.click('filter', 'effects')
+        self.js('__rpgtest.images()')
+        self.screenshot('effects-catalog')
+        self.click('filter', 'themes')
+        self.click('item', 'paint')
+        self.wait('!!document.querySelector(".detail-art img")', 'Palette detail not shown')
+        self.js('__rpgtest.images()')
+        self.screenshot('paint-detail')
+        self.viewport(390, 844)
+        return {'previewsAnimated': 44, 'uniqueCatalogImages': 44, 'free': True, 'brokenImages': 0}
+
+    def paint_colors(self):
+        self.seed(coins=1000)
+        result = self.action('paintColors')
+        saved = self.state()
+        self.load('room')
+        require(self.state() == saved, 'Palette choice lost after reload')
+        require(not self.js('getComputedStyle(document.querySelector(".room")).backgroundImage.includes(ORI_ART.paint.src)'),
+                'Palette picture became room wallpaper after reload')
+        self.screenshot('paint-colors')
+        return result
 
     def settings(self):
         self.seed()
@@ -409,12 +431,14 @@ class Runner:
         with self.offline_network():
             self.offline = True
             diagnostics = self.js('''(async()=>{
-              const urls=['index.html','index.html#home','rpg/app.js']; const results=[];
+              const urls=['index.html','index.html#home','index.html?test=1#home','./#shop','rpg/app.js']; const results=[];
               for(const url of urls){let network;try{const r=await fetch(url);network={status:r.status,bytes:(await r.arrayBuffer()).byteLength};}catch(e){network={error:String(e)};}
                 const cached=await caches.match(url);results.push({url,cache:!!cached,...network});}
               return {controller:!!navigator.serviceWorker.controller,online:navigator.onLine,results};
             })()''')
             print('INFO offline before navigation: ' + json.dumps(diagnostics), flush=True)
+            require(all(r.get('status') == 200 for r in diagnostics['results']),
+                    'Offline shell query/fragment lookup failed: ' + json.dumps(diagnostics))
             # Exercise the complete offline UI even if hash-shell lookup is broken;
             # the hash reload remains a mandatory, separately reported assertion below.
             self.load(route=None)
@@ -485,7 +509,7 @@ class Runner:
                  ('replays', self.replays), ('duplicate-sequence', self.duplicate_sequence),
                  ('purchases', self.purchase_inventory),
                  ('insufficient', self.insufficient), ('previews', self.previews),
-                 ('settings-import', self.settings), ('migration', self.migration),
+                 ('paint-colors', self.paint_colors), ('settings-import', self.settings), ('migration', self.migration),
                  ('real-audio', self.real_audio), ('memory-audio', self.memory_audio),
                  ('route-audio', self.route_audio),
                  ('offline', self.download_offline),

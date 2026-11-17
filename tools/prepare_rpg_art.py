@@ -229,8 +229,8 @@ def catalog() -> list[tuple[str, str, str]]:
         r"^\s*(\w+):\s*\{src:'assets/[^']+',original:'(assets/[^']+)',background:'(white|opaque)'",
         text, re.MULTILINE,
     )
-    if len(entries) != 36 or len({entry[0] for entry in entries}) != 36:
-        raise ValueError('Expected the exact 36-item mockup catalog')
+    if len(entries) != 44 or len({entry[0] for entry in entries}) != 44:
+        raise ValueError('Expected the exact 44-item mockup catalog')
     if dict((key, original) for key, original, _ in entries)['room_orbit_shelf'] != 'assets/room_orbit_shelf-corrected.png':
         raise ValueError('The corrected shelf must be used')
     return entries
@@ -262,8 +262,10 @@ def write_manifest(art: dict) -> None:
 
 
 def validate(art: dict) -> None:
-    assert len(art) == 36
-    assert sum('sprite' in value for value in art.values()) == 30
+    assert len(art) == 44
+    assert len({hashlib.sha256((ROOT / value['src']).read_bytes()).hexdigest()
+                for value in art.values()}) == 44
+    assert sum('sprite' in value for value in art.values()) == 38
     assert sum('placement' in value for value in art.values()) == 12
     for key, entry in art.items():
         assert (ROOT / entry['src']).is_file(), key
@@ -395,7 +397,7 @@ def main() -> None:
     assert protected == digest(list(protected)), 'A protected source/catalog/hero changed'
     write_manifest(art)
     review_sheets(art, preview)
-    print('Verified: 36 descriptors, 30 transparent sprites, 12 fitted overlays; protected files unchanged.')
+    print('Verified: 44 unique catalog images, 38 transparent sprites, 12 fitted overlays; protected files unchanged.')
     print('Review sheets:', preview)
 
 

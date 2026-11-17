@@ -6,6 +6,14 @@
 // Use a positioned/isolation:isolate wrapper: cape z=0, hero z=1, accessories z>1.
 // Enclosed whites are deliberately opaque; this is not semantic glass matting.
 window.ORI_ART = {
+  confetti: {"src":"rpg/assets/confetti.webp","original":"mockups/rpg-v3/assets/confetti.png","background":"white","sprite":"rpg/assets/confetti-sprite.webp"},
+  fireworks: {"src":"rpg/assets/fireworks.webp","original":"mockups/rpg-v3/assets/fireworks.png","background":"white","sprite":"rpg/assets/fireworks-sprite.webp"},
+  effect_bubbles: {"src":"rpg/assets/effect_bubbles.webp","original":"mockups/rpg-v3/assets/effect_bubbles.png","background":"white","sprite":"rpg/assets/effect_bubbles-sprite.webp"},
+  effect_comet_trail: {"src":"rpg/assets/effect_comet_trail.webp","original":"mockups/rpg-v3/assets/effect_comet_trail.png","background":"white","sprite":"rpg/assets/effect_comet_trail-sprite.webp"},
+  effect_petal_swirl: {"src":"rpg/assets/effect_petal_swirl.webp","original":"mockups/rpg-v3/assets/effect_petal_swirl.png","background":"white","sprite":"rpg/assets/effect_petal_swirl-sprite.webp"},
+  effect_soft_aurora: {"src":"rpg/assets/effect_soft_aurora.webp","original":"mockups/rpg-v3/assets/effect_soft_aurora.png","background":"white","sprite":"rpg/assets/effect_soft_aurora-sprite.webp"},
+  effect_star_ripples: {"src":"rpg/assets/effect_star_ripples.webp","original":"mockups/rpg-v3/assets/effect_star_ripples.png","background":"white","sprite":"rpg/assets/effect_star_ripples-sprite.webp"},
+  paint: {"src":"rpg/assets/paint.webp","original":"mockups/rpg-v3/assets/paint.png","background":"white","sprite":"rpg/assets/paint-sprite.webp"},
   pet_cat: {"src":"rpg/assets/pet_cat.webp","original":"mockups/rpg-v3/assets/pet_cat.png","background":"white","sprite":"rpg/assets/pet_cat-sprite.webp"},
   pet_snail: {"src":"rpg/assets/pet_snail.webp","original":"mockups/rpg-v3/assets/pet_snail.png","background":"white","sprite":"rpg/assets/pet_snail-sprite.webp"},
   pet_bunny: {"src":"rpg/assets/pet_bunny.webp","original":"mockups/rpg-v3/assets/pet_bunny.png","background":"white","sprite":"rpg/assets/pet_bunny-sprite.webp"},

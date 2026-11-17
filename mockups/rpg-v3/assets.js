@@ -1,4 +1,12 @@
 window.ORI_ART = {
+  confetti: {src:'assets/confetti.webp',original:'assets/confetti.png',background:'white',reviewed:true},
+  fireworks: {src:'assets/fireworks.webp',original:'assets/fireworks.png',background:'white',reviewed:true},
+  effect_bubbles: {src:'assets/effect_bubbles.webp',original:'assets/effect_bubbles.png',background:'white',reviewed:true},
+  effect_comet_trail: {src:'assets/effect_comet_trail.webp',original:'assets/effect_comet_trail.png',background:'white',reviewed:true},
+  effect_petal_swirl: {src:'assets/effect_petal_swirl.webp',original:'assets/effect_petal_swirl.png',background:'white',reviewed:true},
+  effect_soft_aurora: {src:'assets/effect_soft_aurora.webp',original:'assets/effect_soft_aurora.png',background:'white',reviewed:true},
+  effect_star_ripples: {src:'assets/effect_star_ripples.webp',original:'assets/effect_star_ripples.png',background:'white',reviewed:true},
+  paint: {src:'assets/paint.webp',original:'assets/paint.png',background:'white',reviewed:true},
   pet_cat: {src:'assets/pet_cat.webp',original:'assets/pet_cat.png',background:'white',reviewed:true},
   pet_snail: {src:'assets/pet_snail.webp',original:'assets/pet_snail.png',background:'white',reviewed:true},
   pet_bunny: {src:'assets/pet_bunny.webp',original:'assets/pet_bunny.png',background:'white',reviewed:true},

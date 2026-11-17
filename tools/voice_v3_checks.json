@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "version": "be3b8a620ccf",
+  "clips": 979,
+  "authoredLines": 490,
+  "learningLines": 378,
+  "rewardLines": 112,
+  "counts": {
+    "line": 490,
+    "demo": 4,
+    "sentence-help": 40,
+    "word": 218,
+    "stress-word": 7,
+    "syllable": 149,
+    "support-word": 4,
+    "letter-name": 33,
+    "story-help": 4,
+    "sound": 31
+  },
+  "bytes": 13130496,
+  "reused": 86,
+  "new": 893,
+  "protectedFilesUnchanged": 508,
+  "sha256Checks": 979,
+  "stressSourceChecks": 7,
+  "silentSignSoundsAbsent": true,
+  "relativeProvenance": true,
+  "generatedWavs": 0
+}

@@ -1,0 +1,141 @@
+[
+  {
+    "id": "pet_snail",
+    "file": "C:/projects/GAMES/azbuka-ori/mockups/rpg-v3/assets/pet_snail.png",
+    "width": 1024,
+    "height": 1024,
+    "background": "Белый/почти белый, фактически непрозрачный. RGBA, alpha 253–255; прозрачных пикселей нет. Под телом осталась контактная тень.",
+    "prompt": "Create one isolated children's game sprite: pet_snail, a mint-green CLOUD-SHELL SNAIL. This is the single corrective regeneration: the shell MUST have a CLOUD SILHOUETTE, not a conventional round spiral snail shell.\nImage 1 is only a reference for dimensional cartoon-toy rendering and big kind glossy eyes. Do not draw an owl, feathers, beak, wings, bird feet, jewelry or a purple animal.\nBackdrop: genuine transparent alpha PNG if available, otherwise solid flat #FFFFFF white. This is a cutout sprite, NOT a studio product photograph: there is no surface underneath it, no floor, absolutely NO contact shadow or cast shadow beneath/around the body, no gray haze, no gradient, no reflection. Never draw a checkerboard.\nAnimal: one mint #B3DED0 soft toy snail, exactly two long eyestalks with one large friendly eye at each tip, smiling face, one continuous gastropod foot ending in a tapering tail, no limbs. On its back is a cream-colored shell shaped like a puffy CLOUD: exactly THREE visibly separate rounded cream cloud lobes, a large middle puff and smaller puff on either side, each with its own small curled detail. The top outline is scalloped like a three-puff cloud. This cloud IS its shell, not a floating cloud, and is attached to the back. No single circular disk or large concentric spiral shell.\nStyle: dimensional rounded plush cartoon toy, soft tactile surfaces, like the reference's warm appealing 3D character rendering. Show volume with shading ON the body and shell only. Soft upper-left lighting.\nFraming: entire snail centered, friendly three-quarter view, both eyes and cloud shell clearly visible, silhouette approximately 78 percent of the 1024x1024 canvas height, balanced empty margins on every side, no cropped eyestalks or tail.\nOnly this snail. No companions, trail, props, text, prices, UI, border, frame, watermark, extra eyes, arms, legs, wings, or background shadow.",
+    "review": {
+      "visually_checked_with_read": true,
+      "status": "needs_review",
+      "brief_source": "C:/projects/GAMES/azbuka-ori/mockups/rpg-v3/rewards.js:78-83",
+      "reference": "C:/projects/GAMES/azbuka-ori/img/ori.png",
+      "source": "C:/projects/GAMES/vibe_images/pet_snail_1794941668267_9e7f8478.png",
+      "species_and_anatomy": "Улитка: два глаза на двух рожках, единая нога, хвост, сливочная облачная раковина с тремя видимыми завитками. Совиных частей и лишних конечностей нет.",
+      "framing": "Полный силуэт, ничего не обрезано; визуальная высота около 59% вместо заданных 78%, поля сверху и снизу увеличены.",
+      "lighting": "Мягкий свет преимущественно сверху слева.",
+      "issues": [
+        "Настоящая прозрачность не получена; фон не является математически ровным #FFFFFF.",
+        "Осталась контактная тень под телом.",
+        "Силуэт заметно меньше целевых 78% высоты."
+      ],
+      "generation_calls": 2,
+      "rejected_result": {
+        "source": "C:/projects/GAMES/vibe_images/pet_snail_1794941622674_8a8dedd4.png",
+        "reason": "Обычная круглая спиральная раковина вместо облачной; контактная тень."
+      },
+      "processing": "Выбранный оригинал скопирован побайтно; фон не удалялся, масштаб не менялся; оба оригинала сохранены."
+    }
+  },
+  {
+    "id": "pet_bunny",
+    "file": "C:/projects/GAMES/azbuka-ori/mockups/rpg-v3/assets/pet_bunny.png",
+    "width": 1024,
+    "height": 1024,
+    "background": "Белый/почти белый, фактически непрозрачный. RGBA, alpha 253–255; прозрачных пикселей нет. Под лапами осталась слабая контактная тень.",
+    "prompt": "Use case: one isolated raster character sprite for GAMES, pet_bunny (Moon Bunny), not a scene or product photo.\nReference image 1: borrow ONLY its dimensional soft cartoon-toy illustration style, plush texture, and very large kind glossy eyes. Do not copy the owl, feathers, beak, bird feet, wings, or star chest badge.\nCanvas/background: transparent alpha PNG if the service supports it. Otherwise use absolutely flat pure white #FFFFFF. NO drawn checkerboard, NO floor, NO contact shadow or cast shadow, NO gray haze, gradient, halo, reflection or vignette. As in a cutout character sticker, empty pixels all around the character must be completely unshaded.\nSubject: one recognizable silver-blue plush baby rabbit, gentle and fluffy, with exactly two big friendly eyes, exactly two LONG silver ears with soft pale interiors, rabbit muzzle and little rabbit nose, exactly four rounded paws (two forepaws and two hind paws), and one tiny cotton tail. A delicate collar holds one TINY lilac star, not a large gold badge. Silver-blue body color guided by #BCD8F0. No props.\nPose/composition: centered full-body bunny, sitting in a mild three-quarter pose with all four paws discernible, both long upright ears fully included, complete silhouette approximately 78% of canvas height, about 11% empty margin above the ear tips and below the paws, adequate space on both sides. 1024x1024 square. Cute rabbit anatomy, not an owl-shaped rabbit.\nRendering: rounded dimensional plush cartoon toy with fine soft fur, warm friendly expression, large glassy eyes. Soft key light from upper left, self-shading confined to the rabbit only, zero shadows outside its silhouette.\nNo other animals, no extra ears or limbs, no text, numbers, price tags, UI, border, frame or watermark.",
+    "review": {
+      "visually_checked_with_read": true,
+      "status": "needs_review",
+      "brief_source": "C:/projects/GAMES/azbuka-ori/mockups/rpg-v3/rewards.js:86-91",
+      "reference": "C:/projects/GAMES/azbuka-ori/img/ori.png",
+      "source": "C:/projects/GAMES/vibe_images/pet_bunny_1794941715297_004203b6.png",
+      "species_and_anatomy": "Зайчонок: два длинных уха, два больших глаза, четыре различимые округлые лапки, маленький хвост; серебристо-голубой мех, лиловая звёздочка на ошейнике. Совиных частей нет.",
+      "framing": "Полный силуэт без обрезки; визуальная высота около 90% вместо заданных 78%, верхнее поле около 3–4%.",
+      "lighting": "Мягкий свет сверху слева.",
+      "issues": [
+        "Настоящая прозрачность не получена; фон не является математически ровным #FFFFFF.",
+        "Осталась слабая контактная тень под лапами.",
+        "Силуэт крупнее целевых 78%; верхнее поле тесное, но уши не обрезаны."
+      ],
+      "generation_calls": 2,
+      "rejected_result": {
+        "source": "C:/projects/GAMES/vibe_images/pet_bunny_1794941772782_641a7bad.png",
+        "reason": "Попытка исправить фон и поля дала фиолетовый фон; оставлен первый результат."
+      },
+      "processing": "Выбранный первый оригинал скопирован побайтно; мех и фон не обрабатывались, масштаб не менялся; оба оригинала сохранены."
+    }
+  },
+  {
+    "id": "pet_turtle",
+    "file": "C:/projects/GAMES/azbuka-ori/mockups/rpg-v3/assets/pet_turtle.png",
+    "width": 1024,
+    "height": 1024,
+    "background": "Белый/почти белый, фактически непрозрачный. RGBA, alpha 253–255; прозрачных пикселей нет. Явной внешней тени или пола визуально нет.",
+    "prompt": "Targeted correction of the GAMES pet_turtle sprite in image 1: the gold marking is incorrectly a CLOSED O-SHAPED RING. Replace ONLY this marking with ONE OPEN GOLDEN ORBIT ARC following the rounded turquoise shell surface, an elegant incomplete curved orbital sweep with clearly separated endpoints and a wide visible gap. Do not draw a complete circle, letter O, numeral, floating ring, rocket or engine.\nKeep the same friendly light-green toy turtle, its two large kind eyes, rounded muzzle, turquoise domed shell, short legs and small tail, soft tactile cartoon-toy rendering, colors, upper-left light, pose, full uncropped silhouette, existing framing and WHITE background unchanged. Do not add a ground plane or any contact/cast shadow. The background must be absolutely flat WHITE #FFFFFF, not gray, purple or checkerboard.\nImage 1 is the edit target. Image 2 is ONLY the original dimensional cartoon-toy STYLE reference; never draw its owl or transfer feathers, beak, wings, bird feet or star badge.\nOutput one turtle only, 1024x1024 PNG, no text, prices, UI, borders, frames, additional characters or watermark. Preserve all existing body parts. The single requested design change is closed ring to OPEN orbit arc.",
+    "review": {
+      "visually_checked_with_read": true,
+      "status": "needs_review",
+      "brief_source": "C:/projects/GAMES/azbuka-ori/mockups/rpg-v3/rewards.js:102-107",
+      "reference": "C:/projects/GAMES/azbuka-ori/img/ori.png",
+      "edit_target": "C:/projects/GAMES/vibe_images/pet_turtle_1794941813818_5d63e553.png",
+      "source": "C:/projects/GAMES/vibe_images/pet_turtle_1794942121816_464d1932.png",
+      "species_and_anatomy": "Салатовая черепашка, два глаза, округлый бирюзовый панцирь и одна незамкнутая золотая орбитальная дуга; три лапы видимы полностью, дальняя четвёртая скрыта ракурсом и не подтверждается визуально. Ракет, двигателей и совиных частей нет.",
+      "framing": "Полный силуэт без обрезки; визуальная высота около 60% вместо заданных 78%, увеличенные верхнее и нижнее поля.",
+      "lighting": "Мягкий свет сверху слева.",
+      "issues": [
+        "Настоящая прозрачность не получена; фон не является математически ровным #FFFFFF.",
+        "Силуэт заметно меньше целевых 78% высоты.",
+        "Четвёртая лапа не видна; проверить четыре конечности по растру нельзя."
+      ],
+      "generation_calls": 2,
+      "rejected_result": {
+        "source": "C:/projects/GAMES/vibe_images/pet_turtle_1794941813818_5d63e553.png",
+        "reason": "Замкнутое кольцо вместо орбитальной дуги; исправлено одним отдельным вызовом ImageGen."
+      },
+      "processing": "Финальный результат ImageGen скопирован побайтно; фон и масштаб не менялись; оба оригинала сохранены."
+    }
+  },
+  {
+    "id": "pet_fox",
+    "file": "C:/projects/GAMES/azbuka-ori/mockups/rpg-v3/assets/pet_fox.png",
+    "width": 1024,
+    "height": 1024,
+    "background": "Белый/почти белый, фактически непрозрачный. RGBA, alpha 252–255; прозрачных пикселей нет. Контактная тень устранена генеративной правкой, не автоматическим удалением белого.",
+    "prompt": "Precise single-correction edit of image 1, the GAMES pet_fox sprite: REMOVE ONLY THE FLOOR SHADOW under the fox's paws and tail, replacing it with the same flat WHITE background. Every background pixel must be pure white #FFFFFF, with no gray or brown contact shadow. Use WHITE, never purple, gray or a checkerboard.\nKEEP the fox itself completely unchanged: full body, pose, scale, centered framing and margins, two kind glossy eyes, two large fox ears, pointed muzzle, four paws, one bushy tail with large cream tip, orange-peach plush fur, cream chest, upper-left light. Preserve every fur tip and every extremity. No cropping, repainting of fur, missing paws or additional objects.\nImage 2 is the original rendering-style reference ONLY; it is an owl and must NOT appear or transfer any owl anatomy, feathers, wings, beak or star badge. The result must contain the same one FOX from image 1 on an absolutely flat WHITE 1024x1024 background with ZERO shadow outside its silhouette.\nNo ground plane, text, UI, prices, frames, watermark, fire or other animals. This is a character cutout on blank white, not a product photograph standing on a floor.",
+    "review": {
+      "visually_checked_with_read": true,
+      "status": "usable_with_background_caveat",
+      "brief_source": "C:/projects/GAMES/azbuka-ori/mockups/rpg-v3/rewards.js:110-115",
+      "reference": "C:/projects/GAMES/azbuka-ori/img/ori.png",
+      "edit_target": "C:/projects/GAMES/vibe_images/pet_fox_1794941865235_84fa36f7.png",
+      "source": "C:/projects/GAMES/vibe_images/pet_fox_1794941950817_87821fca.png",
+      "species_and_anatomy": "Лисёнок: два больших уха, два добрых глаза, четыре различимые лапы, один пышный хвост с большим кремовым кончиком. Мех сохранён; огня и совиных частей нет.",
+      "framing": "Полный силуэт по центру, поля сохранены, ничего не обрезано; визуальная высота около 81%, близко к целевым 78%.",
+      "lighting": "Мягкий свет сверху слева.",
+      "issues": [
+        "Настоящая прозрачность не получена; почти белый фон имеет небольшие вариации RGB, а не точный #FFFFFF."
+      ],
+      "generation_calls": 2,
+      "rejected_result": {
+        "source": "C:/projects/GAMES/vibe_images/pet_fox_1794941865235_84fa36f7.png",
+        "reason": "Контактная тень под лапами и хвостом; исправлена одним отдельным вызовом ImageGen."
+      },
+      "processing": "Финальный результат ImageGen скопирован побайтно; автоматического удаления фона не было; оба оригинала сохранены."
+    }
+  },
+  {
+    "id": "pet_dragon",
+    "file": "C:/projects/GAMES/azbuka-ori/mockups/rpg-v3/assets/pet_dragon.png",
+    "width": 1024,
+    "height": 1024,
+    "background": "Белый/почти белый, фактически непрозрачный. RGBA, alpha 253–255; прозрачных пикселей нет. Явной внешней тени или пола визуально нет.",
+    "prompt": "Use case: one isolated raster fantasy pet sprite for GAMES, pet_dragon (Cloud Dragon). A single toy character only, not a scene or studio product photograph.\nImage 1 is the STYLE reference ONLY: borrow its dimensional softly textured cartoon-toy quality and huge kind glossy eyes. Do NOT draw an owl, copy owl anatomy, feathers, beak, bird feet, gold badge or owl wings.\nBackground: absolutely flat pure white #FFFFFF everywhere outside the dragon silhouette, including underneath and between its paws and wings. No floor or ground, no cast shadow, no contact shadow, no gradient, haze, glow, reflection, vignette, colored backdrop or checkerboard. Cutout game sprite look with blank unshaded empty space.\nSubject: a tiny friendly MINT-AND-LILAC plush baby DRAGON, mint body guided by #9BCFC3, pale lilac belly and lilac wing membranes. Two large kind glossy eyes, rounded reptilian muzzle with small nostrils and a gentle closed smile; exactly TWO short BLUNT rounded horns, not pointed. Exactly FOUR separate rounded legs/paws, two forelegs and two hindlegs. In ADDITION to those four legs, exactly TWO SHORT DRAGON WINGS attached to its upper back: one on each side, both clearly visible, rounded wing fingers and soft membranes, not feathered. One softly curved tapering dragon tail. No extra limbs, no missing paws. This is a six-appendage fantasy dragon: four paws plus two wings.\nPose: sitting upright in a nearly frontal gentle three-quarter view, forepaws held slightly apart and a little forward, two round hind feet visible below, both small wings open to either side. This arrangement must let a viewer count all four paws and both wings separately. Friendly toddler proportions, not scary.\nComposition: centered complete silhouette, 1024x1024 square, approximately 78% of canvas height (top of horns near y=113, lowest foot near y=910), generous clear margins on all sides, all horns, wings, paws and tail fully included with no cropping.\nRendering: polished dimensional soft cartoon toy, rounded matte tactile surfaces, upper-left soft lighting, volume shading ON the dragon only, no shadow outside it.\nNo fire, smoke, cloud rings, weapons, teeth or claws, accessories, other characters, text, price, UI, borders, frames or watermark.",
+    "review": {
+      "visually_checked_with_read": true,
+      "status": "usable_with_background_caveat",
+      "brief_source": "C:/projects/GAMES/azbuka-ori/mockups/rpg-v3/rewards.js:118-123",
+      "reference": "C:/projects/GAMES/azbuka-ori/img/ori.png",
+      "source": "C:/projects/GAMES/vibe_images/pet_dragon_1794941910793_d467e1c5.png",
+      "species_and_anatomy": "Мятно-лиловый добрый дракончик: два глаза, четыре отчётливо видимые лапы, два отдельных перепончатых крыла, два тупых рожка, один хвост. Огня, оружия и совиных частей нет.",
+      "framing": "Полный силуэт по центру, все конечности и крылья внутри кадра; визуальная высота около 83%, поля достаточные.",
+      "lighting": "Мягкий свет сверху слева.",
+      "issues": [
+        "Настоящая прозрачность не получена; почти белый фон имеет небольшие вариации RGB, а не точный #FFFFFF."
+      ],
+      "generation_calls": 1,
+      "processing": "Оригинал скопирован побайтно и сохранён; фон и масштаб не менялись."
+    }
+  }
+]

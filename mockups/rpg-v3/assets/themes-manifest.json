@@ -1,0 +1,210 @@
+[
+  {
+    "id": "theme_dawn",
+    "file": "theme_dawn.png",
+    "width": 1536,
+    "height": 1024,
+    "background": "opaque",
+    "prompt": "Use case: a finished raster background plate for a children's educational game, 1536x1024 landscape.\nScene: a cozy rounded spacecraft cabin interior, medium-wide room view at a child's eye level, one circular porthole high on the back wall, curved wall-to-floor junctions and softly rounded structural trim. The room fills the entire image edge to edge.\nStyle reference: the first image is ONLY a reference for polished volumetric cartoon rendering, soft rounded shapes, tactile materials and gentle lighting. Do NOT include the owl, its face, eyes, feathers, star badge, or any other character.\nAsset ID (metadata only, never draw): theme_dawn\nTheme name (metadata only, never draw): Персиковый рассвет\nExact art brief: Фоновая пластина каюты: персиковые стены, кремовый пол, круглое окно с мягким рассветом; без героев и текста.\nInteraction context only, not UI to render: Нажатие в примерке переключает вид за окном между солнцем у горизонта и солнцем чуть выше; применение темы подтверждается отдельно.\nStatic scene choice: peach walls, an uninterrupted cream floor, warm cream rounded cabin ribs, a soft peach sunrise through the round porthole with one sun resting at the horizon. Restrained warm morning illumination, no glare. Only modest integrated architectural ledges at the extreme sides; no loose furniture.\nComposition: put all thematic detail on the upper back wall, inside the porthole, or at the outer side edges. Keep the central lower area completely empty for later character and object overlays: the middle 60 percent of the width from 48 percent of image height down to the bottom is calm unobstructed floor with no objects or patterns. Keep broad wall surfaces smooth, low-detail and evenly lit so educational cards can remain readable. Strong room volume, quiet uncluttered staging, no foreground obstruction.\nConstraints: only ONE complete scene, fully opaque full-bleed background, no transparency, no white border or margins, no vignette. No humans, owls, animals, aliens, robots, characters, faces, eyes or living creatures. No text, letters, numbers, labels, book titles, symbols, logos, watermark, prices, buttons, menus, UI, educational cards or interface placeholders. No busy texture, sparkles, clutter, central furniture, center rug, split panels, storyboard, or animation effects. Render only the static background; do not implement the interaction.",
+    "review": {
+      "status": "passed",
+      "method": "Read visual inspection and Pillow checks",
+      "scene": "Персиковая каюта, кремовый пол, мягкий рассвет в круглом иллюминаторе.",
+      "emptyCenterAndLowerArea": true,
+      "noCharacters": true,
+      "noTextOrUI": true,
+      "noWhiteBorder": true,
+      "cardArea": "Светлая спокойная свободная зона; проверка внутри игры не выполнялась.",
+      "sourceAlphaExtrema": [
+        254,
+        255
+      ],
+      "opacityFix": "Saved as RGB PNG, preserving RGB pixels and removing near-opaque alpha.",
+      "alphaExtrema": [
+        255,
+        255
+      ],
+      "generationCalls": 1,
+      "source": "C:/projects/GAMES/vibe_images/theme_dawn_1794941643218_b6922d2b.png",
+      "referenceImages": [
+        "C:/projects/GAMES/azbuka-ori/img/ori.png"
+      ],
+      "correctedDefects": []
+    }
+  },
+  {
+    "id": "theme_mint_garden",
+    "file": "theme_mint_garden.png",
+    "width": 1536,
+    "height": 1024,
+    "background": "opaque",
+    "prompt": "Use case: precise correction of a raster background plate for a children's educational game, 1536x1024 landscape.\nInput image: the first image is the edit target, NOT a character reference.\nPrimary request: REMOVE THE PURPLE OWL COMPLETELY, including its entire body, head, feathers, eyes, beak, wings, feet, gold badge, and its contact shadow. Reconstruct uninterrupted blank mint wall and pale mint-cream floor where the owl stood. The entire cabin must be empty. This character removal is the only change.\nPreserve: the exact cozy rounded spacecraft cabin geometry, medium-wide viewpoint, circular porthole, softly rounded cream ribs, pale mint walls, large sculpted leaves confined to the outer wall edges, colors, tactile volumetric cartoon materials, soft lighting, and full-bleed composition of the input image.\nAsset ID (metadata only, never draw): theme_mint_garden\nTheme name (metadata only, never draw): Мятный сад\nExact art brief: Фоновая пластина каюты: светло-мятные стены и крупные рельефные листья только по внешним краям, чистая середина.\nInteraction context only, not UI to render: Нажатие на нижний угол стены разворачивает крупный листовой узор; повторное складывает его, не закрывая мебель и интерфейс.\nComposition constraints: central wall and the whole central lower floor must be empty and low-detail for later heroes, objects and educational card overlays. No replacement objects, no furniture, no rug, no remaining shadow or silhouette of the removed owl.\nOutput constraints: one static scene, fully opaque edge-to-edge raster background, no transparency, white border, margins or vignette. Absolutely no humans, owls, animals, aliens, robots, characters, faces, eyes, living creatures, text, letters, numbers, symbols, logos, watermarks, prices, UI, buttons, menus, educational cards, interface placeholders or animation effects.",
+    "review": {
+      "status": "passed",
+      "method": "Read visual inspection and Pillow checks",
+      "scene": "Светло-мятная каюта, рельефные листья только по внешним краям, круглый иллюминатор. Центр полностью пуст; сова и её тень удалены.",
+      "emptyCenterAndLowerArea": true,
+      "noCharacters": true,
+      "noTextOrUI": true,
+      "noWhiteBorder": true,
+      "cardArea": "Светлая спокойная свободная зона; проверка внутри игры не выполнялась.",
+      "sourceAlphaExtrema": [
+        253,
+        255
+      ],
+      "opacityFix": "Saved as RGB PNG, preserving RGB pixels and removing near-opaque alpha.",
+      "alphaExtrema": [
+        255,
+        255
+      ],
+      "generationCalls": 2,
+      "source": "C:/projects/GAMES/vibe_images/theme_mint_garden_corrected_1794941740653_89bedfb8.png",
+      "referenceImages": [
+        "C:/projects/GAMES/vibe_images/theme_mint_garden_1794941690671_de172e18.png"
+      ],
+      "correctedDefects": [
+        {
+          "source": "C:/projects/GAMES/vibe_images/theme_mint_garden_1794941690671_de172e18.png",
+          "reason": "В первом результате появилась сова. Исправлено одной целевой перегенерацией."
+        }
+      ]
+    }
+  },
+  {
+    "id": "theme_coral_bay",
+    "file": "theme_coral_bay.png",
+    "width": 1536,
+    "height": 1024,
+    "background": "opaque",
+    "prompt": "Use case: a finished raster background plate for a children's educational game, 1536x1024 landscape.\nScene: a cozy rounded spacecraft cabin interior, medium-wide room view at a child's eye level, one circular porthole high on the back wall, curved wall-to-floor junctions and softly rounded structural trim. The room fills the entire image edge to edge.\nStyle reference: the first image is ONLY a reference for the rounded cabin architecture, polished volumetric cartoon rendering, tactile materials and gentle lighting. Generate a new room theme with the exact palette and window view below; do not keep the peach walls or sunrise. Preserve the generous empty center and overall camera framing.\nAsset ID (metadata only, never draw): theme_coral_bay\nTheme name (metadata only, never draw): Коралловая бухта\nExact art brief: Фоновая пластина каюты: песочно-кремовые стены, коралловая окантовка окна, за ним тихое бирюзовое море.\nInteraction context only, not UI to render: Горизонтальный жест по окну перемещает одну широкую волну вслед за пальцем; после отпускания море снова неподвижно.\nStatic scene choice: sand-cream walls and floor, soft cream rounded cabin ribs, a clearly coral-colored thick rounded circular window frame. Through the porthole show a quiet turquoise sea under a pale sky, with one broad smooth low wave across the water and a simple distant horizon. Calm daylight, no dramatic surf, no underwater view, no fish. Only modest integrated architectural ledges at the extreme sides; no loose furniture.\nComposition: put all thematic detail on the upper back wall, inside the porthole, or at the outer side edges. Keep the central lower area completely empty for later character and object overlays: the middle 60 percent of the width from 48 percent of image height down to the bottom is calm unobstructed floor with no objects or patterns. Keep broad wall surfaces smooth, low-detail and evenly lit so educational cards can remain readable. Strong room volume, quiet uncluttered staging, no foreground obstruction.\nConstraints: only ONE complete scene, fully opaque full-bleed background, no transparency, no white border or margins, no vignette. No humans, owls, animals, aliens, robots, characters, faces, eyes or living creatures. No text, letters, numbers, labels, book titles, symbols, logos, watermark, prices, buttons, menus, UI, educational cards or interface placeholders. No busy texture, sparkles, clutter, central furniture, center rug, split panels, storyboard, or animation effects. Render only the static background; do not implement the interaction.",
+    "review": {
+      "status": "passed",
+      "method": "Read visual inspection and Pillow checks",
+      "scene": "Песочно-кремовая каюта, коралловая рама круглого окна, бирюзовое море с широкой волной.",
+      "emptyCenterAndLowerArea": true,
+      "noCharacters": true,
+      "noTextOrUI": true,
+      "noWhiteBorder": true,
+      "cardArea": "Светлая спокойная свободная зона; проверка внутри игры не выполнялась.",
+      "sourceAlphaExtrema": [
+        254,
+        255
+      ],
+      "opacityFix": "Saved as RGB PNG, preserving RGB pixels and removing near-opaque alpha.",
+      "alphaExtrema": [
+        255,
+        255
+      ],
+      "generationCalls": 1,
+      "source": "C:/projects/GAMES/vibe_images/theme_coral_bay_1794941786528_1819ad83.png",
+      "referenceImages": [
+        "C:/projects/GAMES/vibe_images/theme_dawn_1794941643218_b6922d2b.png"
+      ],
+      "correctedDefects": []
+    }
+  },
+  {
+    "id": "theme_lavender_night",
+    "file": "theme_lavender_night.png",
+    "width": 1536,
+    "height": 1024,
+    "background": "opaque",
+    "prompt": "Use case: a finished raster background plate for a children's educational game, 1536x1024 landscape.\nScene: a cozy rounded spacecraft cabin interior, medium-wide room view at a child's eye level, one circular porthole high on the back wall, curved wall-to-floor junctions and softly rounded structural trim. The room fills the entire image edge to edge.\nStyle reference: the first image is ONLY a reference for the rounded cabin architecture, polished volumetric cartoon rendering, tactile materials and gentle lighting. Generate a new room theme with the exact palette and window view below; do not keep the peach walls or sunrise. Preserve the generous empty center and overall camera framing.\nAsset ID (metadata only, never draw): theme_lavender_night\nTheme name (metadata only, never draw): Сиреневая ночь\nExact art brief: Фоновая пластина каюты: светло-сиреневые стены, сине-лиловое небо в окне и одна кремовая луна; не затемнять зону интерфейса.\nInteraction context only, not UI to render: Нажатие на луну переключает полумесяц и полный круг; яркость текста и учебных карточек остаётся прежней.\nStatic scene choice: LIGHT lavender walls, pale lavender-cream uninterrupted floor and pearl-cream rounded cabin ribs. Through the porthole show a simple blue-violet night sky and exactly one large softly luminous cream crescent moon without a face. The night is only outside the window; the cabin interior stays softly and evenly illuminated, bright and welcoming, with no dark interface area. No scattered stars or tiny decorative sparkles. Only modest integrated architectural ledges at the extreme sides; no loose furniture.\nComposition: put all thematic detail on the upper back wall, inside the porthole, or at the outer side edges. Keep the central lower area completely empty for later character and object overlays: the middle 60 percent of the width from 48 percent of image height down to the bottom is calm unobstructed floor with no objects or patterns. Keep broad wall surfaces smooth, low-detail and evenly lit so educational cards can remain readable. Strong room volume, quiet uncluttered staging, no foreground obstruction.\nConstraints: only ONE complete scene, fully opaque full-bleed background, no transparency, no white border or margins, no vignette. No humans, owls, animals, aliens, robots, characters, faces, eyes or living creatures. No text, letters, numbers, labels, book titles, symbols, logos, watermark, prices, buttons, menus, UI, educational cards or interface placeholders. No busy texture, sparkles, clutter, central furniture, center rug, split panels, storyboard, or animation effects. Render only the static background; do not implement the interaction.",
+    "review": {
+      "status": "passed",
+      "method": "Read visual inspection and Pillow checks",
+      "scene": "Светло-сиреневая каюта, сине-лиловое небо и одна кремовая луна-полумесяц. Центр светлый и пустой.",
+      "emptyCenterAndLowerArea": true,
+      "noCharacters": true,
+      "noTextOrUI": true,
+      "noWhiteBorder": true,
+      "cardArea": "Светлая спокойная свободная зона; проверка внутри игры не выполнялась.",
+      "sourceAlphaExtrema": [
+        254,
+        255
+      ],
+      "opacityFix": "Saved as RGB PNG, preserving RGB pixels and removing near-opaque alpha.",
+      "alphaExtrema": [
+        255,
+        255
+      ],
+      "generationCalls": 1,
+      "source": "C:/projects/GAMES/vibe_images/theme_lavender_night_1794941834844_88e8ba35.png",
+      "referenceImages": [
+        "C:/projects/GAMES/vibe_images/theme_dawn_1794941643218_b6922d2b.png"
+      ],
+      "correctedDefects": []
+    }
+  },
+  {
+    "id": "theme_cloud_harbor",
+    "file": "theme_cloud_harbor.png",
+    "width": 1536,
+    "height": 1024,
+    "background": "opaque",
+    "prompt": "Use case: precise correction of a raster background plate for a children's educational game, 1536x1024 landscape.\nInput image: the first image is the edit target.\nPrimary request: CHANGE ONLY THE VIEW INSIDE THE CIRCULAR PORTHOLE. Replace the sea and close-up harbor with a clearly distant fantastical AIRBORNE PIER FLOATING HIGH AMONG CLOUDS. There must be NO WATER and NO SEA HORIZON anywhere in the porthole. A few large white cloud banks occupy the bottom and sides of the window view, with open pale blue sky between them and below the floating pier. The small distant cream landing pier is suspended in the sky above the clouds, with a visible underside, occupying no more than one third of the porthole width. Exactly one tiny unmarked rounded sky boat floats alongside that distant pier; it is a boat-like hull, not a building, without passengers, eyes, face, markings or text. All new objects remain inside the porthole.\nPreserve without change: the entire empty sky-blue rounded spacecraft cabin, white rounded beams, porthole frame and location, pale blue-cream floor, medium-wide viewpoint, polished volumetric cartoon materials, soft bright lighting, and full-bleed composition.\nAsset ID (metadata only, never draw): theme_cloud_harbor\nTheme name (metadata only, never draw): Облачная пристань\nExact art brief: Фоновая пластина каюты: голубые стены, белые округлые балки и дальняя воздушная пристань за окном; без персонажей.\nInteraction context only, not UI to render: Нажатие на окно проводит один маленький безымянный кораблик от левого края к причалу; он остаётся у причала до повторного нажатия.\nComposition constraints: central wall and the whole central lower floor must remain empty and low-detail for later heroes, objects and educational card overlays. Do not add furniture, a rug, or any new interior detail. The cloud harbor should read clearly but remain quiet and distant.\nOutput constraints: one static scene, fully opaque edge-to-edge raster background, no transparency, white border, margins or vignette. Absolutely no humans, owls, animals, aliens, robots, characters, faces, eyes, living creatures, text, letters, numbers, symbols, logos, watermarks, prices, UI, buttons, menus, educational cards, interface placeholders or animation effects.",
+    "review": {
+      "status": "passed",
+      "method": "Read visual inspection and Pillow checks",
+      "scene": "Голубая каюта с белыми балками. В круглом иллюминаторе дальний парящий причал с крошечным корабликом среди облаков; моря нет. Центр пустой.",
+      "emptyCenterAndLowerArea": true,
+      "noCharacters": true,
+      "noTextOrUI": true,
+      "noWhiteBorder": true,
+      "cardArea": "Светлая спокойная свободная зона; проверка внутри игры не выполнялась.",
+      "sourceAlphaExtrema": [
+        253,
+        255
+      ],
+      "opacityFix": "Saved as RGB PNG, preserving RGB pixels and removing near-opaque alpha.",
+      "alphaExtrema": [
+        255,
+        255
+      ],
+      "generationCalls": 2,
+      "source": "C:/projects/GAMES/vibe_images/theme_cloud_harbor_corrected_1794941969905_cb67bc9b.png",
+      "referenceImages": [
+        "C:/projects/GAMES/vibe_images/theme_cloud_harbor_1794941882172_8e231011.png"
+      ],
+      "correctedDefects": [
+        {
+          "source": "C:/projects/GAMES/vibe_images/theme_cloud_harbor_1794941882172_8e231011.png",
+          "reason": "Морская пристань вместо воздушной. Одной целевой перегенерацией изменён только вид в окне."
+        }
+      ]
+    }
+  },
+  {
+    "id": "theme_amber_library",
+    "file": "theme_amber_library.png",
+    "width": 1536,
+    "height": 1024,
+    "background": "opaque",
+    "prompt": "Use case: a finished raster background plate for a children's educational game, 1536x1024 landscape.\nScene: a cozy rounded spacecraft cabin interior, medium-wide room view at a child's eye level, one circular porthole high on the back wall, curved wall-to-floor junctions and softly rounded structural trim. The room fills the entire image edge to edge.\nStyle reference: the first image is ONLY a reference for the rounded cabin architecture, polished volumetric cartoon rendering, tactile materials and gentle lighting. Generate a new room theme with the exact palette and window view below; do not keep the peach walls or sunrise. Preserve the generous empty center and overall camera framing.\nAsset ID (metadata only, never draw): theme_amber_library\nTheme name (metadata only, never draw): Янтарная библиотека\nExact art brief: Фоновая пластина каюты: медово-кремовые стены, округлая боковая ниша с несколькими книгами без надписей, свободный центр.\nInteraction context only, not UI to render: Нажатие на книжную нишу выдвигает одну декоративную книгу и раскрывает пустой разворот; повторное закрывает и убирает книгу. Подсказок внутри нет.\nStatic scene choice: honey-cream walls, warm amber rounded trim and a pale cream uninterrupted floor. One compact rounded recessed book niche strictly on an outer side wall, outside the central staging area. In the niche are a few chunky decorative books with completely blank unmarked spines and covers; one small book rests open within the niche showing two entirely blank cream pages, with no writing, drawings or symbols. Through the round porthole is a simple calm softly blue sky. Cozy warm diffuse illumination, no desk, no chair, no floor-standing shelf, no loose furniture or books in the center.\nComposition: put all thematic detail on the upper back wall, inside the porthole, or at the outer side edges. Keep the central lower area completely empty for later character and object overlays: the middle 60 percent of the width from 48 percent of image height down to the bottom is calm unobstructed floor with no objects or patterns. Keep broad wall surfaces smooth, low-detail and evenly lit so educational cards can remain readable. Strong room volume, quiet uncluttered staging, no foreground obstruction.\nConstraints: only ONE complete scene, fully opaque full-bleed background, no transparency, no white border or margins, no vignette. No humans, owls, animals, aliens, robots, characters, faces, eyes or living creatures. No text, letters, numbers, labels, book titles, symbols, logos, watermark, prices, buttons, menus, UI, educational cards or interface placeholders. No busy texture, sparkles, clutter, central furniture, center rug, split panels, storyboard, or animation effects. Render only the static background; do not implement the interaction.",
+    "review": {
+      "status": "passed",
+      "method": "Read visual inspection and Pillow checks",
+      "scene": "Медово-кремовая каюта, круглый иллюминатор и боковая книжная ниша. Корешки и открытые страницы без надписей; центр свободен.",
+      "emptyCenterAndLowerArea": true,
+      "noCharacters": true,
+      "noTextOrUI": true,
+      "noWhiteBorder": true,
+      "cardArea": "Светлая спокойная свободная зона; проверка внутри игры не выполнялась.",
+      "sourceAlphaExtrema": [
+        253,
+        255
+      ],
+      "opacityFix": "Saved as RGB PNG, preserving RGB pixels and removing near-opaque alpha.",
+      "alphaExtrema": [
+        255,
+        255
+      ],
+      "generationCalls": 1,
+      "source": "C:/projects/GAMES/vibe_images/theme_amber_library_1794942018604_862598ef.png",
+      "referenceImages": [
+        "C:/projects/GAMES/vibe_images/theme_dawn_1794941643218_b6922d2b.png"
+      ],
+      "correctedDefects": []
+    }
+  }
+]

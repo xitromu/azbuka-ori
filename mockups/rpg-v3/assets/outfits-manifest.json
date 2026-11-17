@@ -1,0 +1,623 @@
+[
+  {
+    "id": "blip_hat",
+    "file": "blip_hat.png",
+    "width": 1024,
+    "height": 1024,
+    "background": "white",
+    "prompt": "Use case: a single raster inventory product preview for a children's game, item blip_hat, not a character sprite or an automatically aligned overlay.\nInput image 1 is ONLY a reference for the soft rounded 3D toy style, relative accessory scale, and position of the owner's two antenna roots. Do NOT reproduce the character or any body part.\nBackdrop: perfectly uniform pure white #FFFFFF, no floor, no horizon and no cast or contact shadow.\nSubject: one small white-and-blue soft toy cap with a rounded orange visor. A low rounded white crown has simple blue fabric panels and exactly two clearly visible empty reinforced holes on the top, spaced for the reference character's two antennae. Show the hollow antenna openings as actual fabric apertures, not eyes or decorations; there are NO antennae in the image. The orange visor is short and gently curved. No emblem.\nStyle: polished cartoon soft volumetric toy, gently padded smooth fabric, rounded friendly edges and subtle seams. Soft light from the upper left, shading only on the object.\nComposition: isolated unworn cap alone, centered, slight elevated three-quarter product view that shows both top holes and the visor. Entire object visible with at least 10 percent empty margin on every side, no cropping.\nConstraints: only this accessory; no wearer, mannequin, head, eyes, face, body, ears, limbs, antennae or other props. No text, letters, numbers, prices, UI, logos, watermark, border or collage.",
+    "review": {
+      "status": "accepted",
+      "owner": "alien1",
+      "artBrief": "Только слой бело-синей шапочки с оранжевым козырьком по img/alien1.png; два отверстия под антенны, лицо и тело не рисовать.",
+      "reference": "C:/projects/GAMES/azbuka-ori/img/alien1.png",
+      "initialSource": "C:/projects/GAMES/vibe_images/blip_hat_1794941651267_bc40558d.png",
+      "source": "C:/projects/GAMES/vibe_images/blip_hat_fix_1794941759483_ecf47282.png",
+      "imagegenCalls": 2,
+      "correctionPrompt": "Precise object edit for a children's game accessory preview, blip_hat. Image 1 is the edit target; image 2 is ONLY the owner's toy-style and attachment reference, never content to include.\nChange ONLY the background: completely remove the cast/contact shadow underneath the cap and beneath the orange visor, replacing every background pixel outside the cap silhouette with uniform pure white #FFFFFF. Present a floating isolated cutout, not a product resting on a white floor. Keep genuine self-shading inside the two empty antenna holes and on the cap itself. No gray shadow on the backdrop anywhere.\nPreserve exactly the same white-and-blue padded cap, orange visor, two empty top antenna holes, fabric detail, upper-left light, angle, size, centered composition and at least 10 percent margin, 1024x1024. Do not crop, redesign, add or remove any part of the accessory. No wearer, character, head, eyes, face, body, limbs or antennae; no text, prices, UI, logos or other objects. Output only the cap on flat white, no floor, horizon, cast shadow, collage or border.",
+      "checks": [
+        "Просмотрено через Read до и после правки.",
+        "Бело-синяя шапочка, оранжевый козырёк; два пустых отверстия под антенны.",
+        "Персонажа и частей тела нет; предмет целиком.",
+        "Тень на фоне убрана единственной правкой ImageGen."
+      ],
+      "issues": [],
+      "cornerRGB": [
+        [
+          250,
+          249,
+          253
+        ],
+        [
+          251,
+          253,
+          252
+        ],
+        [
+          255,
+          253,
+          253
+        ],
+        [
+          255,
+          255,
+          255
+        ]
+      ],
+      "sha256": "00bb30f6c689f2188d72408bcccdce1afa5bd717a643bffc9d45ea30f8cdbbe0",
+      "alignment": "Предметное превью для макетов, не готовый совмещённый слой. Точное автоматическое совмещение со спрайтом героя не гарантируется; при интеграции нужна ручная подгонка масштаба и положения.",
+      "processing": "PNG скопирован побайтно из результата ImageGen. Фон не вырезался и не нормализовался, растровый предмет не дорисовывался; исходники сохранены.",
+      "backgroundNote": "Визуально белый непрозрачный фон без видимой падающей тени; сохранены исходные оттенки почти белых пикселей ImageGen, точный RGB #FFFFFF не нормализован."
+    }
+  },
+  {
+    "id": "blip_cape",
+    "file": "blip_cape.png",
+    "width": 1024,
+    "height": 1024,
+    "background": "white",
+    "prompt": "Use case: a single raster inventory product preview for a children's game, item blip_cape, not a character sprite or an automatically aligned overlay.\nInput image 1 is ONLY a reference for rounded 3D toy style, accessory proportions and the intended back attachment. Its astronaut suit would stay visible when this short cape is worn. Do NOT reproduce the character, the suit or any body part.\nBackdrop: perfectly uniform pure white #FFFFFF, no floor, horizon, cast shadow or contact shadow.\nSubject: one short blue cape with a rounded orange fabric edge and exactly one simple lighter-blue curved arc across the cape, with no arrows. It is a small open-front back-only cape, with a broad curved upper attachment edge, no sleeves and a softly flared rounded hem. Show the single back fabric panel directly, so the orange piping and lone curved arc are clear; no front bib covering a suit.\nStyle: polished cartoon soft volumetric toy, gently padded blue cloth, smooth broad folds and soft rounded seams. Lighting from upper left, object self-shading only.\nComposition: isolated unworn cape alone, centered in a slightly three-quarter rear product view, gently spread for a legible silhouette. Entire object visible with at least 10 percent empty margin on every side, no cropping.\nConstraints: only this accessory; no wearer, mannequin, head, eyes, face, body, limbs, antennae, costume or extra props. No text, letters, numbers, prices, UI, logos, watermark, border, collage or arrows.",
+    "review": {
+      "status": "accepted",
+      "owner": "alien1",
+      "artBrief": "Только короткий синий плащ позади корпуса img/alien1.png, оранжевый край и одна дуга без стрелок; костюм остаётся виден.",
+      "reference": "C:/projects/GAMES/azbuka-ori/img/alien1.png",
+      "initialSource": "C:/projects/GAMES/vibe_images/blip_cape_1794941668296_90329881.png",
+      "source": "C:/projects/GAMES/vibe_images/blip_cape_fix_1794942052693_6c896d95.png",
+      "imagegenCalls": 2,
+      "correctionPrompt": "Precise framing edit for a children's game accessory preview, blip_cape. Image 1 is the edit target; image 2 is ONLY the owner's toy-style and back-attachment reference, never content to include.\nThe only requested change: uniformly reduce the existing cape to 90 percent of its current apparent size and recenter it on the same 1024x1024 canvas, giving at least 12 percent clear white margins on left and right and generous margin above and below. Do not crop or change its shape.\nPreserve the exact single short blue back cape, rounded orange piping, exactly one lighter-blue curved arc without arrows, seams, broad folds, color, cloth texture, rear view and upper-left lighting. No sleeves, front panel, costume or new ornaments. Keep the background flat pure white #FFFFFF, no floor, horizon, cast shadow or contact shadow; an isolated floating accessory, not resting on a surface.\nNo wearer, mannequin, head, eyes, face, body, limbs or antennae. No text, prices, UI, logos, props, border or collage. Only this one unworn cape.",
+      "checks": [
+        "Просмотрено через Read до и после правки.",
+        "Синий плащ с оранжевой окантовкой и одной дугой без стрелок.",
+        "Задняя тканевая деталь без персонажа и костюма.",
+        "Единственная правка увеличила боковые поля примерно до 10%; обрезки нет."
+      ],
+      "issues": [],
+      "cornerRGB": [
+        [
+          249,
+          249,
+          253
+        ],
+        [
+          253,
+          255,
+          255
+        ],
+        [
+          255,
+          255,
+          253
+        ],
+        [
+          255,
+          255,
+          255
+        ]
+      ],
+      "sha256": "e4d8b298439849b88cb3dfc6e4495f0dfd3fcdc4047240ee4be7273819899930",
+      "alignment": "Предметное превью для макетов, не готовый совмещённый слой. Точное автоматическое совмещение со спрайтом героя не гарантируется; при интеграции нужна ручная подгонка масштаба и положения.",
+      "processing": "PNG скопирован побайтно из результата ImageGen. Фон не вырезался и не нормализовался, растровый предмет не дорисовывался; исходники сохранены.",
+      "backgroundNote": "Визуально белый непрозрачный фон без видимой падающей тени; сохранены исходные оттенки почти белых пикселей ImageGen, точный RGB #FFFFFF не нормализован."
+    }
+  },
+  {
+    "id": "blip_boots",
+    "file": "blip_boots.png",
+    "width": 1024,
+    "height": 1024,
+    "background": "white",
+    "prompt": "Use case: a single raster inventory product preview for a children's game, item blip_boots; the matching pair is ONE product, not a collage and not an automatically aligned character overlay.\nInput image 1 is ONLY a reference for soft rounded 3D toy style and the shape and proportions of the owner's existing broad astronaut boots. Do NOT reproduce the character, existing boots or any body parts.\nBackdrop: perfectly uniform pure white #FFFFFF, no floor, no horizon, no cast or contact shadow.\nSubject: exactly TWO coordinated orange soft slip-on overshoe covers for the reference astronaut boots, displayed together as a left and right pair. Broad rounded toe shells, low hollow ankle openings, cushioned orange soles; exactly two broad rounded accordion folds along each sole make a playful springy shape. These are empty orange outer accessories, with no blue or white original boot, no leg or foot inside. Their low soft shapes fit over broad boots, not tall human boots.\nStyle: polished cartoon soft volumetric toy, matte pliable orange padded material, rounded edges and gentle seam details. Soft upper-left light, shading only on the accessories.\nComposition: the pair centered as one balanced group in a single scene, side by side with a small gap and slightly turned to show the openings and two rounded sole folds. Both complete covers visible, at least 10 percent blank margin around the whole pair, no cropping.\nConstraints: only these two matching accessory parts; no wearer, mannequin, head, eyes, face, body, limbs, legs, feet or antennae. No extra objects, text, letters, numbers, prices, UI, logos, watermark, border or collage.",
+    "review": {
+      "status": "accepted",
+      "owner": "alien1",
+      "artBrief": "Пара оранжевых накладок с двумя округлыми складками на подошвах, точно поверх существующих ботинок img/alien1.png; без новых ног.",
+      "reference": "C:/projects/GAMES/azbuka-ori/img/alien1.png",
+      "initialSource": "C:/projects/GAMES/vibe_images/blip_boots_1794941688704_7c15e3b8.png",
+      "source": "C:/projects/GAMES/vibe_images/blip_boots_fix_1794941779920_3399e71c.png",
+      "imagegenCalls": 2,
+      "correctionPrompt": "Precise object edit for a children's game accessory preview, blip_boots. Image 1 is the edit target; image 2 is ONLY the owner's toy-style and boot-shape reference, never content to include.\nChange ONLY the background: completely remove all cast/contact shadows underneath and between the two orange overshoe covers, replacing every background pixel outside their silhouettes with uniform pure white #FFFFFF. Present floating isolated cutouts, not shoes resting on a white floor. Keep genuine self-shading inside the empty ankle openings and in the two rounded sole folds of each cover. No gray shadow on the backdrop anywhere.\nPreserve exactly these TWO coordinated empty orange padded overshoe covers as ONE product pair, their rounded broad toes, two accordion sole folds each, angle, spacing, fabric detail, upper-left lighting, centered composition and at least 10 percent margin, 1024x1024. No original astronaut boots inside. Do not crop, redesign or add pieces. No wearer, character, head, eyes, face, body, legs, feet, limbs or antennae; no text, prices, UI, logos or extra objects. Only the pair on flat white, no floor, horizon, cast shadow, collage or border.",
+      "checks": [
+        "Просмотрено через Read до и после правки.",
+        "Один товар: две оранжевые пустые накладки с двумя округлыми складками на каждой подошве.",
+        "Новых ног, стоп и исходных ботинок внутри нет.",
+        "Тени на фоне убраны единственной правкой ImageGen; обе части целиком."
+      ],
+      "issues": [],
+      "cornerRGB": [
+        [
+          244,
+          243,
+          247
+        ],
+        [
+          249,
+          253,
+          253
+        ],
+        [
+          255,
+          252,
+          251
+        ],
+        [
+          255,
+          255,
+          255
+        ]
+      ],
+      "sha256": "20a51f39b286c86bb233b844e15adb2fa1b1155b7f582ccb00e78e3237e76efa",
+      "alignment": "Предметное превью для макетов, не готовый совмещённый слой. Точное автоматическое совмещение со спрайтом героя не гарантируется; при интеграции нужна ручная подгонка масштаба и положения.",
+      "processing": "PNG скопирован побайтно из результата ImageGen. Фон не вырезался и не нормализовался, растровый предмет не дорисовывался; исходники сохранены.",
+      "backgroundNote": "Визуально белый непрозрачный фон без видимой падающей тени; сохранены исходные оттенки почти белых пикселей ImageGen, точный RGB #FFFFFF не нормализован."
+    }
+  },
+  {
+    "id": "blip_badge",
+    "file": "blip_badge.png",
+    "width": 1024,
+    "height": 1024,
+    "background": "white",
+    "prompt": "Use case: a single raster inventory product preview for a children's game, item blip_badge, not a character sprite or an automatically aligned overlay.\nInput image 1 is ONLY a reference for the rounded 3D toy style, palette and small accessory scale. This new badge is intended for the outer side of the lowered sleeve, separate from the existing chest emblem. Do NOT show or reproduce the character, sleeve, suit or existing chest emblem.\nBackdrop: perfectly uniform pure white #FFFFFF, no floor, horizon, cast shadow or contact shadow.\nSubject: one small dimensional toy badge shaped as a smooth blue planet encircled by a single thick golden orbital ring. A domed blue sphere on a discreet rounded pin-badge backing; the continuous gold ring crosses diagonally in front and wraps behind, so it reads as a ringed planet. Friendly rounded edges, a clear compact silhouette, no inscriptions or stars and no loose pieces.\nStyle: polished cartoon soft volumetric toy accessory, smooth blue surface, softly lustrous warm gold ring rather than harsh metal, upper-left lighting and gentle shading confined to the object.\nComposition: isolated badge alone, centered, slightly three-quarter frontal product view showing the planet and ring fully. At least 10 percent empty margin on every side, no cropping.\nConstraints: only this accessory; no wearer, mannequin, head, eyes, face, body, limbs, sleeve, antennae or props. No text, letters, numbers, prices, UI, logos, watermark, border or collage.",
+    "review": {
+      "status": "accepted",
+      "owner": "alien1",
+      "artBrief": "Только объёмный значок синей планеты с золотым кольцом на наружной стороне опущенного рукава img/alien1.png; без надписей.",
+      "reference": "C:/projects/GAMES/azbuka-ori/img/alien1.png",
+      "initialSource": "C:/projects/GAMES/vibe_images/blip_badge_1794941705399_bbc545a4.png",
+      "source": "C:/projects/GAMES/vibe_images/blip_badge_fix_1794941801064_10f52b85.png",
+      "imagegenCalls": 2,
+      "correctionPrompt": "Precise object edit for a children's game accessory preview, blip_badge. Image 1 is the edit target; image 2 is ONLY the owner's toy-style and small sleeve-accessory scale reference, never content to include.\nChange ONLY the background: completely remove the gray cast/contact shadow underneath the blue planet badge and its gold ring, replacing every background pixel outside the object silhouette with uniform pure white #FFFFFF. Present a floating isolated cutout, not a planet resting on a white floor. Keep genuine self-shading on the blue sphere and golden orbital ring. No gray shadow on the backdrop anywhere.\nPreserve exactly the same single rounded dimensional blue planet badge with one continuous golden ring, soft toy finish, color, angle, upper-left light, size, centered composition and at least 10 percent margin, 1024x1024. Do not crop, redesign or add pieces. No wearer, character, head, eyes, face, body, limbs, sleeve or antennae; no text, prices, UI, logos or extra objects. Only the badge on flat white, no floor, horizon, cast shadow, collage or border.",
+      "checks": [
+        "Просмотрено через Read до и после правки.",
+        "Один объёмный значок: синяя планета и золотое кольцо.",
+        "Рукав, костюм и герой не нарисованы; надписей нет.",
+        "Тень на фоне убрана единственной правкой ImageGen."
+      ],
+      "issues": [],
+      "cornerRGB": [
+        [
+          249,
+          247,
+          251
+        ],
+        [
+          252,
+          253,
+          253
+        ],
+        [
+          251,
+          248,
+          249
+        ],
+        [
+          255,
+          255,
+          255
+        ]
+      ],
+      "sha256": "7872dad0647632b13e6de7838cf494430cd80dcf2e4268361eb5957290e3d9eb",
+      "alignment": "Предметное превью для макетов, не готовый совмещённый слой. Точное автоматическое совмещение со спрайтом героя не гарантируется; при интеграции нужна ручная подгонка масштаба и положения.",
+      "processing": "PNG скопирован побайтно из результата ImageGen. Фон не вырезался и не нормализовался, растровый предмет не дорисовывался; исходники сохранены.",
+      "backgroundNote": "Визуально белый непрозрачный фон без видимой падающей тени; сохранены исходные оттенки почти белых пикселей ImageGen, точный RGB #FFFFFF не нормализован."
+    }
+  },
+  {
+    "id": "puf_hat",
+    "file": "puf_hat.png",
+    "width": 1024,
+    "height": 1024,
+    "background": "white",
+    "prompt": "Use case: one isolated raster accessory inventory preview for a children's game, puf_hat, not an automatically aligned character overlay.\nInput image 1 is ONLY a reference for soft rounded 3D toy style, accessory proportions and fitting a small hat between the owner's two upper appendages, above all three eyes. Do NOT reproduce the owner or any body part.\nBackdrop: pure flat white #FFFFFF. The accessory is an isolated floating cutout in empty white space, NOT resting on a surface. Absolutely no floor, horizon, gray gradient, drop shadow, cast shadow or contact shadow; the white immediately below the item stays as clean as the white above it.\nSubject: one small mint-green soft beret with a spiral pompom on top. A low gently asymmetrical round padded beret, small shallow head opening, a softly rolled mint band and a single thick curled fabric spiral pompom. Compact width and shallow profile so it fits BETWEEN the upper appendages without covering them or the eyes. No antenna extensions or eye shapes, no large brim.\nStyle: polished cartoon soft volumetric toy, smooth plush-like mint fabric, gentle seams and rounded edges. Light from upper left; shading is confined to the object itself.\nComposition: unworn beret alone, centered slightly elevated three-quarter product view showing the spiral clearly; all parts fully visible within the central 76 percent of the square, at least 12 percent white margins, no cropping.\nConstraints: only the accessory, no wearer, mannequin, head, eyes, face, mouth, body, limbs, tentacles, antennae or other props. No text, letters, prices, numbers, UI, logos, watermark, border or collage. 1024x1024.",
+    "review": {
+      "status": "accepted",
+      "owner": "alien2",
+      "artBrief": "Только небольшой мятный берет со спиральным помпоном по img/alien2.png; не закрывать ни один из трёх глаз и верхние отростки.",
+      "reference": "C:/projects/GAMES/azbuka-ori/img/alien2.png",
+      "initialSource": "C:/projects/GAMES/vibe_images/puf_hat_1794941869457_b54ef102.png",
+      "source": "C:/projects/GAMES/vibe_images/puf_hat_fix_1794941994938_acd0a042.png",
+      "imagegenCalls": 2,
+      "correctionPrompt": "Precise background edit for a children's game accessory preview, puf_hat. Image 1 is the edit target; image 2 is ONLY the owner's toy-style and attachment reference, never content to include.\nRemove the gray-green cast/contact shadow below the mint beret completely. Replace all backdrop outside the accessory silhouette with uniform pure white #FFFFFF, including immediately beneath the lower rim and to the right. This must be a floating isolated cutout, not a beret resting on a surface. Keep self-shading on the hat and within its empty opening, but no shadow on the white backdrop. Keep at least 10 percent blank margin around the complete hat; if necessary slightly reduce it uniformly to fit.\nPreserve the same single mint soft beret, curled spiral pompom, rolled band, fabric texture, rounded shape, angle, upper-left lighting and centered composition. 1024x1024, no cropping. Its owner is never shown: no head, eyes, face, body, limbs, tentacles, antennae or mannequin. No props, text, prices, UI, logos, border or collage. Only the unworn beret on flat white, no floor or horizon.",
+      "checks": [
+        "Просмотрено через Read до и после правки.",
+        "Мятный берет с одним спиральным помпоном; пустой, без головы и отростков.",
+        "Объект целиком, минимальное поле визуально около 10%.",
+        "Тень на фоне убрана единственной правкой ImageGen."
+      ],
+      "issues": [],
+      "cornerRGB": [
+        [
+          245,
+          245,
+          249
+        ],
+        [
+          252,
+          255,
+          255
+        ],
+        [
+          255,
+          252,
+          251
+        ],
+        [
+          255,
+          255,
+          255
+        ]
+      ],
+      "sha256": "22bb6beee7a4b3d0139d384cec45a2ec77b948f50a241987bf30c89cbb251db8",
+      "alignment": "Предметное превью для макетов, не готовый совмещённый слой. Точное автоматическое совмещение со спрайтом героя не гарантируется; при интеграции нужна ручная подгонка масштаба и положения.",
+      "processing": "PNG скопирован побайтно из результата ImageGen. Фон не вырезался и не нормализовался, растровый предмет не дорисовывался; исходники сохранены.",
+      "backgroundNote": "Визуально белый непрозрачный фон без видимой падающей тени; сохранены исходные оттенки почти белых пикселей ImageGen, точный RGB #FFFFFF не нормализован."
+    }
+  },
+  {
+    "id": "puf_cape",
+    "file": "puf_cape.png",
+    "width": 1024,
+    "height": 1024,
+    "background": "white",
+    "prompt": "Use case: one isolated raster accessory inventory preview for a children's game, puf_cape, not an automatically aligned character overlay.\nInput image 1 is ONLY a reference for soft rounded 3D toy style and the round neckless owner's proportions. The cape is a short back-only attachment leaving tentacles free. Do NOT reproduce the owner or any body part and do not invent a human neck or arms.\nBackdrop: pure flat white #FFFFFF. The accessory is an isolated floating cutout in empty white space, NOT resting on a surface. Absolutely no floor, horizon, gray gradient, drop shadow, cast shadow or contact shadow; the white immediately below the item stays as clean as the white above it.\nSubject: one short peach-colored back cape with a gently wavy scalloped hem. A broad short semicircular drape with a shallow curved upper attachment edge and a few large soft flowing folds; all fabric is peach. Designed to attach to the upper back of a round creature, no tall collar, no neck tube, no armholes, no sleeves or front chest panel. Its short softly undulating lower edge leaves the owner's lower and side tentacles unrestricted; render only the empty cloth panel.\nStyle: polished cartoon soft volumetric toy, smooth softly padded peach fabric, broad rounded waves and subtle seams. Light from upper left; shading confined to the object itself.\nComposition: unworn cape alone, centered rear product view, gently spread out to show its wavy hem. All parts within the central 76 percent of the square, at least 12 percent white margins, no cropping.\nConstraints: only this accessory, no wearer, mannequin, head, eyes, face, mouth, body, neck, arms, limbs, tentacles, antennae or extra props. No text, letters, prices, numbers, UI, logos, watermark, border or collage. 1024x1024.",
+    "review": {
+      "status": "accepted",
+      "owner": "alien2",
+      "artBrief": "Только задний слой короткой персиковой накидки с волнистым подолом, под анатомию img/alien2.png; без придуманной шеи или рук.",
+      "reference": "C:/projects/GAMES/azbuka-ori/img/alien2.png",
+      "initialSource": "C:/projects/GAMES/vibe_images/puf_cape_1794941888392_dc9ac065.png",
+      "source": "C:/projects/GAMES/vibe_images/puf_cape_fix_1794942013247_705687ed.png",
+      "imagegenCalls": 2,
+      "correctionPrompt": "Precise framing edit for a children's game accessory preview, puf_cape. Image 1 is the edit target; image 2 is ONLY the neckless owner's toy-style and back-attachment reference, never content to include.\nThe only requested change: uniformly reduce the existing cape to 85 percent of its current apparent size and recenter it on the same 1024x1024 canvas, giving at least 12 percent clear white margins on left and right and generous margin above and below. Do not crop or change its shape.\nPreserve the exact single short peach-colored cape, soft wavy scalloped hem, shallow curved upper attachment edge, seams, broad folds, rear view, color, cloth texture and upper-left lighting. No new collar, sleeves, front panel or ornaments. Keep the background flat pure white #FFFFFF, no floor, horizon, cast shadow or contact shadow; an isolated floating accessory, not resting on a surface.\nNo wearer, mannequin, head, eyes, face, body, neck, arms, limbs, tentacles or antennae. No text, prices, UI, logos, props, border or collage. Only this one unworn cape.",
+      "checks": [
+        "Просмотрено через Read до и после правки.",
+        "Персиковая накидка с волнистым подолом, отдельная задняя деталь.",
+        "Шеи, рук, щупалец и персонажа нет.",
+        "Единственная правка увеличила поля; предмет целиком, видимой тени на фоне нет."
+      ],
+      "issues": [],
+      "cornerRGB": [
+        [
+          247,
+          247,
+          250
+        ],
+        [
+          253,
+          253,
+          251
+        ],
+        [
+          249,
+          251,
+          252
+        ],
+        [
+          255,
+          255,
+          255
+        ]
+      ],
+      "sha256": "7bacdd5e57bc66ab3fd1d8f8524df0c84a77d51b1d82c32483d0c7a22f0290b5",
+      "alignment": "Предметное превью для макетов, не готовый совмещённый слой. Точное автоматическое совмещение со спрайтом героя не гарантируется; при интеграции нужна ручная подгонка масштаба и положения.",
+      "processing": "PNG скопирован побайтно из результата ImageGen. Фон не вырезался и не нормализовался, растровый предмет не дорисовывался; исходники сохранены.",
+      "backgroundNote": "Визуально белый непрозрачный фон без видимой падающей тени; сохранены исходные оттенки почти белых пикселей ImageGen, точный RGB #FFFFFF не нормализован."
+    }
+  },
+  {
+    "id": "puf_boots",
+    "file": "puf_boots.png",
+    "width": 1024,
+    "height": 1024,
+    "background": "white",
+    "prompt": "Use case: one isolated raster accessory inventory preview for a children's game, puf_boots. Exactly TWO matching cuff components form ONE product shown in one scene, not a collage or automatically aligned character overlay.\nInput image 1 is ONLY a reference for the soft rounded 3D toy style and proportions of the lower tentacles. The cuffs would wrap their narrow lower shafts while leaving the suckers and tips uncovered. Do NOT reproduce the character, tentacles or suckers.\nBackdrop: pure flat white #FFFFFF. The accessories are floating isolated cutouts in empty white space, NOT resting on a surface. Absolutely no floor, horizon, gray gradient, drop shadow, cast shadow or contact shadow; the white immediately below them stays as clean as the white above them.\nSubject: exactly two matching turquoise soft padded open-ended cuffs, short hollow cylindrical fabric bands, both upper and lower ends OPEN. Each has a large clearly empty continuous through-opening, soft rounded rolled edges and a smooth turquoise padded middle. They are short annular sleeves for tentacles, NOT shoes: no toe box, no sole, no closed bottom, no boot shape, no feet or appendages inside. Slightly tip them to make the hollow channels and both open rims legible.\nStyle: polished cartoon soft volumetric toy, smooth pliable turquoise fabric and subtle rounded seams. Upper-left light and object-only shading inside the cuffs, no shadow on the white background.\nComposition: coordinated left/right pair side by side with a small gap, centered together, matching scale, gentle three-quarter view. Entire pair within the central 76 percent of the square, at least 12 percent white margin on each side, no cropping.\nConstraints: only these TWO empty accessory parts, no wearer, mannequin, eyes, face, body, limbs, legs, feet, suckers, tentacles, antennae or props. No text, prices, UI, logos, watermark, border or collage. 1024x1024.",
+    "review": {
+      "status": "accepted",
+      "owner": "alien2",
+      "artBrief": "Только две бирюзовые манжеты вокруг нижних щупалец img/alien2.png; присоски и концы открыты, человеческих стоп не добавлять.",
+      "reference": "C:/projects/GAMES/azbuka-ori/img/alien2.png",
+      "initialSource": "C:/projects/GAMES/vibe_images/puf_boots_1794941906902_88db01c7.png",
+      "source": "C:/projects/GAMES/vibe_images/puf_boots_fix_1794942033522_7de57570.png",
+      "imagegenCalls": 2,
+      "correctionPrompt": "Precise background edit for a children's game accessory preview, puf_boots. Image 1 is the edit target; image 2 is ONLY the owner's toy-style and lower-tentacle proportions reference, never content to include.\nRemove all gray cast/contact shadows below both turquoise cuffs completely. Replace all backdrop outside their silhouettes with uniform pure white #FFFFFF, including directly under their bottom rims. These must be floating isolated cutouts, not cuffs resting on a surface. Keep self-shading inside the hollow cuffs, but no gray or colored shadow on the white backdrop.\nPreserve exactly TWO matching turquoise padded open-ended cylindrical cuff sleeves as ONE product pair: same shape, open rims, hollow through-channels, fabric detail, tilt, spacing, size, upper-left lighting and centered composition, at least 10 percent blank margin, 1024x1024. They have no soles or toe boxes and nothing inside. No cropping or redesign.\nNo wearer, mannequin, eyes, face, body, legs, feet, limbs, suckers, tentacles or antennae. No props, text, prices, UI, logos, border or collage. Only the two empty cuffs on flat white, no floor or horizon.",
+      "checks": [
+        "Просмотрено через Read до и после правки.",
+        "Один товар: две бирюзовые полые манжеты, без стоп, подошв и щупалец.",
+        "Показаны пустые отверстия; форма не закрывает концы щупалец.",
+        "Тени на фоне убраны единственной правкой ImageGen."
+      ],
+      "issues": [],
+      "cornerRGB": [
+        [
+          251,
+          251,
+          253
+        ],
+        [
+          253,
+          253,
+          254
+        ],
+        [
+          255,
+          253,
+          253
+        ],
+        [
+          255,
+          255,
+          255
+        ]
+      ],
+      "sha256": "c6f1b23b5b78d103a701201eb172e2a95e393fca804cbc6191db4041b6ef73ff",
+      "alignment": "Предметное превью для макетов, не готовый совмещённый слой. Точное автоматическое совмещение со спрайтом героя не гарантируется; при интеграции нужна ручная подгонка масштаба и положения.",
+      "processing": "PNG скопирован побайтно из результата ImageGen. Фон не вырезался и не нормализовался, растровый предмет не дорисовывался; исходники сохранены.",
+      "backgroundNote": "Визуально белый непрозрачный фон без видимой падающей тени; сохранены исходные оттенки почти белых пикселей ImageGen, точный RGB #FFFFFF не нормализован."
+    }
+  },
+  {
+    "id": "puf_badge",
+    "file": "puf_badge.png",
+    "width": 1024,
+    "height": 1024,
+    "background": "white",
+    "prompt": "Use case: one isolated raster accessory inventory preview for a children's game, puf_badge, not an automatically aligned character overlay.\nInput image 1 is ONLY a reference for soft rounded 3D toy style and small badge scale. The badge is intended for the owner's lower side below the mouth, under a tentacle; do NOT depict this placement, the owner, tongue, spots or any body part.\nBackdrop: pure flat white #FFFFFF. The accessory is a floating isolated cutout in empty white space, NOT resting on a surface. Absolutely no floor, horizon, gray gradient, drop shadow, cast shadow or contact shadow; the white immediately below it stays as clean as the white above it.\nSubject: one small coral-pink seashell badge. A compact rounded scallop shell with two connected hinged valves, plump fan-shaped ridges and smooth scalloped edges; the valves are slightly parted to reveal a narrow pearlescent inner surface. A single coherent shell badge, no loose pearl, no sand, no ocean scene, no creature or face. Back fastening concealed so only the friendly dimensional shell silhouette shows.\nStyle: polished cartoon soft volumetric toy accessory, smooth softly lustrous coral surface, rounded edges and gentle pearly inner highlights. Light from upper left; shading confined to the object itself.\nComposition: shell badge alone, centered in a slight three-quarter frontal product view that shows its scallop shape and small pearlescent opening. All parts within the central 76 percent of the square, at least 12 percent white margins, no cropping.\nConstraints: only this accessory, no wearer, mannequin, head, eyes, face, mouth, tongue, body, limbs, tentacles, antennae or other props. No text, letters, numbers, prices, UI, logos, watermark, border or collage. 1024x1024.",
+    "review": {
+      "status": "accepted",
+      "owner": "alien2",
+      "artBrief": "Только маленькая коралловая ракушка-значок на нижнем боку img/alien2.png, ниже рта; никаких изменений языка и пятен тела.",
+      "reference": "C:/projects/GAMES/azbuka-ori/img/alien2.png",
+      "initialSource": "C:/projects/GAMES/vibe_images/puf_badge_1794941926705_4f180d95.png",
+      "source": "C:/projects/GAMES/vibe_images/puf_badge_1794941926705_4f180d95.png",
+      "imagegenCalls": 1,
+      "correctionPrompt": null,
+      "checks": [
+        "Просмотрено через Read после генерации.",
+        "Одна коралловая ракушка-значок с двумя приоткрытыми створками и перламутровой серединкой.",
+        "Без лица, тела, языка и щупалец; надписей нет.",
+        "Центрированное предметное превью без обрезки и видимой тени на фоне."
+      ],
+      "issues": [],
+      "cornerRGB": [
+        [
+          245,
+          245,
+          249
+        ],
+        [
+          251,
+          253,
+          254
+        ],
+        [
+          255,
+          255,
+          253
+        ],
+        [
+          255,
+          255,
+          255
+        ]
+      ],
+      "sha256": "837aa53191d7fa4e39c87f0d525e512194a8eab6f633b95cc8511f5092c2635b",
+      "alignment": "Предметное превью для макетов, не готовый совмещённый слой. Точное автоматическое совмещение со спрайтом героя не гарантируется; при интеграции нужна ручная подгонка масштаба и положения.",
+      "processing": "PNG скопирован побайтно из результата ImageGen. Фон не вырезался и не нормализовался, растровый предмет не дорисовывался; исходники сохранены.",
+      "backgroundNote": "Визуально белый непрозрачный фон без видимой падающей тени; сохранены исходные оттенки почти белых пикселей ImageGen, точный RGB #FFFFFF не нормализован."
+    }
+  },
+  {
+    "id": "kuku_hat",
+    "file": "kuku_hat.png",
+    "width": 1024,
+    "height": 1024,
+    "background": "white",
+    "prompt": "Use case: one isolated raster accessory inventory preview for a children's game, kuku_hat, not an automatically aligned character overlay.\nInput image 1 is ONLY a reference for the soft rounded 3D toy finish, fluffy texture, accessory scale and the gap BETWEEN the owner's two antenna roots. The little cap sits above the single eye without covering it. Do NOT reproduce the owner, fur body, antennae, eyes or any body part.\nBackdrop: uniform pure white #FFFFFF, completely shadowless outside the accessory. Treat the item as a floating cutout on a blank white digital canvas, never resting on a tabletop or floor. No cast or contact shadow, no horizon or background gradient.\nSubject: one small fluffy WHITE cloud-shaped cap, a shallow soft cap formed by exactly three plump rounded cloud lobes above a small curved lower fabric rim. It is compact enough to sit between the two antennae, not a full head hood. The lower edge stays high; no face opening, no ear flaps, no horns or antenna shapes attached. Subtle cool pale-blue self-shading makes the white fabric edge readable against white.\nStyle: polished cartoon soft volumetric plush toy, fine soft white fibers, rounded child-friendly silhouette. Soft light from the upper left, shading on the cap only.\nComposition: isolated unworn cap alone, centered, shallow three-quarter frontal product view showing the three lobes and underside rim. Entire accessory limited to the central 70 percent of the 1024x1024 image, generous white margins of at least 15 percent on every side, no cropping.\nConstraints: accessory only, no character, mannequin, head, eye, face, mouth, body, blue body fur, limbs, wings or antennae. No props, text, letters, numbers, prices, UI, logos, watermark, border or collage.",
+    "review": {
+      "status": "accepted",
+      "owner": "alien3",
+      "artBrief": "Только белая облачная шапочка между двумя антеннами img/alien3.png, край выше единственного глаза; не рисовать героя заново.",
+      "reference": "C:/projects/GAMES/azbuka-ori/img/alien3.png",
+      "initialSource": "C:/projects/GAMES/vibe_images/kuku_hat_1794942141318_c62488e9.png",
+      "source": "C:/projects/GAMES/vibe_images/kuku_hat_fix_1794942496668_ef2e3ff7.png",
+      "imagegenCalls": 2,
+      "correctionPrompt": "Precise shape edit for a children's game accessory preview, kuku_hat. Image 1 is the edit target; image 2 is ONLY the owner's plush style and gap-between-antennae reference, never content to include.\nChange ONLY the cloud-lobe count: simplify the cap crown to exactly THREE rounded fluffy lobes in total, one central taller dome and one lower dome on each side. Remove the two extra outer scallops so the silhouette has three humps, not five. Keep it a small shallow cap that fits between antennae, above the eye, not a hood.\nPreserve the same white fluffy material, curved lower fabric rim, cool pale-blue self-shading, empty underside opening, angle, upper-left light and centered composition. Full cap within central 70 percent of the 1024x1024 canvas, at least 15 percent margins, no cropping. Perfectly flat white #FFFFFF backdrop, no floor, horizon, background gradient, cast or contact shadow.\nOnly the single unworn white cap: no wearer, mannequin, head, eye, face, body, blue fur, limbs, wings or antennae, no props, text, prices, UI, logos, watermark, border or collage.",
+      "checks": [
+        "Просмотрено через Read до и после правки.",
+        "Белая пушистая шапочка из трёх округлых долей; число долей исправлено одной правкой.",
+        "Нет глаза, антенн, головы, крыльев и тела героя.",
+        "Край различим на белом фоне; предмет целиком."
+      ],
+      "issues": [],
+      "cornerRGB": [
+        [
+          233,
+          233,
+          244
+        ],
+        [
+          245,
+          249,
+          241
+        ],
+        [
+          249,
+          245,
+          243
+        ],
+        [
+          250,
+          252,
+          255
+        ]
+      ],
+      "sha256": "48f96755515db28653a2ec83b7dd63ce3b6a9470191d3436d835b6da1ee23717",
+      "alignment": "Предметное превью для макетов, не готовый совмещённый слой. Точное автоматическое совмещение со спрайтом героя не гарантируется; при интеграции нужна ручная подгонка масштаба и положения.",
+      "processing": "PNG скопирован побайтно из результата ImageGen. Фон не вырезался и не нормализовался, растровый предмет не дорисовывался; исходники сохранены.",
+      "backgroundNote": "Визуально белый непрозрачный фон без видимой падающей тени; сохранены исходные оттенки почти белых пикселей ImageGen, точный RGB #FFFFFF не нормализован."
+    }
+  },
+  {
+    "id": "kuku_cape",
+    "file": "kuku_cape.png",
+    "width": 1024,
+    "height": 1024,
+    "background": "white",
+    "prompt": "Use case: one isolated raster accessory inventory preview for a children's game, kuku_cape, not an automatically aligned character overlay.\nInput image 1 is ONLY a reference for the soft rounded 3D toy finish, proportions and intended attachment UNDER the owner's wings. The cape must not cover its translucent wings or fluffy upper back. Do NOT reproduce the character, wings, fur or any body part.\nBackdrop: uniform pure white #FFFFFF, completely shadowless outside the accessory. The item is a floating cutout on a blank white digital canvas, never resting on a tabletop or floor. No cast or contact shadow, no horizon or background gradient.\nSubject: one small lilac BIFURCATED ribbon cape consisting of a narrow curved upper back attachment strip joining exactly TWO short broad soft ribbon tails. The two tails diverge gently outward with a clear central split, rounded tips, soft curves and subtle fabric folds. Both tails belong to ONE connected accessory. The upper section is low and minimal, with no cape fabric rising into the wing area, no wide shoulder mantle, no hood, collar or front panel. Only the lilac fabric layer that hangs below the wings; do not draw wings or suggest feathers.\nStyle: polished cartoon soft volumetric toy accessory, pliable softly padded lilac fabric and rounded seams. Soft upper-left light; shading on the cloth only.\nComposition: one unworn cape alone, centered rear product view, both tails fully visible and separated below the short common attachment strip. Entire accessory limited to the central 70 percent of the 1024x1024 image, at least 15 percent white margins all around, no cropping.\nConstraints: accessory only, no character, mannequin, head, eyes, face, body, fur, limbs, wings or antennae. No extra objects, text, letters, prices, UI, logos, watermark, border or collage.",
+    "review": {
+      "status": "accepted",
+      "owner": "alien3",
+      "artBrief": "Только лиловая раздвоенная накидка под крыльями img/alien3.png; задний слой, не перекрывающий полупрозрачные крылья и мех.",
+      "reference": "C:/projects/GAMES/azbuka-ori/img/alien3.png",
+      "initialSource": "C:/projects/GAMES/vibe_images/kuku_cape_1794942204525_1873baf0.png",
+      "source": "C:/projects/GAMES/vibe_images/kuku_cape_fix_1794942517334_616833d1.png",
+      "imagegenCalls": 2,
+      "correctionPrompt": "Precise construction edit for a children's game accessory preview, kuku_cape. Image 1 is the edit target; image 2 is ONLY the owner's toy-style and below-wing attachment reference, never content to include.\nCorrect the accessory construction: it must NOT be a neck cape, collar or wing-shaped mantle. Replace the circular neck opening with a narrow shallow curved horizontal back-attachment strip. From that strip hang exactly TWO short broad lilac ribbon tails, attached side by side, clearly separated by a central slit. Each tail has one simple rounded tip, not multiple wing-like lobes. The fabric hangs downward with a gentle outward curve, with no shoulder fabric above the narrow attachment strip. This is a low back accessory that fits entirely BELOW the wings and does not cover wing roots or upper-back fur. It is one connected piece, not separate ribbons or wings.\nKeep the lilac color, soft padded cloth, rounded seams, upper-left lighting, gentle folds and rear product view from image 1. Center the complete accessory within the central 70 percent of the 1024x1024 canvas, at least 15 percent white margins, no cropping. Flat white #FFFFFF, no floor, horizon, cast/contact shadow or gradient.\nOnly the unworn lilac two-tailed accessory; no character, mannequin, head, eyes, face, body, limbs, fur, wings or antennae, no props, text, prices, UI, logos, border or collage.",
+      "checks": [
+        "Просмотрено через Read до и после правки.",
+        "Одна лиловая задняя деталь: две полы на общей узкой планке, открытый центральный разрез.",
+        "Круглый воротник убран единственной правкой; место крепления предполагается ниже крыльев.",
+        "Полы остались с фигурными округлыми краями; герой, мех и настоящие крылья не нарисованы.",
+        "Расположение относительно крыльев требует ручной проверки при интеграции, а не обещания точного совмещения."
+      ],
+      "issues": [],
+      "cornerRGB": [
+        [
+          251,
+          250,
+          253
+        ],
+        [
+          255,
+          255,
+          255
+        ],
+        [
+          253,
+          255,
+          251
+        ],
+        [
+          255,
+          255,
+          255
+        ]
+      ],
+      "sha256": "2d4df98a738181c9bce708bc60dba5ec1e8723d96c8e410224ec4cac7cb62a5b",
+      "alignment": "Предметное превью для макетов, не готовый совмещённый слой. Точное автоматическое совмещение со спрайтом героя не гарантируется; при интеграции нужна ручная подгонка масштаба и положения.",
+      "processing": "PNG скопирован побайтно из результата ImageGen. Фон не вырезался и не нормализовался, растровый предмет не дорисовывался; исходники сохранены.",
+      "backgroundNote": "Визуально белый непрозрачный фон без видимой падающей тени; сохранены исходные оттенки почти белых пикселей ImageGen, точный RGB #FFFFFF не нормализован."
+    }
+  },
+  {
+    "id": "kuku_boots",
+    "file": "kuku_boots.png",
+    "width": 1024,
+    "height": 1024,
+    "background": "white",
+    "prompt": "Use case: one isolated raster accessory inventory preview for a children's game, kuku_boots; exactly TWO matching legwarmers are ONE product in one scene, not a collage or automatically aligned character overlay.\nInput image 1 is ONLY a reference for soft rounded 3D toy finish and short ankle proportions above the owner's blue fluffy paws. These garments leave the paws, toes and blue foot fur exposed when worn. Do NOT reproduce the owner, paws, toes, fur or any body part.\nBackdrop: uniform pure white #FFFFFF, completely shadowless outside the accessories. Floating cutouts on a blank white digital canvas, never resting on a tabletop or floor. No cast or contact shadow, no horizon or background gradient.\nSubject: exactly TWO matching golden-yellow knitted legwarmers, short hollow soft knitted tubes with thick rounded ribbed rims and small plump knitted stitches. Both upper AND lower ends open, no toes, foot sections or soles. Each legwarmer has exactly ONE small golden-yellow yarn pompom attached on its OUTER side by a short yarn cord: left garment pompom outward left, right garment pompom outward right. The pair has two pompoms in total, attached, no loose extra pieces. Empty interiors, no legs inside.\nStyle: polished cartoon soft volumetric toy, cozy golden-yellow yarn, readable chunky knit, gently rounded shapes. Soft upper-left lighting, shading only on the knit and inside the tubes.\nComposition: coordinated pair side by side with a small gap, centered as one group, slight three-quarter product view making the open rims clear. Entire pair including both pompoms limited to the central 70 percent of the 1024x1024 canvas, at least 15 percent white margins on all sides, no cropping.\nConstraints: only the two matching accessories, no wearer, mannequin, eyes, face, body, limbs, legs, feet, toes, fur, wings or antennae. No props, text, letters, prices, numbers, UI, logos, watermark, border or collage.",
+    "review": {
+      "status": "warning",
+      "owner": "alien3",
+      "artBrief": "Только пара золотистых гетр с помпонами над лапами img/alien3.png; пальцы и синий мех лап остаются видны.",
+      "reference": "C:/projects/GAMES/azbuka-ori/img/alien3.png",
+      "initialSource": "C:/projects/GAMES/vibe_images/kuku_boots_1794942305556_5e979454.png",
+      "source": "C:/projects/GAMES/vibe_images/kuku_boots_fix_1794942541425_5f7d061d.png",
+      "imagegenCalls": 2,
+      "correctionPrompt": "Precise isolation and framing correction for a children's game accessory preview, kuku_boots. Image 1 is the edit target; image 2 is ONLY the owner's plush style and ankle-scale reference, never content to include.\nPreserve the exact pair, but correct its presentation: uniformly shrink the entire group including both attached pompoms to 72 percent of its current size, and center it on the same 1024x1024 canvas. Both outer pompoms need at least 12 percent clear margin from the image edges. Completely remove the brown-gray cast/contact shadows below both legwarmers. Every backdrop area outside the knit silhouettes must be uniform pure white #FFFFFF. Floating isolated cutouts, not resting on a floor. Keep genuine self-shading within the knit and hollow tubes only.\nKeep exactly TWO golden-yellow knitted open-ended legwarmers as ONE matching product pair, each with one small attached pompom on its outer side, two pompoms total, short cords, ribbed rims, cozy knitted texture, large empty upper openings and open lower ends. No feet, toe boxes, soles or legs inside. Keep the current angle, left/right arrangement, colors and upper-left lighting. No redesign or cropping.\nNo wearer, mannequin, head, eyes, face, body, limbs, feet, fur, wings or antennae. No floor, horizon, background gradient, props, text, prices, UI, logos, border or collage. Output only the complete pair on flat white.",
+      "checks": [
+        "Просмотрено через Read до и после правки.",
+        "Один товар: две золотистые вязаные гетры и два наружных помпона.",
+        "Лап, пальцев, меха, ног и подошв нет; видимые верхние отверстия пустые.",
+        "Единственная правка убрала тени на фоне, но не обеспечила требуемое уменьшение.",
+        "Обе гетры и оба помпона целиком, обрезки нет."
+      ],
+      "issues": [
+        "После единственной разрешённой правки боковые поля у помпонов остались около 3–4%, меньше требуемых 10%. Повторная генерация и автоматическое изменение PNG не выполнялись."
+      ],
+      "cornerRGB": [
+        [
+          247,
+          247,
+          253
+        ],
+        [
+          251,
+          255,
+          253
+        ],
+        [
+          253,
+          253,
+          249
+        ],
+        [
+          255,
+          255,
+          255
+        ]
+      ],
+      "approximateHorizontalMarginsPx": [
+        33,
+        40
+      ],
+      "marginMeasurementNote": "Оценка по отличию яркости от белого более 30; только диагностика, не маска для обработки PNG.",
+      "sha256": "f940493ffe2ed19f5e7488b3ab8678ccbb4c3291a53d67ace62f2669313e3316",
+      "alignment": "Предметное превью для макетов, не готовый совмещённый слой. Точное автоматическое совмещение со спрайтом героя не гарантируется; при интеграции нужна ручная подгонка масштаба и положения.",
+      "processing": "PNG скопирован побайтно из результата ImageGen. Фон не вырезался и не нормализовался, растровый предмет не дорисовывался; исходники сохранены.",
+      "backgroundNote": "Визуально белый непрозрачный фон без видимой падающей тени; сохранены исходные оттенки почти белых пикселей ImageGen, точный RGB #FFFFFF не нормализован."
+    }
+  },
+  {
+    "id": "kuku_badge",
+    "file": "kuku_badge.png",
+    "width": 1024,
+    "height": 1024,
+    "background": "white",
+    "prompt": "Use case: one isolated raster accessory inventory preview for a children's game, kuku_badge, not an automatically aligned character overlay.\nInput image 1 is ONLY a reference for the soft rounded 3D toy finish and small accessory scale. The badge attaches to the owner's lower fluffy side, far from the eye and wings. Do NOT illustrate this placement or reproduce the owner, eye, wings, blue fur or any body part.\nBackdrop: uniform pure white #FFFFFF, completely shadowless outside the accessory. The item is a floating cutout on a blank white digital canvas, never resting on a tabletop or floor. No cast or contact shadow, no horizon or background gradient.\nSubject: one small lilac teardrop-shaped badge, a plump domed pearlescent lavender drop with a softly rounded upper tip and broad round lower end. A subtle iridescent pearly highlight sits INSIDE the lavender surface, not a white drawn symbol, eye or star. Smooth softly lustrous toy finish, compact discreet badge thickness, hidden back fastening; no border ornament or loose components.\nStyle: polished cartoon soft volumetric toy accessory, friendly rounded silhouette and gentle lilac color, delicate pearlescent material. Soft upper-left light, shading on the drop only.\nComposition: isolated badge alone, upright and centered, slight three-quarter frontal product view. Entire drop limited to the central 70 percent of the 1024x1024 image, at least 15 percent white margins on every side, no cropping.\nConstraints: accessory only, no character, mannequin, head, eyes, face, mouth, body, limbs, fur, wings or antennae. No props, text, letters, numbers, prices, UI, logos, watermark, border or collage.",
+    "review": {
+      "status": "accepted",
+      "owner": "alien3",
+      "artBrief": "Только маленькая сиреневая капля-значок на нижнем боку img/alien3.png, вдали от глаза и крыльев; без букв.",
+      "reference": "C:/projects/GAMES/azbuka-ori/img/alien3.png",
+      "initialSource": "C:/projects/GAMES/vibe_images/kuku_badge_1794942414899_ce1d0baf.png",
+      "source": "C:/projects/GAMES/vibe_images/kuku_badge_1794942414899_ce1d0baf.png",
+      "imagegenCalls": 1,
+      "correctionPrompt": null,
+      "checks": [
+        "Просмотрено через Read после генерации.",
+        "Один сиреневый значок-капля с мягким перламутровым бликом.",
+        "Глаз, тела, меха, крыльев и букв нет.",
+        "Предмет целиком, центрирован, видимой тени на фоне нет."
+      ],
+      "issues": [],
+      "cornerRGB": [
+        [
+          245,
+          245,
+          251
+        ],
+        [
+          255,
+          255,
+          255
+        ],
+        [
+          255,
+          253,
+          251
+        ],
+        [
+          255,
+          255,
+          255
+        ]
+      ],
+      "sha256": "5101e5c4dea81509ed82bc59aa361e6fbf4ea3f55091ee76ea69211d5cea6fd0",
+      "alignment": "Предметное превью для макетов, не готовый совмещённый слой. Точное автоматическое совмещение со спрайтом героя не гарантируется; при интеграции нужна ручная подгонка масштаба и положения.",
+      "processing": "PNG скопирован побайтно из результата ImageGen. Фон не вырезался и не нормализовался, растровый предмет не дорисовывался; исходники сохранены.",
+      "backgroundNote": "Визуально белый непрозрачный фон без видимой падающей тени; сохранены исходные оттенки почти белых пикселей ImageGen, точный RGB #FFFFFF не нормализован."
+    }
+  }
+]

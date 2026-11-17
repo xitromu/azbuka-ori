@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#252045">
+<title>Азбука с Ори — Сад созвездий · макеты</title>
+<link rel="icon" href="../../img/ori.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<aside class="atlas" aria-label="Атлас макетов">
+  <a class="brand" href="#home"><img src="../../img/ori.png" alt="Ори"><span>АЗБУКА С ОРИ<small>Сад созвездий</small></span></a>
+  <p class="eyebrow">ДИЗАЙН-ПРОТОТИП / 03</p>
+  <p class="atlas-intro">Приключение, в котором<br>каждое слово оживает.</p>
+  <label class="mobile-picker">Экран макета<select id="screenPicker"></select></label>
+  <nav id="atlasNav"></nav>
+  <div class="atlas-bottom"><b>Только демоданные</b><p>Покупки — понарошку.<br>Прогресс игры не меняется.<br>Обновление страницы сбрасывает демо.</p><a href="scenario.md">Сценарий разработки</a><a href="learning-notes.md">104 урока и методика</a><a href="art-prompts.md">Промпты для графики</a></div>
+</aside>
+<div class="workspace">
+  <div class="studio"><span>ИНТЕРАКТИВНЫЙ АТЛАС</span><span id="screenLabel"></span><button id="narrow" type="button">Вид телефона</button></div>
+  <div id="gameFrame"><header id="gameHeader"></header><main id="screen" tabindex="-1"></main><nav id="dock" aria-label="Навигация игры"></nav></div>
+  <p class="production-note">Прежние герои • новые призы показаны условными иллюстрациями • новые реплики ещё не записаны</p>
+</div>
+<dialog id="modal"><div id="modalContent"></div><button class="button secondary" id="closeModal">Закрыть</button></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="learning.js"></script>
+<script src="rewards.js"></script>
+<script src="assets.js"></script>
+<script src="app.js"></script>
+<script src="checks.js"></script>
+</body>
+</html>

@@ -1,22 +1,30 @@
-const PAGE = 'ori-page-2';
-const ASSETS = ['index.html','v2.html','img/ori.png','img/alien1.png','img/alien2.png','img/alien3.png'];
-const ASSET_URLS = new Set(ASSETS.map(path => new URL(path,self.location).pathname));
-self.addEventListener('install', e => e.waitUntil(caches.open(PAGE).then(c => c.addAll(ASSETS)).then(() => self.skipWaiting())));
-self.addEventListener('activate', e => e.waitUntil(self.clients.claim()));
-self.addEventListener('fetch', e => {
-  const url = new URL(e.request.url);
-  if (url.origin !== self.location.origin || (e.request.mode !== 'navigate' && !ASSET_URLS.has(url.pathname))) return;
-  e.respondWith((async () => {
-    const cache = await caches.open(PAGE);
-    try {
-      const response = await fetch(e.request);
-      if (response.ok) await cache.put(e.request,response.clone());
-      return response;
-    } catch (error) {
-      const cached = await cache.match(e.request,{ignoreSearch:true});
-      if (cached) return cached;
-      if (url.pathname.endsWith('/')) return await cache.match(new URL('index.html',url).href,{ignoreSearch:true}) || Response.error();
-      return Response.error();
+'use strict';
+importScripts('rpg/offline-manifest.js');
+const PAGE = 'ori-page-3-' + self.ORI_OFFLINE.version;
+const BASE = new URL('./', self.location);
+const URLS = new Set(self.ORI_OFFLINE.files.map(p => new URL(p, BASE).href));
+self.addEventListener('install', event => event.waitUntil((async () => {
+  const cache = await caches.open(PAGE);
+  await cache.addAll(self.ORI_OFFLINE.files);
+  await self.skipWaiting();
+})()));
+self.addEventListener('activate', event => event.waitUntil(self.clients.claim()));
+self.addEventListener('fetch', event => {
+  const url = new URL(event.request.url);
+  if (event.request.method !== 'GET' || url.origin !== BASE.origin || !url.pathname.startsWith(BASE.pathname)) return;
+  const normalized = new URL(url);
+  normalized.search = '';
+  if (normalized.pathname === BASE.pathname) normalized.pathname += 'index.html';
+  const isShell = URLS.has(normalized.href);
+  const isVoice = /^voice(?:-v[23])?\/.*\.mp3$/.test(url.pathname.slice(BASE.pathname.length));
+  if (!isShell && !isVoice) return;
+  event.respondWith((async () => {
+    if (isShell) {
+      const cache = await caches.open(PAGE);
+      return await cache.match(normalized.href) || fetch(event.request);
     }
+    const cached = await caches.match(normalized.href);
+    if (cached) return cached;
+    return fetch(event.request);
   })());
 });

@@ -224,6 +224,10 @@
   window.addEventListener('storage',e=>{if(e.key==='oriRpg3'){blocked=true;renderWarning();toast('Прогресс изменился в другой вкладке. Нажми «Повторить чтение», чтобы продолжить.');}});
   document.addEventListener('visibilitychange',()=>{if(document.hidden){stopAudio();stopMusic();}});
   window.addEventListener('offline',()=>toast('Сеть отключена. Прогресс сохраняется на этом устройстве.'));
-  if('serviceWorker'in navigator && /^https?:$/.test(location.protocol))navigator.serviceWorker.register('sw.js').catch(()=>toast('Офлайн-режим пока не включился. Игра доступна с сетью.'));
+  if('serviceWorker'in navigator && /^https?:$/.test(location.protocol)){
+    const hadController=!!navigator.serviceWorker.controller;
+    navigator.serviceWorker.register('sw.js').then(r=>r.update()).catch(()=>toast('Офлайн-режим пока не включился. Игра доступна с сетью.'));
+    let reloading=false;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(reloading||!hadController)return;reloading=true;location.reload();});
+  }
   render();
 })();

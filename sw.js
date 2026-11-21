@@ -1,6 +1,7 @@
 'use strict';
-importScripts('rpg/offline-manifest.js');
+importScripts('rpg/offline-manifest.js', 'rpg/voice-manifest.js');
 const PAGE = 'ori-page-3-' + self.ORI_OFFLINE.version;
+const VOICES = 'ori-voice-v3-' + self.ORI_VOICE.version;
 const BASE = new URL('./', self.location);
 const URLS = new Set(self.ORI_OFFLINE.files.map(p => new URL(p, BASE).href));
 self.addEventListener('install', event => event.waitUntil((async () => {
@@ -8,7 +9,11 @@ self.addEventListener('install', event => event.waitUntil((async () => {
   await cache.addAll(self.ORI_OFFLINE.files);
   await self.skipWaiting();
 })()));
-self.addEventListener('activate', event => event.waitUntil(self.clients.claim()));
+self.addEventListener('activate', event => event.waitUntil((async () => {
+  const keep = new Set([PAGE, VOICES]);
+  for (const name of await caches.keys()) if (name.startsWith('ori-') && !keep.has(name)) await caches.delete(name);
+  await self.clients.claim();
+})()));
 self.addEventListener('fetch', event => {
   const url = new URL(event.request.url);
   if (event.request.method !== 'GET' || url.origin !== BASE.origin || !url.pathname.startsWith(BASE.pathname)) return;
@@ -24,8 +29,7 @@ self.addEventListener('fetch', event => {
       const cache = await caches.open(PAGE);
       return await cache.match(normalized.href) || fetch(event.request);
     }
-    const cached = await caches.match(normalized.href);
-    if (cached) return cached;
-    return fetch(event.request);
+    const cache = await caches.open(VOICES);
+    return await cache.match(normalized.href) || fetch(event.request);
   })());
 });

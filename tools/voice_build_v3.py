@@ -24,7 +24,7 @@ import voice_tool as V
 import voice_build as base
 
 PROFILES = {
-    'ori': ('eugene', 1.06, .98),
+    'ori': ('kseniya', 1.0, .97),
     'alien1': ('kseniya', 1.16, 1.04),
     'alien2': ('eugene', .96, 1.0),
     'alien3': ('xenia', 1.22, 1.04),
@@ -136,9 +136,8 @@ def main():
         old_path = ROOT / ('voice-v2/' + key + '.mp3')
         legacy = old_report.get(key, {})
         record = {**row, 'profile': list(PROFILES[who]), 'model': 'Silero v5_ru', 'synthesisRate': 48000}
-        if old_path.is_file():
-            if legacy.get('text') != text or legacy.get('profile') != list(PROFILES[who]):
-                raise RuntimeError('Cannot prove exact v2 text/profile: ' + key)
+        legacy_matches = legacy.get('text') == text and legacy.get('profile') == list(PROFILES[who])
+        if old_path.is_file() and legacy_matches:
             record.update(path='voice-v2/' + key + '.mp3', reused=True, source=legacy['source'])
             record['provenance'] = [*row['provenance'], 'mockups/voice-v2/report.json:' + key]
         else:
@@ -208,7 +207,9 @@ def main():
     version = digest.hexdigest()[:12]
     manifest = {'version': version, 'bytes': size, 'clips': {k:r['path'] for k,r in sorted(records.items())}}
     manifest_path = ROOT / 'rpg/voice-manifest.js'
-    manifest_text = '// Generated locally by tools/voice_build_v3.py. Paths relative to index.html.\nwindow.ORI_VOICE=' + json.dumps(manifest, ensure_ascii=False, separators=(',', ':')) + ';\n'
+    manifest_text = ('// Generated locally by tools/voice_build_v3.py. Paths relative to index.html.\n'
+                     "(typeof self==='undefined'?window:self).ORI_VOICE=" +
+                     json.dumps(manifest, ensure_ascii=False, separators=(',', ':')) + ';\n')
     if args.verify_only:
         assert manifest_path.read_text(encoding='utf-8') == manifest_text, 'Manifest differs from verified assets'
     else:

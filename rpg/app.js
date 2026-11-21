@@ -4,7 +4,7 @@
   const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const lessons = ORI_LEARNING.lessons, chapters = ORI_LEARNING.chapters, items = ORI_REWARDS.items;
   const lines = new Map([...ORI_LEARNING.lines, ...ORI_REWARDS.lines].map(l => [l.id, l]));
-  const people = [{id:'ori',name:'Ори'}, {id:'alien1',name:'Блип'}, {id:'alien2',name:'Пуф'}, {id:'alien3',name:'Ку-Ку'}];
+  const people = [{id:'ori',name:'Ори'}, {id:'alien1',name:'Блип'}, {id:'alien2',name:'Пуф'}, {id:'alien3',name:'Кувку'}];
   const categories = {all:'Все подарки',pets:'Питомцы',outfits:'Наряды',decor:'Для каюты',effects:'Чудеса',themes:'Миры'};
   const modeNames = {'letter-find':'Звёздный сад',radar:'Радиостанция',bubble:'Пузыри букв',memory:'Почта двойников',odd:'Космический пикник',blend:'Мастерская звуков',bridge:'Мостики слогов',train:'Словопоезд',missing:'Бюро находок','syllable-sort':'Слоговые домики',stress:'Маячок голоса',sentence:'Живая записка',story:'Театр историй'};
   const store = ORI_STORE.create({getItem:key=>localStorage.getItem(key),setItem:(key,value)=>localStorage.setItem(key,value)});

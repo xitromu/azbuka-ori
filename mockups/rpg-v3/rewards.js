@@ -188,7 +188,7 @@ window.ORI_REWARDS = {
       color: '#E99CAF', shape: 'badge', purchaseLine: 'puf_badge_purchase', tapLine: 'puf_badge_tap'
     },
     {
-      id: 'kuku_hat', name: 'Шапочка Ку-Ку «Облачко»', category: 'outfits', price: 45,
+      id: 'kuku_hat', name: 'Шапочка Кувку «Облачко»', category: 'outfits', price: 45,
       who: 'alien3', owner: 'alien3',
       description: 'Пушистая белая шапочка, не прячущая глаз и антенны.',
       interaction: 'Нажатие слегка надувает три округлые доли шапочки и возвращает прежнюю форму.',
@@ -196,7 +196,7 @@ window.ORI_REWARDS = {
       color: '#D9EBF3', shape: 'hat', purchaseLine: 'kuku_hat_purchase', tapLine: 'kuku_hat_tap'
     },
     {
-      id: 'kuku_cape', name: 'Накидка Ку-Ку «Ветерок»', category: 'outfits', price: 65,
+      id: 'kuku_cape', name: 'Накидка Кувку «Ветерок»', category: 'outfits', price: 65,
       who: 'alien3', owner: 'alien3',
       description: 'Две короткие ленточные полы ниже крыльев.',
       interaction: 'Нажатие разводит две полы в стороны и мягко опускает; крылья героя остаются полностью открытыми.',
@@ -204,7 +204,7 @@ window.ORI_REWARDS = {
       color: '#B2A3E8', shape: 'cape', purchaseLine: 'kuku_cape_purchase', tapLine: 'kuku_cape_tap'
     },
     {
-      id: 'kuku_boots', name: 'Гетры Ку-Ку «Топ-топ»', category: 'outfits', price: 55,
+      id: 'kuku_boots', name: 'Гетры Кувку «Топ-топ»', category: 'outfits', price: 55,
       who: 'alien3', owner: 'alien3',
       description: 'Жёлтые вязаные гетры над пушистыми лапами.',
       interaction: 'Нажатие по очереди покачивает два маленьких помпона на внешних сторонах гетр, без прыжка героя.',
@@ -212,7 +212,7 @@ window.ORI_REWARDS = {
       color: '#EDCC79', shape: 'boots', purchaseLine: 'kuku_boots_purchase', tapLine: 'kuku_boots_tap'
     },
     {
-      id: 'kuku_badge', name: 'Значок Ку-Ку «Капелька»', category: 'outfits', price: 30,
+      id: 'kuku_badge', name: 'Значок Кувку «Капелька»', category: 'outfits', price: 30,
       who: 'alien3', owner: 'alien3',
       description: 'Сиреневая капелька на нижней части пушистого бока.',
       interaction: 'Нажатие наклоняет значок влево и вправо, перемещая перламутровый блик внутри капли.',

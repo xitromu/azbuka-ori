@@ -1078,9 +1078,9 @@
       "id": "l045-intro",
       "who": "alien3",
       "event": "lesson.intro",
-      "text": "Я Ку-Ку. С моста хорошо видно новую букву.",
+      "text": "Я Кувку. С моста хорошо видно новую букву.",
       "lessonId": "lesson045",
-      "key": "alien3/54c19cfc"
+      "key": "alien3/f394e9e3"
     },
     {
       "id": "l045-outro",
@@ -2602,8 +2602,8 @@
       "id": "chapter4-enter",
       "who": "alien3",
       "event": "chapter4.enter",
-      "text": "Ку-Ку здесь! Сложу крылья и посмотрю на мост своим зорким глазом.",
-      "key": "alien3/5d8beecd"
+      "text": "Кувку здесь! Сложу крылья и посмотрю на мост своим зорким глазом.",
+      "key": "alien3/bed99072"
     },
     {
       "id": "chapter4-mission",
@@ -6589,18 +6589,6 @@
       "helpOnly": false
     },
     {
-      "key": "alien3/54c19cfc",
-      "who": "alien3",
-      "text": "Я Ку-Ку. С моста хорошо видно новую букву.",
-      "categories": [
-        "line"
-      ],
-      "provenance": [
-        "rpg/learning.js:l045-intro"
-      ],
-      "helpOnly": false
-    },
-    {
       "key": "alien3/5b7865ed",
       "who": "alien3",
       "text": "Имена не пришлось угадывать: помогли слоги.",
@@ -6609,18 +6597,6 @@
       ],
       "provenance": [
         "rpg/learning.js:l047-outro"
-      ],
-      "helpOnly": false
-    },
-    {
-      "key": "alien3/5d8beecd",
-      "who": "alien3",
-      "text": "Ку-Ку здесь! Сложу крылья и посмотрю на мост своим зорким глазом.",
-      "categories": [
-        "line"
-      ],
-      "provenance": [
-        "rpg/learning.js:chapter4-enter"
       ],
       "helpOnly": false
     },
@@ -6985,6 +6961,18 @@
       "helpOnly": false
     },
     {
+      "key": "alien3/bed99072",
+      "who": "alien3",
+      "text": "Кувку здесь! Сложу крылья и посмотрю на мост своим зорким глазом.",
+      "categories": [
+        "line"
+      ],
+      "provenance": [
+        "rpg/learning.js:chapter4-enter"
+      ],
+      "helpOnly": false
+    },
+    {
       "key": "alien3/bee4c6f4",
       "who": "alien3",
       "text": "Теперь замечаем и начало, и конец слога.",
@@ -7185,6 +7173,18 @@
       ],
       "provenance": [
         "rpg/learning.js:l102-outro"
+      ],
+      "helpOnly": false
+    },
+    {
+      "key": "alien3/f394e9e3",
+      "who": "alien3",
+      "text": "Я Кувку. С моста хорошо видно новую букву.",
+      "categories": [
+        "line"
+      ],
+      "provenance": [
+        "rpg/learning.js:l045-intro"
       ],
       "helpOnly": false
     },

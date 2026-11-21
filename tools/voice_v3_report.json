@@ -6358,33 +6358,6 @@
       "sampleRate": 24000,
       "peak": 0.8219
     },
-    "alien3/54c19cfc": {
-      "key": "alien3/54c19cfc",
-      "who": "alien3",
-      "text": "Я Ку-Ку. С моста хорошо видно новую букву.",
-      "categories": [
-        "line"
-      ],
-      "provenance": [
-        "rpg/learning.js:l045-intro"
-      ],
-      "helpOnly": false,
-      "profile": [
-        "xenia",
-        1.22,
-        1.04
-      ],
-      "model": "Silero v5_ru",
-      "synthesisRate": 48000,
-      "path": "voice-v3/alien3/54c19cfc.mp3",
-      "reused": false,
-      "source": "я Ку-Ку. эс моста хорошо видно новую букву.",
-      "sha256": "6e187ecedb43bc9cdaee68bccdaaf7bd4792cdb77033a3f4bb1fccc24f8f35a8",
-      "bytes": 27072,
-      "decodedSeconds": 3.384,
-      "sampleRate": 24000,
-      "peak": 0.85326
-    },
     "alien3/5b7865ed": {
       "key": "alien3/5b7865ed",
       "who": "alien3",
@@ -6411,33 +6384,6 @@
       "decodedSeconds": 2.664,
       "sampleRate": 24000,
       "peak": 0.8432
-    },
-    "alien3/5d8beecd": {
-      "key": "alien3/5d8beecd",
-      "who": "alien3",
-      "text": "Ку-Ку здесь! Сложу крылья и посмотрю на мост своим зорким глазом.",
-      "categories": [
-        "line"
-      ],
-      "provenance": [
-        "rpg/learning.js:chapter4-enter"
-      ],
-      "helpOnly": false,
-      "profile": [
-        "xenia",
-        1.22,
-        1.04
-      ],
-      "model": "Silero v5_ru",
-      "synthesisRate": 48000,
-      "path": "voice-v3/alien3/5d8beecd.mp3",
-      "reused": false,
-      "source": "Ку-Ку здесь! Сложу крылья и посмотрю на мост своим зорким глазом.",
-      "sha256": "6187d41fb0a3de1c3d3bde81f55e0df65c07e4ab67d941f263b94682d11df9ca",
-      "bytes": 30912,
-      "decodedSeconds": 3.864,
-      "sampleRate": 24000,
-      "peak": 0.84718
     },
     "alien3/657b5631": {
       "key": "alien3/657b5631",
@@ -7250,6 +7196,33 @@
       "sampleRate": 24000,
       "peak": 0.85134
     },
+    "alien3/bed99072": {
+      "key": "alien3/bed99072",
+      "who": "alien3",
+      "text": "Кувку здесь! Сложу крылья и посмотрю на мост своим зорким глазом.",
+      "categories": [
+        "line"
+      ],
+      "provenance": [
+        "rpg/learning.js:chapter4-enter"
+      ],
+      "helpOnly": false,
+      "profile": [
+        "xenia",
+        1.22,
+        1.04
+      ],
+      "model": "Silero v5_ru",
+      "synthesisRate": 48000,
+      "path": "voice-v3/alien3/bed99072.mp3",
+      "reused": false,
+      "source": "Кувку здесь! Сложу крылья и посмотрю на мост своим зорким глазом.",
+      "decodedSeconds": 3.864,
+      "sampleRate": 24000,
+      "peak": 0.83055,
+      "bytes": 30912,
+      "sha256": "5c1e2d7be6d59f588ea60d178b5f6ee2cd2fc2db14323fc1b9e8b41d35e84362"
+    },
     "alien3/bee4c6f4": {
       "key": "alien3/bee4c6f4",
       "who": "alien3",
@@ -7708,6 +7681,33 @@
       "decodedSeconds": 2.28,
       "sampleRate": 24000,
       "peak": 0.86323
+    },
+    "alien3/f394e9e3": {
+      "key": "alien3/f394e9e3",
+      "who": "alien3",
+      "text": "Я Кувку. С моста хорошо видно новую букву.",
+      "categories": [
+        "line"
+      ],
+      "provenance": [
+        "rpg/learning.js:l045-intro"
+      ],
+      "helpOnly": false,
+      "profile": [
+        "xenia",
+        1.22,
+        1.04
+      ],
+      "model": "Silero v5_ru",
+      "synthesisRate": 48000,
+      "path": "voice-v3/alien3/f394e9e3.mp3",
+      "reused": false,
+      "source": "я Кувку. эс моста хорошо видно новую букву.",
+      "decodedSeconds": 3.336,
+      "sampleRate": 24000,
+      "peak": 0.87386,
+      "bytes": 26688,
+      "sha256": "45f00041f11d1928b11c005f54be3623c45d83d9bfe75f0ff869dcd303703d72"
     },
     "alien3/f4493784": {
       "key": "alien3/f4493784",
@@ -26714,8 +26714,8 @@
     }
   },
   "summary": {
-    "version": "4d4292237cff",
-    "bytes": 14981376,
+    "version": "346c5e232775",
+    "bytes": 14980992,
     "clips": 979,
     "reused": 3,
     "new": 976,

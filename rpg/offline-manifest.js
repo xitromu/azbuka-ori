@@ -1,5 +1,5 @@
 self.ORI_OFFLINE = {
-  "version": "9ca70b548deffc82",
+  "version": "306c41fa50759290",
   "files": [
     "index.html",
     "v1.html",
